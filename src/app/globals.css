@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --primary: #fd88d7;
+  --primary-light: #ffb8e6;
+  --primary-dark: #e879a0;
+  --secondary: #fd88d7;
+  --slate-900: #0f172a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary: var(--secondary);
+  --color-slate-900: var(--slate-900);
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-outfit);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+.brand-pink {
+  background-color: var(--primary);
+}
+
+.brand-gradient {
+  background: linear-gradient(135deg, #fd88d7 0%, #e879a0 100%);
+}
+
+.brand-gradient-soft {
+  background: linear-gradient(135deg, #fce7f3 0%, #fae8ff 100%);
+}
+
+.white-card {
+  background-color: #ffffff;
+  border-radius: 2rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+.glow-pink {
+  box-shadow: 0 0 30px rgba(253, 136, 215, 0.3);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
