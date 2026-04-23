@@ -9,18 +9,18 @@ interface Partner {
 }
 
 const partnersConfig: Partner[] = [
-  { name: "Stonegate Group", src: "/stoneage-img.png", type: "mask" },
-  { name: "XOYO", src: "/xoyo.png", type: "image", scale: "scale-110" },
-  { name: "R", src: "/r.png", type: "image", scale: "scale-100" },
+  { name: "Groovebox", src: "/groverbox1.png", type: "mask", containerClass: "h-12 md:h-16 w-32 md:w-48" },
   { name: "Popworld", src: "/pp-world.png", type: "image", scale: "scale-125" },
-  { name: "Marston's", src: "/marteson.png", type: "mask" },
-  { name: "The Cavendish", src: "/s&l.png", type: "mask" },
-  { name: "Binks Yard", src: "/bink-yard.png", type: "mask" },
-  { name: "Groovebox", src: "/groverbox.png", type: "mask", containerClass: "h-12 md:h-16 w-32 md:w-48" },
+  { name: "R", src: "/r.png", type: "image", scale: "scale-100" },
+  { name: "XOYO", src: "/xoyo.png", type: "image", scale: "scale-110" },
+  { name: "Stonegate Group", src: "/stoneage-img.png", type: "mask" },
   { name: "The Nest", src: "/the-nest.png", type: "mask" },
+  { name: "Live Tour", src: "/live-tour1.png", type: "mask" },
+  { name: "The Cavendish", src: "/s&l.png", type: "mask" },
   { name: "Live Republic", src: "/live-republic1.png", type: "image", scale: "scale-110", containerClass: "h-16 md:h-24 w-64 md:w-80 relative" },
+  { name: "Marston's", src: "/marteson.png", type: "mask" },
   { name: "Breathe", src: "/breathe-icon.png", type: "mask" },
-  { name: "Live Tour", src: "/live-tour.png", type: "mask" },
+  { name: "Binks Yard", src: "/bink-yard.png", type: "mask" },
 ];
 
 const Partners = () => {
