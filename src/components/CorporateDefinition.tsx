@@ -40,7 +40,7 @@ const CorporateDefinition = () => {
             {/* Tilted Main Image Card */}
             <div className="relative h-[450px] md:h-[550px] w-full max-w-[500px] lg:ml-auto group rounded-[3.5rem] overflow-hidden shadow-2xl -rotate-6 border-[12px] border-white/10 transition-transform duration-500 hover:rotate-0 hover:scale-105">
               <Image
-                src="/effervescent-definition.jpeg"
+                src="/effervescent-definition1.jpeg"
                 alt="The Effervescent Experience"
                 fill
                 className="object-cover"
@@ -52,7 +52,7 @@ const CorporateDefinition = () => {
               <p className="text-xl text-white/90 leading-relaxed font-light">
                 <span className="font-bold italic">Fully Trained & Compliant:</span> We combine <span className="font-bold">industry-leading sales training</span> with <span className="font-bold">responsible service education</span>. All shot-sellers are trained in <span className="font-bold">Challenge 25 and Drinkaware</span>, ensuring they represent both your venue and the wider industry to the highest possible standard.
               </p>
-              
+
               <div className="space-y-2 pt-4">
                 <p className="text-xl font-bold text-white leading-relaxed">
                   Ready to elevate your events and maximise your sales?
@@ -67,11 +67,11 @@ const CorporateDefinition = () => {
 
         {/* Global Signature Decorator */}
         <div className="absolute right-8 bottom-8 opacity-20 hidden lg:block w-80 h-32">
-          <Image 
-            src="/effervescent-sign1.png" 
-            alt="Effervescent Signature" 
-            fill 
-            className="object-contain brightness-0 invert" 
+          <Image
+            src="/effervescent-sign1.png"
+            alt="Effervescent Signature"
+            fill
+            className="object-contain brightness-0 invert"
           />
         </div>
       </div>
