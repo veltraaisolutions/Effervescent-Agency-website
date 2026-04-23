@@ -269,21 +269,21 @@ export default function ApplyForm() {
   if (submitted) return <SuccessScreen />;
 
   return (
-    <div className={`bg-white py-12 md:py-16 relative overflow-hidden rounded-[3rem] w-full shadow-2xl border border-slate-100 transition-opacity duration-200 ${visible ? "opacity-100" : "opacity-0"}`}>
+    <div className={`bg-white py-8 md:py-16 relative overflow-hidden rounded-[2rem] md:rounded-[3rem] w-full shadow-2xl border border-slate-100 transition-opacity duration-200 ${visible ? "opacity-100" : "opacity-0"}`}>
       <div className="absolute top-0 right-0 w-80 h-80 opacity-[0.03] -mr-20 -mt-20 rotate-12 pointer-events-none">
         <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
       </div>
 
-      <div className="px-6 md:px-10 relative z-10">
-        <div className="mb-16">
+      <div className="px-4 md:px-10 relative z-10">
+        <div className="mb-12 md:mb-16">
           <div className="flex items-center justify-between relative">
-            <div className="absolute top-6 left-0 right-0 h-px bg-slate-100 -z-0"></div>
+            <div className="absolute top-5 md:top-6 left-0 right-0 h-px bg-slate-100 -z-0"></div>
             {Array.from({ length: 5 }, (_, i) => i + 1).map((s) => (
-              <div key={s} className="flex flex-col items-center gap-3 relative z-10 flex-1">
-                <div className={`w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold transition-all ${s === slide ? "bg-[#fd88d7] text-white shadow-lg" : "bg-slate-50 text-slate-300 border border-slate-100"}`}>
+              <div key={s} className="flex flex-col items-center gap-2 md:gap-3 relative z-10 flex-1">
+                <div className={`w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center text-sm md:text-lg font-bold transition-all ${s === slide ? "bg-[#fd88d7] text-white shadow-lg" : "bg-slate-50 text-slate-300 border border-slate-100"}`}>
                   {s}
                 </div>
-                <span className={`text-[10px] font-black uppercase tracking-widest text-center ${s === slide ? "text-slate-900" : "text-slate-400"}`}>
+                <span className={`hidden sm:block text-[10px] font-black uppercase tracking-widest text-center ${s === slide ? "text-slate-900" : "text-slate-400"}`}>
                   {SLIDE_LABELS[s - 1]}
                 </span>
               </div>
@@ -291,10 +291,10 @@ export default function ApplyForm() {
           </div>
         </div>
 
-        <p className="text-sm font-black uppercase tracking-widest mb-4 text-[#fd88d7]">Step {slide} of 5</p>
-        <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-12">{SLIDE_TITLES[slide - 1]}</h2>
+        <p className="text-xs md:text-sm font-black uppercase tracking-widest mb-2 md:mb-4 text-[#fd88d7]">Step {slide} of 5</p>
+        <h2 className="text-3xl md:text-5xl font-serif text-slate-900 mb-8 md:mb-12 text-balance leading-tight">{SLIDE_TITLES[slide - 1]}</h2>
 
-        <div className="space-y-8">
+        <div className="space-y-6 md:space-y-8">
           {slide === 1 && (
             <>
               <div>
@@ -361,18 +361,18 @@ export default function ApplyForm() {
             <>
               <div>
                 <FieldLabel required>Photos of Yourself (Min 2)</FieldLabel>
-                <div onClick={() => photosRef.current?.click()} className="border-2 border-dashed border-slate-200 rounded-[2rem] p-10 text-center bg-slate-50 cursor-pointer hover:border-[#fd88d7]/50 transition-all">
-                  <Upload className="w-12 h-12 mx-auto mb-4 text-[#fd88d7]" />
-                  <p className="font-bold text-slate-900">Click to add photos ({form.photos.length}/5)</p>
+                <div onClick={() => photosRef.current?.click()} className="border-2 border-dashed border-slate-200 rounded-[1.5rem] md:rounded-[2rem] p-8 md:p-10 text-center bg-slate-50 cursor-pointer hover:border-[#fd88d7]/50 transition-all">
+                  <Upload className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-4 text-[#fd88d7]" />
+                  <p className="font-bold text-slate-900 text-sm md:text-base">Click to add photos ({form.photos.length}/5)</p>
                 </div>
                 {photoUploadError && <FieldError message={photoUploadError} />}
                 <input ref={photosRef} type="file" multiple hidden accept="image/*" onChange={(e) => handlePhotoUpload(e.target.files)} />
                 <FieldError message={errors.photos} />
-                <div className="grid grid-cols-3 gap-4 mt-4">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-4">
                   {form.photos.map((p, i) => (
-                    <div key={i} className="relative aspect-square rounded-xl overflow-hidden shadow-sm">
+                    <div key={i} className="relative aspect-square rounded-xl overflow-hidden shadow-sm border border-slate-100">
                       <img src={p.base64} alt="" className="w-full h-full object-cover" />
-                      <button onClick={() => upd({ photos: form.photos.filter((_, idx) => idx !== i) })} className="absolute top-1 right-1 bg-red-500 text-white rounded-full p-1"><X size={12} /></button>
+                      <button onClick={() => upd({ photos: form.photos.filter((_, idx) => idx !== i) })} className="absolute top-1 right-1 bg-red-500 text-white rounded-full p-1 shadow-md active:scale-90 transition-transform"><X size={12} /></button>
                     </div>
                   ))}
                 </div>
@@ -380,15 +380,15 @@ export default function ApplyForm() {
               <div>
                 <FieldLabel required>Upload Photo ID (Passport)</FieldLabel>
                 {!form.passportId ? (
-                  <div onClick={() => idRef.current?.click()} className="border-2 border-dashed border-slate-200 rounded-[2rem] p-10 text-center bg-slate-50 cursor-pointer hover:border-[#fd88d7]/50 transition-all">
-                    <Upload className="w-12 h-12 mx-auto mb-4 text-[#fd88d7]" />
-                    <p className="font-bold text-slate-900">Upload Passport</p>
+                  <div onClick={() => idRef.current?.click()} className="border-2 border-dashed border-slate-200 rounded-[1.5rem] md:rounded-[2rem] p-8 md:p-10 text-center bg-slate-50 cursor-pointer hover:border-[#fd88d7]/50 transition-all">
+                    <Upload className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-4 text-[#fd88d7]" />
+                    <p className="font-bold text-slate-900 text-sm md:text-base">Upload Passport</p>
                   </div>
                 ) : (
-                  <div className="flex items-center gap-4 p-4 bg-slate-50 rounded-xl">
+                  <div className="flex items-center gap-4 p-4 bg-slate-50 rounded-xl border border-slate-100">
                     <img src={form.passportId.base64} className="w-12 h-12 object-cover rounded-lg" />
                     <span className="flex-1 text-sm font-bold truncate">{form.passportId.name}</span>
-                    <button onClick={() => upd({ passportId: null })}><X size={16} /></button>
+                    <button onClick={() => upd({ passportId: null })} className="p-1 hover:bg-slate-200 rounded-full transition-colors"><X size={16} /></button>
                   </div>
                 )}
                 <input ref={idRef} type="file" hidden accept="image/*" onChange={(e) => handleIdUpload(e.target.files)} />
@@ -451,7 +451,7 @@ export default function ApplyForm() {
 
           {slide === 5 && (
             <>
-              <div className="bg-slate-50 rounded-3xl p-8 space-y-6">
+              <div className="bg-slate-50 rounded-3xl p-8 space-y-6 border border-slate-100">
                 <StyledCheckbox id="self" checked={form.selfEmployed} onCheckedChange={(v: boolean) => upd({ selfEmployed: v })} label="This is self-employed work" />
                 <FieldError message={errors.selfEmployed} />
                 <StyledCheckbox id="weekend" checked={form.weekendWork} onCheckedChange={(v: boolean) => upd({ weekendWork: v })} label="Predominantly weekend/night work" />
@@ -466,11 +466,11 @@ export default function ApplyForm() {
           )}
         </div>
 
-        <div className="mt-16 flex flex-col gap-6">
+        <div className="mt-12 md:mt-16 flex flex-col gap-6">
           {submitError && <div className="p-4 bg-red-50 text-red-600 rounded-2xl text-sm border border-red-100">{submitError}</div>}
           <div className="flex justify-between items-center">
-            <button onClick={() => slide > 1 && goToSlide(slide - 1)} disabled={slide === 1 || submitting} className="text-slate-400 font-black uppercase tracking-widest text-sm hover:text-slate-900 transition-colors disabled:opacity-0">Back</button>
-            <button onClick={handleNext} disabled={submitting} className="bg-slate-900 text-white px-12 py-5 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl hover:scale-105 transition-all disabled:opacity-50">
+            <button onClick={() => slide > 1 && goToSlide(slide - 1)} disabled={slide === 1 || submitting} className="text-slate-400 font-black uppercase tracking-widest text-xs md:text-sm hover:text-slate-900 transition-colors disabled:opacity-0">Back</button>
+            <button onClick={handleNext} disabled={submitting} className="bg-slate-900 text-white px-8 md:px-12 py-4 md:py-5 rounded-xl md:rounded-2xl font-black uppercase tracking-widest text-xs md:text-sm shadow-xl hover:scale-105 active:scale-95 transition-all disabled:opacity-50">
               {submitting ? "SENDING…" : slide === 5 ? "Submit" : "Next"}
             </button>
           </div>

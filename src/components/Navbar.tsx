@@ -93,40 +93,42 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation */}
-      {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-pink-50 absolute w-full shadow-xl animate-in slide-in-from-top duration-300">
-          <div className="px-4 pt-2 pb-6 space-y-2">
-            <Link
-              href="/venues"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-4 text-base font-medium text-slate-900 hover:bg-pink-50 rounded-lg"
-            >
-              For Venues
-            </Link>
-            <Link
-              href="/marketing"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-4 text-base font-medium text-slate-900 hover:bg-pink-50 rounded-lg"
-            >
-              Marketing & Network
-            </Link>
-            <Link
-              href="/apply"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-4 text-base font-bold text-primary"
-            >
-              Become a Shot-Seller
-            </Link>
-            <Link
-              href="/contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-4 text-base font-medium text-slate-900 bg-slate-50 rounded-lg"
-            >
-              Contact
-            </Link>
-          </div>
+      <div 
+        className={`md:hidden bg-white border-t border-pink-50 fixed w-full shadow-2xl transition-all duration-500 ease-in-out z-40 ${
+          mobileMenuOpen ? "top-[72px] opacity-100 pointer-events-auto" : "-top-full opacity-0 pointer-events-none"
+        }`}
+      >
+        <div className="px-6 py-10 space-y-6 flex flex-col items-center text-center">
+          <Link
+            href="/venues"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-2xl font-serif text-slate-900 hover:text-primary transition-colors py-2 border-b border-pink-100 w-full"
+          >
+            For Venues
+          </Link>
+          <Link
+            href="/marketing"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-2xl font-serif text-slate-900 hover:text-primary transition-colors py-2 border-b border-pink-100 w-full"
+          >
+            Marketing & Network
+          </Link>
+          <Link
+            href="/apply"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-2xl font-serif font-black text-primary py-2 border-b border-pink-100 w-full"
+          >
+            Become a Shot-Seller
+          </Link>
+          <Link
+            href="/contact"
+            onClick={() => setMobileMenuOpen(false)}
+            className="bg-slate-900 text-white px-8 py-4 rounded-full text-xl font-bold w-full shadow-lg"
+          >
+            Contact
+          </Link>
         </div>
-      )}
+      </div>
     </nav>
   );
 };
