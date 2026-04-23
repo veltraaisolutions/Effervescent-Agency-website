@@ -13,12 +13,12 @@ const OtherServices = () => {
   return (
     <section className="py-32 brand-gradient relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-20 items-center">
 
           {/* Left Column - Content */}
           <div className="space-y-12">
-            <h2 className="text-5xl md:text-7xl font-serif text-white leading-tight">
-              Other Services: <br />
+            <h2 className="text-5xl md:text-6xl font-serif text-white leading-tight">
+              Other Services: {" "}
               <span className="italic font-light opacity-90 text-[0.8em]">Hostesses & Promoters</span>
             </h2>
 
@@ -37,15 +37,15 @@ const OtherServices = () => {
             {/* Top Right Main Card */}
             <div
               onClick={() => handleCardClick(1)}
-              className={`absolute top-0 right-0 h-[450px] w-full max-w-[380px] rounded-[3rem] overflow-hidden shadow-2xl rotate-3 border-4 border-white/10 cursor-pointer transition-all duration-700 
+              className={`absolute top-0 right-0 lg:-right-32 h-[400px] w-full lg:w-[650px] rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white/10 cursor-pointer transition-all duration-700 
               ${activeCard === 1 ? "z-50 -translate-y-20 scale-105 shadow-white/30" : "z-10 translate-y-0 hover:-translate-y-8 hover:z-30 hover:shadow-white/10"}`}
             >
               <Image
-                src="/Promtoers-Services.jpeg"
+                src="/HostessService.jpeg"
                 alt="VIP Hostess Services"
                 fill
                 className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 380px"
+                sizes="(max-width: 1024px) 100vw, 650px"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent"></div>
             </div>
@@ -53,7 +53,7 @@ const OtherServices = () => {
             {/* Center Offset Card - Festival Tray */}
             <div
               onClick={() => handleCardClick(2)}
-              className={`absolute top-1/2 left-1/2 -translate-x-1/2 h-[350px] w-full max-w-[420px] rounded-[3rem] overflow-hidden shadow-2xl -rotate-6 border-4 border-white/30 cursor-pointer transition-all duration-700
+              className={`absolute top-1/2 left-1/2 -translate-x-1/2 h-[300px] w-full max-w-[420px] rounded-[3rem] overflow-hidden shadow-2xl rotate-6 border-4 border-white/30 cursor-pointer transition-all duration-700
               ${activeCard === 2 ? "z-50 -translate-y-[90%] scale-110 shadow-white/30" : "z-20 -translate-y-1/2 hover:scale-105 hover:-translate-y-[55%] hover:z-30"}`}
             >
               <Image
