@@ -58,7 +58,7 @@ const CaseStudies = () => {
           {/* Front Card */}
           <div className="absolute top-0 left-0 h-[450px] w-full max-w-[400px] rounded-[3rem] overflow-hidden shadow-2xl rotate-3 transition-all duration-500 group-hover:-translate-y-6 z-10 border-2 border-white/10">
             <Image
-              src="/fun-gala-girl1.jpeg"
+              src="/fungala-girl.png"
               alt="Venue Success"
               fill
               className="object-cover"

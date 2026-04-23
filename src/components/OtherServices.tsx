@@ -35,7 +35,7 @@ const OtherServices = () => {
           {/* Right Column - Diamond Corners Triple Stack */}
           <div className="relative h-[650px]">
             {/* Top Right Main Card */}
-            <div 
+            <div
               onClick={() => handleCardClick(1)}
               className={`absolute top-0 right-0 h-[450px] w-full max-w-[380px] rounded-[3rem] overflow-hidden shadow-2xl rotate-3 border-4 border-white/10 cursor-pointer transition-all duration-700 
               ${activeCard === 1 ? "z-50 -translate-y-20 scale-105 shadow-white/30" : "z-10 translate-y-0 hover:-translate-y-8 hover:z-30 hover:shadow-white/10"}`}
@@ -51,13 +51,13 @@ const OtherServices = () => {
             </div>
 
             {/* Center Offset Card - Festival Tray */}
-            <div 
+            <div
               onClick={() => handleCardClick(2)}
               className={`absolute top-1/2 left-1/2 -translate-x-1/2 h-[350px] w-full max-w-[420px] rounded-[3rem] overflow-hidden shadow-2xl -rotate-6 border-4 border-white/30 cursor-pointer transition-all duration-700
               ${activeCard === 2 ? "z-50 -translate-y-[90%] scale-110 shadow-white/30" : "z-20 -translate-y-1/2 hover:scale-105 hover:-translate-y-[55%] hover:z-30"}`}
             >
               <Image
-                src="/Promtoers-Services2.jpeg"
+                src="/Promtoers-Services21.png"
                 alt="Festival Promoters"
                 fill
                 className="object-cover"
@@ -67,7 +67,7 @@ const OtherServices = () => {
             </div>
 
             {/* Bottom Left Support Card - Fun Gala Girl (Wider) */}
-            <div 
+            <div
               onClick={() => handleCardClick(3)}
               className={`absolute bottom-0 left-0 h-[320px] w-full max-w-[500px] rounded-[3rem] overflow-hidden shadow-2xl rotate-3 border-4 border-white/20 cursor-pointer transition-all duration-700
               ${activeCard === 3 ? "z-50 -translate-y-32 scale-105 shadow-white/30" : "z-10 translate-y-0 hover:-translate-y-8 hover:z-30 hover:shadow-white/10"}`}
