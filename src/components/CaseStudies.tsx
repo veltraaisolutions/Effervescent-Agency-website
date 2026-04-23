@@ -54,15 +54,15 @@ const CaseStudies = () => {
         </div>
 
         {/* Harmonized Signature Image Stack - Diamond Corners Style */}
-        <div className="relative h-[500px] group max-w-[600px] mx-auto md:mx-0">
+        <div className="relative h-[500px] max-w-[1200px] mx-auto md:mx-0">
           {/* Front Card */}
-          <div className="absolute top-0 left-0 h-[450px] w-full max-w-[400px] rounded-[3rem] overflow-hidden shadow-2xl rotate-3 transition-all duration-500 group-hover:-translate-y-6 z-10 border-2 border-white/10">
+          <div className="absolute top-0 left-0 h-[380px] w-full max-w-[600px] rounded-[3rem] overflow-hidden shadow-2xl rotate-3 transition-transform duration-500 z-10 border-2 border-white/10 hover:scale-105">
             <Image
               src="/fungala-girl.png"
               alt="Venue Success"
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, 400px"
+              sizes="(max-width: 768px) 100vw, 600px"
             />
             <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
             <div className="absolute bottom-6 left-6 text-white">
@@ -71,13 +71,13 @@ const CaseStudies = () => {
           </div>
 
           {/* Back Overlapping Card */}
-          <div className="absolute top-24 left-12 md:left-24 h-[400px] w-full max-w-[380px] rounded-[3rem] overflow-hidden shadow-2xl -rotate-6 border-4 border-white/20 z-0 transition-all duration-700 group-hover:-translate-y-40 group-hover:z-20">
+          <div className="absolute top-24 left-48 md:left-[550px] h-[300px] w-full max-w-[480px] rounded-[3rem] overflow-hidden shadow-2xl -rotate-6 border-4 border-white/20 z-0 transition-transform duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:-translate-y-12 hover:rotate-0 hover:z-20">
             <Image
               src="/case-study-card-2.png"
               alt="Case Study Detail"
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, 380px"
+              sizes="(max-width: 768px) 100vw, 480px"
             />
             <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-slate-900/40 to-transparent pointer-events-none"></div>
           </div>

@@ -7,7 +7,7 @@ const HowItWorks = () => {
         <h2 className="text-6xl md:text-8xl lg:text-9xl font-serif text-white tracking-tighter leading-none mb-20">
           A Seamless Integration
         </h2>
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-12 items-start">
 
           {/* Left Column - Steps */}
@@ -39,7 +39,7 @@ const HowItWorks = () => {
           <div className="relative group lg:justify-self-end w-full max-w-[420px]">
             <div className="relative h-[550px] w-full rounded-[3.5rem] overflow-hidden shadow-2xl -rotate-3 border-[12px] border-white/10 transition-all duration-700 group-hover:rotate-0 group-hover:scale-[1.02] group-hover:shadow-white/10">
               <Image
-                src="/boy-shot1.jpeg"
+                src="/boy-shot.jpeg"
                 alt="Efficiency in Action"
                 fill
                 className="object-contain transition-transform duration-700 group-hover:scale-110"

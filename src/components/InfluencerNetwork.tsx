@@ -29,33 +29,33 @@ const InfluencerNetwork = () => {
             </div>
           </div>
 
-          <div className="relative h-[600px] group mr-4">
-            {/* Influencer Stack Card 1 */}
-            <div className="absolute top-0 right-0 h-[450px] w-full max-w-[420px] rounded-[3rem] overflow-hidden shadow-2xl rotate-2 transition-all duration-500 group-hover:-translate-y-4 z-10 border-4 border-white/10">
+          <div className="relative h-[650px] group">
+            {/* Influencer Stack Card 1 (Hostess Service 2) */}
+            <div className="absolute top-0 right-0 h-[300px] w-full max-w-[550px] rounded-[3rem] overflow-hidden shadow-2xl rotate-2 transition-all duration-500 hover:-translate-y-4 z-20 border-4 border-white/10">
               <Image
-                src="/tray-girl.jpeg"
+                src="/HostessService.jpeg"
                 alt="Influencer Impact"
                 fill
                 className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 420px"
+                sizes="(max-width: 1024px) 100vw, 550px"
               />
               <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
             </div>
 
-            {/* Influencer Stack Card 2 */}
-            <div className="absolute top-32 right-12 md:right-32 h-[400px] w-full max-w-[380px] rounded-[3rem] overflow-hidden shadow-2xl -rotate-6 border-4 border-white/30 z-0 transition-all duration-700 group-hover:-translate-y-44 group-hover:z-20">
+            {/* Influencer Stack Card 2 (Fungala Girl) */}
+            <div className="absolute top-24 right-12 md:right-24 h-[320px] w-full max-w-[500px] rounded-[3rem] overflow-hidden shadow-2xl -rotate-6 border-4 border-white/30 z-10 transition-all duration-700 hover:-translate-y-44 hover:z-30 hover:rotate-0">
               <Image
-                src="/boy-shot1.jpeg"
-                alt="Live Content Capture"
+                src="/fungala-girl.png"
+                alt="Event Results"
                 fill
                 className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 380px"
+                sizes="(max-width: 1024px) 100vw, 500px"
               />
-              <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-slate-900/40 to-transparent pointer-events-none"></div>
+              <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-slate-900/30 to-transparent pointer-events-none"></div>
             </div>
 
             {/* Decorative Icon */}
-            <div className="absolute left-0 bottom-0 opacity-20 p-8 w-80 h-40">
+            <div className="absolute left-0 bottom-0 opacity-20 p-8 w-80 h-40 pointer-events-none">
               <Image src="/effervescent-sign1.png" alt="Signature" fill className="object-contain brightness-0 invert" />
             </div>
           </div>

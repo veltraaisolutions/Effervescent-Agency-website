@@ -57,7 +57,7 @@ const OtherServices = () => {
               ${activeCard === 2 ? "z-50 -translate-y-[90%] scale-110 shadow-white/30" : "z-20 -translate-y-1/2 hover:scale-105 hover:-translate-y-[55%] hover:z-30"}`}
             >
               <Image
-                src="/Promtoers-Services21.png"
+                src="/HostessService2.jpeg"
                 alt="Festival Promoters"
                 fill
                 className="object-cover"
