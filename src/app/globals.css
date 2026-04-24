@@ -14,14 +14,22 @@
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-slate-900: var(--slate-900);
-  --font-serif: var(--font-playfair);
-  --font-sans: var(--font-outfit);
+  --font-serif: var(--font-playfair), serif;
+  --font-sans: var(--font-outfit), sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  line-height: 1.1;
 }
 
 .brand-pink {

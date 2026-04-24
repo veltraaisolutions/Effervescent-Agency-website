@@ -17,6 +17,7 @@ export default function ShotSellersPage() {
             alt="Shot Seller Impact"
             fill
             className="object-cover"
+            priority
             sizes="100vw"
           />
           <div className="absolute inset-0 brand-gradient mix-blend-overlay"></div>

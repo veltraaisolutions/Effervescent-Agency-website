@@ -35,8 +35,8 @@ export default function ApplyPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-20 md:mb-24">
             {[
               { step: "Step 1", title: "Submit Application", desc: "Fill out our quick online form with your details, location preferences, and any previous experience." },
-              { step: "Step 2", title: "Instant Invite", desc: "We move fast. Our automated system will instantly send you a WhatsApp message to book your interview." },
-              { step: "Step 3", title: "Vibe Check", desc: "Jump on a quick call with us. if you're a fit, we'll schedule you for a paid Trial Shift at a premium venue." },
+              { step: "Step 2", title: "Instant Invite", desc: "We move fast.We will send you WhatsApp message to book your interview." },
+              { step: "Step 3", title: "Vibe Check", desc: "Jump on a quick call with us. if you're a fit, we'll schedule you for Trial Shift at a premium venue." },
               { step: "Step 4", title: "Official Onboarding", desc: "Crushed your trial? Get access to our app where you simply tap the days you want to work." }
             ].map((s, idx) => (
               <div key={idx} className="bg-slate-50 p-8 rounded-[2rem] md:rounded-[3rem] border border-slate-100 hover:border-primary/20 transition-all group text-center lg:text-left">

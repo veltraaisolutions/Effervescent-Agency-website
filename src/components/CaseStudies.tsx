@@ -63,7 +63,7 @@ const CaseStudies = () => {
               alt="Venue Success"
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, 600px"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 600px, 600px"
             />
             <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
             <div className="absolute bottom-6 left-6 text-left">
@@ -78,7 +78,7 @@ const CaseStudies = () => {
               alt="Case Study Detail"
               fill
               className="object-cover"
-              sizes="(max-width: 768px) 100vw, 480px"
+              sizes="(max-width: 768px) 90vw, (max-width: 1024px) 480px, 480px"
             />
             <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-slate-900/40 to-transparent pointer-events-none"></div>
           </div>

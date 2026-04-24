@@ -44,7 +44,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center gap-8">
             <Link
               href="/shot-sellers"
-              className="text-sm font-bold text-primary px-4 py-2 rounded-full border border-primary/20 bg-primary/5 hover:bg-primary hover:text-white transition-all shadow-sm"
+              className="text-sm font-bold text-white bg-slate-900 hover:bg-slate-800 px-6 py-2.5 rounded-full shadow-lg shadow-slate-900/10 transition-all hover:scale-105 active:scale-95"
             >
               What is a Shot-Seller?
             </Link>
@@ -95,7 +95,7 @@ const Navbar = () => {
           <Link
             href="/shot-sellers"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-2xl font-serif text-primary font-bold py-2 border-b border-primary/10 w-full"
+            className="w-full text-center text-lg font-bold text-white bg-slate-900 py-4 rounded-2xl shadow-xl shadow-slate-900/10 active:scale-95 transition-all"
           >
             What is a Shot-Seller?
           </Link>

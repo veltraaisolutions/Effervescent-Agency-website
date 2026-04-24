@@ -54,18 +54,12 @@ const Partners = () => {
               <div key={partner.name} className="transition-all hover:scale-110 cursor-default flex items-center justify-center w-full">
                 {partner.type === "mask" ? (
                   <div className={partner.containerClass || "h-16 md:h-20 w-40 md:w-56 relative flex items-center justify-center"}>
-                    <div
-                      className="w-full h-full bg-white shadow-xl"
-                      style={{
-                        maskImage: `url(${partner.src})`,
-                        maskSize: 'contain',
-                        maskPosition: 'center',
-                        maskRepeat: 'no-repeat',
-                        WebkitMaskImage: `url(${partner.src})`,
-                        WebkitMaskSize: 'contain',
-                        WebkitMaskPosition: 'center',
-                        WebkitMaskRepeat: 'no-repeat'
-                      }}
+                    <Image
+                      src={partner.src}
+                      alt={`${partner.name} Logo`}
+                      fill
+                      className={`object-contain brightness-0 invert transition-opacity duration-300 ${partner.scale || ""}`}
+                      sizes="(max-width: 768px) 160px, 224px"
                     />
                   </div>
                 ) : (
@@ -74,8 +68,8 @@ const Partners = () => {
                       src={partner.src}
                       alt={`${partner.name} Logo`}
                       fill
-                      className={`object-contain brightness-0 invert shadow-xl ${partner.scale || ""}`}
-                      sizes="300px"
+                      className={`object-contain brightness-0 invert transition-opacity duration-300 ${partner.scale || ""}`}
+                      sizes="(max-width: 768px) 160px, 224px"
                     />
                   </div>
                 )}
