@@ -57,7 +57,7 @@ const CaseStudies = () => {
                 Our approach combines professional sales talent with data-driven venue management, resulting in unprecedented revenue growth for hospitality brands.
               </p>
             </div>
-            
+
             <div className="p-10 bg-slate-50 rounded-[3rem] border border-slate-100">
               <div className="flex items-center gap-6 mb-4">
                 <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center text-white font-black italic">!</div>

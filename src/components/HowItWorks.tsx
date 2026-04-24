@@ -5,7 +5,7 @@ const HowItWorks = () => {
     <section className="py-24 md:py-32 relative overflow-hidden bg-primary">
       {/* Subtle Pattern Overlay */}
       <div className="absolute inset-0 z-0 opacity-10 dot-grid mix-blend-overlay"></div>
-      
+
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="mb-20 text-center lg:text-left space-y-4">
           <span className="text-white font-black uppercase tracking-[0.4em] text-xs opacity-80">Our Process</span>

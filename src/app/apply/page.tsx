@@ -39,7 +39,7 @@ export default function ApplyPage() {
       <section className="py-24 md:py-32 relative bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
-            
+
             {/* Left: Benefits & Social Proof */}
             <div className="lg:col-span-5 space-y-20 lg:sticky lg:top-32">
               <div className="space-y-6">
@@ -53,23 +53,23 @@ export default function ApplyPage() {
 
               <div className="space-y-12">
                 {[
-                  { 
-                    icon: <Zap className="text-primary" size={24} />, 
-                    title: "Uncapped Earnings", 
-                    desc: "Industry-leading commission structure that rewards your drive and sales talent." 
+                  {
+                    icon: <Zap className="text-primary" size={24} />,
+                    title: "Uncapped Earnings",
+                    desc: "Industry-leading commission structure that rewards your drive and sales talent."
                   },
-                  { 
-                    icon: <Clock className="text-primary" size={24} />, 
-                    title: "Absolute Freedom", 
-                    desc: "Our custom app lets you claim shifts with a single tap. Work when it suits you." 
+                  {
+                    icon: <Clock className="text-primary" size={24} />,
+                    title: "Absolute Freedom",
+                    desc: "Our custom app lets you claim shifts with a single tap. Work when it suits you."
                   },
-                  { 
-                    icon: <Trophy className="text-primary" size={24} />, 
-                    title: "A-List Venues", 
-                    desc: "Work in the most exclusive nightclubs across London, Manchester, and Spain." 
+                  {
+                    icon: <Trophy className="text-primary" size={24} />,
+                    title: "A-List Venues",
+                    desc: "Work in the most exclusive nightclubs across London, Manchester, and Spain."
                   }
                 ].map((item, idx) => (
-                  <motion.div 
+                  <motion.div
                     key={idx}
                     initial={{ x: -20, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}

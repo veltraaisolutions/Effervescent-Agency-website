@@ -16,122 +16,45 @@ import OtherServices from "@/components/OtherServices";
 
 export default function Home() {
   return (
-    <div className="flex flex-col bg-white">
-      {/* Modern SaaS-Style Hero Section - Exact Design Layout */}
-      <section className="relative min-h-[90vh] flex items-center pt-32 pb-20 overflow-hidden bg-slate-50">
-        {/* Subtle Background Pattern - Dot Grid */}
-        <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#0f172a 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white to-transparent"></div>
-
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-
-            {/* Left Column: Content */}
-            <motion.div
-              initial={{ x: -30, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.8 }}
-              className="space-y-12"
-            >
-              <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-1.5 rounded-full border border-primary/20 text-primary text-xs font-black tracking-[0.3em] uppercase">
-                <Star size={12} fill="currentColor" /> Global Nightlife Leaders
-              </div>
-
-              <div className="relative w-full max-w-[500px] h-32 md:h-48 mb-8">
-                <Image
-                  src="/effervescent-sign1.png"
-                  alt="Effervescent"
-                  fill
-                  className="object-contain object-left"
-                  priority
-                />
-              </div>
-
-              <p className="text-xl md:text-2xl text-slate-500 font-sans font-light max-w-2xl leading-relaxed">
-                Transforming <span className="text-slate-900 font-medium italic underline decoration-primary underline-offset-8">venues</span> and <span className="text-slate-900 font-medium italic underline decoration-primary underline-offset-8">events</span> with the world’s most elite hospitality sales roster.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-6 pt-4">
-                <Link
-                  href="/contact"
-                  className="bg-primary hover:bg-primary/90 text-white px-10 py-5 rounded-2xl text-lg font-black shadow-[0_20px_50px_rgba(253,184,215,0.3)] transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3 group"
-                >
-                  Partner With Us <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
-                </Link>
-                <Link
-                  href="/apply"
-                  className="bg-slate-950 text-white px-10 py-5 rounded-2xl text-lg font-black transition-all hover:scale-105 active:scale-95 text-center flex items-center justify-center gap-3"
-                >
-                  Become a Shot-Seller <ArrowRight size={20} />
-                </Link>
-              </div>
-
-              {/* Decorative Brand Note */}
-              <div className="hidden md:block pl-4">
-                <p className="text-primary font-serif italic text-sm border-l-2 border-primary/20 pl-4 py-1">
-                  Building Enterprise Growth: <br />
-                  An Efficient Blueprint
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Right Column: Image with Floating Elements */}
-            <motion.div
-              initial={{ x: 30, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
-            >
-              <div className="relative h-[500px] md:h-[650px] w-full rounded-[2.5rem] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.1)] border-8 border-white">
-                <Image
-                  src="/tray-girl.jpeg"
-                  alt="Effervescent Experience"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent"></div>
-              </div>
-
-              {/* Floating Stat Card 1: Top Right */}
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-6 -right-6 md:right-0 bg-white p-4 md:p-6 rounded-3xl shadow-2xl border border-slate-100 z-20 flex items-center gap-4"
-              >
-                <div className="flex -space-x-3">
-                  <div className="w-10 h-10 rounded-full border-2 border-white bg-slate-200 overflow-hidden relative">
-                    <Image src="/logo1.jpeg" alt="" fill className="object-cover" />
-                  </div>
-                  <div className="w-10 h-10 rounded-full border-2 border-white bg-slate-300 flex items-center justify-center text-[10px] font-bold">EA</div>
-                </div>
-                <div>
-                  <p className="text-xl font-bold text-slate-900 leading-none">7.65m+</p>
-                  <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Global Reach</p>
-                </div>
-              </motion.div>
-
-              {/* Floating Tag 2: Bottom Left */}
-              <div className="absolute bottom-10 -left-6 md:left-10 space-y-3 z-20">
-                <div className="bg-white/90 backdrop-blur-md px-6 py-2.5 rounded-full shadow-xl border border-white/50 text-slate-900 text-xs font-black">
-                  Built to scale with your needs
-                </div>
-                <div className="bg-white/90 backdrop-blur-md px-6 py-2.5 rounded-full shadow-xl border border-white/50 text-slate-900 text-xs font-black translate-x-4">
-                  Affordable & scalable plans
-                </div>
-                <div className="bg-white/90 backdrop-blur-md px-6 py-2.5 rounded-full shadow-xl border border-white/50 text-slate-900 text-xs font-black translate-x-8">
-                  Plans that fit every stage
-                </div>
-              </div>
-
-              {/* Decorative Greenish Icon (Matching the image's vibe) */}
-              <div className="absolute top-1/2 -left-8 w-16 h-16 bg-[#b5ff3d] rounded-2xl flex items-center justify-center shadow-xl border-4 border-white z-20 -rotate-12">
-                <Zap size={24} className="text-slate-900" fill="currentColor" />
-              </div>
-            </motion.div>
-
+    <div className="flex flex-col bg-white min-h-screen">
+      {/* Modern SaaS-Style Hero Section - Final Atmosphere Branding */}
+      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden" style={{ background: 'radial-gradient(circle at 100% 0%, #C874E2 0%, transparent 50%), #fbcfe8' }}>
+        {/* Decorative Floating Star from the image */}
+        <div className="absolute bottom-12 right-12 opacity-60">
+          <div className="w-24 h-24 relative">
+            <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
           </div>
         </div>
+
+        {/* Main Content */}
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full flex flex-col items-center text-center">
+          <motion.div
+            initial={{ scale: 0.95, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="w-full max-w-[1000px] h-64 md:h-96 mb-8"
+          >
+            <div className="relative w-full h-full">
+              <Image
+                src="/hero-section1.png"
+                alt="Effervescent"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+          </motion.div>
+
+          <motion.p
+            initial={{ y: 10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="text-2xl md:text-5xl text-white font-serif italic tracking-tight"
+          >
+            Transforming Venues and Events Around the Globe
+          </motion.p>
+        </div>
+
       </section>
 
       <Milestones />

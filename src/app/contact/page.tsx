@@ -34,7 +34,7 @@ export default function ContactPage() {
       });
 
       if (!response.ok) throw new Error("Failed to send inquiry");
-      
+
       setSubmitted(true);
     } catch (err) {
       setError("Something went wrong. Please try again or contact us directly via WhatsApp.");
@@ -44,7 +44,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="flex flex-col bg-white">
+    <div className="flex flex-col bg-white min-h-screen">
       {/* Hero Section - Clean SaaS Style */}
       <section className="min-h-[60vh] flex items-center pt-32 pb-20 relative overflow-hidden bg-slate-50">
         {/* Subtle Background Pattern - Dot Grid */}
@@ -70,7 +70,7 @@ export default function ContactPage() {
       <section className="py-24 md:py-32 bg-white relative">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-start">
-            
+
             {/* Contact Info */}
             <div className="space-y-16">
               <div className="space-y-8">
@@ -109,12 +109,12 @@ export default function ContactPage() {
 
             {/* B2B Inquiry Form */}
             <div className="saas-card p-1 md:p-4">
-               <div className="p-8 md:p-16">
+              <div className="p-8 md:p-16">
                 <div className="mb-12">
                   <h3 className="text-3xl font-serif text-slate-900 mb-4">Partner Inquiry</h3>
                   <div className="w-16 h-1 bg-primary rounded-full"></div>
                 </div>
-                
+
                 {submitted ? (
                   <div className="text-center py-12 space-y-6">
                     <div className="w-20 h-20 bg-green-50 text-green-500 rounded-2xl flex items-center justify-center mx-auto border border-green-100">
@@ -122,7 +122,7 @@ export default function ContactPage() {
                     </div>
                     <h4 className="text-2xl font-bold text-slate-900">Inquiry Sent!</h4>
                     <p className="text-slate-500 font-light">Thank you for reaching out. Maddison will be in touch shortly to discuss your venue's growth.</p>
-                    <button 
+                    <button
                       onClick={() => setSubmitted(false)}
                       className="text-primary font-black uppercase tracking-widest text-xs hover:underline pt-4"
                     >
@@ -134,67 +134,67 @@ export default function ContactPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       <div className="space-y-3">
                         <label className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 ml-1">Full Name</label>
-                        <input 
+                        <input
                           required
-                          type="text" 
-                          placeholder="Your Name" 
+                          type="text"
+                          placeholder="Your Name"
                           value={formData.name}
-                          onChange={(e) => setFormData({...formData, name: e.target.value})}
-                          className="premium-input" 
+                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                          className="premium-input"
                         />
                       </div>
                       <div className="space-y-3">
                         <label className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 ml-1">Venue Name</label>
-                        <input 
+                        <input
                           required
-                          type="text" 
-                          placeholder="Venue" 
+                          type="text"
+                          placeholder="Venue"
                           value={formData.venueName}
-                          onChange={(e) => setFormData({...formData, venueName: e.target.value})}
-                          className="premium-input" 
+                          onChange={(e) => setFormData({ ...formData, venueName: e.target.value })}
+                          className="premium-input"
                         />
                       </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       <div className="space-y-3">
                         <label className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 ml-1">Email Address</label>
-                        <input 
+                        <input
                           required
-                          type="email" 
-                          placeholder="email@venue.com" 
+                          type="email"
+                          placeholder="email@venue.com"
                           value={formData.email}
-                          onChange={(e) => setFormData({...formData, email: e.target.value})}
-                          className="premium-input" 
+                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          className="premium-input"
                         />
                       </div>
                       <div className="space-y-3">
                         <label className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 ml-1">Phone</label>
-                        <input 
+                        <input
                           required
-                          type="tel" 
-                          placeholder="Number" 
+                          type="tel"
+                          placeholder="Number"
                           value={formData.phone}
-                          onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                          className="premium-input" 
+                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                          className="premium-input"
                         />
                       </div>
                     </div>
                     <div className="space-y-3">
                       <label className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 ml-1">Project Details</label>
-                      <textarea 
+                      <textarea
                         required
-                        rows={4} 
-                        placeholder="Tell us about your venue's needs..." 
+                        rows={4}
+                        placeholder="Tell us about your venue's needs..."
                         value={formData.message}
-                        onChange={(e) => setFormData({...formData, message: e.target.value})}
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         className="premium-input resize-none"
                       ></textarea>
                     </div>
-                    
+
                     {error && <p className="text-red-500 text-sm font-medium text-center">{error}</p>}
-                    
-                    <button 
-                      type="submit" 
+
+                    <button
+                      type="submit"
                       disabled={submitting}
                       className="w-full bg-slate-900 py-6 rounded-2xl text-white font-black text-lg shadow-premium hover:bg-slate-800 hover:-translate-y-1 active:scale-95 transition-all flex items-center justify-center gap-3 disabled:opacity-70 disabled:hover:scale-100"
                     >
@@ -206,7 +206,7 @@ export default function ContactPage() {
                     </button>
                   </form>
                 )}
-               </div>
+              </div>
             </div>
 
           </div>

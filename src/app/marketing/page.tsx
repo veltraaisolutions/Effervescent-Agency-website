@@ -24,22 +24,22 @@ export default function MarketingPage() {
                 Leveraging a <span className="text-slate-900 font-medium italic underline decoration-primary underline-offset-8">7.65M+ social reach</span> to drive ticket sales and electric atmospheres for our partners.
               </p>
             </div>
-            
+
             <div className="relative h-[400px] md:h-[500px] rounded-[3rem] overflow-hidden shadow-premium border-[10px] border-white group">
-                <Image
-                  src="/Party-efficencyy.jpeg"
-                  alt="Party Efficiency"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  priority
-                />
+              <Image
+                src="/Party-efficencyy.jpeg"
+                alt="Party Efficiency"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+              />
               <div className="absolute inset-0 bg-slate-900/10"></div>
             </div>
           </div>
         </div>
       </section>
-      
+
       <InfluencerNetwork />
 
       {/* Premium Reach Stats Section */}
