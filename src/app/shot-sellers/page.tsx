@@ -21,7 +21,7 @@ export default function ShotSellersPage() {
           />
           <div className="absolute inset-0 brand-gradient mix-blend-overlay"></div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <h1 className="text-4xl md:text-7xl font-serif text-white mb-6 leading-tight">
             What a <span className="text-primary italic">Shot-Seller</span> <br /> Can Do For Your Venue
@@ -65,25 +65,6 @@ export default function ShotSellersPage() {
 
       {/* Re-using existing sections that define the service */}
       <ServiceHighlights />
-      <CorporateDefinition />
-      <HowItWorks />
-      <OtherServices />
-
-      {/* Final CTA */}
-      <section className="py-24 brand-gradient text-white text-center">
-        <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-4xl md:text-6xl font-serif mb-8">Ready to see the results?</h2>
-          <p className="text-xl mb-12 opacity-90">
-            Join the elite venues across the UK and Dubai who have transformed their nightlife revenue with Effervescent.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-white text-primary px-10 py-5 rounded-full text-xl font-black shadow-2xl transition-all hover:scale-105"
-          >
-            Partner With Us Now <ArrowRight size={24} />
-          </Link>
-        </div>
-      </section>
     </div>
   );
 }
