@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const CorporateDefinition = () => {
   return (
-    <section className="py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #fd88d7 0%, #e879a0 100%)' }}>
+    <section className="py-24 relative overflow-hidden bg-[#FDb8D7]">
       <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-16">
 
@@ -13,7 +13,7 @@ const CorporateDefinition = () => {
             </h2>
 
             {/* Definition Purple Card */}
-            <div className="bg-[#c084fc]/80 backdrop-blur-md p-8 md:p-10 rounded-[2.5rem] shadow-xl max-w-lg">
+            <div className="bg-white/10 backdrop-blur-md p-8 md:p-10 rounded-[2.5rem] shadow-xl max-w-lg border border-white/20">
               <h3 className="text-3xl font-serif text-white mb-2">Effervescent</h3>
               <p className="text-white/80 italic text-sm mb-4">Definition:</p>
               <p className="text-lg md:text-xl text-white leading-relaxed font-light">

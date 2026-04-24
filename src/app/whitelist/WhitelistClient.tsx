@@ -45,16 +45,16 @@ export function WhitelistClient({ initial }: { initial: WhitelistEntry[] }) {
         <div className="grid grid-cols-2 gap-3">
           <div
             className="rounded-2xl border p-4 flex items-center gap-3"
-            style={{ borderColor: "#FDB8D720", backgroundColor: "#FDB8D708" }}
+            style={{ borderColor: "#FDb8D720", backgroundColor: "#FDb8D708" }}
           >
             <Shield
               className="w-5 h-5"
-              style={{ color: "#FDB8D7" }}
+              style={{ color: "#FDb8D7" }}
             />
             <div>
               <p
                 className="text-2xl font-bold leading-none"
-                style={{ color: "#FDB8D7" }}
+                style={{ color: "#FDb8D7" }}
               >
                 {whitelisted.length}
               </p>

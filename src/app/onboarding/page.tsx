@@ -12,7 +12,7 @@ import {
   User,
 } from "lucide-react";
 
-const B = "#FDB8D7";
+const B = "#FDb8D7";
 const WEBHOOK_URL =
   "https://n8n.veltraai.net/webhook/Onboarding_Availability_form_submitted";
 
@@ -212,7 +212,7 @@ function CheckItem({
       onClick={() => onChange(!checked)}
       style={checked ? { borderColor: B, backgroundColor: `${B}12` } : {}}
       className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl border text-left transition-all ${
-        checked ? "" : "border-[#2a2a2a] bg-[#1a1a1a] hover:border-[#FDB8D7]/30"
+        checked ? "" : "border-[#2a2a2a] bg-[#1a1a1a] hover:border-[#FDb8D7]/30"
       }`}
     >
       <div
@@ -223,7 +223,7 @@ function CheckItem({
       >
         {checked && (
           <Check
-            className="w-2.5 h-2.5 text-[#1a0a10]"
+            className="w-2.5 h-2.5 text-slate-900"
             strokeWidth={3}
           />
         )}
@@ -495,8 +495,7 @@ function OnboardingForm() {
         <div className="bg-[#111111] border border-[#1f1f1f] rounded-3xl overflow-hidden shadow-2xl">
           {/* Header */}
           <div
-            className="px-6 py-5"
-            style={{ background: "linear-gradient(135deg, #2a0d1c, #3d1228)" }}
+            className="px-6 py-5 bg-[#FDb8D7]"
           >
             <p
               className="text-xs font-semibold uppercase tracking-widest mb-0.5"
@@ -674,7 +673,7 @@ function OnboardingForm() {
                   setTab("onboarding");
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
-                className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold border border-[#2a2a2a] text-gray-400 bg-[#141414] hover:border-[#FDB8D7]/50 hover:text-gray-200 transition-all"
+                className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold border border-[#2a2a2a] text-gray-400 bg-[#141414] hover:border-[#FDb8D7]/50 hover:text-gray-200 transition-all"
               >
                 <ChevronLeft className="w-4 h-4" /> Back
               </button>
@@ -686,8 +685,8 @@ function OnboardingForm() {
               <button
                 onClick={handleNext}
                 style={{
-                  background: `linear-gradient(135deg, ${B}, #e89fbe)`,
-                  color: "#1a0a10",
+                  backgroundColor: B,
+                  color: "#ffffff",
                 }}
                 className="flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-bold shadow-lg hover:opacity-90 transition-all"
               >
@@ -698,8 +697,8 @@ function OnboardingForm() {
                 onClick={handleSubmit}
                 disabled={submitting}
                 style={{
-                  background: `linear-gradient(135deg, ${B}, #e89fbe)`,
-                  color: "#1a0a10",
+                  backgroundColor: B,
+                  color: "#ffffff",
                 }}
                 className="flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-bold shadow-lg disabled:opacity-50 hover:opacity-90 transition-all"
               >
@@ -735,7 +734,7 @@ export default function OnboardingPage() {
     <Suspense
       fallback={
         <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center">
-          <div className="w-8 h-8 border-2 border-[#FDB8D7]/30 border-t-[#FDB8D7] rounded-full animate-spin" />
+          <div className="w-8 h-8 border-2 border-[#FDb8D7]/30 border-t-[#FDb8D7] rounded-full animate-spin" />
         </div>
       }
     >

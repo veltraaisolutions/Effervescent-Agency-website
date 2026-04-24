@@ -2,7 +2,11 @@ import Image from "next/image";
 
 const HowItWorks = () => {
   return (
-    <section className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #fd88d7 0%, #e879a0 100%)' }}>
+    <section className="py-20 relative overflow-hidden bg-[#FDb8D7]">
+      {/* Decorative Orbs */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#FDb8D7]/20 rounded-full blur-[100px] pointer-events-none"></div>
+      
       <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10">
         <h2 className="text-5xl md:text-8xl lg:text-9xl font-serif text-white tracking-tighter leading-none mb-12 md:mb-20 text-center lg:text-left text-balance">
           A Seamless Integration
@@ -15,14 +19,23 @@ const HowItWorks = () => {
 
             <div className="space-y-8">
               {[
-                { step: "Step 1 (Arrival)", text: "The contractor arrives at the venue bringing all their own equipment." },
-                { step: "Step 2 (Service)", text: "You provide the product to the shot-sellers, and they begin to work." },
-                { step: "Step 3 (Settlement)", text: "Instant payment is made to your venue at the end of the night for all the products sold, using your preferred payment method." }
+                {
+                  step: "Step 1 (Arrival)",
+                  text: "The contractor arrives at the venue bringing all their own equipment.",
+                },
+                {
+                  step: "Step 2 (Service)",
+                  text: "You provide the product to the shot-sellers, and they begin to work.",
+                },
+                {
+                  step: "Step 3 (Settlement)",
+                  text: "Instant payment is made to your venue at the end of the night for all the products sold, using your preferred payment method.",
+                },
               ].map((item, idx) => (
                 <div key={idx} className="space-y-3">
-                  <p className="text-2xl md:text-3xl font-serif text-white">{item.step}</p>
-                  <div className="bg-[#c084fc]/80 backdrop-blur-md px-6 md:px-8 py-3 rounded-[1.5rem] md:rounded-[2rem] shadow-lg inline-block w-full max-w-2xl border border-white/10 text-center lg:text-left">
-                    <p className="text-lg md:text-xl text-white font-light leading-relaxed">
+                  <p className="text-2xl md:text-3xl font-serif text-white italic">{item.step}</p>
+                  <div className="bg-white/95 backdrop-blur-md px-6 md:px-8 py-4 rounded-[1.5rem] md:rounded-[2.5rem] shadow-2xl inline-block w-full max-w-2xl border border-white/20 text-center lg:text-left transition-transform hover:scale-[1.01]">
+                    <p className="text-lg md:text-xl text-[#FDb8D7] font-bold leading-relaxed">
                       {item.text}
                     </p>
                   </div>

@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="flex items-center gap-4 mb-6 group">
-              <div className="w-14 h-14 rounded-2xl overflow-hidden bg-white p-1 shadow-lg group-hover:scale-105 transition-transform">
+              <div className="w-14 h-14 overflow-hidden group-hover:scale-105 transition-transform">
                 <Image
                   src="/logo1.jpeg"
                   alt="Effervescent Agency Logo"
@@ -102,12 +102,6 @@ const Footer = () => {
               </li>
               <li>
                 <Link href="/contact" className="text-white/80 hover:text-white transition-colors">Contact Management</Link>
-              </li>
-              <li>
-                <div className="pt-4 mt-4 border-t border-white/20">
-                  <p className="text-sm text-white/70">Point of Contact: Maddie</p>
-                  <p className="text-sm text-white/70">Email: maddison@effervescent.agency</p>
-                </div>
               </li>
             </ul>
           </div>

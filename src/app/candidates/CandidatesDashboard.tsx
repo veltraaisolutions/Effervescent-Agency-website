@@ -119,7 +119,7 @@ function Section({
 }) {
   return (
     <div className="space-y-3">
-      <h4 className="text-xs font-bold text-[#FDB8D7] uppercase tracking-widest border-b border-[#1f1f1f] pb-2">
+      <h4 className="text-xs font-bold text-[#FDb8D7] uppercase tracking-widest border-b border-[#1f1f1f] pb-2">
         {title}
       </h4>
       <div className="grid grid-cols-2 gap-x-6 gap-y-3">{children}</div>
@@ -436,7 +436,7 @@ function CandidateModal({
       <div className="relative bg-[#111111] border border-[#1f1f1f] rounded-3xl w-full max-w-2xl my-4 shadow-2xl">
         {/* Header */}
         <div className="rounded-t-3xl overflow-hidden">
-          <div className="bg-gradient-to-r from-[#b05c82] to-[#c8709a] px-6 py-5 flex items-start justify-between">
+          <div className="bg-[#FDb8D7] px-6 py-5 flex items-start justify-between">
             <div>
               <p className="text-xs font-semibold text-white/60 uppercase tracking-widest mb-1">
                 Candidate Profile
@@ -661,7 +661,7 @@ function CandidateModal({
             candidate.status === "onboarding" ||
             candidate.status === "on-boarded") && (
             <div className="space-y-3">
-              <h4 className="text-xs font-bold text-[#FDB8D7] uppercase tracking-widest border-b border-[#1f1f1f] pb-2">
+              <h4 className="text-xs font-bold text-[#FDb8D7] uppercase tracking-widest border-b border-[#1f1f1f] pb-2">
                 Trial Details
               </h4>
               <div className="grid grid-cols-2 gap-3">
@@ -669,7 +669,7 @@ function CandidateModal({
                   <label className="text-[11px] font-semibold text-gray-500 uppercase tracking-wider">
                     Trial Venue
                   </label>
-                  <div className="flex items-center gap-2 bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl px-3 py-2 focus-within:border-[#FDB8D7]/50 transition-colors">
+                  <div className="flex items-center gap-2 bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl px-3 py-2 focus-within:border-[#FDb8D7]/50 transition-colors">
                     <Building2 className="w-3.5 h-3.5 text-gray-600 flex-shrink-0" />
                     <input
                       type="text"
@@ -684,7 +684,7 @@ function CandidateModal({
                   <label className="text-[11px] font-semibold text-gray-500 uppercase tracking-wider">
                     Trial Mentor
                   </label>
-                  <div className="flex items-center gap-2 bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl px-3 py-2 focus-within:border-[#FDB8D7]/50 transition-colors">
+                  <div className="flex items-center gap-2 bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl px-3 py-2 focus-within:border-[#FDb8D7]/50 transition-colors">
                     <User className="w-3.5 h-3.5 text-gray-600 flex-shrink-0" />
                     <input
                       type="text"
@@ -700,12 +700,12 @@ function CandidateModal({
                 onClick={handleSaveTrialDetails}
                 disabled={trialSaving}
                 className="flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold
-                  bg-[#FDB8D7]/10 text-[#FDB8D7] border border-[#FDB8D7]/25
-                  hover:bg-[#FDB8D7]/20 hover:border-[#FDB8D7]/40
+                  bg-[#FDb8D7]/10 text-[#FDb8D7] border border-[#FDb8D7]/25
+                  hover:bg-[#FDb8D7]/20 hover:border-[#FDb8D7]/40
                   disabled:opacity-50 disabled:cursor-not-allowed transition-all"
               >
                 {trialSaving ? (
-                  <div className="w-4 h-4 border-2 border-[#FDB8D7]/30 border-t-[#FDB8D7] rounded-full animate-spin" />
+                  <div className="w-4 h-4 border-2 border-[#FDb8D7]/30 border-t-[#FDb8D7] rounded-full animate-spin" />
                 ) : trialSaved ? (
                   <CheckCircle2 className="w-4 h-4" />
                 ) : (
@@ -726,7 +726,7 @@ function CandidateModal({
             candidate.status === "on-boarded") && (
             <div className="space-y-3">
               <div className="flex items-center justify-between border-b border-[#1f1f1f] pb-2">
-                <h4 className="text-xs font-bold text-[#FDB8D7] uppercase tracking-widest">
+                <h4 className="text-xs font-bold text-[#FDb8D7] uppercase tracking-widest">
                   Onboarding Checklist
                 </h4>
                 {candidate.rotacloud_login &&
@@ -765,7 +765,7 @@ function CandidateModal({
                     onClick={() =>
                       handleChecklistToggle(field, !candidate[field])
                     }
-                    className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl bg-[#1a1a1a] border border-[#2a2a2a] hover:border-[#FDB8D7]/30 transition-colors text-left"
+                    className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl bg-[#1a1a1a] border border-[#2a2a2a] hover:border-[#FDb8D7]/30 transition-colors text-left"
                   >
                     {candidate[field] ? (
                       <CheckSquare className="w-4 h-4 text-emerald-400 flex-shrink-0" />
@@ -785,7 +785,7 @@ function CandidateModal({
 
           {/* Staff Notes */}
           <div className="space-y-3">
-            <h4 className="text-xs font-bold text-[#FDB8D7] uppercase tracking-widest border-b border-[#1f1f1f] pb-2 flex items-center gap-2">
+            <h4 className="text-xs font-bold text-[#FDb8D7] uppercase tracking-widest border-b border-[#1f1f1f] pb-2 flex items-center gap-2">
               <NotebookPen className="w-3.5 h-3.5" />
               Staff Notes
             </h4>
@@ -794,18 +794,18 @@ function CandidateModal({
               onChange={(e) => setStaffNotes(e.target.value)}
               rows={4}
               placeholder="Add internal notes about this candidate…"
-              className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl px-3 py-2.5 text-sm text-white placeholder:text-gray-600 focus:outline-none focus:border-[#FDB8D7]/50 resize-none transition-colors"
+              className="w-full bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl px-3 py-2.5 text-sm text-white placeholder:text-gray-600 focus:outline-none focus:border-[#FDb8D7]/50 resize-none transition-colors"
             />
             <button
               onClick={handleSaveNotes}
               disabled={notesSaving}
               className="flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold
-                bg-[#FDB8D7]/10 text-[#FDB8D7] border border-[#FDB8D7]/25
-                hover:bg-[#FDB8D7]/20 hover:border-[#FDB8D7]/40
+                bg-[#FDb8D7]/10 text-[#FDb8D7] border border-[#FDb8D7]/25
+                hover:bg-[#FDb8D7]/20 hover:border-[#FDb8D7]/40
                 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
             >
               {notesSaving ? (
-                <div className="w-4 h-4 border-2 border-[#FDB8D7]/30 border-t-[#FDB8D7] rounded-full animate-spin" />
+                <div className="w-4 h-4 border-2 border-[#FDb8D7]/30 border-t-[#FDb8D7] rounded-full animate-spin" />
               ) : notesSaved ? (
                 <CheckCircle2 className="w-4 h-4" />
               ) : (
@@ -873,7 +873,7 @@ function CandidateModal({
           {/* Photos */}
           {candidate.photo_urls && candidate.photo_urls.length > 0 && (
             <div className="space-y-3">
-              <h4 className="text-xs font-bold text-[#FDB8D7] uppercase tracking-widest border-b border-[#1f1f1f] pb-2">
+              <h4 className="text-xs font-bold text-[#FDb8D7] uppercase tracking-widest border-b border-[#1f1f1f] pb-2">
                 Photos ({candidate.photo_urls.length})
               </h4>
               <div className="grid grid-cols-3 gap-2">
@@ -899,7 +899,7 @@ function CandidateModal({
 
           {/* Passport / ID */}
           <div className="space-y-3">
-            <h4 className="text-xs font-bold text-[#FDB8D7] uppercase tracking-widest border-b border-[#1f1f1f] pb-2">
+            <h4 className="text-xs font-bold text-[#FDb8D7] uppercase tracking-widest border-b border-[#1f1f1f] pb-2">
               Identity & Right to Work
             </h4>
             <div className="grid grid-cols-2 gap-x-6 gap-y-3">
@@ -990,7 +990,7 @@ function CandidateModal({
 
           {/* Long-form answers */}
           <div className="space-y-4">
-            <h4 className="text-xs font-bold text-[#FDB8D7] uppercase tracking-widest border-b border-[#1f1f1f] pb-2">
+            <h4 className="text-xs font-bold text-[#FDb8D7] uppercase tracking-widest border-b border-[#1f1f1f] pb-2">
               Written Answers
             </h4>
             {candidate.understand_role && (
@@ -1033,7 +1033,7 @@ function CandidateModal({
             candidate.availability_locations ||
             candidate.availability_comments) && (
             <div className="space-y-4">
-              <h4 className="text-xs font-bold text-[#FDB8D7] uppercase tracking-widest border-b border-[#1f1f1f] pb-2">
+              <h4 className="text-xs font-bold text-[#FDb8D7] uppercase tracking-widest border-b border-[#1f1f1f] pb-2">
                 Submitted Forms Info
               </h4>
               <div className="grid grid-cols-2 gap-x-6 gap-y-3">
@@ -1495,9 +1495,9 @@ export function CandidatesDashboard({
   function SortIcon({ k }: { k: SortKey }) {
     if (sortKey !== k) return <ChevronDown className="w-3 h-3 text-gray-600" />;
     return sortAsc ? (
-      <ChevronUp className="w-3 h-3 text-[#FDB8D7]" />
+      <ChevronUp className="w-3 h-3 text-[#FDb8D7]" />
     ) : (
-      <ChevronDown className="w-3 h-3 text-[#FDB8D7]" />
+      <ChevronDown className="w-3 h-3 text-[#FDb8D7]" />
     );
   }
 
@@ -1517,7 +1517,7 @@ export function CandidatesDashboard({
             <div className="flex items-center gap-3">
               <div
                 className="w-10 h-10 rounded-xl overflow-hidden flex-shrink-0"
-                style={{ boxShadow: "0 0 0 1px #FDB8D730" }}
+                style={{ boxShadow: "0 0 0 1px #FDb8D730" }}
               >
                 <Image
                   src="/logo1.jpeg"
@@ -1530,7 +1530,7 @@ export function CandidatesDashboard({
               <div>
                 <p
                   className="text-sm font-bold tracking-tight leading-none"
-                  style={{ color: "#FDB8D7" }}
+                  style={{ color: "#FDb8D7" }}
                 >
                   Effervescent Agency
                 </p>
@@ -1543,13 +1543,13 @@ export function CandidatesDashboard({
           <div className="fixed top-4 right-6 z-50 flex items-center gap-3">
             <Link
               href="/apply"
-              className="px-4 py-1.5 text-sm text-gray-300 border border-white/10 rounded-lg bg-white/5 hover:border-[#FDB8D7]/50 hover:text-[#FDB8D7] hover:bg-[#FDB8D7]/5 transition-all duration-200 tracking-wide"
+              className="px-4 py-1.5 text-sm text-gray-300 border border-white/10 rounded-lg bg-white/5 hover:border-[#FDb8D7]/50 hover:text-[#FDb8D7] hover:bg-[#FDb8D7]/5 transition-all duration-200 tracking-wide"
             >
               Apply Form
             </Link>
             <Link
               href="/whitelist"
-              className="px-4 py-1.5 text-sm text-gray-300 border border-white/10 rounded-lg bg-white/5 hover:border-[#FDB8D7]/50 hover:text-[#FDB8D7] hover:bg-[#FDB8D7]/5 transition-all duration-200 tracking-wide"
+              className="px-4 py-1.5 text-sm text-gray-300 border border-white/10 rounded-lg bg-white/5 hover:border-[#FDb8D7]/50 hover:text-[#FDb8D7] hover:bg-[#FDb8D7]/5 transition-all duration-200 tracking-wide"
             >
               Whitelist
             </Link>
@@ -1563,16 +1563,16 @@ export function CandidatesDashboard({
           {/* Total card uses brand color */}
           <div
             className="rounded-2xl border p-4 flex items-center gap-3"
-            style={{ borderColor: "#FDB8D720", backgroundColor: "#FDB8D708" }}
+            style={{ borderColor: "#FDb8D720", backgroundColor: "#FDb8D708" }}
           >
             <Briefcase
               className="w-5 h-5 flex-shrink-0"
-              style={{ color: "#FDB8D7" }}
+              style={{ color: "#FDb8D7" }}
             />
             <div>
               <p
                 className="text-2xl font-bold leading-none"
-                style={{ color: "#FDB8D7" }}
+                style={{ color: "#FDb8D7" }}
               >
                 {counts.total}
               </p>
@@ -1654,10 +1654,10 @@ export function CandidatesDashboard({
             placeholder="Search by name, email, phone, location…"
             className="flex-1 px-4 py-2.5 bg-[#111111] border border-[#1f1f1f] rounded-xl text-sm text-white
               placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:border-transparent"
-            style={{ "--tw-ring-color": "#FDB8D7" } as React.CSSProperties}
+            style={{ "--tw-ring-color": "#FDb8D7" } as React.CSSProperties}
             onFocus={(e) => {
-              e.currentTarget.style.boxShadow = "0 0 0 2px #FDB8D760";
-              e.currentTarget.style.borderColor = "#FDB8D7";
+              e.currentTarget.style.boxShadow = "0 0 0 2px #FDb8D760";
+              e.currentTarget.style.borderColor = "#FDb8D7";
             }}
             onBlur={(e) => {
               e.currentTarget.style.boxShadow = "";
@@ -1683,8 +1683,8 @@ export function CandidatesDashboard({
                 style={
                   statusFilter === value
                     ? {
-                        backgroundColor: "#FDB8D7",
-                        borderColor: "#FDB8D7",
+                        backgroundColor: "#FDb8D7",
+                        borderColor: "#FDb8D7",
                         color: "#1a0a10",
                       }
                     : {}
@@ -1692,7 +1692,7 @@ export function CandidatesDashboard({
                 className={`px-3 py-2 rounded-xl text-xs font-semibold border transition-all ${
                   statusFilter === value
                     ? ""
-                    : "bg-[#111111] text-gray-400 border-[#1f1f1f] hover:border-[#FDB8D7]/50 hover:text-[#FDB8D7]"
+                    : "bg-[#111111] text-gray-400 border-[#1f1f1f] hover:border-[#FDb8D7]/50 hover:text-[#FDb8D7]"
                 }`}
               >
                 {label}
@@ -1752,7 +1752,7 @@ export function CandidatesDashboard({
                         className="hover:bg-[#161616] cursor-pointer transition-colors group"
                       >
                         <td className="px-4 py-3">
-                          <p className="font-semibold text-white group-hover:text-[#FDB8D7] transition-colors">
+                          <p className="font-semibold text-white group-hover:text-[#FDb8D7] transition-colors">
                             {c.full_name}
                           </p>
                           {c.instagram && (
@@ -1862,7 +1862,7 @@ export function CandidatesDashboard({
                                 e.stopPropagation();
                                 setSelected(c);
                               }}
-                              className="p-1.5 rounded-lg bg-[#1a1a1a] text-gray-500 hover:text-[#FDB8D7] hover:bg-[#FDB8D7]/10 transition-colors"
+                              className="p-1.5 rounded-lg bg-[#1a1a1a] text-gray-500 hover:text-[#FDb8D7] hover:bg-[#FDb8D7]/10 transition-colors"
                               title="View"
                             >
                               <Eye className="w-3.5 h-3.5" />
@@ -1922,7 +1922,7 @@ export function CandidatesDashboard({
                           e.stopPropagation();
                           setSelected(c);
                         }}
-                        className="ml-auto flex items-center gap-1 text-xs text-gray-500 hover:text-[#FDB8D7] transition-colors"
+                        className="ml-auto flex items-center gap-1 text-xs text-gray-500 hover:text-[#FDb8D7] transition-colors"
                       >
                         <Eye className="w-3.5 h-3.5" /> View
                       </button>

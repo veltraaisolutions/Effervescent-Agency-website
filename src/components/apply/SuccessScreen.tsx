@@ -15,14 +15,14 @@ export function SuccessScreen() {
         angle: 60,
         spread: 55,
         origin: { x: 0 },
-        colors: ["#FD88D7", "#ffffff"],
+        colors: ["#FDb8D7", "#ffffff"],
       });
       confetti({
         particleCount: 2,
         angle: 120,
         spread: 55,
         origin: { x: 1 },
-        colors: ["#FD88D7", "#ffffff"],
+        colors: ["#FDb8D7", "#ffffff"],
       });
 
       if (Date.now() < end) {
@@ -34,7 +34,7 @@ export function SuccessScreen() {
 
   return (
     <div className="bg-white py-20 px-10 rounded-[3rem] text-center shadow-2xl border border-slate-100 max-w-2xl mx-auto">
-      <div className="w-24 h-24 bg-green-50 text-green-500 rounded-full flex items-center justify-center mx-auto mb-8 shadow-inner">
+      <div className="w-24 h-24 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-8 shadow-inner">
         <Check size={48} strokeWidth={3} />
       </div>
       <h2 className="text-4xl md:text-5xl font-serif text-slate-900 mb-6">

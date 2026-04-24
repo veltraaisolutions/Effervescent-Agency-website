@@ -3,10 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #0f172a;
-  --primary: #fd88d7;
-  --primary-light: #ffb8e6;
-  --primary-dark: #e879a0;
-  --secondary: #fd88d7;
+  --primary: #FDb8D7;
+  --secondary: #FDb8D7;
   --slate-900: #0f172a;
 }
 
@@ -14,8 +12,6 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
-  --color-primary-light: var(--primary-light);
-  --color-primary-dark: var(--primary-dark);
   --color-secondary: var(--secondary);
   --color-slate-900: var(--slate-900);
   --font-serif: var(--font-playfair);
@@ -29,15 +25,15 @@ body {
 }
 
 .brand-pink {
-  background-color: var(--primary);
+  background-color: #FDb8D7;
 }
 
 .brand-gradient {
-  background: linear-gradient(135deg, #fd88d7 0%, #e879a0 100%);
+  background: #FDb8D7;
 }
 
 .brand-gradient-soft {
-  background: linear-gradient(135deg, #fce7f3 0%, #fae8ff 100%);
+  background: rgba(253, 184, 215, 0.1);
 }
 
 .white-card {
@@ -47,7 +43,7 @@ body {
 }
 
 .glow-pink {
-  box-shadow: 0 0 30px rgba(253, 136, 215, 0.3);
+  box-shadow: 0 0 30px rgba(253, 184, 215, 0.3);
 }
 
 .glass-card {

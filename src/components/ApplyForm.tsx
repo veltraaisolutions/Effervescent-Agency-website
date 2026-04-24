@@ -280,7 +280,7 @@ export default function ApplyForm() {
             <div className="absolute top-5 md:top-6 left-0 right-0 h-px bg-slate-100 -z-0"></div>
             {Array.from({ length: 5 }, (_, i) => i + 1).map((s) => (
               <div key={s} className="flex flex-col items-center gap-2 md:gap-3 relative z-10 flex-1">
-                <div className={`w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center text-sm md:text-lg font-bold transition-all ${s === slide ? "bg-[#fd88d7] text-white shadow-lg" : "bg-slate-50 text-slate-300 border border-slate-100"}`}>
+                <div className={`w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center text-sm md:text-lg font-bold transition-all ${s === slide ? "bg-[#FDb8D7] text-white shadow-lg" : "bg-slate-50 text-slate-300 border border-slate-100"}`}>
                   {s}
                 </div>
                 <span className={`hidden sm:block text-[10px] font-black uppercase tracking-widest text-center ${s === slide ? "text-slate-900" : "text-slate-400"}`}>
@@ -291,7 +291,7 @@ export default function ApplyForm() {
           </div>
         </div>
 
-        <p className="text-xs md:text-sm font-black uppercase tracking-widest mb-2 md:mb-4 text-[#fd88d7]">Step {slide} of 5</p>
+        <p className="text-xs md:text-sm font-black uppercase tracking-widest mb-2 md:mb-4 text-[#FDb8D7]">Step {slide} of 5</p>
         <h2 className="text-3xl md:text-5xl font-serif text-slate-900 mb-8 md:mb-12 text-balance leading-tight">{SLIDE_TITLES[slide - 1]}</h2>
 
         <div className="space-y-6 md:space-y-8">
@@ -361,8 +361,8 @@ export default function ApplyForm() {
             <>
               <div>
                 <FieldLabel required>Photos of Yourself (Min 2)</FieldLabel>
-                <div onClick={() => photosRef.current?.click()} className="border-2 border-dashed border-slate-200 rounded-[1.5rem] md:rounded-[2rem] p-8 md:p-10 text-center bg-slate-50 cursor-pointer hover:border-[#fd88d7]/50 transition-all">
-                  <Upload className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-4 text-[#fd88d7]" />
+                <div onClick={() => photosRef.current?.click()} className="border-2 border-dashed border-slate-200 rounded-[1.5rem] md:rounded-[2rem] p-8 md:p-10 text-center bg-slate-50 cursor-pointer hover:border-[#FDb8D7]/50 transition-all">
+                  <Upload className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-4 text-[#FDb8D7]" />
                   <p className="font-bold text-slate-900 text-sm md:text-base">Click to add photos ({form.photos.length}/5)</p>
                 </div>
                 {photoUploadError && <FieldError message={photoUploadError} />}
@@ -380,8 +380,8 @@ export default function ApplyForm() {
               <div>
                 <FieldLabel required>Upload Photo ID (Passport)</FieldLabel>
                 {!form.passportId ? (
-                  <div onClick={() => idRef.current?.click()} className="border-2 border-dashed border-slate-200 rounded-[1.5rem] md:rounded-[2rem] p-8 md:p-10 text-center bg-slate-50 cursor-pointer hover:border-[#fd88d7]/50 transition-all">
-                    <Upload className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-4 text-[#fd88d7]" />
+                  <div onClick={() => idRef.current?.click()} className="border-2 border-dashed border-slate-200 rounded-[1.5rem] md:rounded-[2rem] p-8 md:p-10 text-center bg-slate-50 cursor-pointer hover:border-[#FDb8D7]/50 transition-all">
+                    <Upload className="w-10 h-10 md:w-12 md:h-12 mx-auto mb-4 text-[#FDb8D7]" />
                     <p className="font-bold text-slate-900 text-sm md:text-base">Upload Passport</p>
                   </div>
                 ) : (
@@ -470,7 +470,7 @@ export default function ApplyForm() {
           {submitError && <div className="p-4 bg-red-50 text-red-600 rounded-2xl text-sm border border-red-100">{submitError}</div>}
           <div className="flex justify-between items-center">
             <button onClick={() => slide > 1 && goToSlide(slide - 1)} disabled={slide === 1 || submitting} className="text-slate-400 font-black uppercase tracking-widest text-xs md:text-sm hover:text-slate-900 transition-colors disabled:opacity-0">Back</button>
-            <button onClick={handleNext} disabled={submitting} className="bg-slate-900 text-white px-8 md:px-12 py-4 md:py-5 rounded-xl md:rounded-2xl font-black uppercase tracking-widest text-xs md:text-sm shadow-xl hover:scale-105 active:scale-95 transition-all disabled:opacity-50">
+            <button onClick={handleNext} disabled={submitting} className="bg-primary text-white px-8 md:px-12 py-4 md:py-5 rounded-xl md:rounded-2xl font-black uppercase tracking-widest text-xs md:text-sm shadow-xl hover:scale-105 active:scale-95 transition-all disabled:opacity-50">
               {submitting ? "SENDING…" : slide === 5 ? "Submit" : "Next"}
             </button>
           </div>

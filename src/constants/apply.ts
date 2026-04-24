@@ -24,7 +24,7 @@ export const MAX_FILE_SIZE = 10 * 1024 * 1024;
 export const ALLOWED_PHOTO_TYPES = ["image/jpeg", "image/jpg", "image/png", "image/webp"];
 export const ALLOWED_ID_TYPES = ["image/jpeg", "image/jpg", "image/png"];
 
-export const BRAND_COLOR = "#FD88D7";
+export const BRAND_COLOR = "#FDb8D7";
 
 export const SLIDE_LABELS = [
   "Personal", "Location", "Photos", "Experience", "Declarations",

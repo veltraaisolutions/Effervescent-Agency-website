@@ -20,7 +20,7 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-        ? "bg-white/90 backdrop-blur-md py-3 shadow-md border-b border-pink-100"
+        ? "bg-white/90 backdrop-blur-md py-3 shadow-md border-b border-[#FDb8D7]/20"
         : "bg-transparent py-5"
         }`}
     >
@@ -28,13 +28,13 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-lg overflow-hidden border border-pink-200">
+            <div className="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0">
               <Image
                 src="/logo1.jpeg"
                 alt="Effervescent Agency Logo"
                 width={40}
                 height={40}
-                className="object-cover"
+                className="object-cover w-full h-full"
               />
             </div>
             <div className="flex flex-col">
@@ -68,7 +68,7 @@ const Navbar = () => {
             </Link>
             <Link
               href="/apply"
-              className="bg-primary hover:bg-primary/90 text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-pink-200 transition-all hover:scale-105 active:scale-95"
+              className="bg-primary hover:bg-primary/90 text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-[#FDb8D7]/30 transition-all hover:scale-105 active:scale-95"
             >
               Become a Shot-Seller
             </Link>
@@ -94,7 +94,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       <div 
-        className={`md:hidden bg-white border-t border-pink-50 fixed w-full shadow-2xl transition-all duration-500 ease-in-out z-40 ${
+        className={`md:hidden bg-white border-t border-[#FDb8D7]/10 fixed w-full shadow-2xl transition-all duration-500 ease-in-out z-40 ${
           mobileMenuOpen ? "top-[72px] opacity-100 pointer-events-auto" : "-top-full opacity-0 pointer-events-none"
         }`}
       >
@@ -102,21 +102,21 @@ const Navbar = () => {
           <Link
             href="/venues"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-2xl font-serif text-slate-900 hover:text-primary transition-colors py-2 border-b border-pink-100 w-full"
+            className="text-2xl font-serif text-slate-900 hover:text-primary transition-colors py-2 border-b border-[#FDb8D7]/10 w-full"
           >
             For Venues
           </Link>
           <Link
             href="/marketing"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-2xl font-serif text-slate-900 hover:text-primary transition-colors py-2 border-b border-pink-100 w-full"
+            className="text-2xl font-serif text-slate-900 hover:text-primary transition-colors py-2 border-b border-[#FDb8D7]/10 w-full"
           >
             Marketing & Network
           </Link>
           <Link
             href="/apply"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-2xl font-serif font-black text-primary py-2 border-b border-pink-100 w-full"
+            className="text-2xl font-serif font-black text-primary py-2 border-b border-[#FDb8D7]/10 w-full"
           >
             Become a Shot-Seller
           </Link>
