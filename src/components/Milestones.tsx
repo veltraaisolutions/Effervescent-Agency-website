@@ -6,33 +6,40 @@ const Milestones = () => {
       {/* Faded Divider */}
       <div className="h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent relative z-10"></div>
 
-      {/* Milestone Section - Full Width Immersive Pink */}
-      <section className="relative min-h-[600px] flex items-center justify-center py-24 overflow-hidden brand-gradient">
-        {/* Background Image with Pink Tint */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/bg-image-200,000.jpeg"
-            alt="Success Background"
-            fill
-            className="object-cover opacity-30 mix-blend-overlay"
-            priority
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-primary/20"></div>
-        </div>
+      {/* Milestone Section - Clean SaaS Style */}
+      <section className="relative py-24 md:py-32 overflow-hidden bg-slate-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8 items-center">
+            <div className="space-y-4">
+              <span className="text-primary font-black uppercase tracking-[0.4em] text-xs">Total Impact</span>
+              <h2 className="text-6xl md:text-8xl font-serif text-slate-900 leading-none tracking-tighter">
+                £2.0M<span className="text-primary italic">+</span>
+              </h2>
+              <p className="text-slate-500 font-medium">Revenue Generated</p>
+            </div>
 
-        {/* Content */}
-        <div className="max-w-5xl mx-auto px-4 relative z-10 text-center">
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif text-white leading-tight drop-shadow-2xl">
-            Over <span className="italic font-black">£2,000,000</span> generated <br />
-            for hospitality businesses through <br />
-            our risk free, shot sales service
-          </h2>
-        </div>
+            <div className="space-y-4 md:border-x border-slate-200">
+              <span className="text-primary font-black uppercase tracking-[0.4em] text-xs">Active Reach</span>
+              <h2 className="text-6xl md:text-8xl font-serif text-slate-900 leading-none tracking-tighter">
+                500<span className="text-primary italic">+</span>
+              </h2>
+              <p className="text-slate-500 font-medium">Elite Roster Members</p>
+            </div>
 
-        {/* Decorative Icon at Bottom Right */}
-        <div className="absolute bottom-10 right-10 opacity-30 drop-shadow-lg w-48 h-20">
-          <Image src="/effervescent-sign1.png" alt="Signature" fill className="object-contain brightness-0 invert" />
+            <div className="space-y-4">
+              <span className="text-primary font-black uppercase tracking-[0.4em] text-xs">Market Share</span>
+              <h2 className="text-6xl md:text-8xl font-serif text-slate-900 leading-none tracking-tighter">
+                3<span className="text-primary italic"></span>
+              </h2>
+              <p className="text-slate-500 font-medium">Countries Covered</p>
+            </div>
+          </div>
+
+          <div className="mt-20 max-w-3xl mx-auto p-12 bg-white rounded-[3rem] shadow-soft border border-slate-100">
+            <p className="text-2xl text-slate-900 font-serif italic leading-relaxed">
+              "We provide high-performing shot-sellers to the world's most exclusive venues, ensuring <span className="text-primary">zero-risk revenue growth</span> for our partners."
+            </p>
+          </div>
         </div>
       </section>
     </>

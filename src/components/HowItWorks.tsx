@@ -2,55 +2,64 @@ import Image from "next/image";
 
 const HowItWorks = () => {
   return (
-    <section className="py-20 relative overflow-hidden bg-[#FDb8D7]">
-      {/* Decorative Orbs */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-[120px] pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#FDb8D7]/20 rounded-full blur-[100px] pointer-events-none"></div>
+    <section className="py-24 md:py-32 relative overflow-hidden bg-primary">
+      {/* Subtle Pattern Overlay */}
+      <div className="absolute inset-0 z-0 opacity-10 dot-grid mix-blend-overlay"></div>
       
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 relative z-10">
-        <h2 className="text-5xl md:text-8xl lg:text-9xl font-serif text-white tracking-tighter leading-none mb-12 md:mb-20 text-center lg:text-left text-balance">
-          A Seamless Integration
-        </h2>
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+        <div className="mb-20 text-center lg:text-left space-y-4">
+          <span className="text-white font-black uppercase tracking-[0.4em] text-xs opacity-80">Our Process</span>
+          <h2 className="text-6xl md:text-9xl font-serif text-white tracking-tighter leading-none text-balance">
+            Seamless <br />
+            <span className="italic">Integration.</span>
+          </h2>
+        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-24 gap-y-20 items-center">
 
           {/* Left Column - Steps */}
-          <div className="space-y-8 order-2 lg:order-1">
-
+          <div className="space-y-12">
             <div className="space-y-8">
               {[
                 {
-                  step: "Step 1 (Arrival)",
-                  text: "The contractor arrives at the venue bringing all their own equipment.",
+                  step: "01",
+                  title: "Arrival",
+                  text: "The contractor arrives at the venue bringing all their own professional equipment.",
                 },
                 {
-                  step: "Step 2 (Service)",
-                  text: "You provide the product to the shot-sellers, and they begin to work.",
+                  step: "02",
+                  title: "Service",
+                  text: "You provide the product to the shot-sellers, and they begin their elite service.",
                 },
                 {
-                  step: "Step 3 (Settlement)",
-                  text: "Instant payment is made to your venue at the end of the night for all the products sold, using your preferred payment method.",
+                  step: "03",
+                  title: "Settlement",
+                  text: "Instant payment is made to your venue for all products sold, via your preferred method.",
                 },
               ].map((item, idx) => (
-                <div key={idx} className="space-y-3">
-                  <p className="text-2xl md:text-3xl font-serif text-white italic">{item.step}</p>
-                  <div className="bg-white/95 backdrop-blur-md px-6 md:px-8 py-4 rounded-[1.5rem] md:rounded-[2.5rem] shadow-2xl inline-block w-full max-w-2xl border border-white/20 text-center lg:text-left transition-transform hover:scale-[1.01]">
-                    <p className="text-lg md:text-xl text-[#FDb8D7] font-bold leading-relaxed">
-                      {item.text}
-                    </p>
+                <div key={idx} className="bg-white/10 backdrop-blur-md p-8 md:p-10 rounded-[2.5rem] border border-white/20 hover:bg-white/15 transition-all group shadow-soft">
+                  <div className="flex gap-8 items-start">
+                    <span className="text-3xl font-serif italic text-white/40 group-hover:text-white transition-colors">{item.step}</span>
+                    <div className="space-y-3">
+                      <h4 className="text-2xl font-bold text-white">{item.title}</h4>
+                      <p className="text-lg text-white/80 leading-relaxed font-light">
+                        {item.text}
+                      </p>
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
 
-            <p className="text-lg text-white/90 leading-relaxed font-light max-w-2xl pt-4 text-center lg:text-left mx-auto lg:mx-0">
-              Our service is designed to be entirely seamless, ensuring a smooth transition of our contractors into your venue. The contractors are managed by our in-house management team who work around the clock to ensure your partnership with Effervescent is effortlessly integrated.
-            </p>
+            <div className="flex gap-8 items-center pl-6">
+              <div className="w-20 h-px bg-white/20"></div>
+              <p className="text-white/60 font-black uppercase tracking-[0.4em] text-xs">Zero friction integration</p>
+            </div>
           </div>
 
           {/* Right Column - Portrait Card */}
-          <div className="relative group lg:justify-self-end w-full max-w-[420px] mx-auto lg:mx-0 order-1 lg:order-2">
-            <div className="relative w-full rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden shadow-2xl -rotate-2 lg:-rotate-3 border-[8px] md:border-[12px] border-white/10 transition-all duration-700 group-hover:rotate-0 group-hover:scale-[1.02] group-hover:shadow-white/10">
+          <div className="relative group lg:justify-self-end w-full max-w-[480px] mx-auto lg:mx-0">
+            <div className="relative w-full rounded-[3.5rem] overflow-hidden shadow-premium rotate-3 group-hover:rotate-0 transition-all duration-700 border-[12px] border-white">
               <Image
                 src="/boy-shot.jpeg"
                 alt="Efficiency in Action"
@@ -58,18 +67,14 @@ const HowItWorks = () => {
                 height={2128}
                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
                 priority
-                sizes="(max-width: 768px) 100vw, 420px"
+                sizes="(max-width: 768px) 100vw, 480px"
               />
             </div>
 
-            {/* Global Signature Decorator */}
-            <div className="absolute -right-8 -bottom-8 opacity-20 hidden lg:block w-80 h-32">
-              <Image
-                src="/effervescent-sign1.png"
-                alt="Effervescent Signature"
-                fill
-                className="object-contain brightness-0 invert"
-              />
+            {/* Quote Bubble */}
+            <div className="absolute -bottom-10 -left-10 bg-white p-8 rounded-[2.5rem] shadow-premium max-w-[280px] hidden md:block group-hover:-translate-y-4 transition-transform duration-500 border border-slate-100">
+              <p className="text-slate-900 font-serif italic text-lg leading-relaxed mb-4">"The integration was flawless. We saw immediate uplift in revenue."</p>
+              <p className="text-primary font-black uppercase tracking-widest text-[10px]">Operations Director</p>
             </div>
           </div>
         </div>

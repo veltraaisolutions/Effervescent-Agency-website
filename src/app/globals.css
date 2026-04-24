@@ -5,6 +5,8 @@
   --foreground: #0f172a;
   --primary: #FDb8D7;
   --secondary: #FDb8D7;
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
   --slate-900: #0f172a;
 }
 
@@ -13,9 +15,15 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
+  --color-slate-50: var(--slate-50);
+  --color-slate-100: var(--slate-100);
   --color-slate-900: var(--slate-900);
   --font-serif: var(--font-playfair), serif;
   --font-sans: var(--font-outfit), sans-serif;
+  
+  --shadow-premium: 0 40px 100px rgba(0, 0, 0, 0.05);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.02);
+  --shadow-glow: 0 0 50px rgba(253, 184, 215, 0.2);
 }
 
 body {
@@ -30,32 +38,31 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif);
   font-weight: 700;
   line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
-.brand-pink {
-  background-color: #FDb8D7;
+.dot-grid {
+  background-image: radial-gradient(#0f172a 1px, transparent 1px);
+  background-size: 30px 30px;
 }
 
 .brand-gradient {
-  background: #FDb8D7;
+  background: linear-gradient(135deg, #FDb8D7 0%, #ff8ab3 100%);
 }
 
-.brand-gradient-soft {
-  background: rgba(253, 184, 215, 0.1);
+.saas-card {
+  @apply bg-white rounded-[2.5rem] border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.03)] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_40px_80px_rgba(0,0,0,0.06)];
 }
 
-.white-card {
-  background-color: #ffffff;
-  border-radius: 2rem;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+.glass-pill {
+  @apply bg-white/40 backdrop-blur-xl border border-white/50 shadow-sm px-4 py-1.5 rounded-full;
 }
 
-.glow-pink {
-  box-shadow: 0 0 30px rgba(253, 184, 215, 0.3);
+.premium-input {
+  @apply w-full bg-slate-50 border-0 rounded-2xl p-5 text-slate-900 focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-slate-400;
 }
 
-.glass-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+::selection {
+  background: rgba(253, 184, 215, 0.3);
+  color: #0f172a;
 }

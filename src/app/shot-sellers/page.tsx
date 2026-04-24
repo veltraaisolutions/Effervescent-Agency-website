@@ -8,56 +8,58 @@ import ServiceHighlights from "@/components/ServiceHighlights";
 
 export default function ShotSellersPage() {
   return (
-    <div className="pt-20">
-      {/* Hero Section */}
-      <section className="relative py-24 md:py-32 overflow-hidden bg-slate-900">
-        <div className="absolute inset-0 z-0 opacity-40">
-          <Image
-            src="/partner-bg.jpeg"
-            alt="Shot Seller Impact"
-            fill
-            className="object-cover"
-            priority
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 brand-gradient mix-blend-overlay"></div>
-        </div>
+    <div className="flex flex-col bg-white">
+      {/* Hero Section - Clean SaaS Style */}
+      <section className="min-h-[60vh] flex items-center pt-32 pb-20 relative overflow-hidden bg-slate-50">
+        {/* Subtle Background Pattern - Dot Grid */}
+        <div className="absolute inset-0 z-0 opacity-[0.03] dot-grid"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white to-transparent"></div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <h1 className="text-4xl md:text-7xl font-serif text-white mb-6 leading-tight">
-            What a <span className="text-primary italic">Shot-Seller</span> <br /> Can Do For Your Venue
-          </h1>
-          <p className="text-lg md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Boost revenue, enhance atmosphere, and provide a premium experience—all with zero risk and zero upfront costs.
-          </p>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full py-16">
+          <div className="text-center space-y-8 max-w-4xl mx-auto">
+            <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-1.5 rounded-full border border-primary/20 text-primary text-xs font-black tracking-[0.3em] uppercase">
+              Service Excellence
+            </div>
+            <h1 className="text-6xl md:text-8xl font-serif text-slate-900 leading-[0.85] tracking-tighter">
+              What is a <br />
+              <span className="text-primary italic">Shot-Seller?</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-slate-500 font-sans font-light leading-relaxed">
+              Boost revenue, enhance atmosphere, and provide a premium experience—all with <span className="text-slate-900 font-medium italic underline decoration-primary underline-offset-8">zero risk</span> and zero upfront costs for your venue.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Key Benefits Grid */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <section className="py-24 md:py-32 bg-white relative">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
               {
-                icon: <TrendingUp className="text-primary" size={40} />,
-                title: "Instant Revenue Growth",
-                desc: "Our shot-sellers are trained to maximize sales in a high-energy environment, turning quiet moments into peak profit."
+                icon: <TrendingUp className="text-primary" size={32} />,
+                title: "Instant Revenue",
+                desc: "Our shot-sellers are trained to maximize sales in high-energy environments, turning quiet moments into peak profit."
               },
               {
-                icon: <Users className="text-primary" size={40} />,
-                title: "Enhanced Atmosphere",
+                icon: <Users className="text-primary" size={32} />,
+                title: "Electric Atmosphere",
                 desc: "Beyond sales, our team brings infectious energy and a professional vibe that keeps guests engaged and excited."
               },
               {
-                icon: <ShieldCheck className="text-primary" size={40} />,
-                title: "Zero Risk Partnership",
-                desc: "We work on a commission-only basis. If we don't sell, you don't pay. It's a true win-win for your business."
+                icon: <ShieldCheck className="text-primary" size={32} />,
+                title: "Zero-Risk Partnership",
+                desc: "We work on a commission-only basis. If we don't sell, you don't pay. A true win-win for your business."
               }
             ].map((benefit, idx) => (
-              <div key={idx} className="p-8 rounded-[2rem] bg-slate-50 border border-slate-100 hover:border-primary/20 transition-all text-center">
-                <div className="mb-6 flex justify-center">{benefit.icon}</div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">{benefit.title}</h3>
-                <p className="text-slate-600 leading-relaxed">{benefit.desc}</p>
+              <div key={idx} className="saas-card p-12 text-center group">
+                <div className="mb-8 flex justify-center">
+                  <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center border border-slate-100 group-hover:scale-110 group-hover:bg-primary/10 transition-all duration-500">
+                    {benefit.icon}
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-6 group-hover:text-primary transition-colors">{benefit.title}</h3>
+                <p className="text-slate-500 leading-relaxed font-light">{benefit.desc}</p>
               </div>
             ))}
           </div>

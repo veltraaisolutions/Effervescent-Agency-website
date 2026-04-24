@@ -291,10 +291,16 @@ export default function ApplyForm() {
           </div>
         </div>
 
-        <p className="text-xs md:text-sm font-black uppercase tracking-widest mb-2 md:mb-4 text-[#FDb8D7]">Step {slide} of 5</p>
-        <h2 className="text-3xl md:text-5xl font-serif text-slate-900 mb-8 md:mb-12 text-balance leading-tight">{SLIDE_TITLES[slide - 1]}</h2>
+        <p className="text-xs md:text-sm font-black uppercase tracking-[0.4em] mb-4 text-primary">Step {slide} of 5</p>
+        <h2 className="text-4xl md:text-6xl font-serif text-slate-900 mb-10 md:mb-16 text-balance leading-[1.1]">{SLIDE_TITLES[slide - 1]}</h2>
 
-        <div className="space-y-6 md:space-y-8">
+        <motion.div
+          key={slide}
+          initial={{ x: 20, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="space-y-8 md:space-y-10"
+        >
           {slide === 1 && (
             <>
               <div>

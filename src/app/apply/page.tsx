@@ -1,87 +1,127 @@
+"use client";
+
 import Image from "next/image";
-import { Zap, Clock, Trophy } from "lucide-react";
+import { motion } from "framer-motion";
+import { Zap, Clock, Trophy, ArrowRight } from "lucide-react";
 import ApplyForm from "@/components/ApplyForm";
 
 export default function ApplyPage() {
   return (
-    <div className="pt-20">
-      {/* Hero Header */}
-      <section className="bg-slate-900 py-20 md:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-40">
-          <Image
-            src="/party-confetti-girl.png"
-            alt="Become a Shot-Seller"
-            fill
-            className="object-cover"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 brand-gradient mix-blend-overlay"></div>
-        </div>
+    <div className="flex flex-col bg-white">
+      {/* Hero Section - Clean SaaS Style */}
+      <section className="min-h-[60vh] flex items-center pt-32 pb-20 relative overflow-hidden bg-slate-50">
+        {/* Subtle Background Pattern - Dot Grid */}
+        <div className="absolute inset-0 z-0 opacity-[0.03] dot-grid"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white to-transparent"></div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <h1 className="text-4xl md:text-8xl font-serif text-white mb-6 md:mb-8 leading-tight text-balance">
-            Bring the Energy. <br className="hidden md:block" />
-            <span className="italic font-light opacity-90 text-[0.8em]">Reap the Rewards.</span>
-          </h1>
-          <p className="text-lg md:text-3xl text-white/90 font-medium max-w-4xl mx-auto leading-relaxed px-4">
-            Join the UK’s highest-performing nightlife sales roster. We provide the venue partnerships, the training, and the product. You bring the vibe and take home industry-leading commission.
-          </p>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full py-16">
+          <motion.div
+            initial={{ x: -30, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl"
+          >
+            <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-1.5 rounded-full border border-primary/20 text-primary text-xs font-black tracking-[0.3em] uppercase mb-10">
+              <Zap size={12} fill="currentColor" /> Career Opportunities
+            </div>
+            <h1 className="text-6xl md:text-9xl font-serif text-slate-900 leading-[0.85] tracking-tighter mb-12">
+              The <br />
+              <span className="text-primary italic">Elite</span> Roster.
+            </h1>
+            <p className="text-xl md:text-2xl text-slate-500 font-sans font-light max-w-2xl leading-relaxed">
+              Supplying high-performing sales stars to the world's most exclusive venues. <span className="text-slate-900 font-medium italic underline decoration-primary underline-offset-8">Bring the energy</span>, we provide the platform.
+            </p>
+          </motion.div>
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-20 md:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-20 md:mb-24">
-            {[
-              { step: "Step 1", title: "Submit Application", desc: "Fill out our quick online form with your details, location preferences, and any previous experience." },
-              { step: "Step 2", title: "Instant Invite", desc: "We move fast.We will send you WhatsApp message to book your interview." },
-              { step: "Step 3", title: "Vibe Check", desc: "Jump on a quick call with us. if you're a fit, we'll schedule you for Trial Shift at a premium venue." },
-              { step: "Step 4", title: "Official Onboarding", desc: "Crushed your trial? Get access to our app where you simply tap the days you want to work." }
-            ].map((s, idx) => (
-              <div key={idx} className="bg-slate-50 p-8 rounded-[2rem] md:rounded-[3rem] border border-slate-100 hover:border-primary/20 transition-all group text-center lg:text-left">
-                <p className="text-primary font-serif italic text-2xl mb-4">{s.step}</p>
-                <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-primary transition-colors">{s.title}</h3>
-                <p className="text-slate-600 leading-relaxed text-sm md:text-base">{s.desc}</p>
+      {/* Info & Form Section */}
+      <section className="py-24 md:py-32 relative bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+            
+            {/* Left: Benefits & Social Proof */}
+            <div className="lg:col-span-5 space-y-20 lg:sticky lg:top-32">
+              <div className="space-y-6">
+                <h2 className="text-5xl md:text-6xl font-serif text-slate-900 leading-tight">
+                  Why <span className="text-primary italic">Effervescent?</span>
+                </h2>
+                <p className="text-xl text-slate-500 leading-relaxed max-w-md font-light">
+                  We don't just hire staff; we build sales stars. Our infrastructure is designed to help you earn more than any other agency.
+                </p>
               </div>
-            ))}
-          </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-start">
-            <div className="space-y-10 md:space-y-12 order-2 lg:order-1">
-              <h2 className="text-4xl md:text-5xl font-serif text-slate-900 leading-tight text-center lg:text-left text-balance">
-                Why Work With <br className="hidden md:block" />
-                <span className="text-primary italic">Effervescent?</span>
-              </h2>
-
-              <div className="space-y-8 max-w-xl mx-auto lg:mx-0">
+              <div className="space-y-12">
                 {[
-                  { icon: <Zap className="text-primary" />, title: "Uncapped Earnings", desc: "The harder you work, the more you take home. Our industry-leading commission structure rewards high performance." },
-                  { icon: <Clock className="text-primary" />, title: "Total Flexibility", desc: "You are an independent contractor. Tap the days you want to work on our app and manage your own schedule." },
-                  { icon: <Trophy className="text-primary" />, title: "Premium Venues Only", desc: "We only partner with the best. You'll be working in the hottest venues across the UK, Spain, and Dubai." }
+                  { 
+                    icon: <Zap className="text-primary" size={24} />, 
+                    title: "Uncapped Earnings", 
+                    desc: "Industry-leading commission structure that rewards your drive and sales talent." 
+                  },
+                  { 
+                    icon: <Clock className="text-primary" size={24} />, 
+                    title: "Absolute Freedom", 
+                    desc: "Our custom app lets you claim shifts with a single tap. Work when it suits you." 
+                  },
+                  { 
+                    icon: <Trophy className="text-primary" size={24} />, 
+                    title: "A-List Venues", 
+                    desc: "Work in the most exclusive nightclubs across London, Manchester, and Spain." 
+                  }
                 ].map((item, idx) => (
-                  <div key={idx} className="flex flex-col md:flex-row gap-6 items-center md:items-start text-center md:text-left">
-                    <div className="w-14 h-14 bg-pink-50 rounded-2xl flex items-center justify-center flex-shrink-0">
+                  <motion.div 
+                    key={idx}
+                    initial={{ x: -20, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                    className="flex gap-8 group"
+                  >
+                    <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 border border-slate-100 shadow-soft">
                       {item.icon}
                     </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-slate-900 mb-2">{item.title}</h4>
-                      <p className="text-slate-600 leading-relaxed text-sm md:text-base">{item.desc}</p>
+                    <div className="space-y-2">
+                      <h4 className="text-xl font-bold text-slate-900 group-hover:text-primary transition-colors">{item.title}</h4>
+                      <p className="text-slate-500 leading-relaxed font-light">{item.desc}</p>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
 
-            <div className="relative order-1 lg:order-2 w-full max-w-[600px] mx-auto lg:mx-0">
-              <div className="absolute -top-10 -right-10 opacity-10 w-[300px] h-[200px] pointer-events-none hidden md:block">
-                <Image src="/effervescent-sign1.png" alt="Signature Decor" fill className="object-contain brightness-0 invert" />
+              {/* Testimonial Quote */}
+              <div className="p-12 rounded-[3.5rem] bg-slate-900 text-white relative overflow-hidden shadow-premium group">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700"></div>
+                <p className="text-2xl font-serif italic mb-10 relative z-10 leading-relaxed">
+                  &ldquo;The support and commission structure at Effervescent is unlike anything else in the industry.&rdquo;
+                </p>
+                <div className="flex items-center gap-5 relative z-10">
+                  <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-primary font-black border border-white/10">SA</div>
+                  <div>
+                    <p className="font-bold text-lg">Sarah Anderson</p>
+                    <p className="text-sm text-white/50 italic font-medium uppercase tracking-widest">Top Seller • Manchester</p>
+                  </div>
+                </div>
               </div>
-
-              {/* <div className="relative z-10 w-full">
-                <ApplyForm />
-              </div> */}
             </div>
+
+            {/* Right: The Application Form */}
+            <div className="lg:col-span-7">
+              <motion.div
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.8 }}
+                className="saas-card p-1 md:p-4"
+              >
+                <div className="p-8 md:p-16">
+                  <div className="mb-12">
+                    <h3 className="text-4xl font-serif text-slate-900 mb-4">Apply Now</h3>
+                    <div className="w-20 h-1 bg-primary rounded-full"></div>
+                  </div>
+                  <ApplyForm />
+                </div>
+              </motion.div>
+            </div>
+
           </div>
         </div>
       </section>
