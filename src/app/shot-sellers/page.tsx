@@ -1,73 +1,94 @@
+"use client";
 import Image from "next/image";
-import { CheckCircle2, TrendingUp, Users, ShieldCheck, ArrowRight } from "lucide-react";
-import Link from "next/link";
-import CorporateDefinition from "@/components/CorporateDefinition";
-import HowItWorks from "@/components/HowItWorks";
-import OtherServices from "@/components/OtherServices";
-import ServiceHighlights from "@/components/ServiceHighlights";
-
+import { motion } from "framer-motion";
 export default function ShotSellersPage() {
   return (
-    <div className="flex flex-col bg-white">
-      {/* Hero Section - Clean SaaS Style */}
-      <section className="min-h-[60vh] flex items-center pt-32 pb-20 relative overflow-hidden bg-slate-50">
-        {/* Subtle Background Pattern - Dot Grid */}
-        <div className="absolute inset-0 z-0 opacity-[0.03] dot-grid"></div>
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white to-transparent"></div>
+    <section className="relative py-24 md:py-32 overflow-hidden" style={{ background: 'radial-gradient(circle at 90% 10%, #C874E2 0%, transparent 50%), radial-gradient(circle at 10% 90%, #C874E2 0%, transparent 50%), #fbcfe8' }}>
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* Title */}
+        <motion.h2
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          className="text-5xl md:text-7xl font-serif text-white text-center mb-16 md:mb-24 tracking-tight"
+        >
+          What Can a Shot-Seller Do for Me?
+        </motion.h2>
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full py-16">
-          <div className="text-center space-y-8 max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-1.5 rounded-full border border-primary/20 text-primary text-xs font-black tracking-[0.3em] uppercase">
-              Service Excellence
-            </div>
-            <h1 className="text-6xl md:text-8xl font-serif text-slate-900 leading-[0.85] tracking-tighter">
-              What is a <br />
-              <span className="text-primary italic">Shot-Seller?</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-slate-500 font-sans font-light leading-relaxed">
-              Boost revenue, enhance atmosphere, and provide a premium experience—all with <span className="text-slate-900 font-medium italic underline decoration-primary underline-offset-8">zero risk</span> and zero upfront costs for your venue.
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 mb-32">
+          {/* Left Column - List */}
+          <motion.div
+            initial={{ x: -30, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <ul className="space-y-4">
+              {[
+                "Additional revenue, no extra costs",
+                "Improved customer service",
+                "Less pressure on bar staff",
+                "Shorter waiting times",
+                "Interactive & engaging",
+                "Regular customers"
+              ].map((item, index) => (
+                <li key={index} className="flex items-center gap-4 text-white text-xl md:text-3xl font-bold tracking-tight">
+                  <span className="text-white text-2xl">✽</span> {item}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Right Column - Text */}
+          <motion.div
+            initial={{ x: 30, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="space-y-8 text-white/90 text-lg md:text-xl font-medium leading-relaxed max-w-lg"
+          >
+            <p>
+              Shot-sellers can be a valuable addition to your venue, positively impacting customer experience and bringing revenue to new heights, at no additional cost to yourselves.
             </p>
-          </div>
+            <p>
+              Beyond that, shot girls excel at creating an engaging and enjoyable experience for customers, fostering a vibrant and social atmosphere.
+            </p>
+            <p>
+              Customers also benefit from shorter wait times at the bar, streamlining your service, taking pressure off bar staff and improving customer satisfaction overall.
+            </p>
+          </motion.div>
         </div>
-      </section>
+      </div>
 
-      {/* Key Benefits Grid */}
-      <section className="py-24 md:py-32 bg-white relative">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {[
-              {
-                icon: <TrendingUp className="text-primary" size={32} />,
-                title: "Instant Revenue",
-                desc: "Our shot-sellers are trained to maximize sales in high-energy environments, turning quiet moments into peak profit."
-              },
-              {
-                icon: <Users className="text-primary" size={32} />,
-                title: "Electric Atmosphere",
-                desc: "Beyond sales, our team brings infectious energy and a professional vibe that keeps guests engaged and excited."
-              },
-              {
-                icon: <ShieldCheck className="text-primary" size={32} />,
-                title: "Zero-Risk Partnership",
-                desc: "We work on a commission-only basis. If we don't sell, you don't pay. A true win-win for your business."
-              }
-            ].map((benefit, idx) => (
-              <div key={idx} className="saas-card p-12 text-center group">
-                <div className="mb-8 flex justify-center">
-                  <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center border border-slate-100 group-hover:scale-110 group-hover:bg-primary/10 transition-all duration-500">
-                    {benefit.icon}
-                  </div>
-                </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-6 group-hover:text-primary transition-colors">{benefit.title}</h3>
-                <p className="text-slate-500 leading-relaxed font-light">{benefit.desc}</p>
-              </div>
-            ))}
-          </div>
+      {/* Bottom Image Collage */}
+      <div className="relative w-full h-[400px] md:h-[500px] mt-10">
+        {/* Left Image */}
+        <div className="absolute bottom-0 left-0 w-[60%] md:w-[45%] h-full rounded-tr-[3rem] overflow-hidden shadow-2xl">
+          <Image
+            src="/tray-girl.jpeg"
+            alt="Shot seller at work"
+            fill
+            className="object-cover"
+          />
         </div>
-      </section>
 
-      {/* Re-using existing sections that define the service */}
-      <ServiceHighlights />
-    </div>
+        {/* Right Overlapping Image */}
+        <div className="absolute bottom-10 left-[45%] md:left-[35%] w-[50%] md:w-[35%] h-[90%] rounded-[2rem] overflow-hidden shadow-2xl transform rotate-[8deg] border-4 border-white/20">
+          <Image
+            src="/tray-girl2.jpeg"
+            alt="Shot seller serving"
+            fill
+            className="object-cover"
+          />
+        </div>
+      </div>
+
+      {/* Decorative Star - Bottom Right */}
+      <div className="absolute bottom-12 right-12 opacity-90 scale-125 z-20">
+        <div className="w-20 h-20 relative">
+          <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
+        </div>
+      </div>
+    </section>
   );
 }

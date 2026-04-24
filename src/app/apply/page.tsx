@@ -9,11 +9,7 @@ export default function ApplyPage() {
   return (
     <div className="flex flex-col bg-white">
       {/* Hero Section - Clean SaaS Style */}
-      <section className="min-h-[60vh] flex items-center pt-32 pb-20 relative overflow-hidden bg-slate-50">
-        {/* Subtle Background Pattern - Dot Grid */}
-        <div className="absolute inset-0 z-0 opacity-[0.03] dot-grid"></div>
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white to-transparent"></div>
-
+      <section className="min-h-[60vh] flex items-center pt-32 pb-20 relative overflow-hidden" style={{ background: 'radial-gradient(circle at 90% 10%, #C874E2 0%, transparent 50%), radial-gradient(circle at 10% 90%, #C874E2 0%, transparent 50%), #fbcfe8' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full py-16">
           <motion.div
             initial={{ x: -30, opacity: 0 }}
@@ -21,17 +17,24 @@ export default function ApplyPage() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl"
           >
-            <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-1.5 rounded-full border border-primary/20 text-primary text-xs font-black tracking-[0.3em] uppercase mb-10">
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/20 text-white text-xs font-black tracking-[0.3em] uppercase mb-10">
               <Zap size={12} fill="currentColor" /> Career Opportunities
             </div>
-            <h1 className="text-6xl md:text-9xl font-serif text-slate-900 leading-[0.85] tracking-tighter mb-12">
+            <h1 className="text-6xl md:text-9xl font-serif text-white leading-[0.85] tracking-tighter mb-12">
               The <br />
-              <span className="text-primary italic">Elite</span> Roster.
+              <span className="italic">Elite</span> Roster.
             </h1>
-            <p className="text-xl md:text-2xl text-slate-500 font-sans font-light max-w-2xl leading-relaxed">
-              Supplying high-performing sales stars to the world's most exclusive venues. <span className="text-slate-900 font-medium italic underline decoration-primary underline-offset-8">Bring the energy</span>, we provide the platform.
+            <p className="text-xl md:text-2xl text-white/90 font-sans font-light max-w-2xl leading-relaxed">
+              Supplying high-performing sales stars to the world's most exclusive venues. <span className="text-white font-medium italic underline decoration-white/50 underline-offset-8">Bring the energy</span>, we provide the platform.
             </p>
           </motion.div>
+        </div>
+
+        {/* Decorative Star - Bottom Right */}
+        <div className="absolute bottom-12 right-12 opacity-90 scale-125 z-30">
+          <div className="w-20 h-20 relative">
+            <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
+          </div>
         </div>
       </section>
 

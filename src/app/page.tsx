@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Star, Zap } from "lucide-react";
-import Milestones from "@/components/Milestones";
 import Partners from "@/components/Partners";
 import ServiceHighlights from "@/components/ServiceHighlights";
 import CaseStudies from "@/components/CaseStudies";
@@ -103,206 +102,53 @@ export default function Home() {
       </section>
 
       {/* What Can a Shot-Seller Do for Me? Section */}
-      <section className="relative py-24 md:py-32 overflow-hidden" style={{ background: 'radial-gradient(circle at 90% 10%, #C874E2 0%, transparent 50%), radial-gradient(circle at 10% 90%, #C874E2 0%, transparent 50%), #fbcfe8' }}>
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          {/* Title */}
-          <motion.h2
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-5xl md:text-7xl font-serif text-white text-center mb-16 md:mb-24 tracking-tight"
-          >
-            What Can a Shot-Seller Do for Me?
-          </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 mb-32">
-            {/* Left Column - List */}
-            <motion.div
-              initial={{ x: -30, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-            >
-              <ul className="space-y-4">
-                {[
-                  "Additional revenue, no extra costs",
-                  "Improved customer service",
-                  "Less pressure on bar staff",
-                  "Shorter waiting times",
-                  "Interactive & engaging",
-                  "Regular customers"
-                ].map((item, index) => (
-                  <li key={index} className="flex items-center gap-4 text-white text-xl md:text-3xl font-bold tracking-tight">
-                    <span className="text-white text-2xl">✽</span> {item}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
 
-            {/* Right Column - Text */}
-            <motion.div
-              initial={{ x: 30, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="space-y-8 text-white/90 text-lg md:text-xl font-medium leading-relaxed max-w-lg"
-            >
-              <p>
-                Shot-sellers can be a valuable addition to your venue, positively impacting customer experience and bringing revenue to new heights, at no additional cost to yourselves.
-              </p>
-              <p>
-                Beyond that, shot girls excel at creating an engaging and enjoyable experience for customers, fostering a vibrant and social atmosphere.
-              </p>
-              <p>
-                Customers also benefit from shorter wait times at the bar, streamlining your service, taking pressure off bar staff and improving customer satisfaction overall.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-
-        {/* Bottom Image Collage */}
-        <div className="relative w-full h-[400px] md:h-[500px] mt-10">
-          {/* Left Image */}
-          <div className="absolute bottom-0 left-0 w-[60%] md:w-[45%] h-full rounded-tr-[3rem] overflow-hidden shadow-2xl">
-            <Image
-              src="/tray-girl.jpeg"
-              alt="Shot seller at work"
-              fill
-              className="object-cover"
-            />
-          </div>
-
-          {/* Right Overlapping Image */}
-          <div className="absolute bottom-10 left-[45%] md:left-[35%] w-[50%] md:w-[35%] h-[90%] rounded-[2rem] overflow-hidden shadow-2xl transform rotate-[8deg] border-4 border-white/20">
-            <Image
-              src="/tray-girl2.jpeg"
-              alt="Shot seller serving"
-              fill
-              className="object-cover"
-            />
-          </div>
-        </div>
-
-        {/* Decorative Star - Bottom Right */}
-        <div className="absolute bottom-12 right-12 opacity-90 scale-125 z-20">
-          <div className="w-20 h-20 relative">
-            <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
-          </div>
-        </div>
-      </section>
-
-      {/* Case Studies Section */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
-        {/* Background Image and Gradient Overlay */}
+      {/* Testimonial Section */}
+      <section className="relative py-32 md:py-48 overflow-hidden bg-[#fbcfe8]">
+        {/* Abstract Background Elements */}
         <div className="absolute inset-0 z-0">
-          <Image
-            src="/case-studies-bg.jpeg"
-            alt="Case Studies Background"
-            fill
-            className="object-cover"
-          />
-          {/* Layer 1: Tint */}
-          <div
-            className="absolute inset-0 mix-blend-color opacity-100"
-            style={{ background: 'radial-gradient(circle at 90% 10%, #C874E2 0%, transparent 50%), radial-gradient(circle at 10% 90%, #C874E2 0%, transparent 50%), #fbcfe8' }}
-          />
-          {/* Layer 2: Brightness */}
-          <div
-            className="absolute inset-0 opacity-80"
-            style={{ background: 'radial-gradient(circle at 90% 10%, #C874E2 0%, transparent 50%), radial-gradient(circle at 10% 90%, #C874E2 0%, transparent 50%), #fbcfe8' }}
-          />
+          {/* Base Glows */}
+          <div className="absolute inset-0" style={{ background: 'radial-gradient(circle at 80% 20%, #C874E2 0%, transparent 60%)' }} />
+          <div className="absolute inset-0" style={{ background: 'radial-gradient(circle at 20% 80%, #C874E2 0%, transparent 60%)' }} />
+
+          {/* Diagonal Line and Shape Overlay */}
+          <div className="absolute -top-[30%] right-[-10%] w-[80%] h-[160%] bg-[#d690eb]/20 transform rotate-[35deg] border-l-2 border-white/30" />
+
+          {/* Dotted Texture Overlay in Top Right */}
+          <div className="absolute top-0 right-0 w-[50%] h-full opacity-10" style={{ backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)', backgroundSize: '20px 20px' }} />
+
+          {/* Subtle Flare */}
+          <div className="absolute top-[20%] right-[30%] w-32 h-32 bg-white/30 blur-[40px] rounded-full" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          {/* Header */}
-          <div className="mb-16">
-            <motion.h3
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-4xl md:text-6xl font-serif text-white mb-6 tracking-tight drop-shadow-sm"
-            >
-              Case Studies
-            </motion.h3>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="text-5xl md:text-7xl font-serif text-white max-w-5xl tracking-tight leading-[1.1] drop-shadow-sm"
-            >
-              Record-Breaking Revenue Generated <br className="hidden md:block" />
-              for UK Venues in 2025
-            </motion.h2>
-          </div>
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col md:flex-row items-start gap-4 md:gap-10"
+          >
+            {/* Giant Quote Mark */}
+            <span className="text-[10rem] md:text-[14rem] font-serif text-white/30 leading-none -mt-10 md:-mt-16 font-bold tracking-tighter">
+              “
+            </span>
 
-          {/* Data Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-32">
-            {/* Card 1 */}
-            <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} className="flex flex-col text-center">
-              <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-                <div className="bg-[#483c51] py-5">
-                  <span className="text-white font-serif text-2xl md:text-3xl font-medium tracking-wide">Venue No.1</span>
-                </div>
-                <div className="bg-[#a97bf0] py-5">
-                  <span className="text-white font-serif text-4xl md:text-5xl italic tracking-tight">£166,905</span>
-                </div>
+            {/* Quote Content */}
+            <div className="flex flex-col gap-10 mt-4 md:mt-0">
+              <h2 className="text-5xl md:text-6xl lg:text-[4.5rem] font-serif text-white italic tracking-wide leading-[1.15]">
+                It’s been great, <br className="hidden md:block" />
+                unreal difference <br className="hidden md:block" />
+                your girls have made <br className="hidden md:block" />
+                versus other companies.”
+              </h2>
+
+              <div className="text-white font-serif text-xl md:text-2xl mt-2">
+                <p className="font-bold opacity-100 tracking-wide">The Cavendish, Sheffield</p>
+                <p className="opacity-90 tracking-wide mt-1">Partner since 2023</p>
               </div>
-              <p className="text-white/95 mt-5 font-serif text-xl md:text-2xl drop-shadow-sm">Client since September 2022</p>
-            </motion.div>
-
-            {/* Card 2 */}
-            <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="flex flex-col text-center">
-              <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-                <div className="bg-[#483c51] py-5">
-                  <span className="text-white font-serif text-2xl md:text-3xl font-medium tracking-wide">Venue No.2</span>
-                </div>
-                <div className="bg-[#a97bf0] py-5">
-                  <span className="text-white font-serif text-4xl md:text-5xl italic tracking-tight">£98,462</span>
-                </div>
-              </div>
-              <p className="text-white/95 mt-5 font-serif text-xl md:text-2xl drop-shadow-sm">Client since August 2022</p>
-            </motion.div>
-
-            {/* Card 3 */}
-            <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="flex flex-col text-center">
-              <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-                <div className="bg-[#483c51] py-5">
-                  <span className="text-white font-serif text-2xl md:text-3xl font-medium tracking-wide">Venue No.3</span>
-                </div>
-                <div className="bg-[#a97bf0] py-5">
-                  <span className="text-white font-serif text-4xl md:text-5xl italic tracking-tight">£69,607</span>
-                </div>
-              </div>
-              <p className="text-white/95 mt-5 font-serif text-xl md:text-2xl flex flex-col drop-shadow-sm">
-                <span>Client since April 2023</span>
-                <span className="text-sm md:text-base opacity-80 mt-1">(Seasonal venue, trading 6 months per year only)</span>
-              </p>
-            </motion.div>
-          </div>
-        </div>
-
-        {/* Bottom Image Collage */}
-        <div className="relative w-full h-[400px] md:h-[500px] mt-10">
-          {/* Left Image */}
-          <div className="absolute bottom-0 left-0 w-[60%] md:w-[45%] h-[110%] rounded-tr-[3rem] overflow-hidden shadow-2xl z-20">
-            <Image
-              src="/fungala-girl.png"
-              alt="Outdoor Event"
-              fill
-              className="object-cover"
-            />
-          </div>
-
-          {/* Right Overlapping Image */}
-          <div className="absolute bottom-10 left-[45%] md:left-[35%] w-[50%] md:w-[35%] h-[90%] rounded-[2rem] overflow-hidden shadow-2xl transform rotate-[8deg] border-4 border-white/20 z-10">
-            <Image
-              src="/case-study-card-2.png"
-              alt="Event Girls"
-              fill
-              className="object-cover"
-            />
-          </div>
+            </div>
+          </motion.div>
         </div>
 
         {/* Decorative Star - Bottom Right */}
@@ -313,23 +159,13 @@ export default function Home() {
         </div>
       </section>
 
-      <Milestones />
       <Partners />
+
+      {/* Other Services Section */}
+
+
       {/* Final CTA Banner */}
-      <section className="py-20 md:py-32 brand-gradient relative overflow-hidden">
-        {/* Background Texture Overlay */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/party-confetti-girl.png"
-            alt="Success Background"
-            fill
-            className="object-cover opacity-10 mix-blend-overlay"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-primary/20"></div>
-          {/* Decorative Dot Pattern */}
-          <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
-        </div>
+      <section className="relative py-24 md:py-32 overflow-hidden" style={{ background: 'radial-gradient(circle at 90% 10%, #C874E2 0%, transparent 50%), radial-gradient(circle at 10% 90%, #C874E2 0%, transparent 50%), #fbcfe8' }}>
 
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
@@ -378,17 +214,17 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
               </div>
-
-              {/* Decorative Floating Signature */}
-              <div className="absolute -bottom-10 -right-10 opacity-30 animate-pulse hidden lg:block w-64 h-32">
-                <Image src="/effervescent-sign1.png" alt="Signature" fill className="object-contain brightness-0 invert" />
-              </div>
             </div>
           </div>
         </div>
 
-        {/* Luminous Glow Divider */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-900 to-transparent opacity-50"></div>
+
+        {/* Decorative Star - Bottom Right */}
+        <div className="absolute bottom-12 right-12 opacity-90 scale-125 z-30">
+          <div className="w-20 h-20 relative">
+            <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
+          </div>
+        </div>
       </section>
     </div>
   );

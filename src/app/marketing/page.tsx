@@ -1,65 +1,79 @@
+'use client';
 import Image from "next/image";
-import InfluencerNetwork from "@/components/InfluencerNetwork";
+import { motion } from "framer-motion";
 
 export default function MarketingPage() {
   return (
-    <div className="flex flex-col bg-white">
-      {/* Hero Section - Clean SaaS Style */}
-      <section className="min-h-[60vh] flex items-center pt-32 pb-20 relative overflow-hidden bg-slate-50">
-        {/* Subtle Background Pattern - Dot Grid */}
-        <div className="absolute inset-0 z-0 opacity-[0.03] dot-grid"></div>
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white to-transparent"></div>
+    <section className="relative py-24 md:py-32 overflow-hidden" style={{ background: 'radial-gradient(circle at 90% 10%, #C874E2 0%, transparent 50%), radial-gradient(circle at 10% 90%, #C874E2 0%, transparent 50%), #fbcfe8' }}>
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-1.5 rounded-full border border-primary/20 text-primary text-xs font-black tracking-[0.3em] uppercase">
-                Amplification Network
-              </div>
-              <h1 className="text-6xl md:text-8xl font-serif text-slate-900 leading-[0.85] tracking-tighter">
-                Marketing <br />
-                <span className="text-primary italic">& Network.</span>
-              </h1>
-              <p className="text-xl md:text-2xl text-slate-500 font-sans font-light max-w-xl leading-relaxed">
-                Leveraging a <span className="text-slate-900 font-medium italic underline decoration-primary underline-offset-8">7.65M+ social reach</span> to drive ticket sales and electric atmospheres for our partners.
-              </p>
-            </div>
+        {/* Header */}
+        <div className="mb-16 md:mb-20">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-5xl md:text-7xl font-serif text-white tracking-tight leading-[1.15] max-w-4xl"
+          >
+            More Tickets Sold <br className="hidden md:block" />
+            Using Effervescent’s Influencer Network
+          </motion.h2>
+        </div>
 
-            <div className="relative h-[400px] md:h-[500px] rounded-[3rem] overflow-hidden shadow-premium border-[10px] border-white group">
-              <Image
-                src="/Party-efficencyy.jpeg"
-                alt="Party Efficiency"
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-700"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                priority
-              />
-              <div className="absolute inset-0 bg-slate-900/10"></div>
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 relative z-20">
+          {/* Left Column - Text */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-8 text-white/95 text-lg md:text-xl font-medium leading-relaxed max-w-lg"
+          >
+            <p>
+              At Effervescent, our support goes beyond the venue floor. Through our network of promoters and influencers, we actively help our partners <span className="font-bold">drive awareness, engagement, and ticket sales.</span>
+            </p>
+            <p>
+              With a combined <span className="font-bold">social media reach of over 1.5 million across our platforms</span>, we share marketing materials, event announcements, and ticket links to help maximise visibility and attendance.
+            </p>
+            <p>
+              We also capture <span className="font-bold">live content during events</span>, creating engaging social media posts that are shared across our channels to further promote the venue and atmosphere.
+            </p>
+            <p>
+              This support is provided <span className="font-bold">completely free of charge</span> - because when our partners win, we win too.
+            </p>
+          </motion.div>
+
+          {/* Right Column - Images */}
+          <div className="relative w-full h-[450px] md:h-[600px] mt-10 md:mt-0">
+            {/* Top Image */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="absolute top-0 right-0 w-[85%] md:w-[80%] h-[55%] rounded-[2rem] overflow-hidden shadow-2xl z-10"
+            >
+              <Image src="/shot-seller-in-party.jpeg" alt="Influencer Network" fill className="object-cover" />
+            </motion.div>
+
+            {/* Bottom Tilted Image */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, rotate: 0 }}
+              whileInView={{ opacity: 1, scale: 1, rotate: -12 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="absolute bottom-0 left-0 md:left-4 w-[75%] md:w-[70%] h-[60%] rounded-[2rem] overflow-hidden shadow-2xl transform -rotate-[12deg] z-20 border-4 border-white/20"
+            >
+              <Image src="/Party-efficencyy.jpeg" alt="Live Event Content" fill className="object-cover" />
+            </motion.div>
           </div>
         </div>
-      </section>
+      </div>
 
-      <InfluencerNetwork />
-
-      {/* Premium Reach Stats Section */}
-      <section className="py-24 md:py-32 bg-white relative">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {[
-              { label: "Total Reach", value: "7.65M+", desc: "Aggregated social media footprint." },
-              { label: "Active Influencers", value: "150+", desc: "Premium content creators on call." },
-              { label: "Weekly Impressions", value: "12M+", desc: "Driving consistent brand awareness." }
-            ].map((stat, idx) => (
-              <div key={idx} className="saas-card p-12 text-center group">
-                <p className="text-[10px] font-black uppercase tracking-[0.4em] text-primary mb-6">{stat.label}</p>
-                <h3 className="text-6xl font-serif text-slate-900 mb-6 group-hover:scale-110 transition-transform duration-500">{stat.value}</h3>
-                <p className="text-slate-500 font-light leading-relaxed">{stat.desc}</p>
-              </div>
-            ))}
-          </div>
+      {/* Decorative Star - Bottom Right */}
+      <div className="absolute bottom-12 right-12 opacity-90 scale-125 z-30">
+        <div className="w-20 h-20 relative">
+          <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }

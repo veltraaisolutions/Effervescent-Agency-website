@@ -1,71 +1,126 @@
+"use client"
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const CaseStudies = () => {
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden bg-white">
-      {/* Subtle Dot Grid Background */}
-      <div className="absolute inset-0 z-0 opacity-[0.03] dot-grid"></div>
+    <section className="relative py-24 md:py-32 overflow-hidden">
+      {/* Background Image and Gradient Overlay */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/case-studies-bg.jpeg"
+          alt="Case Studies Background"
+          fill
+          className="object-cover"
+        />
+        {/* Layer 1: Tint */}
+        <div
+          className="absolute inset-0 mix-blend-color opacity-100"
+          style={{ background: 'radial-gradient(circle at 90% 10%, #C874E2 0%, transparent 50%), radial-gradient(circle at 10% 90%, #C874E2 0%, transparent 50%), #fbcfe8' }}
+        />
+        {/* Layer 2: Brightness */}
+        <div
+          className="absolute inset-0 opacity-80"
+          style={{ background: 'radial-gradient(circle at 90% 10%, #C874E2 0%, transparent 50%), radial-gradient(circle at 10% 90%, #C874E2 0%, transparent 50%), #fbcfe8' }}
+        />
+      </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 text-center">
-        <div className="mb-20 space-y-4">
-          <span className="text-primary font-black uppercase tracking-[0.4em] text-xs">Proof of Concept</span>
-          <h2 className="text-5xl md:text-8xl font-serif text-slate-900 leading-none tracking-tighter">
-            Market <br />
-            <span className="text-primary italic">Dominance.</span>
-          </h2>
-          <p className="text-xl text-slate-500 font-sans font-light max-w-2xl mx-auto leading-relaxed">
-            Record-Breaking Revenue Generated for UK & International Venues in 2025.
-          </p>
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* Header */}
+        <div className="mb-16">
+          <motion.h3
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-6xl font-serif text-white mb-6 tracking-tight drop-shadow-sm"
+          >
+            Case Studies
+          </motion.h3>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="text-5xl md:text-7xl font-serif text-white max-w-5xl tracking-tight leading-[1.1] drop-shadow-sm"
+          >
+            Record-Breaking Revenue Generated <br className="hidden md:block" />
+            for UK Venues in 2025
+          </motion.h2>
         </div>
 
-        {/* Revenue Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-24">
-          {[
-            { id: 1, amount: "£166,905", date: "Partner since Sept 2022" },
-            { id: 2, amount: "£98,462", date: "Partner since Aug 2022" },
-            { id: 3, amount: "£69,607", date: "Partner since Apr 2023", note: "Seasonal venue (6 months)" }
-          ].map((venue) => (
-            <div key={venue.id} className="saas-card p-10 flex flex-col items-center group">
-              <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-slate-400 font-black text-xs mb-8 border border-slate-100 group-hover:bg-primary/10 group-hover:text-primary transition-colors">
-                CASE {venue.id}
+        {/* Data Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-32">
+          {/* Card 1 */}
+          <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} className="flex flex-col text-center">
+            <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+              <div className="bg-[#483c51] py-5">
+                <span className="text-white font-serif text-2xl md:text-3xl font-medium tracking-wide">Venue No.1</span>
               </div>
-              <h3 className="text-5xl font-black text-slate-900 mb-4 tracking-tighter group-hover:scale-110 transition-transform">
-                {venue.amount}
-              </h3>
-              <p className="text-slate-400 font-bold uppercase tracking-widest text-[10px]">{venue.date}</p>
-              {venue.note && <p className="text-primary/60 text-[10px] mt-2 italic font-bold">{venue.note}</p>}
+              <div className="bg-[#a97bf0] py-5">
+                <span className="text-white font-serif text-4xl md:text-5xl italic tracking-tight">£166,905</span>
+              </div>
             </div>
-          ))}
+            <p className="text-white/95 mt-5 font-serif text-xl md:text-2xl drop-shadow-sm">Client since September 2022</p>
+          </motion.div>
+
+          {/* Card 2 */}
+          <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="flex flex-col text-center">
+            <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+              <div className="bg-[#483c51] py-5">
+                <span className="text-white font-serif text-2xl md:text-3xl font-medium tracking-wide">Venue No.2</span>
+              </div>
+              <div className="bg-[#a97bf0] py-5">
+                <span className="text-white font-serif text-4xl md:text-5xl italic tracking-tight">£98,462</span>
+              </div>
+            </div>
+            <p className="text-white/95 mt-5 font-serif text-xl md:text-2xl drop-shadow-sm">Client since August 2022</p>
+          </motion.div>
+
+          {/* Card 3 */}
+          <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="flex flex-col text-center">
+            <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+              <div className="bg-[#483c51] py-5">
+                <span className="text-white font-serif text-2xl md:text-3xl font-medium tracking-wide">Venue No.3</span>
+              </div>
+              <div className="bg-[#a97bf0] py-5">
+                <span className="text-white font-serif text-4xl md:text-5xl italic tracking-tight">£69,607</span>
+              </div>
+            </div>
+            <p className="text-white/95 mt-5 font-serif text-xl md:text-2xl flex flex-col drop-shadow-sm">
+              <span>Client since April 2023</span>
+              <span className="text-sm md:text-base opacity-80 mt-1">(Seasonal venue, trading 6 months per year only)</span>
+            </p>
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Bottom Image Collage */}
+      <div className="relative w-full h-[400px] md:h-[500px] mt-10">
+        {/* Left Image */}
+        <div className="absolute bottom-0 left-0 w-[60%] md:w-[45%] h-[110%] rounded-tr-[3rem] overflow-hidden shadow-2xl z-20">
+          <Image
+            src="/fungala-girl.png"
+            alt="Outdoor Event"
+            fill
+            className="object-cover"
+          />
         </div>
 
-        {/* Visual Showcase */}
-        <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="relative h-[450px] md:h-[550px] rounded-[3.5rem] overflow-hidden shadow-premium border-[12px] border-slate-50 group">
-            <Image
-              src="/fungala-girl.png"
-              alt="Venue Success"
-              fill
-              className="object-cover group-hover:scale-105 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 to-transparent"></div>
-          </div>
+        {/* Right Overlapping Image */}
+        <div className="absolute bottom-10 left-[45%] md:left-[35%] w-[50%] md:w-[35%] h-[90%] rounded-[2rem] overflow-hidden shadow-2xl transform rotate-[8deg] border-4 border-white/20 z-10">
+          <Image
+            src="/case-study-card-2.png"
+            alt="Event Girls"
+            fill
+            className="object-cover"
+          />
+        </div>
+      </div>
 
-          <div className="text-left space-y-10 lg:pl-12">
-            <div className="space-y-6">
-              <h4 className="text-4xl font-serif text-slate-900">Measuring Impact</h4>
-              <p className="text-xl text-slate-500 leading-relaxed font-light">
-                Our approach combines professional sales talent with data-driven venue management, resulting in unprecedented revenue growth for hospitality brands.
-              </p>
-            </div>
-
-            <div className="p-10 bg-slate-50 rounded-[3rem] border border-slate-100">
-              <div className="flex items-center gap-6 mb-4">
-                <div className="w-12 h-12 bg-primary rounded-2xl flex items-center justify-center text-white font-black italic">!</div>
-                <p className="text-lg font-bold text-slate-900">Key Performance Metric</p>
-              </div>
-              <p className="text-slate-500 italic">"On average, our partners see a 40% increase in shot sales within the first 30 days of roster deployment."</p>
-            </div>
-          </div>
+      {/* Decorative Star - Bottom Right */}
+      <div className="absolute bottom-12 right-12 opacity-90 scale-125 z-30">
+        <div className="w-20 h-20 relative">
+          <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
         </div>
       </div>
     </section>

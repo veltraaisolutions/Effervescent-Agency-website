@@ -4,13 +4,13 @@ import { MessageCircle } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-white text-slate-900 pt-32 pb-16 border-t border-slate-100">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <footer className="relative pt-32 pb-16 overflow-hidden" style={{ background: 'radial-gradient(circle at 90% 10%, #C874E2 0%, transparent 50%), radial-gradient(circle at 10% 90%, #C874E2 0%, transparent 50%), #fbcfe8' }}>
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 mb-24">
           {/* Brand Column */}
           <div className="lg:col-span-5 space-y-10">
             <Link href="/" className="flex items-center gap-5 group">
-              <div className="w-16 h-16 rounded-[1.5rem] overflow-hidden group-hover:scale-110 transition-transform duration-500 shadow-premium border border-slate-100">
+              <div className="w-16 h-16 rounded-[1.5rem] overflow-hidden group-hover:scale-110 transition-transform duration-500 shadow-2xl border border-white/20">
                 <Image
                   src="/logo1.jpeg"
                   alt="Effervescent"
@@ -20,15 +20,15 @@ const Footer = () => {
                 />
               </div>
               <div className="flex flex-col">
-                <span className="font-serif text-4xl tracking-tighter leading-none mb-1">Effervescent.</span>
-                <span className="text-primary text-[10px] font-black uppercase tracking-[0.4em]">The Elite Roster</span>
+                <span className="font-serif text-4xl tracking-tighter leading-none mb-1 text-white">Effervescent.</span>
+                <span className="text-white text-[10px] font-black uppercase tracking-[0.4em] opacity-80">The Elite Roster</span>
               </div>
             </Link>
-            <p className="text-slate-500 max-w-sm text-lg leading-relaxed font-light">
+            <p className="text-white/80 max-w-sm text-lg leading-relaxed font-light">
               Transforming hospitality revenue through professional sales talent across the UK, Spain, and Dubai.
             </p>
             <div className="flex gap-4">
-              <Link href="https://instagram.com/effervescent.agency" className="bg-slate-50 hover:bg-primary hover:text-white p-4 rounded-2xl transition-all border border-slate-100 group">
+              <Link href="https://instagram.com/effervescent.agency" className="bg-white/10 hover:bg-white hover:text-primary p-4 rounded-2xl transition-all border border-white/10 text-white group">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -46,7 +46,7 @@ const Footer = () => {
                   <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                 </svg>
               </Link>
-              <Link href="https://wa.me/971585216771" className="bg-slate-50 hover:bg-primary hover:text-white p-4 rounded-2xl transition-all border border-slate-100">
+              <Link href="https://wa.me/971585216771" className="bg-white/10 hover:bg-white hover:text-primary p-4 rounded-2xl transition-all border border-white/10 text-white">
                 <MessageCircle size={20} />
               </Link>
             </div>
@@ -55,51 +55,51 @@ const Footer = () => {
           {/* Navigation Columns */}
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
             <div className="space-y-8">
-              <h4 className="text-slate-900 font-bold text-lg">For Partners</h4>
+              <h4 className="text-white font-bold text-lg">For Partners</h4>
               <ul className="space-y-5">
                 <li>
-                  <Link href="/venues" className="text-slate-500 hover:text-primary transition-all font-medium">Venue Services</Link>
+                  <Link href="/venues" className="text-white/60 hover:text-white transition-all font-medium">Venue Services</Link>
                 </li>
                 <li>
-                  <Link href="/marketing" className="text-slate-500 hover:text-primary transition-all font-medium">Marketing Network</Link>
+                  <Link href="/marketing" className="text-white/60 hover:text-white transition-all font-medium">Marketing Network</Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="text-slate-500 hover:text-primary transition-all font-medium">Partner With Us</Link>
+                  <Link href="/contact" className="text-white/60 hover:text-white transition-all font-medium">Partner With Us</Link>
                 </li>
               </ul>
             </div>
 
             <div className="space-y-8">
-              <h4 className="text-slate-900 font-bold text-lg">The Team</h4>
+              <h4 className="text-white font-bold text-lg">The Team</h4>
               <ul className="space-y-5">
                 <li>
-                  <Link href="/apply" className="text-slate-500 hover:text-primary transition-all font-medium">Become a Shot-Seller</Link>
+                  <Link href="/apply" className="text-white/60 hover:text-white transition-all font-medium">Become a Shot-Seller</Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="text-slate-500 hover:text-primary transition-all font-medium">Management</Link>
+                  <Link href="/contact" className="text-white/60 hover:text-white transition-all font-medium">Management</Link>
                 </li>
               </ul>
             </div>
 
             <div className="space-y-8">
-              <h4 className="text-slate-900 font-bold text-lg">Company</h4>
+              <h4 className="text-white font-bold text-lg">Company</h4>
               <ul className="space-y-5">
                 <li>
-                  <Link href="#" className="text-slate-500 hover:text-primary transition-all font-medium">About Us</Link>
+                  <Link href="#" className="text-white/60 hover:text-white transition-all font-medium">About Us</Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-slate-500 hover:text-primary transition-all font-medium">Global Locations</Link>
+                  <Link href="#" className="text-white/60 hover:text-white transition-all font-medium">Global Locations</Link>
                 </li>
               </ul>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-slate-100 pt-12 flex flex-col md:flex-row justify-between items-center gap-8 text-xs text-slate-400 font-bold uppercase tracking-[0.2em]">
+        <div className="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-center gap-8 text-xs text-white/40 font-bold uppercase tracking-[0.2em]">
           <p>© {new Date().getFullYear()} Effervescent Agency. Built for impact.</p>
           <div className="flex gap-10">
-            <Link href="#" className="hover:text-primary transition-colors">Privacy</Link>
-            <Link href="#" className="hover:text-primary transition-colors">Terms</Link>
+            <Link href="#" className="hover:text-white transition-colors">Privacy</Link>
+            <Link href="#" className="hover:text-white transition-colors">Terms</Link>
           </div>
         </div>
       </div>
