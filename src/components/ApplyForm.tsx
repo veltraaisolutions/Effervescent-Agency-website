@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { Upload, X } from "lucide-react";
 import { SuccessScreen } from "./apply/SuccessScreen";
 import {
@@ -470,7 +471,7 @@ export default function ApplyForm() {
               </div>
             </>
           )}
-        </div>
+        </motion.div>
 
         <div className="mt-12 md:mt-16 flex flex-col gap-6">
           {submitError && <div className="p-4 bg-red-50 text-red-600 rounded-2xl text-sm border border-red-100">{submitError}</div>}
