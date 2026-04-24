@@ -73,7 +73,6 @@ export default function Home() {
 
       <Milestones />
       <Partners />
-
       {/* Final CTA Banner */}
       <section className="py-20 md:py-32 brand-gradient relative overflow-hidden">
         {/* Background Texture Overlay */}
