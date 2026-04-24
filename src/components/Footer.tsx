@@ -95,7 +95,7 @@ const Footer = () => {
 
           {/* Contact & Legals */}
           <div>
-            <h4 className="font-bold text-lg mb-6">Join The Roster</h4>
+            <h4 className="font-bold text-lg mb-6">Become a Shot-Seller</h4>
             <ul className="space-y-4">
               <li>
                 <Link href="/apply" className="text-white/80 hover:text-white transition-colors">Become a Shot-Seller</Link>

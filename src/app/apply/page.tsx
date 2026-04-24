@@ -10,7 +10,7 @@ export default function ApplyPage() {
         <div className="absolute inset-0 z-0 opacity-40">
           <Image
             src="/party-confetti-girl.png"
-            alt="Join the Roster"
+            alt="Become a Shot-Seller"
             fill
             className="object-cover"
             sizes="100vw"
@@ -78,9 +78,9 @@ export default function ApplyPage() {
                 <Image src="/effervescent-sign1.png" alt="Signature Decor" fill className="object-contain brightness-0 invert" />
               </div>
 
-              <div className="relative z-10 w-full">
+              {/* <div className="relative z-10 w-full">
                 <ApplyForm />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

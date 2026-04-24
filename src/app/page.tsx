@@ -1,10 +1,6 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Star, Layers, Zap, Trophy, Users } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 import Milestones from "@/components/Milestones";
 import Partners from "@/components/Partners";
 import ServiceHighlights from "@/components/ServiceHighlights";
@@ -15,22 +11,12 @@ import Testimonial from "@/components/Testimonial";
 import HowItWorks from "@/components/HowItWorks";
 import OtherServices from "@/components/OtherServices";
 
-type TabType = "services" | "process" | "results" | "network";
-
 export default function Home() {
-  const [activeTab, setActiveTab] = useState<TabType>("services");
-
-  const tabs = [
-    { id: "services", label: "Services", icon: <Zap size={18} /> },
-    { id: "process", label: "Our Process", icon: <Layers size={18} /> },
-    { id: "results", label: "Case Studies", icon: <Trophy size={18} /> },
-    { id: "network", label: "The Network", icon: <Users size={18} /> },
-  ] as const;
-
   return (
     <div className="flex flex-col">
-      {/* Hero Section - Always Visible */}
+      {/* Hero Section */}
       <section className="min-h-screen flex items-center pt-20 relative overflow-hidden bg-[#FDb8D7]">
+        {/* Full-Screen Immersive Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
             src="/tray-girl.jpeg"
@@ -41,25 +27,17 @@ export default function Home() {
             loading="eager"
             sizes="100vw"
           />
+          {/* Brand & Readability Overlays - High Pink Saturation */}
           <div className="absolute inset-0 bg-[#FDb8D7]/40 mix-blend-multiply"></div>
           <div className="absolute inset-0 brand-gradient opacity-80"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-20 text-center">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/30 text-white text-sm font-bold tracking-widest uppercase mb-8 shadow-xl"
-          >
+          <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/30 text-white text-sm font-bold tracking-widest uppercase mb-8 shadow-xl">
             <Star size={16} fill="white" /> Global Nightlife Leaders
-          </motion.div>
+          </div>
 
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2 }}
-            className="flex flex-col items-center mb-8"
-          >
+          <div className="flex flex-col items-center mb-8">
             <div className="h-48 md:h-64 lg:h-80 w-full max-w-[1000px] relative mb-4">
               <Image
                 src="/hero-section1.png"
@@ -70,23 +48,13 @@ export default function Home() {
                 sizes="(max-width: 768px) 100vw, 1000px"
               />
             </div>
-          </motion.div>
+          </div>
 
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="text-xl md:text-3xl text-white font-serif italic mb-12 max-w-3xl mx-auto px-4 drop-shadow-lg"
-          >
+          <p className="text-xl md:text-3xl text-white font-serif italic mb-12 max-w-3xl mx-auto px-4 drop-shadow-lg">
             Transforming <span className="underline decoration-white/50 underline-offset-4">Venues</span> and <span className="underline decoration-white/50 underline-offset-4">Events</span> Around the Globe
-          </motion.p>
+          </p>
 
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="flex flex-col sm:flex-row justify-center gap-6 px-4"
-          >
+          <div className="flex flex-col sm:flex-row justify-center gap-6 px-4">
             <Link
               href="/contact"
               className="bg-white text-[#FDb8D7] px-10 py-5 rounded-full text-xl font-black shadow-2xl transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
@@ -97,98 +65,18 @@ export default function Home() {
               href="/apply"
               className="bg-white/10 backdrop-blur-md text-white px-10 py-5 rounded-full text-xl font-black shadow-2xl transition-all hover:scale-105 active:scale-95 border border-white/30 text-center hover:bg-white/20"
             >
-              Join The Roster
+              Become a Shot-Seller
             </Link>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Trust Elements - Always Visible */}
       <Milestones />
       <Partners />
 
-      {/* Tabbed Content Section */}
-      <section className="bg-white pt-24 pb-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-serif text-slate-900 mb-6">Explore Our <span className="text-primary italic">World</span></h2>
-            <div className="flex flex-wrap justify-center gap-3 md:gap-4">
-              {tabs.map((tab) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab(tab.id as TabType)}
-                  className={`flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold transition-all duration-300 ${
-                    activeTab === tab.id
-                      ? "bg-primary text-white shadow-lg shadow-primary/20 scale-105"
-                      : "bg-slate-50 text-slate-500 hover:bg-slate-100"
-                  }`}
-                >
-                  {tab.icon}
-                  {tab.label}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="relative min-h-[600px]">
-            <AnimatePresence mode="wait">
-              {activeTab === "services" && (
-                <motion.div
-                  key="services"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.4 }}
-                >
-                  <ServiceHighlights />
-                  <OtherServices />
-                </motion.div>
-              )}
-
-              {activeTab === "process" && (
-                <motion.div
-                  key="process"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.4 }}
-                >
-                  <HowItWorks />
-                  <CorporateDefinition />
-                </motion.div>
-              )}
-
-              {activeTab === "results" && (
-                <motion.div
-                  key="results"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.4 }}
-                >
-                  <CaseStudies />
-                </motion.div>
-              )}
-
-              {activeTab === "network" && (
-                <motion.div
-                  key="network"
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.4 }}
-                >
-                  <InfluencerNetwork />
-                  <Testimonial />
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA Banner - Always Visible */}
+      {/* Final CTA Banner */}
       <section className="py-20 md:py-32 brand-gradient relative overflow-hidden">
+        {/* Background Texture Overlay */}
         <div className="absolute inset-0 z-0">
           <Image
             src="/party-confetti-girl.png"
@@ -198,11 +86,13 @@ export default function Home() {
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-primary/20"></div>
+          {/* Decorative Dot Pattern */}
           <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
         </div>
 
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+            {/* Content Side */}
             <div className="space-y-10 text-center lg:text-left order-2 lg:order-1">
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 text-white text-sm font-bold tracking-[0.2em] uppercase mx-auto lg:mx-0">
                 <div className="w-6 h-4 relative">
@@ -211,7 +101,7 @@ export default function Home() {
               </div>
 
               <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif text-white leading-[1.1] text-balance">
-                Ready to <span className="italic underline decoration-white/30 underline-offset-8">transform</span> <br className="hidden md:block" /> your venue?
+                Ready to <span className="italic underline decoration-white/50 underline-offset-8">transform</span> <br className="hidden md:block" /> your venue?
               </h2>
 
               <p className="text-xl md:text-2xl text-white/90 font-medium italic max-w-xl leading-relaxed mx-auto lg:mx-0">
@@ -229,11 +119,12 @@ export default function Home() {
                   href="/apply"
                   className="bg-slate-900/20 backdrop-blur-md text-white border-2 border-white/30 px-10 py-5 rounded-full text-xl font-black shadow-2xl transition-all hover:scale-105 text-center"
                 >
-                  Join The Roster
+                  Become a Shot-Seller
                 </Link>
               </div>
             </div>
 
+            {/* Image Side */}
             <div className="relative group lg:justify-self-end w-full max-w-[650px] mx-auto lg:mx-0 order-1 lg:order-2">
               <div className="relative h-[300px] md:h-[450px] w-full rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden border-8 border-white/10 shadow-3xl transition-all duration-700 group-hover:scale-[1.02] group-hover:shadow-white/10">
                 <Image
@@ -246,12 +137,17 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
               </div>
+
+              {/* Decorative Floating Signature */}
               <div className="absolute -bottom-10 -right-10 opacity-30 animate-pulse hidden lg:block w-64 h-32">
                 <Image src="/effervescent-sign1.png" alt="Signature" fill className="object-contain brightness-0 invert" />
               </div>
             </div>
           </div>
         </div>
+
+        {/* Luminous Glow Divider */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-900 to-transparent opacity-50"></div>
       </section>
     </div>
   );
