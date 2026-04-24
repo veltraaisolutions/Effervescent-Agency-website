@@ -110,10 +110,10 @@ export const experienceSchema = z.object({
 
 export const declarationSchema = z.object({
   selfEmployed: z.literal(true, {
-    errorMap: () => ({ message: "You must acknowledge this is self-employed work" }),
+    message: "You must acknowledge this is self-employed work",
   }),
   weekendWork: z.literal(true, {
-    errorMap: () => ({ message: "You must acknowledge weekend/night work" }),
+    message: "You must acknowledge weekend/night work",
   }),
   heardAbout: z.string().min(1, "Please select an option"),
 });

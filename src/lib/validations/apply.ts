@@ -55,8 +55,8 @@ export const experienceSchema = z.object({
 }, { message: "Years of experience is required", path: ["yearsExp"] });
 
 export const declarationSchema = z.object({
-  selfEmployed: z.literal(true, { errorMap: () => ({ message: "You must acknowledge this to proceed" }) }),
-  weekendWork: z.literal(true, { errorMap: () => ({ message: "You must acknowledge this to proceed" }) }),
+  selfEmployed: z.literal(true, { message: "You must acknowledge this to proceed" }),
+  weekendWork: z.literal(true, { message: "You must acknowledge this to proceed" }),
   heardAbout: z.string().min(1, "Please tell us how you heard about us"),
 });
 

@@ -94,7 +94,7 @@ export default function ApplyForm() {
     if (result.success) return {};
 
     const e: Record<string, string> = {};
-    result.error.errors.forEach((err) => {
+    result.error.issues.forEach((err) => {
       const path = err.path[0] as string;
       if (!e[path]) e[path] = err.message;
     });
