@@ -4,10 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,27 +45,34 @@ const Navbar = () => {
           {/* Center Navigation */}
           <div className="hidden lg:flex items-center gap-10">
             {[
+              { name: "Home", href: "/" },
               { name: "What is a Shot-Seller?", href: "/shot-sellers" },
               { name: "Venues", href: "/venues" },
               { name: "Marketing", href: "/marketing" },
               { name: "Contact", href: "/contact" }
-            ].map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="text-sm font-bold text-slate-500 hover:text-slate-900 transition-colors relative group py-2"
-              >
-                {link.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            ))}
+            ].map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={`text-sm font-bold transition-colors relative group py-2 ${isActive ? "text-slate-900" : "text-slate-500 hover:text-slate-900"
+                    }`}
+                >
+                  {link.name}
+                  <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${isActive ? "w-full" : "w-0 group-hover:w-full"
+                    }`}></span>
+                </Link>
+              );
+            })}
           </div>
 
           {/* Right Actions */}
           <div className="hidden lg:flex items-center gap-6">
             <Link
               href="/apply"
-              className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-2xl text-sm font-black shadow-[0_15px_30px_rgba(253,184,215,0.3)] transition-all hover:scale-105 active:scale-95"
+              className={`bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-2xl text-sm font-black shadow-[0_15px_30px_rgba(253,184,215,0.3)] transition-all hover:scale-105 active:scale-95 ${pathname === "/apply" ? "ring-4 ring-primary/30 scale-105" : ""
+                }`}
             >
               Become a Shot-Seller
             </Link>
@@ -88,24 +97,30 @@ const Navbar = () => {
       >
         <div className="px-6 py-10 space-y-4">
           {[
+            { name: "Home", href: "/" },
             { name: "What is a Shot-Seller?", href: "/shot-sellers" },
             { name: "Venues", href: "/venues" },
             { name: "Marketing", href: "/marketing" },
             { name: "Contact", href: "/contact" }
-          ].map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-xl font-serif text-slate-900 hover:text-primary transition-colors py-4 border-b border-slate-50"
-            >
-              {link.name}
-            </Link>
-          ))}
+          ].map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block text-xl font-serif transition-colors py-4 border-b border-slate-50 ${isActive ? "text-primary" : "text-slate-900 hover:text-primary"
+                  }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
           <Link
             href="/apply"
             onClick={() => setMobileMenuOpen(false)}
-            className="block w-full bg-primary text-white text-center py-5 rounded-2xl font-black text-lg shadow-lg"
+            className={`block w-full bg-primary text-white text-center py-5 rounded-2xl font-black text-lg shadow-lg ${pathname === "/apply" ? "ring-4 ring-white/30" : ""
+              }`}
           >
             Become a Shot-Seller
           </Link>

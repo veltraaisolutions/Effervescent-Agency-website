@@ -51,7 +51,7 @@ export default function ShotSellersPage() {
               Shot-sellers can be a valuable addition to your venue, positively impacting customer experience and bringing revenue to new heights, at no additional cost to yourselves.
             </p>
             <p>
-              Beyond that, shot girls excel at creating an engaging and enjoyable experience for customers, fostering a vibrant and social atmosphere.
+              Beyond that, Shot-Sellers excel at creating an engaging and enjoyable experience for customers, fostering a vibrant and social atmosphere.
             </p>
             <p>
               Customers also benefit from shorter wait times at the bar, streamlining your service, taking pressure off bar staff and improving customer satisfaction overall.

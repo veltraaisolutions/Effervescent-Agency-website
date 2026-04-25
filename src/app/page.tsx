@@ -139,7 +139,7 @@ export default function Home() {
               <h2 className="text-5xl md:text-6xl lg:text-[4.5rem] font-serif text-white italic tracking-wide leading-[1.15]">
                 It’s been great, <br className="hidden md:block" />
                 unreal difference <br className="hidden md:block" />
-                your girls have made <br className="hidden md:block" />
+                your Shot-Sellers have made <br className="hidden md:block" />
                 versus other companies.”
               </h2>
 

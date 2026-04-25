@@ -110,7 +110,7 @@ const CaseStudies = () => {
         <div className="absolute bottom-10 left-[45%] md:left-[35%] w-[50%] md:w-[35%] h-[90%] rounded-[2rem] overflow-hidden shadow-2xl transform rotate-[8deg] border-4 border-white/20 z-10">
           <Image
             src="/case-study-card-2.png"
-            alt="Event Girls"
+            alt="Event Talent"
             fill
             className="object-cover"
           />

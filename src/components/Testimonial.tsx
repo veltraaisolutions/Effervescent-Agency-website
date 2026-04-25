@@ -20,7 +20,7 @@ const Testimonial = () => {
             <h2 className="text-5xl md:text-7xl font-serif text-white italic leading-tight">
               &ldquo;It&rsquo;s been great, <br />
               unreal difference <br />
-              your girls have made <br />
+              your Shot-Sellers have made <br />
               versus other companies.&rdquo;
             </h2>
 
