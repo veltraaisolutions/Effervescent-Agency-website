@@ -9,19 +9,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 mb-24">
           {/* Brand Column */}
           <div className="lg:col-span-5 space-y-10">
-            <Link href="/" className="flex items-center gap-5 group">
-              <div className="w-16 h-16 rounded-[1.5rem] overflow-hidden group-hover:scale-110 transition-transform duration-500 shadow-2xl border border-white/20">
+            <Link href="/" className="flex items-center group">
+              <div className="h-14 md:h-16 w-auto rounded-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500 shadow-2xl border border-white/20">
                 <Image
-                  src="/logo1.jpeg"
+                  src="/logo2.jpeg"
                   alt="Effervescent"
-                  width={64}
+                  width={300}
                   height={64}
-                  className="object-cover h-full"
+                  className="object-cover h-full w-auto"
                 />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-serif text-4xl tracking-tighter leading-none mb-1 text-white">Effervescent.</span>
-                <span className="text-white text-[10px] font-black uppercase tracking-[0.4em] opacity-80">The Elite Roster</span>
               </div>
             </Link>
             <p className="text-white/80 max-w-sm text-lg leading-relaxed font-light">

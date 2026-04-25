@@ -21,25 +21,24 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-        ? "bg-white/80 backdrop-blur-xl py-4 shadow-soft border-b border-slate-100"
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${isScrolled || mobileMenuOpen
+        ? "bg-white/95 backdrop-blur-xl py-4 shadow-soft border-b border-slate-100"
         : "bg-transparent py-8"
         }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="relative flex items-center justify-center lg:justify-between">
-          {/* Logo - Centered on mobile, Left on desktop */}
-          <Link href="/" className="flex items-center gap-4 group lg:ml-0">
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl overflow-hidden flex-shrink-0 shadow-sm border border-slate-100 group-hover:scale-110 transition-transform duration-500">
+        <div className="flex justify-between items-center">
+          {/* Full Logo - Left aligned */}
+          <Link href="/" className="flex items-center group">
+            <div className="h-10 md:h-12 w-auto rounded-2xl overflow-hidden transition-transform duration-500 group-hover:scale-105 shadow-sm border border-slate-100">
               <Image
-                src="/logo1.jpeg"
+                src="/logo2.jpeg"
                 alt="Effervescent"
-                width={48}
+                width={200}
                 height={48}
-                className="object-cover w-full h-full"
+                className="object-cover h-full w-auto"
               />
             </div>
-            <span className="font-serif text-xl md:text-2xl tracking-tighter text-slate-900 group-hover:text-primary transition-colors">Effervescent.</span>
           </Link>
 
           {/* Center Navigation - Desktop only */}
@@ -78,13 +77,13 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Mobile menu button - Absolute Right */}
-          <div className="lg:hidden absolute right-0 flex items-center">
+          {/* Mobile menu button */}
+          <div className="lg:hidden flex items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="text-slate-900 p-2 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors"
             >
-              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
@@ -92,7 +91,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       <div
-        className={`lg:hidden bg-white fixed inset-x-0 top-full border-t border-slate-100 shadow-premium transition-all duration-500 ease-in-out z-40 overflow-hidden ${mobileMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
+        className={`lg:hidden bg-white absolute inset-x-0 top-full border-t border-slate-100 shadow-premium transition-all duration-500 ease-in-out z-50 overflow-hidden ${mobileMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
           }`}
       >
         <div className="px-6 py-4 space-y-0.5">
