@@ -20,6 +20,38 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const TikTokIcon = ({ size = 20 }: { size?: number }) => (
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round"
+    >
+      <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+    </svg>
+  );
+
+  const InstagramIcon = ({ size = 20 }: { size?: number }) => (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+  );
+
   return (
     <div className="fixed top-0 left-0 right-0 z-[100]">
       <AnnouncementBar />
@@ -68,7 +100,15 @@ const Navbar = () => {
             </div>
 
             {/* Right Actions - Desktop only */}
-            <div className="hidden lg:flex items-center gap-3">
+            <div className="hidden lg:flex items-center gap-4">
+              <div className="flex items-center gap-3 mr-2">
+                <Link href="https://instagram.com/effervescent.agency" className="text-slate-900 hover:text-primary transition-colors">
+                  <InstagramIcon size={18} />
+                </Link>
+                <Link href="https://tiktok.com/@effervescent.agency" className="text-slate-900 hover:text-primary transition-colors">
+                  <TikTokIcon size={18} />
+                </Link>
+              </div>
               <Link
                 href="/contact"
                 className="inline-flex items-center gap-2 bg-white text-slate-900 px-6 py-2.5 rounded-full text-sm font-black shadow-lg transition-all hover:scale-105 active:scale-95 group"
@@ -120,24 +160,33 @@ const Navbar = () => {
                 </Link>
               );
             })}
-            <div className="pt-3 pb-1 space-y-3">
-              <Link
-                href="/contact"
-                onClick={() => setMobileMenuOpen(false)}
-                className={`block w-full bg-white text-slate-900 border border-slate-200 text-center py-3.5 rounded-xl font-black text-sm shadow-lg ${pathname === "/contact" ? "ring-4 ring-primary/20" : ""
-                  }`}
-              >
-                Partner With Us
+          <div className="pt-3 pb-1 space-y-3">
+            <Link
+              href="/contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block w-full bg-white text-slate-900 border border-slate-200 text-center py-3.5 rounded-xl font-black text-sm shadow-lg ${pathname === "/contact" ? "ring-4 ring-primary/20" : ""
+                }`}
+            >
+              Partner With Us
+            </Link>
+            <Link
+              href="/apply"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`block w-full bg-primary text-white text-center py-3.5 rounded-xl font-black text-sm shadow-lg ${pathname === "/apply" ? "ring-4 ring-white/30" : ""
+                }`}
+            >
+              Start Making £ Today
+            </Link>
+            
+            <div className="flex justify-center gap-6 pt-2">
+              <Link href="https://instagram.com/effervescent.agency" className="text-slate-500 hover:text-primary transition-colors">
+                <InstagramIcon size={24} />
               </Link>
-              <Link
-                href="/apply"
-                onClick={() => setMobileMenuOpen(false)}
-                className={`block w-full bg-primary text-white text-center py-3.5 rounded-xl font-black text-sm shadow-lg ${pathname === "/apply" ? "ring-4 ring-white/30" : ""
-                  }`}
-              >
-                Start Making £ Today
+              <Link href="https://tiktok.com/@effervescent.agency" className="text-slate-500 hover:text-primary transition-colors">
+                <TikTokIcon size={24} />
               </Link>
             </div>
+          </div>
           </div>
         </div>
       </nav>

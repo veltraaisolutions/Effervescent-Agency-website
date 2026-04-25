@@ -3,6 +3,38 @@ import Image from "next/image";
 import { MessageCircle } from "lucide-react";
 
 const Footer = () => {
+  const TikTokIcon = ({ size = 20 }: { size?: number }) => (
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round"
+    >
+      <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+    </svg>
+  );
+
+  const InstagramIcon = ({ size = 20 }: { size?: number }) => (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+  );
+
   return (
     <footer className="relative pt-32 pb-16 overflow-hidden" style={{ background: 'radial-gradient(circle at 90% 10%, #C874E2 0%, transparent 50%), radial-gradient(circle at 10% 90%, #C874E2 0%, transparent 50%), #fbcfe8' }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
@@ -24,22 +56,10 @@ const Footer = () => {
             </p>
             <div className="flex gap-4">
               <Link href="https://instagram.com/effervescent.agency" className="bg-white/10 hover:bg-white hover:text-primary p-4 rounded-2xl transition-all border border-white/10 text-white group">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-instagram"
-                >
-                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                </svg>
+                <InstagramIcon size={20} />
+              </Link>
+              <Link href="https://tiktok.com/@effervescent.agency" className="bg-white/10 hover:bg-white hover:text-primary p-4 rounded-2xl transition-all border border-white/10 text-white group">
+                <TikTokIcon size={20} />
               </Link>
               <Link href="https://wa.me/971585216771" className="bg-white/10 hover:bg-white hover:text-primary p-4 rounded-2xl transition-all border border-white/10 text-white">
                 <MessageCircle size={20} />
