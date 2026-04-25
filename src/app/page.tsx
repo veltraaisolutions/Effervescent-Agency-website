@@ -194,9 +194,9 @@ export default function Home() {
                 </Link>
                 <Link
                   href="/apply"
-                  className="bg-slate-900/20 backdrop-blur-md text-white border-2 border-white/30 px-10 py-5 rounded-full text-xl font-black shadow-2xl transition-all hover:scale-105 text-center"
+                  className="bg-slate-900/20 backdrop-blur-md text-white border-2 border-white/30 px-10 py-5 rounded-full text-xl font-black shadow-2xl transition-all hover:scale-105 flex items-center justify-center gap-2 group"
                 >
-                  Become a Shot-Seller
+                  Become a Shot-Seller <ArrowRight size={22} className="transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
             </div>

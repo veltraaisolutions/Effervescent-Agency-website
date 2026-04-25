@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 const Navbar = () => {
@@ -67,13 +67,18 @@ const Navbar = () => {
           </div>
 
           {/* Right Actions - Desktop only */}
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-3">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-white text-slate-900 px-6 py-2.5 rounded-full text-sm font-black shadow-lg transition-all hover:scale-105 active:scale-95 group"
+            >
+              Partner With Us <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+            </Link>
             <Link
               href="/apply"
-              className={`bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-2xl text-sm font-black shadow-[0_15px_30px_rgba(253,184,215,0.3)] transition-all hover:scale-105 active:scale-95 ${pathname === "/apply" ? "ring-4 ring-primary/30 scale-105" : ""
-                }`}
+              className="inline-flex items-center gap-2 bg-slate-900/20 backdrop-blur-md text-slate-900 border-2 border-slate-900/30 px-6 py-2.5 rounded-full text-sm font-black shadow-lg transition-all hover:scale-105 active:scale-95 group"
             >
-              Become a Shot-Seller
+              Become a Shot-Seller <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
 
