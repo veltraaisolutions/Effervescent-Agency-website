@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 import Partners from "@/components/Partners";
 
 export default function Home() {
@@ -20,6 +20,24 @@ export default function Home() {
 
         {/* Main Content */}
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full flex flex-col items-center text-center">
+          {/* Trust Badge */}
+          <motion.div
+            initial={{ y: -10, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-2 rounded-full border border-white/20 mb-8"
+          >
+            <div className="flex gap-1">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} size={14} className={i < 4 ? "fill-primary text-primary" : "text-white/30"} />
+              ))}
+            </div>
+            <div className="h-4 w-px bg-white/20" />
+            <p className="text-[10px] md:text-xs font-black uppercase tracking-[0.15em] text-white">
+              4.8/5 <span className="text-white/60">by 400+ venues</span> <span className="mx-2 opacity-30">•</span> Trust Partner
+            </p>
+          </motion.div>
+
           <motion.div
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
