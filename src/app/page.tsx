@@ -19,13 +19,13 @@ export default function Home() {
         </div>
 
         {/* Main Content */}
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full flex flex-col items-center text-center">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full flex flex-col items-center text-center pt-32 md:pt-48">
           {/* Trust Badge */}
           <motion.div
             initial={{ y: -10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-2 rounded-full border border-white/20 mb-8"
+            className="flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-2 rounded-full border border-white/20 mb-6 md:mb-8"
           >
             <div className="flex gap-1">
               {[...Array(5)].map((_, i) => (
@@ -42,7 +42,7 @@ export default function Home() {
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
-            className="w-full max-w-[1000px] h-64 md:h-96 mb-8"
+            className="w-full max-w-[1000px] h-64 md:h-96 mb-0"
           >
             <div className="relative w-full h-full">
               <Image
