@@ -27,10 +27,10 @@ const Navbar = () => {
         }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex justify-between items-center">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-4 group">
-            <div className="w-12 h-12 rounded-2xl overflow-hidden flex-shrink-0 shadow-sm border border-slate-100 group-hover:scale-110 transition-transform duration-500">
+        <div className="relative flex items-center justify-center lg:justify-between">
+          {/* Logo - Centered on mobile, Left on desktop */}
+          <Link href="/" className="flex items-center gap-4 group lg:ml-0">
+            <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl overflow-hidden flex-shrink-0 shadow-sm border border-slate-100 group-hover:scale-110 transition-transform duration-500">
               <Image
                 src="/logo1.jpeg"
                 alt="Effervescent"
@@ -39,10 +39,10 @@ const Navbar = () => {
                 className="object-cover w-full h-full"
               />
             </div>
-            <span className="font-serif text-2xl tracking-tighter text-slate-900 group-hover:text-primary transition-colors">Effervescent.</span>
+            <span className="font-serif text-xl md:text-2xl tracking-tighter text-slate-900 group-hover:text-primary transition-colors">Effervescent.</span>
           </Link>
 
-          {/* Center Navigation */}
+          {/* Center Navigation - Desktop only */}
           <div className="hidden lg:flex items-center gap-10">
             {[
               { name: "Home", href: "/" },
@@ -67,7 +67,7 @@ const Navbar = () => {
             })}
           </div>
 
-          {/* Right Actions */}
+          {/* Right Actions - Desktop only */}
           <div className="hidden lg:flex items-center gap-6">
             <Link
               href="/apply"
@@ -78,13 +78,13 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="lg:hidden flex items-center">
+          {/* Mobile menu button - Absolute Right */}
+          <div className="lg:hidden absolute right-0 flex items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="text-slate-900 p-2 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors"
             >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>

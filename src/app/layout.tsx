@@ -1,20 +1,12 @@
-import { Playfair_Display, Outfit } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Metadata } from "next";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-  style: ["normal", "italic"],
-});
-
-const outfit = Outfit({
-  variable: "--font-outfit",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+const academyBold = localFont({
+  src: "../../public/fonts/AcademyC-Bold.otf",
+  variable: "--font-academy",
 });
 
 export const metadata: Metadata = {
@@ -33,7 +25,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${outfit.variable} h-full antialiased`}
+      className={`${academyBold.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <Navbar />

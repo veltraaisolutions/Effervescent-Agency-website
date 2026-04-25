@@ -18,8 +18,8 @@
   --color-slate-50: var(--slate-50);
   --color-slate-100: var(--slate-100);
   --color-slate-900: var(--slate-900);
-  --font-serif: var(--font-playfair), serif;
-  --font-sans: var(--font-outfit), sans-serif;
+  --font-serif: var(--font-academy), serif;
+  --font-sans: var(--font-academy), sans-serif;
 
   --shadow-premium: 0 40px 100px rgba(0, 0, 0, 0.05);
   --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.02);
@@ -39,7 +39,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif);
-  font-weight: 700;
+  font-weight: bold;
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
