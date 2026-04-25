@@ -6,7 +6,7 @@ import { AlertCircle, ChevronDown, Check } from "lucide-react";
 
 export function FieldLabel({ children, required }: { children: React.ReactNode; required?: boolean }) {
   return (
-    <label className="block text-[10px] font-black uppercase tracking-[0.4em] text-slate-400 mb-3 ml-1">
+    <label className="block text-xs font-black tracking-widest text-slate-400 mb-3 ml-1">
       {children}
       {required && <span className="text-primary ml-1">*</span>}
     </label>
@@ -64,7 +64,7 @@ export function YesNoToggle({ value, onChange }: any) {
       {(["yes", "no"] as const).map((opt) => (
         <button
           key={opt} type="button" onClick={() => onChange(opt)}
-          className={`flex-1 px-8 py-4.5 rounded-2xl text-sm font-black uppercase tracking-widest border transition-all duration-300 ${value === opt 
+          className={`flex-1 px-8 py-4.5 rounded-2xl text-sm font-black tracking-widest border transition-all duration-300 ${value === opt 
             ? "bg-slate-900 border-slate-900 text-white shadow-premium -translate-y-0.5" 
             : "bg-slate-50 text-slate-400 border-slate-100 hover:bg-slate-100 hover:text-slate-600"}`}
         >

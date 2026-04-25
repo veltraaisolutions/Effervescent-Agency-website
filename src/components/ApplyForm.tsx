@@ -270,12 +270,20 @@ export default function ApplyForm() {
   if (submitted) return <SuccessScreen />;
 
   return (
-    <div className={`bg-white py-8 md:py-16 relative overflow-hidden rounded-[2rem] md:rounded-[3rem] w-full shadow-2xl border border-slate-100 transition-opacity duration-200 ${visible ? "opacity-100" : "opacity-0"}`}>
+    <div className={`bg-white py-10 md:p-16 relative overflow-hidden rounded-[3rem] md:rounded-[4rem] w-full shadow-4xl border border-white/20 transition-opacity duration-200 ${visible ? "opacity-100" : "opacity-0"}`}>
       <div className="absolute top-0 right-0 w-80 h-80 opacity-[0.03] -mr-20 -mt-20 rotate-12 pointer-events-none">
         <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
       </div>
 
-      <div className="px-4 md:px-10 relative z-10">
+      <div className="px-6 md:px-0 relative z-10">
+        {slide === 1 && (
+          <div className="mb-12">
+            <h3 className="text-4xl md:text-5xl font-serif text-slate-900 mb-4 tracking-tight">Apply Now</h3>
+            <p className="text-slate-500 font-medium italic">Join the Elite Roster today.</p>
+            <div className="w-24 h-1.5 bg-primary rounded-full mt-6"></div>
+          </div>
+        )}
+
         <div className="mb-12 md:mb-16">
           <div className="flex items-center justify-between relative">
             <div className="absolute top-5 md:top-6 left-0 right-0 h-px bg-slate-100 -z-0"></div>
@@ -284,7 +292,7 @@ export default function ApplyForm() {
                 <div className={`w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center text-sm md:text-lg font-bold transition-all ${s === slide ? "bg-[#FDb8D7] text-white shadow-lg" : "bg-slate-50 text-slate-300 border border-slate-100"}`}>
                   {s}
                 </div>
-                <span className={`hidden sm:block text-[10px] font-black uppercase tracking-widest text-center ${s === slide ? "text-slate-900" : "text-slate-400"}`}>
+                <span className={`hidden sm:block text-[10px] font-black tracking-widest text-center ${s === slide ? "text-slate-900" : "text-slate-400"}`}>
                   {SLIDE_LABELS[s - 1]}
                 </span>
               </div>
@@ -292,7 +300,7 @@ export default function ApplyForm() {
           </div>
         </div>
 
-        <p className="text-xs md:text-sm font-black uppercase tracking-[0.4em] mb-4 text-primary">Step {slide} of 5</p>
+        <p className="text-xs md:text-sm font-black tracking-[0.4em] mb-4 text-primary">Step {slide} of 5</p>
         <h2 className="text-4xl md:text-6xl font-serif text-slate-900 mb-10 md:mb-16 text-balance leading-[1.1]">{SLIDE_TITLES[slide - 1]}</h2>
 
         <motion.div
@@ -476,13 +484,13 @@ export default function ApplyForm() {
         <div className="mt-12 md:mt-16 flex flex-col gap-6">
           {submitError && <div className="p-4 bg-red-50 text-red-600 rounded-2xl text-sm border border-red-100">{submitError}</div>}
           <div className="flex justify-between items-center">
-            <button onClick={() => slide > 1 && goToSlide(slide - 1)} disabled={slide === 1 || submitting} className="text-slate-400 font-black uppercase tracking-widest text-xs md:text-sm hover:text-slate-900 transition-colors disabled:opacity-0">Back</button>
-            <button onClick={handleNext} disabled={submitting} className="bg-primary text-white px-8 md:px-12 py-4 md:py-5 rounded-xl md:rounded-2xl font-black uppercase tracking-widest text-xs md:text-sm shadow-xl hover:scale-105 active:scale-95 transition-all disabled:opacity-50">
-              {submitting ? "SENDING…" : slide === 5 ? "Submit" : "Next"}
+            <button onClick={() => slide > 1 && goToSlide(slide - 1)} disabled={slide === 1 || submitting} className="text-slate-400 font-black tracking-widest text-xs md:text-sm hover:text-slate-900 transition-colors disabled:opacity-0">Back</button>
+            <button onClick={handleNext} disabled={submitting} className="bg-primary text-white px-8 md:px-12 py-4 md:py-5 rounded-xl md:rounded-2xl font-black tracking-widest text-xs md:text-sm shadow-xl hover:scale-105 active:scale-95 transition-all disabled:opacity-50">
+              {submitting ? "Sending…" : slide === 5 ? "Submit" : "Next"}
             </button>
           </div>
         </div>
-        <p className="text-center text-[10px] text-slate-400 font-black uppercase tracking-[0.5em] mt-12 pb-8">Effervescent Agency • Global Operations</p>
+        <p className="text-center text-[10px] text-slate-400 font-black tracking-[0.5em] mt-12 pb-8">Effervescent Agency • Global Operations</p>
       </div>
     </div>
   );
