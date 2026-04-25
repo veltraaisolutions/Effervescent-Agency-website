@@ -3,15 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Star, Zap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Partners from "@/components/Partners";
-import ServiceHighlights from "@/components/ServiceHighlights";
-import CaseStudies from "@/components/CaseStudies";
-import InfluencerNetwork from "@/components/InfluencerNetwork";
-import CorporateDefinition from "@/components/CorporateDefinition";
-import Testimonial from "@/components/Testimonial";
-import HowItWorks from "@/components/HowItWorks";
-import OtherServices from "@/components/OtherServices";
 
 export default function Home() {
   return (
