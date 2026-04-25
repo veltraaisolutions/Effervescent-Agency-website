@@ -33,18 +33,16 @@ const Navbar = () => {
           <div className="flex justify-between items-center">
             {/* Full Logo - Left aligned */}
             <Link href="/" className="flex items-center group">
-              <div className="h-10 md:h-12 relative">
+              <div className="h-10 w-10 md:h-12 md:w-12 bg-primary rounded-full overflow-hidden relative flex items-center justify-center transition-transform duration-500 group-hover:scale-110 shadow-sm border border-white/20">
                 <Image
-                  src="/logo2.jpeg"
+                  src="/effervescent-side-logo.jpeg"
                   alt="Effervescent"
-                  width={200}
-                  height={48}
-                  className="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                  fill
+                  className="object-cover"
                   priority
                 />
               </div>
             </Link>
-
             {/* Center Navigation - Desktop only */}
             <div className="hidden lg:flex items-center gap-10">
               {[
