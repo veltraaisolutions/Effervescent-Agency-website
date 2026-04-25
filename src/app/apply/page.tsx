@@ -29,8 +29,8 @@ export default function ApplyPage() {
                   <Zap size={14} fill="currentColor" className="text-white" /> Join The Elite
                 </div>
                 <h1 className="text-6xl md:text-8xl font-serif text-white leading-tight tracking-tighter">
-                  Become a <br />
-                  <span className="italic underline decoration-white/30 underline-offset-8">Shot-Seller.</span>
+                  Start Making <br />
+                  <span className="italic underline decoration-white/30 underline-offset-8">£ Today </span>
                 </h1>
                 <p className="text-xl md:text-2xl text-white/90 font-medium italic leading-relaxed max-w-md">
                   Step into the spotlight and join the world's leading network of professional sales talent.

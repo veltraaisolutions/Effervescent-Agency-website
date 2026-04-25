@@ -80,7 +80,7 @@ const Navbar = () => {
                 href="/apply"
                 className="inline-flex items-center gap-2 bg-slate-900/20 backdrop-blur-md text-slate-900 border-2 border-slate-900/30 px-6 py-2.5 rounded-full text-sm font-black shadow-lg transition-all hover:scale-105 active:scale-95 group"
               >
-                Become a Shot-Seller <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+                Start Making £ Today <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
 
@@ -122,14 +122,22 @@ const Navbar = () => {
                 </Link>
               );
             })}
-            <div className="pt-3 pb-1">
+            <div className="pt-3 pb-1 space-y-3">
+              <Link
+                href="/contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block w-full bg-white text-slate-900 border border-slate-200 text-center py-3.5 rounded-xl font-black text-sm shadow-lg ${pathname === "/contact" ? "ring-4 ring-primary/20" : ""
+                  }`}
+              >
+                Partner With Us
+              </Link>
               <Link
                 href="/apply"
                 onClick={() => setMobileMenuOpen(false)}
                 className={`block w-full bg-primary text-white text-center py-3.5 rounded-xl font-black text-sm shadow-lg ${pathname === "/apply" ? "ring-4 ring-white/30" : ""
                   }`}
               >
-                Become a Shot-Seller
+                Start Making £ Today
               </Link>
             </div>
           </div>

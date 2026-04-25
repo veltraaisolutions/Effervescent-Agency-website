@@ -68,7 +68,7 @@ const Footer = () => {
               <h4 className="text-white font-bold text-lg">The Team</h4>
               <ul className="space-y-5">
                 <li>
-                  <Link href="/apply" className="text-white/60 hover:text-white transition-all font-medium">Become a Shot-Seller</Link>
+                  <Link href="/apply" className="text-white/60 hover:text-white transition-all font-medium">Start Making £ Today</Link>
                 </li>
                 <li>
                   <Link href="/contact" className="text-white/60 hover:text-white transition-all font-medium">Management</Link>
