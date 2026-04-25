@@ -106,7 +106,6 @@ const Navbar = () => {
               { name: "Home", href: "/" },
               { name: "What is a Shot-Seller?", href: "/shot-sellers" },
               { name: "Venues", href: "/venues" },
-              { name: "Marketing", href: "/marketing" },
               { name: "Contact", href: "/contact" }
             ].map((link) => {
               const isActive = pathname === link.href;
