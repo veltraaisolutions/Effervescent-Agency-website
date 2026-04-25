@@ -97,7 +97,7 @@ const CaseStudies = () => {
       {/* Bottom Image Collage - Mobile Optimized & Touch to End */}
       <div className="relative w-full h-[450px] md:h-[650px] mt-20">
         {/* Left Image */}
-        <div className="absolute bottom-0 left-0 w-[75%] md:w-[45%] h-full rounded-tr-[3.5rem] md:rounded-tr-[6rem] overflow-hidden shadow-3xl z-20 border-r border-white/10 group">
+        <div className="absolute bottom-0 left-0 w-[60%] md:w-[35%] h-full rounded-tr-[3.5rem] md:rounded-tr-[6rem] overflow-hidden shadow-3xl z-20 border-r border-white/10 group">
           <Image
             src="/fungala-girl.png"
             alt="Outdoor Event"
@@ -106,8 +106,8 @@ const CaseStudies = () => {
           />
         </div>
 
-        {/* Right Overlapping Image */}
-        <div className="absolute bottom-6 md:bottom-12 right-0 md:left-[35%] w-[60%] md:w-[40%] h-[85%] md:h-[95%] rounded-[2rem] md:rounded-[4rem] overflow-hidden shadow-3xl transform rotate-[3deg] md:rotate-[6deg] border-4 border-white/20 z-10 group">
+        {/* Right Overlapping Image - Hidden on mobile, visible on desktop */}
+        <div className="hidden md:block absolute bottom-6 md:bottom-12 right-0 md:left-[25%] w-[60%] md:w-[40%] h-[85%] md:h-[95%] rounded-[2rem] md:rounded-[4rem] overflow-hidden shadow-3xl transform rotate-[3deg] md:rotate-[6deg] border-4 border-white/20 z-10 group">
           <Image
             src="/case-study-card-2.png"
             alt="Event Talent"

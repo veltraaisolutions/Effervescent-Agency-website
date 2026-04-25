@@ -18,14 +18,19 @@ const CorporateDefinition = () => {
             Why Effervescent?
           </motion.h2>
 
-          {/* Tilted Image Top Right */}
+          {/* Tilted Image Top Right - Anchored to the right screen edge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9, rotate: 0 }}
             whileInView={{ opacity: 1, scale: 1, rotate: 12 }}
             viewport={{ once: true }}
-            className="w-[280px] h-[350px] md:w-[350px] md:h-[420px] rounded-[2rem] overflow-hidden shadow-2xl absolute top-12 -right-8 md:-top-20 md:right-10 z-10 border-4 border-white/20 group"
+            className="w-[280px] h-[280px] md:w-[calc(350px+15vw)] md:h-[340px] rounded-[2rem] md:rounded-l-[4rem] md:rounded-r-none overflow-hidden shadow-3xl absolute top-12 -right-8 md:-top-20 md:right-[-15vw] z-10 border-4 border-white/20 group"
           >
-            <Image src="/effervescent-definition1.jpeg" alt="Why Effervescent" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
+            <Image 
+              src="/effervescent-definition1.jpeg" 
+              alt="Why Effervescent" 
+              fill 
+              className="object-cover object-center transition-transform duration-1000 group-hover:scale-105" 
+            />
           </motion.div>
         </div>
 
@@ -34,16 +39,16 @@ const CorporateDefinition = () => {
 
           {/* Left Column */}
           <div className="flex flex-col gap-10">
-            {/* Definition Box */}
+            {/* Definition Box - Stretches to the left edge */}
             <motion.div
-              initial={{ x: -50, opacity: 0 }}
+              initial={{ x: -100, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
-              className="bg-[#B47EE5] text-white p-8 md:p-10 rounded-r-[2rem] shadow-xl w-[calc(100%+1.5rem)] md:w-[calc(100%+6rem)] relative -left-6 md:-left-24"
+              className="bg-[#B47EE5] text-white p-8 md:p-12 rounded-r-[3rem] shadow-2xl w-[calc(100%+4rem)] md:w-[calc(100%+40vw)] relative -left-6 md:-left-[40vw] md:pl-[40vw]"
             >
-              <h3 className="text-3xl md:text-4xl font-serif mb-1">Effervescent</h3>
-              <p className="italic text-white/90 text-lg mb-3 font-serif">Definition:</p>
-              <p className="text-lg md:text-xl font-medium leading-snug">
+              <h3 className="text-3xl md:text-5xl font-serif mb-2">Effervescent</h3>
+              <p className="italic text-white/90 text-lg mb-4 font-serif">Definition:</p>
+              <p className="text-lg md:text-2xl font-medium leading-tight">
                 lively, energetic, and impossible to ignore<br className="hidden md:block" />
                 - just like the teams we provide.
               </p>

@@ -92,10 +92,10 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       <div
-        className={`lg:hidden bg-white fixed inset-x-0 top-[88px] border-t border-slate-100 shadow-premium transition-all duration-500 ease-in-out z-40 overflow-hidden ${mobileMenuOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
+        className={`lg:hidden bg-white fixed inset-x-0 top-full border-t border-slate-100 shadow-premium transition-all duration-500 ease-in-out z-40 overflow-hidden ${mobileMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
           }`}
       >
-        <div className="px-6 py-6 space-y-1">
+        <div className="px-6 py-4 space-y-0.5">
           {[
             { name: "Home", href: "/" },
             { name: "What is a Shot-Seller?", href: "/shot-sellers" },
@@ -109,18 +109,18 @@ const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className={`block text-lg font-serif transition-colors py-3 border-b border-slate-50 last:border-0 ${isActive ? "text-primary" : "text-slate-900 hover:text-primary"
+                className={`block text-base font-serif transition-colors py-2.5 border-b border-slate-50 last:border-0 ${isActive ? "text-primary" : "text-slate-900 hover:text-primary"
                   }`}
               >
                 {link.name}
               </Link>
             );
           })}
-          <div className="pt-4 pb-2">
+          <div className="pt-3 pb-1">
             <Link
               href="/apply"
               onClick={() => setMobileMenuOpen(false)}
-              className={`block w-full bg-primary text-white text-center py-4 rounded-xl font-black text-base shadow-lg ${pathname === "/apply" ? "ring-4 ring-white/30" : ""
+              className={`block w-full bg-primary text-white text-center py-3.5 rounded-xl font-black text-sm shadow-lg ${pathname === "/apply" ? "ring-4 ring-white/30" : ""
                 }`}
             >
               Become a Shot-Seller

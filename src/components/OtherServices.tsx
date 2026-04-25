@@ -13,7 +13,7 @@ const OtherServices = () => {
 
   return (
     <section className="relative pt-24 md:pt-32 pb-0 overflow-hidden" style={{ background: 'radial-gradient(circle at 90% 10%, #C874E2 0%, transparent 50%), radial-gradient(circle at 10% 90%, #C874E2 0%, transparent 50%), #fbcfe8' }}>
-      <div className="max-w-7xl mx-auto px-6 relative z-10 min-h-[600px] md:min-h-[850px] flex flex-col">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 min-h-[500px] md:min-h-[700px] flex flex-col">
 
         {/* Top Row: Text + Top Right Image */}
         <div className="flex flex-col md:flex-row justify-between w-full relative z-20">
@@ -48,33 +48,43 @@ const OtherServices = () => {
             </motion.p>
           </div>
 
-          {/* Top Right Image Container */}
-          <div className="hidden md:block absolute top-0 right-[-5%] w-[50%] h-[400px] group overflow-hidden rounded-tl-[3rem] rounded-bl-[1rem] shadow-2xl">
-            <Image src="/HostessService.jpeg" alt="VIP Guides" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
+          {/* Top Right Image Container - Anchored to the right screen edge */}
+          <div className="hidden md:block absolute top-0 right-[-15vw] w-[calc(40%+15vw)] h-[380px] group overflow-hidden rounded-tl-[4rem] rounded-bl-[2rem] shadow-3xl">
+            <Image
+              src="/HostessService.jpeg"
+              alt="VIP Guides"
+              fill
+              className="object-cover object-center transition-transform duration-1000 group-hover:scale-105"
+            />
           </div>
         </div>
 
         {/* Bottom Row Images - Mobile Optimized & Touch to End */}
-        <div className="relative w-full h-[500px] md:h-[550px] mt-10 md:mt-24">
-          {/* Bottom Left Image */}
+        <div className="relative w-full h-[350px] md:h-[450px] mt-8 md:mt-10">
+          {/* Bottom Left Image - Anchored to the left screen edge */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="absolute bottom-0 left-[-5%] w-[85%] md:w-[50%] h-[350px] md:h-[450px] z-10 group overflow-hidden rounded-tr-[3rem] md:rounded-tr-[5rem]"
+            className="absolute bottom-0 left-[-15vw] w-[80%] md:w-[calc(35%+15vw)] h-[250px] md:h-[380px] z-10 group overflow-hidden rounded-tr-[3rem] md:rounded-tr-[5rem] shadow-2xl"
           >
-            <Image src="/party-confetti-girl.png" alt="Party" fill className="object-cover transition-transform duration-1000 group-hover:scale-110 shadow-2xl" />
+            <Image
+              src="/party-confetti-girl.png"
+              alt="Party"
+              fill
+              className="object-cover object-center transition-transform duration-1000 group-hover:scale-105"
+            />
           </motion.div>
 
-          {/* Middle Tilted Image */}
+          {/* Middle Tilted Image - Hidden on mobile, visible on desktop */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9, rotate: 0 }}
             whileInView={{ opacity: 1, scale: 1, rotate: -5 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="absolute bottom-[20%] md:bottom-[15%] right-0 md:left-[45%] w-[65%] md:w-[45%] h-[280px] md:h-[400px] z-20 transform -rotate-[5deg] md:-rotate-[10deg] rounded-[2rem] md:rounded-[4rem] overflow-hidden shadow-3xl border-[6px] border-white/20 group"
+            className="hidden md:block absolute bottom-[20%] md:bottom-[15%] right-0 md:left-[30%] w-[65%] md:w-[45%] h-[220px] md:h-[300px] z-20 transform -rotate-[5deg] md:-rotate-[10deg] rounded-[2rem] md:rounded-[4rem] overflow-hidden shadow-3xl border-[6px] border-white/20 group"
           >
-            <Image src="/shot-seller-in-party.jpeg" alt="Hostess" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
+            <Image src="/shot-seller-in-party.jpeg" alt="Hostess" fill className="object-cover transition-transform duration-1000 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
           </motion.div>
         </div>

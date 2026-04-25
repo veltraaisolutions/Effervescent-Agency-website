@@ -60,28 +60,40 @@ export default function ShotSellersPage() {
         </div>
       </div>
 
-      {/* Bottom Image Collage - Mobile Optimized */}
-      <div className="relative w-full h-[450px] md:h-[600px] mt-10">
+      {/* Bottom Image Collage - Compact & Mobile Optimized */}
+      <div className="relative w-full h-[350px] md:h-[450px] mt-10">
         {/* Left Image - More visible on mobile */}
-        <div className="absolute bottom-0 left-0 w-[80%] md:w-[45%] h-[95%] md:h-full rounded-tr-[3rem] md:rounded-tr-[5rem] overflow-hidden shadow-2xl z-10 border-r border-white/10 group">
+        <motion.div
+          initial={{ y: 40, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="absolute bottom-0 left-0 w-[60%] md:w-[35%] h-full rounded-tr-[3rem] md:rounded-tr-[5rem] overflow-hidden shadow-2xl z-10 border-r border-white/10 group"
+        >
           <Image
             src="/tray-girl.jpeg"
             alt="Shot seller at work"
             fill
-            className="object-cover transition-transform duration-700 group-hover:scale-110"
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
           />
-        </div>
+        </motion.div>
 
-        {/* Right Overlapping Image - Narrower on mobile to show more of left image */}
-        <div className="absolute bottom-6 md:bottom-12 right-0 md:left-[35%] w-[55%] md:w-[35%] h-[80%] md:h-[90%] rounded-[2rem] md:rounded-[3.5rem] overflow-hidden shadow-3xl transform rotate-[4deg] md:rotate-[8deg] border-4 border-white/20 z-20 group">
+        {/* Right Overlapping Image - Hidden on mobile, visible on desktop */}
+        <motion.div
+          initial={{ y: 60, opacity: 0, rotate: 0 }}
+          whileInView={{ y: 0, opacity: 1, rotate: 8 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          className="hidden md:block absolute bottom-6 md:bottom-12 right-0 md:left-[25%] w-[50%] md:w-[30%] h-[80%] md:h-[90%] rounded-[2rem] md:rounded-[3.5rem] overflow-hidden shadow-3xl transform rotate-[4deg] md:rotate-[8deg] border-4 border-white/20 z-20 group"
+        >
           <Image
             src="/tray-girl2.jpeg"
             alt="Shot seller serving"
             fill
-            className="object-cover transition-transform duration-1000 group-hover:scale-110"
+            className="object-cover transition-transform duration-1000 group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Decorative Star - Bottom Right */}
