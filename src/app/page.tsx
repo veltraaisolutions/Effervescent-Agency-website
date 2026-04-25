@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Star } from "lucide-react";
+import PartnerMarquee from "@/components/PartnerMarquee";
 import Partners from "@/components/Partners";
 
 export default function Home() {
@@ -59,13 +60,15 @@ export default function Home() {
             initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-2xl md:text-5xl text-white font-serif italic tracking-tight"
+            className="text-2xl md:text-5xl text-white font-serif italic tracking-tight mb-12 md:mb-20"
           >
             Transforming Venues and Events Around the Globe
           </motion.p>
         </div>
 
       </section>
+
+      <PartnerMarquee />
 
       {/* Impact/Revenue Section - Exact Match Design */}
       <section className="relative h-[70vh] md:h-[90vh] flex items-center justify-center overflow-hidden">
@@ -111,9 +114,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* What Can a Shot-Seller Do for Me? Section */}
-
 
       {/* Testimonial Section */}
       <section className="relative py-32 md:py-48 overflow-hidden bg-[#fbcfe8]">
@@ -171,9 +171,6 @@ export default function Home() {
       </section>
 
       <Partners />
-
-      {/* Other Services Section */}
-
 
       {/* Final CTA Banner */}
       <section className="relative py-24 md:py-32 overflow-hidden" style={{ background: 'radial-gradient(circle at 90% 10%, #C874E2 0%, transparent 50%), radial-gradient(circle at 10% 90%, #C874E2 0%, transparent 50%), #fbcfe8' }}>
