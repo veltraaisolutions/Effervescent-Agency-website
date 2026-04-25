@@ -10,13 +10,13 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-5 space-y-10">
             <Link href="/" className="flex items-center group">
-              <div className="h-14 md:h-16 w-auto rounded-2xl overflow-hidden group-hover:scale-105 transition-transform duration-500 shadow-2xl border border-white/20">
+              <div className="h-14 md:h-16 relative">
                 <Image
                   src="/logo2.jpeg"
                   alt="Effervescent"
                   width={300}
                   height={64}
-                  className="object-cover h-full w-auto"
+                  className="h-full w-auto object-contain transition-transform duration-500 group-hover:scale-105 shadow-2xl"
                 />
               </div>
             </Link>

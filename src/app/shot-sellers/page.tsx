@@ -12,7 +12,7 @@ export default function ShotSellersPage() {
           viewport={{ once: true }}
           className="text-5xl md:text-7xl font-serif text-white text-center mb-16 md:mb-24 tracking-tight"
         >
-          What Can a Shot-Seller Do for Me?
+          What is a Shot-Seller?
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-24 mb-20 md:mb-32">
