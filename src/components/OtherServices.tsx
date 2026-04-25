@@ -12,8 +12,8 @@ const OtherServices = () => {
   };
 
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden" style={{ background: 'radial-gradient(circle at 90% 10%, #C874E2 0%, transparent 50%), radial-gradient(circle at 10% 90%, #C874E2 0%, transparent 50%), #fbcfe8' }}>
-      <div className="max-w-7xl mx-auto px-6 relative z-10 min-h-[850px] flex flex-col">
+    <section className="relative pt-24 md:pt-32 pb-0 overflow-hidden" style={{ background: 'radial-gradient(circle at 90% 10%, #C874E2 0%, transparent 50%), radial-gradient(circle at 10% 90%, #C874E2 0%, transparent 50%), #fbcfe8' }}>
+      <div className="max-w-7xl mx-auto px-6 relative z-10 min-h-[600px] md:min-h-[850px] flex flex-col">
 
         {/* Top Row: Text + Top Right Image */}
         <div className="flex flex-col md:flex-row justify-between w-full relative z-20">
@@ -49,32 +49,33 @@ const OtherServices = () => {
           </div>
 
           {/* Top Right Image Container */}
-          <div className="hidden md:block absolute top-0 right-[-5%] w-[50%] h-[400px]">
-            <Image src="/HostessService.jpeg" alt="VIP Guides" fill className="object-cover rounded-tl-[3rem] rounded-bl-[1rem] shadow-2xl" />
+          <div className="hidden md:block absolute top-0 right-[-5%] w-[50%] h-[400px] group overflow-hidden rounded-tl-[3rem] rounded-bl-[1rem] shadow-2xl">
+            <Image src="/HostessService.jpeg" alt="VIP Guides" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
           </div>
         </div>
 
-        {/* Bottom Row Images */}
-        <div className="relative w-full h-[500px] md:h-[450px] mt-10 md:mt-24">
+        {/* Bottom Row Images - Mobile Optimized & Touch to End */}
+        <div className="relative w-full h-[500px] md:h-[550px] mt-10 md:mt-24">
           {/* Bottom Left Image */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="absolute bottom-0 left-[-5%] w-[85%] md:w-[50%] h-[350px] md:h-[400px] z-10"
+            className="absolute bottom-0 left-[-5%] w-[85%] md:w-[50%] h-[350px] md:h-[450px] z-10 group overflow-hidden rounded-tr-[3rem] md:rounded-tr-[5rem]"
           >
-            <Image src="/party-confetti-girl.png" alt="Party" fill className="object-cover rounded-tr-[3rem] rounded-br-[1rem] shadow-2xl" />
+            <Image src="/party-confetti-girl.png" alt="Party" fill className="object-cover transition-transform duration-1000 group-hover:scale-110 shadow-2xl" />
           </motion.div>
 
           {/* Middle Tilted Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9, rotate: 0 }}
-            whileInView={{ opacity: 1, scale: 1, rotate: -10 }}
+            whileInView={{ opacity: 1, scale: 1, rotate: -5 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="absolute bottom-[40%] md:bottom-[25%] left-[15%] md:left-[45%] w-[75%] md:w-[45%] h-[280px] md:h-[380px] z-20 transform -rotate-[10deg] rounded-[2rem] overflow-hidden shadow-2xl border-[6px] border-white/20"
+            className="absolute bottom-[20%] md:bottom-[15%] right-0 md:left-[45%] w-[65%] md:w-[45%] h-[280px] md:h-[400px] z-20 transform -rotate-[5deg] md:-rotate-[10deg] rounded-[2rem] md:rounded-[4rem] overflow-hidden shadow-3xl border-[6px] border-white/20 group"
           >
-            <Image src="/shot-seller-in-party.jpeg" alt="Hostess" fill className="object-cover" />
+            <Image src="/shot-seller-in-party.jpeg" alt="Hostess" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
           </motion.div>
         </div>
 

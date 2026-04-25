@@ -3,7 +3,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 export default function ShotSellersPage() {
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden" style={{ background: 'radial-gradient(circle at 90% 10%, #C874E2 0%, transparent 50%), radial-gradient(circle at 10% 90%, #C874E2 0%, transparent 50%), #fbcfe8' }}>
+    <section className="relative pt-24 md:pt-32 pb-0 overflow-hidden" style={{ background: 'radial-gradient(circle at 90% 10%, #C874E2 0%, transparent 50%), radial-gradient(circle at 10% 90%, #C874E2 0%, transparent 50%), #fbcfe8' }}>
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Title */}
         <motion.h2
@@ -15,7 +15,7 @@ export default function ShotSellersPage() {
           What Can a Shot-Seller Do for Me?
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 mb-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-24 mb-20 md:mb-32">
           {/* Left Column - List */}
           <motion.div
             initial={{ x: -30, opacity: 0 }}
@@ -23,7 +23,7 @@ export default function ShotSellersPage() {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <ul className="space-y-4">
+            <ul className="space-y-4 md:space-y-6">
               {[
                 "Additional revenue, no extra costs",
                 "Improved customer service",
@@ -32,8 +32,8 @@ export default function ShotSellersPage() {
                 "Interactive & engaging",
                 "Regular customers"
               ].map((item, index) => (
-                <li key={index} className="flex items-center gap-4 text-white text-xl md:text-3xl font-bold tracking-tight">
-                  <span className="text-white text-2xl">✽</span> {item}
+                <li key={index} className="flex items-start gap-4 text-white text-lg md:text-3xl font-bold tracking-tight">
+                  <span className="text-white text-xl md:text-2xl mt-1">✽</span> {item}
                 </li>
               ))}
             </ul>
@@ -45,7 +45,7 @@ export default function ShotSellersPage() {
             whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="space-y-8 text-white/90 text-lg md:text-xl font-medium leading-relaxed max-w-lg"
+            className="space-y-6 md:space-y-8 text-white/90 text-base md:text-xl font-medium leading-relaxed max-w-lg"
           >
             <p>
               Shot-sellers can be a valuable addition to your venue, positively impacting customer experience and bringing revenue to new heights, at no additional cost to yourselves.
@@ -60,26 +60,27 @@ export default function ShotSellersPage() {
         </div>
       </div>
 
-      {/* Bottom Image Collage */}
-      <div className="relative w-full h-[400px] md:h-[500px] mt-10">
-        {/* Left Image */}
-        <div className="absolute bottom-0 left-0 w-[60%] md:w-[45%] h-full rounded-tr-[3rem] overflow-hidden shadow-2xl">
+      {/* Bottom Image Collage - Mobile Optimized */}
+      <div className="relative w-full h-[450px] md:h-[600px] mt-10">
+        {/* Left Image - More visible on mobile */}
+        <div className="absolute bottom-0 left-0 w-[80%] md:w-[45%] h-[95%] md:h-full rounded-tr-[3rem] md:rounded-tr-[5rem] overflow-hidden shadow-2xl z-10 border-r border-white/10 group">
           <Image
             src="/tray-girl.jpeg"
             alt="Shot seller at work"
             fill
-            className="object-cover"
+            className="object-cover transition-transform duration-700 group-hover:scale-110"
           />
         </div>
 
-        {/* Right Overlapping Image */}
-        <div className="absolute bottom-10 left-[45%] md:left-[35%] w-[50%] md:w-[35%] h-[90%] rounded-[2rem] overflow-hidden shadow-2xl transform rotate-[8deg] border-4 border-white/20">
+        {/* Right Overlapping Image - Narrower on mobile to show more of left image */}
+        <div className="absolute bottom-6 md:bottom-12 right-0 md:left-[35%] w-[55%] md:w-[35%] h-[80%] md:h-[90%] rounded-[2rem] md:rounded-[3.5rem] overflow-hidden shadow-3xl transform rotate-[4deg] md:rotate-[8deg] border-4 border-white/20 z-20 group">
           <Image
             src="/tray-girl2.jpeg"
             alt="Shot seller serving"
             fill
-            className="object-cover"
+            className="object-cover transition-transform duration-1000 group-hover:scale-110"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
         </div>
       </div>
 

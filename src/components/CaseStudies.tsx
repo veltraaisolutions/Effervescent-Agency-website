@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const CaseStudies = () => {
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden">
+    <section className="relative pt-24 md:pt-32 pb-0 overflow-hidden">
       {/* Background Image and Gradient Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -94,26 +94,27 @@ const CaseStudies = () => {
         </div>
       </div>
 
-      {/* Bottom Image Collage */}
-      <div className="relative w-full h-[400px] md:h-[500px] mt-10">
+      {/* Bottom Image Collage - Mobile Optimized & Touch to End */}
+      <div className="relative w-full h-[450px] md:h-[650px] mt-20">
         {/* Left Image */}
-        <div className="absolute bottom-0 left-0 w-[60%] md:w-[45%] h-[110%] rounded-tr-[3rem] overflow-hidden shadow-2xl z-20">
+        <div className="absolute bottom-0 left-0 w-[75%] md:w-[45%] h-full rounded-tr-[3.5rem] md:rounded-tr-[6rem] overflow-hidden shadow-3xl z-20 border-r border-white/10 group">
           <Image
             src="/fungala-girl.png"
             alt="Outdoor Event"
             fill
-            className="object-cover"
+            className="object-cover transition-transform duration-1000 group-hover:scale-110"
           />
         </div>
 
         {/* Right Overlapping Image */}
-        <div className="absolute bottom-10 left-[45%] md:left-[35%] w-[50%] md:w-[35%] h-[90%] rounded-[2rem] overflow-hidden shadow-2xl transform rotate-[8deg] border-4 border-white/20 z-10">
+        <div className="absolute bottom-6 md:bottom-12 right-0 md:left-[35%] w-[60%] md:w-[40%] h-[85%] md:h-[95%] rounded-[2rem] md:rounded-[4rem] overflow-hidden shadow-3xl transform rotate-[3deg] md:rotate-[6deg] border-4 border-white/20 z-10 group">
           <Image
             src="/case-study-card-2.png"
             alt="Event Talent"
             fill
-            className="object-cover"
+            className="object-cover transition-transform duration-1000 group-hover:scale-110"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
         </div>
       </div>
 

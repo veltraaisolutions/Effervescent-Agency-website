@@ -23,9 +23,9 @@ const CorporateDefinition = () => {
             initial={{ opacity: 0, scale: 0.9, rotate: 0 }}
             whileInView={{ opacity: 1, scale: 1, rotate: 12 }}
             viewport={{ once: true }}
-            className="w-[280px] h-[350px] md:w-[350px] md:h-[420px] rounded-[2rem] overflow-hidden shadow-2xl absolute -top-10 -right-4 md:-top-20 md:right-10 z-10 border-4 border-white/20"
+            className="w-[280px] h-[350px] md:w-[350px] md:h-[420px] rounded-[2rem] overflow-hidden shadow-2xl absolute top-12 -right-8 md:-top-20 md:right-10 z-10 border-4 border-white/20 group"
           >
-            <Image src="/effervescent-definition1.jpeg" alt="Why Effervescent" fill className="object-cover" />
+            <Image src="/effervescent-definition1.jpeg" alt="Why Effervescent" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
           </motion.div>
         </div>
 
