@@ -198,7 +198,7 @@ export default function Home() {
                   href="/contact"
                   className="bg-white text-slate-900 px-10 py-5 rounded-full text-xl font-black shadow-2xl transition-all hover:scale-105 hover:shadow-white/20 flex items-center justify-center gap-2"
                 >
-                  Partner With Us <ArrowRight size={22} className="text-primary" />
+                  Discuss Your Venue With Us <ArrowRight size={22} className="text-primary" />
                 </Link>
                 <Link
                   href="/apply"

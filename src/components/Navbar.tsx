@@ -112,7 +112,7 @@ const Navbar = () => {
                 href="/contact"
                 className="inline-flex items-center gap-2 bg-white text-slate-900 px-6 py-2.5 rounded-full text-sm font-black shadow-lg transition-all hover:scale-105 active:scale-95 group"
               >
-                Partner With Us <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+                Discuss Your Venue With Us <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
                 href="/apply"
@@ -165,7 +165,7 @@ const Navbar = () => {
                 className={`block w-full bg-white text-slate-900 border border-slate-200 text-center py-3.5 rounded-xl font-black text-sm shadow-lg ${pathname === "/contact" ? "ring-4 ring-primary/20" : ""
                   }`}
               >
-                Partner With Us
+                Discuss Your Venue With Us
               </Link>
               <Link
                 href="/apply"
