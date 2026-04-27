@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 
 const partnersConfig = [
   { name: "Groovebox", src: "/groverbox1.png" },
-  { name: "Live Tour", src: "/live-tour1.png" },
   { name: "Live Republic", src: "/live-republic1.png" },
   { name: "Marteson", src: "/marteson1.png" },
   { name: "S&L", src: "/s&l1.png" },

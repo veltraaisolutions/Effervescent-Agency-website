@@ -13,7 +13,6 @@ const partnersConfig: Partner[] = [
   { name: "XOYO", src: "/xoyo.png", scale: "scale-110" },
   { name: "Stonegate Group", src: "/stoneage-img.png" },
   { name: "The Nest", src: "/the-nest.png", scale: "scale-150" },
-  { name: "Live Tour", src: "/live-tour1.png" },
   { name: "S&L", src: "/s&l1.png", scale: "scale-125" },
   { name: "Live Republic", src: "/live-republic1.png" },
   { name: "Marston's", src: "/marteson1.png" },
