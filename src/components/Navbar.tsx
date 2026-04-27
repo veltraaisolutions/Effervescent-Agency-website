@@ -81,6 +81,7 @@ const Navbar = () => {
               {[
                 { name: "Home", href: "/" },
                 { name: "About Us", href: "/about" },
+                { name: "Services", href: "/services" },
                 { name: "What is a Shot-Seller?", href: "/shot-sellers" },
                 { name: "Venues", href: "/venues" },
               ].map((link) => {
@@ -91,7 +92,7 @@ const Navbar = () => {
                     href={link.href}
                     className={`px-5 py-2 rounded-full text-[11px] font-black uppercase tracking-[0.15em] transition-all duration-300 ${
                       isActive 
-                        ? "bg-slate-900 text-white shadow-md" 
+                        ? "bg-primary text-white shadow-md" 
                         : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
                     }`}
                   >
@@ -115,13 +116,15 @@ const Navbar = () => {
                 href="/contact"
                 className="inline-flex items-center gap-2 bg-white text-slate-900 px-6 py-2.5 rounded-full text-sm font-black shadow-lg transition-all hover:scale-105 active:scale-95 group"
               >
-                Discuss Your Venue With Us <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+                New Booking <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
-                href="/apply"
+                href="https://effervescent-agency.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-slate-900/20 backdrop-blur-md text-slate-900 border-2 border-slate-900/30 px-6 py-2.5 rounded-full text-sm font-black shadow-lg transition-all hover:scale-105 active:scale-95 group"
               >
-                Start Making £ Today <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+                Join The Team <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
 
@@ -139,13 +142,14 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         <div
-          className={`lg:hidden bg-white absolute inset-x-0 top-full border-t border-slate-100 shadow-premium transition-all duration-500 ease-in-out z-50 overflow-hidden ${mobileMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
+          className={`lg:hidden bg-white absolute inset-x-0 top-full border-t border-slate-100 shadow-premium transition-all duration-500 ease-in-out z-50 overflow-hidden ${mobileMenuOpen ? "max-h-[700px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
             }`}
         >
           <div className="px-6 py-4 space-y-0.5">
             {[
               { name: "Home", href: "/" },
               { name: "About Us", href: "/about" },
+              { name: "Services", href: "/services" },
               { name: "What is a Shot-Seller?", href: "/shot-sellers" },
               { name: "Venues", href: "/venues" },
             ].map((link) => {
@@ -157,7 +161,7 @@ const Navbar = () => {
                   onClick={() => setMobileMenuOpen(false)}
                   className={`block w-full text-center py-4 rounded-xl text-sm font-black uppercase tracking-widest transition-all mb-3 ${
                     isActive 
-                      ? "bg-slate-900 text-white shadow-lg" 
+                      ? "bg-primary text-white shadow-lg" 
                       : "bg-slate-50 text-slate-600 border border-slate-100"
                   }`}
                 >
@@ -172,15 +176,16 @@ const Navbar = () => {
                 className={`block w-full bg-white text-slate-900 border border-slate-200 text-center py-3.5 rounded-xl font-black text-sm shadow-lg ${pathname === "/contact" ? "ring-4 ring-primary/20" : ""
                   }`}
               >
-                Discuss Your Venue With Us
+                New Booking
               </Link>
               <Link
-                href="/apply"
+                href="https://effervescent-agency.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
-                className={`block w-full bg-primary text-white text-center py-3.5 rounded-xl font-black text-sm shadow-lg ${pathname === "/apply" ? "ring-4 ring-white/30" : ""
-                  }`}
+                className="block w-full bg-primary text-white text-center py-3.5 rounded-xl font-black text-sm shadow-lg"
               >
-                Start Making £ Today
+                Join The Team
               </Link>
 
               <div className="flex justify-center gap-6 pt-2">
