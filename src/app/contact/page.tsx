@@ -47,13 +47,62 @@ export default function ContactPage() {
     <div className="flex flex-col bg-white min-h-screen">
       <section className="relative py-24 md:py-32 overflow-hidden" style={{ background: 'radial-gradient(circle at 90% 10%, #C874E2 0%, transparent 50%), radial-gradient(circle at 10% 90%, #C874E2 0%, transparent 50%), #fbcfe8' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center">
+            
+            {/* Content Side */}
+            <div className="space-y-12 order-2 lg:order-1">
+              <div className="space-y-6">
+                <h2 className="text-5xl md:text-7xl font-serif text-white leading-tight">
+                  Discuss Your <br />
+                  <span className="italic underline decoration-white/30 underline-offset-8">Venue</span> With Us
+                </h2>
+                <p className="text-xl md:text-2xl text-white/90 font-medium italic max-w-xl leading-relaxed">
+                  Join the elite network of venues transforming their guest experience and revenue streams through our premium shot-sales service.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-4">
+                {[
+                  { title: "Boost Revenue", desc: "Immediate impact on your bottom line with no upfront costs." },
+                  { title: "Pro Talent", desc: "Our sellers are trained professionals, not just staff." },
+                  { title: "Global Scale", desc: "Proven success across the UK, Spain, and Dubai." },
+                  { title: "Fully Managed", desc: "We handle recruitment, training, and management." }
+                ].map((item) => (
+                  <div key={item.title} className="space-y-2">
+                    <h4 className="text-white font-black uppercase tracking-widest text-sm">{item.title}</h4>
+                    <p className="text-white/70 text-sm leading-relaxed">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center pt-6 border-t border-white/20">
+                <div className="flex -space-x-3">
+                  {[
+                    { name: "XOYO", src: "/xoyo.png" },
+                    { name: "Pop World", src: "/pop-world.png" },
+                    { name: "The Nest", src: "/the-nest.png" }
+                  ].map((partner) => (
+                    <div key={partner.name} className="w-12 h-12 rounded-full border-2 border-white/20 bg-white/10 backdrop-blur-md overflow-hidden relative p-2">
+                      <Image 
+                        src={partner.src} 
+                        alt={partner.name} 
+                        fill 
+                        className="object-contain p-2 brightness-0 invert" 
+                      />
+                    </div>
+                  ))}
+                </div>
+                <p className="text-white/80 text-sm font-medium">
+                  Trusted by <span className="text-white font-bold">400+ venues</span> worldwide.
+                </p>
+              </div>
+            </div>
 
             {/* B2B Inquiry Form */}
-            <div className="bg-white rounded-[3rem] p-1 md:p-4 shadow-2xl relative z-10 overflow-hidden">
+            <div className="bg-white rounded-[3rem] p-1 md:p-4 shadow-2xl relative z-10 overflow-hidden order-1 lg:order-2">
               <div className="p-8 md:p-16">
                 <div className="mb-12">
-                  <h3 className="text-3xl font-serif text-slate-900 mb-4">Partner Inquiry</h3>
+                  <h3 className="text-3xl font-serif text-slate-900 mb-4">Venue Inquiry</h3>
                   <div className="w-16 h-1 bg-primary rounded-full"></div>
                 </div>
 
