@@ -51,18 +51,18 @@ const Footer = () => {
                 />
               </div>
             </Link>
-            <p className="text-white/80 max-w-sm text-lg leading-relaxed font-light">
+            <p className="text-white/80 max-w-sm text-xl leading-relaxed font-light">
               Transforming hospitality revenue through professional sales talent across the UK, Spain, and Dubai.
             </p>
             <div className="flex gap-4">
-              <Link href="https://instagram.com/effervescent.agency" className="bg-white/10 hover:bg-white hover:text-primary p-4 rounded-2xl transition-all border border-white/10 text-white group">
-                <InstagramIcon size={20} />
+              <Link href="https://instagram.com/effervescent.agency" target="_blank" className="bg-white/10 hover:bg-white hover:text-primary p-4 rounded-2xl transition-all border border-white/10 text-white group">
+                <InstagramIcon size={24} />
               </Link>
-              <Link href="https://tiktok.com/@effervescent.agency" className="bg-white/10 hover:bg-white hover:text-primary p-4 rounded-2xl transition-all border border-white/10 text-white group">
-                <TikTokIcon size={20} />
+              <Link href="https://tiktok.com/@effervescent.agency" target="_blank" className="bg-white/10 hover:bg-white hover:text-primary p-4 rounded-2xl transition-all border border-white/10 text-white group">
+                <TikTokIcon size={24} />
               </Link>
-              <Link href="https://wa.me/971585216771" className="bg-white/10 hover:bg-white hover:text-primary p-4 rounded-2xl transition-all border border-white/10 text-white">
-                <MessageCircle size={20} />
+              <Link href="https://wa.me/971585216771" target="_blank" className="bg-white/10 hover:bg-white hover:text-primary p-4 rounded-2xl transition-all border border-white/10 text-white">
+                <MessageCircle size={24} />
               </Link>
             </div>
           </div>
@@ -70,40 +70,40 @@ const Footer = () => {
           {/* Navigation Columns */}
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
             <div className="space-y-8">
-              <h4 className="text-white font-bold text-lg">For Partners</h4>
+              <h4 className="text-white font-bold text-2xl tracking-tight">For Partners</h4>
               <ul className="space-y-5">
                 <li>
-                  <Link href="/venues" className="text-white/60 hover:text-white transition-all font-medium">Venue Services</Link>
+                  <Link href="/services" className="text-white/60 hover:text-white transition-all font-medium text-lg">Venue Services</Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="text-white/60 hover:text-white transition-all font-medium">Discuss Your Venue With Us</Link>
+                  <Link href="/contact" className="text-white/60 hover:text-white transition-all font-medium text-lg">Discuss Your Venue With Us</Link>
                 </li>
               </ul>
             </div>
 
             <div className="space-y-8">
-              <h4 className="text-white font-bold text-lg">The Team</h4>
+              <h4 className="text-white font-bold text-2xl tracking-tight">The Team</h4>
               <ul className="space-y-5">
                 <li>
-                  <Link href="/apply" className="text-white/60 hover:text-white transition-all font-medium">Start Making £ Today</Link>
+                  <Link href="https://effervescent-agency.vercel.app" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-all font-medium text-lg">Start Making £ Today</Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="text-white/60 hover:text-white transition-all font-medium">Management</Link>
+                  <Link href="/contact" className="text-white/60 hover:text-white transition-all font-medium text-lg">Management</Link>
                 </li>
               </ul>
             </div>
 
             <div className="space-y-8">
-              <h4 className="text-white font-bold text-lg">Company</h4>
+              <h4 className="text-white font-bold text-2xl tracking-tight">Company</h4>
               <ul className="space-y-5">
                 <li>
-                  <Link href="/about" className="text-white/60 hover:text-white transition-all font-medium">About Us</Link>
+                  <Link href="/about" className="text-white/60 hover:text-white transition-all font-medium text-lg">About Us</Link>
                 </li>
                 <li>
-                  <Link href="/services" className="text-white/60 hover:text-white transition-all font-medium">Services</Link>
+                  <Link href="/services" className="text-white/60 hover:text-white transition-all font-medium text-lg">Services</Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-white/60 hover:text-white transition-all font-medium">Global Locations</Link>
+                  <Link href="#" className="text-white/60 hover:text-white transition-all font-medium text-lg">Global Locations</Link>
                 </li>
               </ul>
             </div>
