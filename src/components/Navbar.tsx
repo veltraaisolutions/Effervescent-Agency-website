@@ -76,7 +76,7 @@ const Navbar = () => {
               </div>
             </Link>
             
-            {/* Center Navigation - Show only on XL and up to prevent crowding */}
+            {/* Center Navigation */}
             <div className="hidden xl:flex items-center gap-2">
               {[
                 { name: "Home", href: "/" },
@@ -114,7 +114,7 @@ const Navbar = () => {
               </div>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-white border border-slate-100 text-slate-900 px-5 py-2.5 rounded-full text-xs font-black shadow-sm transition-all hover:scale-105 active:scale-95 group whitespace-nowrap"
+                className="inline-flex items-center gap-2 bg-primary text-white px-5 py-2.5 rounded-full text-xs font-black shadow-lg transition-all hover:scale-105 active:scale-95 group whitespace-nowrap"
               >
                 Discuss Your Venue <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
               </Link>
@@ -128,7 +128,7 @@ const Navbar = () => {
               </Link>
             </div>
 
-            {/* Mobile menu button - Show on screens smaller than XL */}
+            {/* Mobile menu button */}
             <div className="xl:hidden flex items-center">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -173,7 +173,7 @@ const Navbar = () => {
               <Link
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className={`block w-full bg-white text-slate-900 border border-slate-200 text-center py-4 rounded-xl font-black text-sm shadow-lg ${pathname === "/contact" ? "ring-4 ring-primary/20" : ""
+                className={`block w-full bg-primary text-white text-center py-4 rounded-xl font-black text-sm shadow-lg ${pathname === "/contact" ? "ring-4 ring-primary/20" : ""
                   }`}
               >
                 Discuss Your Venue With Us
@@ -183,7 +183,7 @@ const Navbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block w-full bg-primary text-white text-center py-4 rounded-xl font-black text-sm shadow-lg"
+                className="block w-full bg-slate-900 text-white text-center py-4 rounded-xl font-black text-sm shadow-lg"
               >
                 Start Making £ Today
               </Link>
