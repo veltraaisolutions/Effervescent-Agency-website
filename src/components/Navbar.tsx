@@ -80,6 +80,7 @@ const Navbar = () => {
             <div className="hidden lg:flex items-center gap-3">
               {[
                 { name: "Home", href: "/" },
+                { name: "About Us", href: "/about" },
                 { name: "What is a Shot-Seller?", href: "/shot-sellers" },
                 { name: "Venues", href: "/venues" },
               ].map((link) => {
@@ -144,6 +145,7 @@ const Navbar = () => {
           <div className="px-6 py-4 space-y-0.5">
             {[
               { name: "Home", href: "/" },
+              { name: "About Us", href: "/about" },
               { name: "What is a Shot-Seller?", href: "/shot-sellers" },
               { name: "Venues", href: "/venues" },
             ].map((link) => {
