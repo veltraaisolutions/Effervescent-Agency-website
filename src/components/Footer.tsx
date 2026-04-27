@@ -103,6 +103,9 @@ const Footer = () => {
                   <Link href="/services" className="text-white/60 hover:text-white transition-all font-medium text-lg">Services</Link>
                 </li>
                 <li>
+                  <Link href="/faq" className="text-white/60 hover:text-white transition-all font-medium text-lg">FAQ</Link>
+                </li>
+                <li>
                   <Link href="#" className="text-white/60 hover:text-white transition-all font-medium text-lg">Global Locations</Link>
                 </li>
               </ul>

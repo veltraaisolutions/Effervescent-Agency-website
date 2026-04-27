@@ -18,10 +18,7 @@ const PartnerMarquee = () => {
   const duplicatedPartners = [...partnersConfig, ...partnersConfig, ...partnersConfig, ...partnersConfig];
 
   return (
-    <section className="relative py-16 overflow-hidden border-y border-white/20" style={{ background: 'radial-gradient(circle at 100% 0%, #C874E2 0%, transparent 50%), #fbcfe8' }}>
-      {/* Background Overlay for texture */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
-
+    <section className="relative py-16 overflow-hidden border-y border-white/20 bg-[#fbcfe8]">
       <div className="max-w-7xl mx-auto px-6 relative z-10 mb-12">
         <div className="flex flex-col items-center text-center space-y-2">
           <div className="w-8 h-8 relative mb-2 opacity-80">
@@ -34,7 +31,7 @@ const PartnerMarquee = () => {
         </div>
       </div>
       
-      <div className="flex whitespace-nowrap relative z-10">
+      <div className="flex whitespace-nowrap relative z-10 [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
         <motion.div
           animate={{
             x: [0, -1920],
@@ -47,7 +44,7 @@ const PartnerMarquee = () => {
               ease: "linear",
             },
           }}
-          className="flex gap-20 md:gap-40 items-center"
+          className="flex gap-20 md:gap-40 items-center py-4"
         >
           {duplicatedPartners.map((partner, index) => (
             <div key={index} className="relative w-32 h-14 md:w-56 md:h-20 group transition-all duration-500">
@@ -61,10 +58,6 @@ const PartnerMarquee = () => {
           ))}
         </motion.div>
       </div>
-
-      {/* Decorative side fades */}
-      <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#fbcfe8] to-transparent z-20 pointer-events-none" />
-      <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#fbcfe8] to-transparent z-20 pointer-events-none" />
     </section>
   );
 };

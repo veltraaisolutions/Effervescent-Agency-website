@@ -84,6 +84,7 @@ const Navbar = () => {
                 { name: "Services", href: "/services" },
                 { name: "Shot-Sellers", href: "/shot-sellers" },
                 { name: "Venues", href: "/venues" },
+                { name: "FAQ", href: "/faq" },
               ].map((link) => {
                 const isActive = pathname === link.href;
                 return (
@@ -144,6 +145,7 @@ const Navbar = () => {
               { name: "Services", href: "/services" },
               { name: "What is a Shot-Seller?", href: "/shot-sellers" },
               { name: "Venues", href: "/venues" },
+              { name: "FAQ", href: "/faq" },
             ].map((link) => {
               const isActive = pathname === link.href;
               return (
