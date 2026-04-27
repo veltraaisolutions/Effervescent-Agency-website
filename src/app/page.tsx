@@ -26,12 +26,12 @@ export default function Home() {
           >
             <div className="flex gap-1">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} size={14} className={i < 4 ? "fill-primary text-primary" : "text-white/30"} />
+                <Star key={i} size={14} className="fill-white text-white" />
               ))}
             </div>
             <div className="h-4 w-px bg-white/20" />
             <p className="text-[10px] md:text-xs font-black uppercase tracking-[0.15em] text-white">
-              4.8/5 <span className="text-white/60">by 400+ venues</span> <span className="mx-2 opacity-30">•</span> Trust Partner
+              5 Star Rated <span className="text-white/60">by 400+ venues</span> <span className="mx-2 opacity-30">•</span> Trust Partner
             </p>
           </motion.div>
 

@@ -36,18 +36,33 @@ export default function ServicesPage() {
   return (
     <div className="flex flex-col bg-white min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex flex-col items-center justify-center overflow-hidden" style={{ background: 'radial-gradient(circle at 100% 0%, #C874E2 0%, transparent 50%), #fbcfe8' }}>
-        <div className="absolute top-0 right-0 w-[50%] h-full opacity-10" style={{ backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)', backgroundSize: '20px 20px' }} />
+      <section className="relative min-h-[70vh] flex flex-col items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div
+            className="absolute inset-0 mix-blend-color opacity-100"
+            style={{ background: 'radial-gradient(circle at 100% 0%, #C874E2 0%, transparent 50%), #fbcfe8' }}
+          />
+          <div
+            className="absolute inset-0 opacity-75"
+            style={{ background: 'radial-gradient(circle at 100% 0%, #C874E2 0%, transparent 50%), #fbcfe8' }}
+          />
+        </div>
+        <div className="absolute top-0 right-0 w-[50%] h-full opacity-10 z-[1]" style={{ backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)', backgroundSize: '20px 20px' }} />
         
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full flex flex-col items-center text-center pt-32">
           <motion.div
             initial={{ y: -10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-6 py-2 rounded-full border border-white/20 mb-8"
+            className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-2 rounded-full border border-white/20 mb-8"
           >
-            <Star size={14} className="fill-white text-white" />
+            <div className="flex gap-1">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} size={14} className="fill-white text-white" />
+              ))}
+            </div>
+            <div className="h-4 w-px bg-white/20" />
             <p className="text-[10px] md:text-xs font-black uppercase tracking-[0.15em] text-white">
-              Premium Staffing <span className="mx-2 opacity-30">•</span> World Class Service
+              5 Star Rated <span className="text-white/60">by 400+ venues</span> <span className="mx-2 opacity-30">•</span> Trust Partner
             </p>
           </motion.div>
 
@@ -80,14 +95,28 @@ export default function ServicesPage() {
         <section 
           key={idx} 
           className="relative py-24 md:py-40 overflow-hidden"
-          style={{ 
-            background: idx % 2 === 0 
-              ? 'radial-gradient(circle at 0% 0%, #C874E2 0%, transparent 50%), #fbcfe8'
-              : 'radial-gradient(circle at 100% 100%, #C874E2 0%, transparent 50%), #fbcfe8'
-          }}
         >
+          <div className="absolute inset-0 z-0">
+            <div
+              className="absolute inset-0 mix-blend-color opacity-100"
+              style={{ 
+                background: idx % 2 === 0 
+                  ? 'radial-gradient(circle at 0% 0%, #C874E2 0%, transparent 50%), #fbcfe8'
+                  : 'radial-gradient(circle at 100% 100%, #C874E2 0%, transparent 50%), #fbcfe8'
+              }}
+            />
+            <div
+              className="absolute inset-0 opacity-75"
+              style={{ 
+                background: idx % 2 === 0 
+                  ? 'radial-gradient(circle at 0% 0%, #C874E2 0%, transparent 50%), #fbcfe8'
+                  : 'radial-gradient(circle at 100% 100%, #C874E2 0%, transparent 50%), #fbcfe8'
+              }}
+            />
+          </div>
+          
           {/* Dotted Texture */}
-          <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)', backgroundSize: '30px 30px' }} />
+          <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none z-[1]" style={{ backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)', backgroundSize: '30px 30px' }} />
           
           <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
             <div className={`grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center ${service.align === 'right' ? 'lg:flex-row-reverse' : ''}`}>
@@ -157,8 +186,18 @@ export default function ServicesPage() {
       ))}
 
       {/* Decorative Star Footer */}
-      <section className="relative py-24 md:py-32 overflow-hidden" style={{ background: 'radial-gradient(circle at 50% 50%, #C874E2 0%, transparent 50%), #fbcfe8' }}>
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)', backgroundSize: '30px 30px' }} />
+      <section className="relative py-24 md:py-32 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div
+            className="absolute inset-0 mix-blend-color opacity-100"
+            style={{ background: 'radial-gradient(circle at 50% 50%, #C874E2 0%, transparent 50%), #fbcfe8' }}
+          />
+          <div
+            className="absolute inset-0 opacity-75"
+            style={{ background: 'radial-gradient(circle at 50% 50%, #C874E2 0%, transparent 50%), #fbcfe8' }}
+          />
+        </div>
+        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none z-[1]" style={{ backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)', backgroundSize: '30px 30px' }} />
         
         <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
           <motion.div

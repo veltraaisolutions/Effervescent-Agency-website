@@ -64,22 +64,20 @@ export default function FAQPage() {
         </div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
-          {/* Badge — same glass-pill style as hero */}
+          {/* Badge — 5 Star Rated */}
           <motion.div
             initial={{ y: -10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-2 rounded-full border border-white/20 mb-8"
           >
-            <div className="w-5 h-4 relative">
-              <Image
-                src="/effervescent-sign1.png"
-                alt="Icon"
-                fill
-                className="object-contain brightness-0 invert"
-              />
+            <div className="flex gap-1">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} size={14} className="fill-white text-white" />
+              ))}
             </div>
+            <div className="h-4 w-px bg-white/20" />
             <p className="text-[10px] font-black uppercase tracking-[0.15em] text-white">
-              Everything you need to know
+              5 Star Rated <span className="text-white/60">by 400+ venues</span> <span className="mx-2 opacity-30">•</span> Trust Partner
             </p>
           </motion.div>
 
