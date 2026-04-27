@@ -21,14 +21,14 @@ const Navbar = () => {
   }, []);
 
   const TikTokIcon = ({ size = 20 }: { size?: number }) => (
-    <svg 
-      width={size} 
-      height={size} 
-      viewBox="0 0 24 24" 
-      fill="none" 
-      stroke="currentColor" 
-      strokeWidth="2" 
-      strokeLinecap="round" 
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
       strokeLinejoin="round"
     >
       <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
@@ -81,7 +81,6 @@ const Navbar = () => {
                 { name: "Home", href: "/" },
                 { name: "What is a Shot-Seller?", href: "/shot-sellers" },
                 { name: "Venues", href: "/venues" },
-                { name: "Contact", href: "/contact" }
               ].map((link) => {
                 const isActive = pathname === link.href;
                 return (
@@ -145,7 +144,6 @@ const Navbar = () => {
               { name: "Home", href: "/" },
               { name: "What is a Shot-Seller?", href: "/shot-sellers" },
               { name: "Venues", href: "/venues" },
-              { name: "Contact", href: "/contact" }
             ].map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -160,33 +158,33 @@ const Navbar = () => {
                 </Link>
               );
             })}
-          <div className="pt-3 pb-1 space-y-3">
-            <Link
-              href="/contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className={`block w-full bg-white text-slate-900 border border-slate-200 text-center py-3.5 rounded-xl font-black text-sm shadow-lg ${pathname === "/contact" ? "ring-4 ring-primary/20" : ""
-                }`}
-            >
-              Partner With Us
-            </Link>
-            <Link
-              href="/apply"
-              onClick={() => setMobileMenuOpen(false)}
-              className={`block w-full bg-primary text-white text-center py-3.5 rounded-xl font-black text-sm shadow-lg ${pathname === "/apply" ? "ring-4 ring-white/30" : ""
-                }`}
-            >
-              Start Making £ Today
-            </Link>
-            
-            <div className="flex justify-center gap-6 pt-2">
-              <Link href="https://instagram.com/effervescent.agency" className="text-slate-500 hover:text-primary transition-colors">
-                <InstagramIcon size={24} />
+            <div className="pt-3 pb-1 space-y-3">
+              <Link
+                href="/contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block w-full bg-white text-slate-900 border border-slate-200 text-center py-3.5 rounded-xl font-black text-sm shadow-lg ${pathname === "/contact" ? "ring-4 ring-primary/20" : ""
+                  }`}
+              >
+                Partner With Us
               </Link>
-              <Link href="https://tiktok.com/@effervescent.agency" className="text-slate-500 hover:text-primary transition-colors">
-                <TikTokIcon size={24} />
+              <Link
+                href="/apply"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block w-full bg-primary text-white text-center py-3.5 rounded-xl font-black text-sm shadow-lg ${pathname === "/apply" ? "ring-4 ring-white/30" : ""
+                  }`}
+              >
+                Start Making £ Today
               </Link>
+
+              <div className="flex justify-center gap-6 pt-2">
+                <Link href="https://instagram.com/effervescent.agency" className="text-slate-500 hover:text-primary transition-colors">
+                  <InstagramIcon size={24} />
+                </Link>
+                <Link href="https://tiktok.com/@effervescent.agency" className="text-slate-500 hover:text-primary transition-colors">
+                  <TikTokIcon size={24} />
+                </Link>
+              </div>
             </div>
-          </div>
           </div>
         </div>
       </nav>
