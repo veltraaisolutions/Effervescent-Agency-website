@@ -65,18 +65,19 @@ const Navbar = () => {
           <div className="flex justify-between items-center">
             {/* Full Logo - Left aligned */}
             <Link href="/" className="flex items-center group">
-              <div className="h-10 w-10 md:h-12 md:w-12 bg-primary rounded-full overflow-hidden relative flex items-center justify-center transition-transform duration-500 group-hover:scale-110 shadow-sm border border-white/20">
+              <div className="h-10 w-10 md:h-12 md:w-12 bg-primary rounded-lg overflow-hidden relative flex items-center justify-center transition-transform duration-500 group-hover:scale-110 shadow-sm">
                 <Image
                   src="/effervescent-side-logo.jpeg"
                   alt="Effervescent"
                   fill
-                  className="object-cover"
+                  className="object-cover scale-110"
                   priority
                 />
               </div>
             </Link>
+            
             {/* Center Navigation - Desktop only */}
-            <div className="hidden lg:flex items-center gap-10">
+            <div className="hidden lg:flex items-center gap-3">
               {[
                 { name: "Home", href: "/" },
                 { name: "What is a Shot-Seller?", href: "/shot-sellers" },
@@ -87,12 +88,13 @@ const Navbar = () => {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className={`text-sm font-bold transition-colors relative group py-2 ${isActive ? "text-slate-900" : "text-slate-500 hover:text-slate-900"
-                      }`}
+                    className={`px-5 py-2 rounded-full text-[11px] font-black uppercase tracking-[0.15em] transition-all duration-300 ${
+                      isActive 
+                        ? "bg-slate-900 text-white shadow-md" 
+                        : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+                    }`}
                   >
                     {link.name}
-                    <span className={`absolute bottom-0 left-0 h-0.5 bg-primary transition-all duration-300 ${isActive ? "w-full" : "w-0 group-hover:w-full"
-                      }`}></span>
                   </Link>
                 );
               })}
@@ -151,8 +153,11 @@ const Navbar = () => {
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`block text-base font-serif transition-colors py-2.5 border-b border-slate-50 last:border-0 ${isActive ? "text-primary" : "text-slate-900 hover:text-primary"
-                    }`}
+                  className={`block w-full text-center py-4 rounded-xl text-sm font-black uppercase tracking-widest transition-all mb-3 ${
+                    isActive 
+                      ? "bg-slate-900 text-white shadow-lg" 
+                      : "bg-slate-50 text-slate-600 border border-slate-100"
+                  }`}
                 >
                   {link.name}
                 </Link>

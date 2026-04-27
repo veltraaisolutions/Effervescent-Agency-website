@@ -1,11 +1,14 @@
 "use client";
 
+import { useState } from "react";
+import { ArrowRight, Zap, Clock, Trophy } from "lucide-react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { Zap, Clock, Trophy, ArrowRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import ApplyForm from "@/components/ApplyForm";
 
 export default function ApplyPage() {
+  const [showForm, setShowForm] = useState(false);
+
   return (
     <div className="flex flex-col bg-white min-h-screen">
       <section className="relative py-24 md:py-48 overflow-hidden" style={{ background: 'radial-gradient(circle at 90% 10%, #C874E2 0%, transparent 50%), radial-gradient(circle at 10% 90%, #C874E2 0%, transparent 50%), #fbcfe8' }}>
@@ -97,15 +100,46 @@ export default function ApplyPage() {
               </motion.div>
             </div>
 
-            {/* Right Column: Application Form */}
+            {/* Right Column: Application Form or CTA */}
             <div className="lg:col-span-7">
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.8 }}
-              >
-                <ApplyForm />
-              </motion.div>
+              <AnimatePresence mode="wait">
+                {!showForm ? (
+                  <motion.div 
+                    key="cta"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    className="flex flex-col items-center justify-center min-h-[400px] space-y-8"
+                  >
+                    <motion.div 
+                      initial={{ y: -20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ repeat: Infinity, duration: 2, repeatType: "reverse" }}
+                      className="text-white bg-white/10 backdrop-blur-md p-4 rounded-full border border-white/20"
+                    >
+                      <ArrowRight size={32} className="rotate-90" />
+                    </motion.div>
+
+                    <button 
+                      onClick={() => setShowForm(true)}
+                      className="group relative inline-flex items-center gap-4 bg-slate-900/20 backdrop-blur-md text-slate-900 border-2 border-slate-900/30 px-12 py-8 rounded-[2.5rem] text-3xl md:text-4xl font-black shadow-lg transition-all hover:scale-105 active:scale-95 overflow-hidden"
+                    >
+                      <div className="absolute inset-0 bg-slate-900/5 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+                      <span className="relative z-10">Application Form</span>
+                      <ArrowRight size={32} className="relative z-10 rotate-90 transition-transform group-hover:translate-y-2" />
+                    </button>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="form"
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                  >
+                    <ApplyForm />
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
           </div>

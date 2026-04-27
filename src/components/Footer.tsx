@@ -42,12 +42,12 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-5 space-y-10">
             <Link href="/" className="flex items-center group">
-              <div className="h-16 w-16 bg-primary rounded-full overflow-hidden relative flex items-center justify-center transition-transform duration-500 group-hover:scale-110 shadow-2xl border border-white/20">
+              <div className="h-16 w-16 bg-primary rounded-2xl overflow-hidden relative flex items-center justify-center transition-transform duration-500 group-hover:scale-110 shadow-2xl">
                 <Image
                   src="/effervescent-side-logo.jpeg"
                   alt="Effervescent"
                   fill
-                  className="object-cover"
+                  className="object-cover scale-110"
                 />
               </div>
             </Link>
