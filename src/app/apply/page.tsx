@@ -122,9 +122,9 @@ export default function ApplyPage() {
 
                     <button 
                       onClick={() => setShowForm(true)}
-                      className="group relative inline-flex items-center gap-4 bg-slate-900/20 backdrop-blur-md text-slate-900 border-2 border-slate-900/30 px-12 py-8 rounded-[2.5rem] text-3xl md:text-4xl font-black shadow-lg transition-all hover:scale-105 active:scale-95 overflow-hidden"
+                      className="group relative inline-flex items-center gap-4 bg-primary text-white px-12 py-8 rounded-[2.5rem] text-3xl md:text-4xl font-black shadow-xl transition-all hover:scale-105 active:scale-95 overflow-hidden"
                     >
-                      <div className="absolute inset-0 bg-slate-900/5 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+                      <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
                       <span className="relative z-10">Application Form</span>
                       <ArrowRight size={32} className="relative z-10 rotate-90 transition-transform group-hover:translate-y-2" />
                     </button>
