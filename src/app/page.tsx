@@ -8,15 +8,6 @@ import PartnerMarquee from "@/components/PartnerMarquee";
 import Partners from "@/components/Partners";
 
 export default function Home() {
-  const TransitionGlow = ({ position = "bottom", color = "#C874E2" }: { position?: "top" | "bottom", color?: string }) => (
-    <div className={`absolute left-0 right-0 h-64 z-20 pointer-events-none overflow-hidden ${position === "bottom" ? "bottom-0 translate-y-1/2" : "top-0 -translate-y-1/2"}`}>
-      <div 
-        className="absolute inset-0 bg-gradient-to-b from-transparent via-current to-transparent blur-[100px] opacity-60" 
-        style={{ color: color }}
-      />
-    </div>
-  );
-
   return (
     <div className="flex flex-col bg-white min-h-screen">
       {/* Modern SaaS-Style Hero Section */}
@@ -68,13 +59,10 @@ export default function Home() {
             Transforming Venues and Events Around the Globe
           </motion.p>
         </div>
-        <TransitionGlow />
       </section>
 
       <div className="relative">
         <PartnerMarquee />
-        <TransitionGlow position="top" />
-        <TransitionGlow position="bottom" />
       </div>
 
       {/* Impact/Revenue Section */}
@@ -114,7 +102,6 @@ export default function Home() {
             <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
           </div>
         </div>
-        <TransitionGlow />
       </section>
 
       {/* Testimonial Section */}
@@ -156,13 +143,10 @@ export default function Home() {
             <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
           </div>
         </div>
-        <TransitionGlow />
       </section>
 
       <div className="relative">
         <Partners />
-        <TransitionGlow position="top" />
-        <TransitionGlow position="bottom" />
       </div>
 
       {/* Final CTA Banner */}

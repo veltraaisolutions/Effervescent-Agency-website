@@ -13,12 +13,6 @@ export default function AboutPage() {
     { label: "Sales Generated", value: "£2M+" },
   ];
 
-  const TransitionGlow = ({ position = "bottom" }: { position?: "top" | "bottom" }) => (
-    <div className={`absolute left-0 right-0 h-64 z-20 pointer-events-none overflow-hidden ${position === "bottom" ? "bottom-0 translate-y-1/2" : "top-0 -translate-y-1/2"}`}>
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#C874E2]/40 to-transparent blur-[100px] opacity-60" />
-    </div>
-  );
-
   return (
     <div className="flex flex-col bg-white min-h-screen">
       {/* Hero Section */}
@@ -57,7 +51,6 @@ export default function AboutPage() {
             <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
           </div>
         </div>
-        <TransitionGlow />
       </section>
 
       {/* Track Record */}
@@ -106,7 +99,6 @@ export default function AboutPage() {
             </motion.div>
           </div>
         </div>
-        <TransitionGlow />
       </section>
 
       {/* Winning Approach */}
@@ -164,7 +156,6 @@ export default function AboutPage() {
             <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
           </div>
         </div>
-        <TransitionGlow />
       </section>
 
       {/* Final CTA Banner */}
