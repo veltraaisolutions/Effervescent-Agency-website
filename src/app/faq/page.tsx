@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { Plus, Minus, ArrowRight, Globe, Users } from "lucide-react";
+import { Plus, Minus, ArrowRight, Globe, Users, Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
