@@ -42,7 +42,7 @@ export default function Home() {
           >
             <div className="relative w-full h-full">
               <Image
-                src="/hero-section1.png"
+                src="/effervescent-logo.jpeg"
                 alt="Effervescent"
                 fill
                 className="object-contain"
