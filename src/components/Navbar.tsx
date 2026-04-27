@@ -65,12 +65,13 @@ const Navbar = () => {
           <div className="flex justify-between items-center gap-4">
             {/* Logo */}
             <Link href="/" className="flex-shrink-0 flex items-center group">
-              <div className="h-10 w-10 md:h-12 md:w-12 bg-primary rounded-lg overflow-hidden relative flex items-center justify-center transition-transform duration-500 group-hover:scale-110 shadow-sm">
+              <div className="h-12 w-24 md:h-16 md:w-32 relative transition-transform duration-500 group-hover:scale-110">
                 <Image
-                  src="/effervescent-side-logo.jpeg"
+                  src="/effervescent-logo.jpeg"
                   alt="Effervescent"
                   fill
-                  className="object-cover scale-110"
+                  className="object-contain"
+                  style={{ mixBlendMode: 'multiply' }}
                   priority
                 />
               </div>
