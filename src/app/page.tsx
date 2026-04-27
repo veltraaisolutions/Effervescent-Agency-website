@@ -27,14 +27,7 @@ export default function Home() {
             <div className="flex items-center gap-3">
               <div className="flex gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <div key={i} className="w-4 h-4 relative">
-                    <Image
-                      src="/star.png"
-                      alt="Star"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
+                  <Star key={i} size={14} className="fill-white text-white" />
                 ))}
               </div>
               <div className="h-4 w-px bg-white/20 hidden md:block" />

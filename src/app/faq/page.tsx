@@ -73,17 +73,9 @@ export default function FAQPage() {
             <div className="flex items-center gap-3">
               <div className="flex gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <div key={i} className="w-4 h-4 relative">
-                    <Image
-                      src="/star.png"
-                      alt="Star"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
+                  <Star key={i} size={14} className="fill-white text-white" />
                 ))}
-              </div>
-              <div className="h-4 w-px bg-white/20 hidden md:block" />
+              </div>              <div className="h-4 w-px bg-white/20 hidden md:block" />
             </div>
             <p className="text-[10px] font-black uppercase tracking-[0.15em] text-white text-center md:text-left leading-relaxed">
               5/5 BY 400+ VENUES <span className="mx-1 md:mx-2 opacity-30">•</span> Short-Sellers <span className="mx-1 md:mx-2 opacity-30">•</span> Hostesses <span className="mx-1 md:mx-2 opacity-30">•</span> Entertainment <span className="mx-1 md:mx-2 opacity-30">•</span> Trust Partner
