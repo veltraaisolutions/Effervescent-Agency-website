@@ -47,7 +47,6 @@ export default function Home() {
                 fill
                 className="object-contain"
                 priority
-                style={{ mixBlendMode: 'multiply' }}
               />
             </div>
           </motion.div>
