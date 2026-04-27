@@ -61,10 +61,10 @@ const Navbar = () => {
           : "bg-transparent py-8"
           }`}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex justify-between items-center">
-            {/* Full Logo - Left aligned */}
-            <Link href="/" className="flex items-center group">
+        <div className="max-w-[1600px] mx-auto px-4 lg:px-8">
+          <div className="flex justify-between items-center gap-4">
+            {/* Logo */}
+            <Link href="/" className="flex-shrink-0 flex items-center group">
               <div className="h-10 w-10 md:h-12 md:w-12 bg-primary rounded-lg overflow-hidden relative flex items-center justify-center transition-transform duration-500 group-hover:scale-110 shadow-sm">
                 <Image
                   src="/effervescent-side-logo.jpeg"
@@ -76,13 +76,13 @@ const Navbar = () => {
               </div>
             </Link>
             
-            {/* Center Navigation - Desktop only */}
-            <div className="hidden lg:flex items-center gap-3">
+            {/* Center Navigation - Show only on XL and up to prevent crowding */}
+            <div className="hidden xl:flex items-center gap-2">
               {[
                 { name: "Home", href: "/" },
                 { name: "About Us", href: "/about" },
                 { name: "Services", href: "/services" },
-                { name: "What is a Shot-Seller?", href: "/shot-sellers" },
+                { name: "Shot-Sellers", href: "/shot-sellers" },
                 { name: "Venues", href: "/venues" },
               ].map((link) => {
                 const isActive = pathname === link.href;
@@ -90,7 +90,7 @@ const Navbar = () => {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className={`px-5 py-2 rounded-full text-[11px] font-black uppercase tracking-[0.15em] transition-all duration-300 ${
+                    className={`px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.1em] transition-all duration-300 ${
                       isActive 
                         ? "bg-primary text-white shadow-md" 
                         : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
@@ -102,34 +102,34 @@ const Navbar = () => {
               })}
             </div>
 
-            {/* Right Actions - Desktop only */}
-            <div className="hidden lg:flex items-center gap-4">
+            {/* Right Actions */}
+            <div className="hidden xl:flex items-center gap-3">
               <div className="flex items-center gap-3 mr-2">
-                <Link href="https://instagram.com/effervescent.agency" className="text-slate-900 hover:text-primary transition-colors">
+                <Link href="https://instagram.com/effervescent.agency" target="_blank" className="text-slate-900 hover:text-primary transition-colors">
                   <InstagramIcon size={18} />
                 </Link>
-                <Link href="https://tiktok.com/@effervescent.agency" className="text-slate-900 hover:text-primary transition-colors">
+                <Link href="https://tiktok.com/@effervescent.agency" target="_blank" className="text-slate-900 hover:text-primary transition-colors">
                   <TikTokIcon size={18} />
                 </Link>
               </div>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-white text-slate-900 px-6 py-2.5 rounded-full text-sm font-black shadow-lg transition-all hover:scale-105 active:scale-95 group"
+                className="inline-flex items-center gap-2 bg-white border border-slate-100 text-slate-900 px-5 py-2.5 rounded-full text-xs font-black shadow-sm transition-all hover:scale-105 active:scale-95 group whitespace-nowrap"
               >
-                New Booking <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+                Discuss Your Venue <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
                 href="https://effervescent-agency.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-slate-900/20 backdrop-blur-md text-slate-900 border-2 border-slate-900/30 px-6 py-2.5 rounded-full text-sm font-black shadow-lg transition-all hover:scale-105 active:scale-95 group"
+                className="inline-flex items-center gap-2 bg-slate-900/10 backdrop-blur-md text-slate-900 border-2 border-slate-900/20 px-5 py-2.5 rounded-full text-xs font-black transition-all hover:scale-105 active:scale-95 group whitespace-nowrap"
               >
-                Join The Team <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+                Start Making £ Today <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
 
-            {/* Mobile menu button */}
-            <div className="lg:hidden flex items-center">
+            {/* Mobile menu button - Show on screens smaller than XL */}
+            <div className="xl:hidden flex items-center">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="text-slate-900 p-2 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors"
@@ -142,10 +142,10 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         <div
-          className={`lg:hidden bg-white absolute inset-x-0 top-full border-t border-slate-100 shadow-premium transition-all duration-500 ease-in-out z-50 overflow-hidden ${mobileMenuOpen ? "max-h-[700px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
+          className={`xl:hidden bg-white absolute inset-x-0 top-full border-t border-slate-100 shadow-premium transition-all duration-500 ease-in-out z-50 overflow-hidden ${mobileMenuOpen ? "max-h-[800px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
             }`}
         >
-          <div className="px-6 py-4 space-y-0.5">
+          <div className="px-6 py-6 space-y-2">
             {[
               { name: "Home", href: "/" },
               { name: "About Us", href: "/about" },
@@ -159,7 +159,7 @@ const Navbar = () => {
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`block w-full text-center py-4 rounded-xl text-sm font-black uppercase tracking-widest transition-all mb-3 ${
+                  className={`block w-full text-center py-4 rounded-xl text-sm font-black uppercase tracking-widest transition-all ${
                     isActive 
                       ? "bg-primary text-white shadow-lg" 
                       : "bg-slate-50 text-slate-600 border border-slate-100"
@@ -169,31 +169,31 @@ const Navbar = () => {
                 </Link>
               );
             })}
-            <div className="pt-3 pb-1 space-y-3">
+            <div className="pt-4 space-y-3">
               <Link
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className={`block w-full bg-white text-slate-900 border border-slate-200 text-center py-3.5 rounded-xl font-black text-sm shadow-lg ${pathname === "/contact" ? "ring-4 ring-primary/20" : ""
+                className={`block w-full bg-white text-slate-900 border border-slate-200 text-center py-4 rounded-xl font-black text-sm shadow-lg ${pathname === "/contact" ? "ring-4 ring-primary/20" : ""
                   }`}
               >
-                New Booking
+                Discuss Your Venue With Us
               </Link>
               <Link
                 href="https://effervescent-agency.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block w-full bg-primary text-white text-center py-3.5 rounded-xl font-black text-sm shadow-lg"
+                className="block w-full bg-primary text-white text-center py-4 rounded-xl font-black text-sm shadow-lg"
               >
-                Join The Team
+                Start Making £ Today
               </Link>
 
-              <div className="flex justify-center gap-6 pt-2">
-                <Link href="https://instagram.com/effervescent.agency" className="text-slate-500 hover:text-primary transition-colors">
-                  <InstagramIcon size={24} />
+              <div className="flex justify-center gap-8 pt-4">
+                <Link href="https://instagram.com/effervescent.agency" target="_blank" className="text-slate-500 hover:text-primary transition-colors">
+                  <InstagramIcon size={28} />
                 </Link>
-                <Link href="https://tiktok.com/@effervescent.agency" className="text-slate-500 hover:text-primary transition-colors">
-                  <TikTokIcon size={24} />
+                <Link href="https://tiktok.com/@effervescent.agency" target="_blank" className="text-slate-500 hover:text-primary transition-colors">
+                  <TikTokIcon size={28} />
                 </Link>
               </div>
             </div>
