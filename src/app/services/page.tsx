@@ -53,16 +53,25 @@ export default function ServicesPage() {
           <motion.div
             initial={{ y: -10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-2 rounded-full border border-white/20 mb-8"
+            className="flex flex-col md:flex-row items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-3 md:py-2 rounded-3xl md:rounded-full border border-white/20 mb-8 mx-auto w-fit"
           >
-            <div className="flex gap-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} size={14} className="fill-white text-white" />
-              ))}
+            <div className="flex items-center gap-3">
+              <div className="flex gap-1">
+                {[...Array(5)].map((_, i) => (
+                  <div key={i} className="w-4 h-4 relative">
+                    <Image
+                      src="/star.png"
+                      alt="Star"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                ))}
+              </div>
+              <div className="h-4 w-px bg-white/20 hidden md:block" />
             </div>
-            <div className="h-4 w-px bg-white/20" />
-            <p className="text-[10px] md:text-xs font-black uppercase tracking-[0.15em] text-white">
-              5 Star Rated <span className="text-white/60">by 400+ venues</span> <span className="mx-2 opacity-30">•</span> Trust Partner
+            <p className="text-[10px] md:text-xs font-black uppercase tracking-[0.15em] text-white text-center md:text-left leading-relaxed">
+              5/5 BY 400+ VENUES <span className="mx-1 md:mx-2 opacity-30">•</span> Short-Sellers <span className="mx-1 md:mx-2 opacity-30">•</span> Hostesses <span className="mx-1 md:mx-2 opacity-30">•</span> Entertainment <span className="mx-1 md:mx-2 opacity-30">•</span> Trust Partner
             </p>
           </motion.div>
 
