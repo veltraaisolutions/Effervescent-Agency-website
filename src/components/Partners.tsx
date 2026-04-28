@@ -22,7 +22,7 @@ const partnersConfig: Partner[] = [
 
 const Partners = () => {
   return (
-    <section className="relative py-24 md:py-40 overflow-hidden bg-[#fbcfe8]">
+    <section className="relative py-24 md:py-40 overflow-hidden">
       {/* Background Image & Gradient Overlay */}
       <div 
         className="absolute inset-0 z-0"

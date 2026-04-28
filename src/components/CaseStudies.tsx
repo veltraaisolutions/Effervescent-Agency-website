@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const CaseStudies = () => {
   return (
-    <section className="relative pt-24 md:pt-32 pb-0 overflow-hidden bg-[#fbcfe8]">
+    <section className="relative pt-24 md:pt-32 pb-0 overflow-hidden">
       {/* Background Image and Gradient Overlay */}
       <div 
         className="absolute inset-0 z-0"

@@ -18,7 +18,7 @@ const PartnerMarquee = () => {
   const duplicatedPartners = [...partnersConfig, ...partnersConfig, ...partnersConfig, ...partnersConfig];
 
   return (
-    <section className="relative py-16 overflow-hidden border-y border-white/20 bg-[#fbcfe8]">
+    <section className="relative py-16 overflow-hidden border-y border-white/20">
       <div className="max-w-7xl mx-auto px-6 relative z-10 mb-12">
         <div className="flex flex-col items-center text-center space-y-2">
           <div className="w-8 h-8 relative mb-2 opacity-80">
