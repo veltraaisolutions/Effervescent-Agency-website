@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const CorporateDefinition = () => {
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden" style={{ background: 'radial-gradient(circle at 90% 10%, #C874E2 0%, transparent 50%), radial-gradient(circle at 10% 90%, #C874E2 0%, transparent 50%), #fbcfe8' }}>
+    <section className="relative py-24 md:py-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
         {/* Top Row: Title & Image */}

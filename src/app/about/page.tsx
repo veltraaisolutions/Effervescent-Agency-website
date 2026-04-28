@@ -14,9 +14,15 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="flex flex-col bg-white min-h-screen">
+    <div className="flex flex-col min-h-screen relative">
+      {/* Subtle overlays for depth, allowing global background to shine through */}
+      <div className="fixed inset-0 z-0 pointer-events-none opacity-20">
+        <div className="absolute top-0 right-0 w-[80%] h-[60%] bg-[#C874E2] blur-[120px] rounded-full" />
+        <div className="absolute bottom-0 left-0 w-[60%] h-[50%] bg-[#C874E2] blur-[100px] rounded-full" />
+      </div>
+
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex flex-col items-center justify-center overflow-hidden" style={{ background: 'radial-gradient(circle at 100% 0%, #C874E2 0%, transparent 50%), #fbcfe8' }}>
+      <section className="relative min-h-[80vh] flex flex-col items-center justify-center overflow-hidden">
         <div className="absolute top-0 right-0 w-[50%] h-full opacity-10" style={{ backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)', backgroundSize: '20px 20px' }} />
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full flex flex-col items-center text-center pt-32">
           <motion.div
@@ -54,7 +60,7 @@ export default function AboutPage() {
       </section>
 
       {/* Track Record */}
-      <section className="relative py-24 md:py-40 overflow-hidden" style={{ background: 'radial-gradient(circle at 0% 0%, #C874E2 0%, transparent 50%), #fbcfe8' }}>
+      <section className="relative py-24 md:py-40 overflow-hidden">
         <div className="absolute top-0 left-0 w-[50%] h-full opacity-10" style={{ backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)', backgroundSize: '20px 20px' }} />
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -102,11 +108,9 @@ export default function AboutPage() {
       </section>
 
       {/* Winning Approach */}
-      <section className="relative py-32 md:py-48 overflow-hidden bg-[#fbcfe8]">
+      <section className="relative py-32 md:py-48 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0" style={{ background: 'radial-gradient(circle at 80% 20%, #C874E2 0%, transparent 60%)' }} />
-          <div className="absolute inset-0" style={{ background: 'radial-gradient(circle at 20% 80%, #C874E2 0%, transparent 60%)' }} />
-          <div className="absolute -top-[30%] right-[-10%] w-[80%] h-[160%] bg-[#d690eb]/20 transform rotate-[35deg] border-l-2 border-white/30" />
+          <div className="absolute -top-[30%] right-[-10%] w-[80%] h-[160%] bg-[#d690eb]/10 transform rotate-[35deg] border-l-2 border-white/20" />
         </div>
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -159,7 +163,7 @@ export default function AboutPage() {
       </section>
 
       {/* Final CTA Banner */}
-      <section className="relative py-24 md:py-48 overflow-hidden" style={{ background: 'radial-gradient(circle at 90% 10%, #C874E2 0%, transparent 50%), radial-gradient(circle at 10% 90%, #C874E2 0%, transparent 50%), #fbcfe8' }}>
+      <section className="relative py-24 md:py-48 overflow-hidden">
         <div className="max-w-5xl mx-auto px-6 text-center relative z-10 space-y-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

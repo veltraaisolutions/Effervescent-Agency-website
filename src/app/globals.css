@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #fbcfe8;
   --foreground: #0f172a;
   --primary: #fdb8d7;
   --secondary: #fdb8d7;
@@ -30,7 +30,8 @@
 }
 
 body {
-  background: var(--background);
+  background: radial-gradient(circle at 100% 0%, #C874E2 0%, transparent 50%), var(--background);
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;

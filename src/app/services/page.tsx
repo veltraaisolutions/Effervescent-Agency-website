@@ -34,19 +34,15 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="flex flex-col bg-white min-h-screen">
+    <div className="flex flex-col min-h-screen relative">
+      {/* Subtle overlays for depth, allowing global background to shine through */}
+      <div className="fixed inset-0 z-0 pointer-events-none opacity-20">
+        <div className="absolute top-0 right-0 w-[80%] h-[60%] bg-[#C874E2] blur-[120px] rounded-full" />
+        <div className="absolute bottom-0 left-0 w-[60%] h-[50%] bg-[#C874E2] blur-[100px] rounded-full" />
+      </div>
+
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex flex-col items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div
-            className="absolute inset-0 mix-blend-color opacity-100"
-            style={{ background: 'radial-gradient(circle at 100% 0%, #C874E2 0%, transparent 50%), #fbcfe8' }}
-          />
-          <div
-            className="absolute inset-0 opacity-75"
-            style={{ background: 'radial-gradient(circle at 100% 0%, #C874E2 0%, transparent 50%), #fbcfe8' }}
-          />
-        </div>
         <div className="absolute top-0 right-0 w-[50%] h-full opacity-10 z-[1]" style={{ backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)', backgroundSize: '20px 20px' }} />
         
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full flex flex-col items-center text-center pt-32">
@@ -97,25 +93,6 @@ export default function ServicesPage() {
           key={idx} 
           className="relative py-24 md:py-40 overflow-hidden"
         >
-          <div className="absolute inset-0 z-0">
-            <div
-              className="absolute inset-0 mix-blend-color opacity-100"
-              style={{ 
-                background: idx % 2 === 0 
-                  ? 'radial-gradient(circle at 0% 0%, #C874E2 0%, transparent 50%), #fbcfe8'
-                  : 'radial-gradient(circle at 100% 100%, #C874E2 0%, transparent 50%), #fbcfe8'
-              }}
-            />
-            <div
-              className="absolute inset-0 opacity-75"
-              style={{ 
-                background: idx % 2 === 0 
-                  ? 'radial-gradient(circle at 0% 0%, #C874E2 0%, transparent 50%), #fbcfe8'
-                  : 'radial-gradient(circle at 100% 100%, #C874E2 0%, transparent 50%), #fbcfe8'
-              }}
-            />
-          </div>
-          
           {/* Dotted Texture */}
           <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none z-[1]" style={{ backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)', backgroundSize: '30px 30px' }} />
           
@@ -188,16 +165,6 @@ export default function ServicesPage() {
 
       {/* Decorative Star Footer */}
       <section className="relative py-24 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div
-            className="absolute inset-0 mix-blend-color opacity-100"
-            style={{ background: 'radial-gradient(circle at 50% 50%, #C874E2 0%, transparent 50%), #fbcfe8' }}
-          />
-          <div
-            className="absolute inset-0 opacity-75"
-            style={{ background: 'radial-gradient(circle at 50% 50%, #C874E2 0%, transparent 50%), #fbcfe8' }}
-          />
-        </div>
         <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none z-[1]" style={{ backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)', backgroundSize: '30px 30px' }} />
         
         <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
