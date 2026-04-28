@@ -57,17 +57,17 @@ const Navbar = () => {
       <AnnouncementBar />
       <nav
         className={`transition-all duration-500 ${isScrolled || mobileMenuOpen
-          ? "bg-white/95 backdrop-blur-xl py-4 shadow-soft border-b border-slate-100"
-          : "bg-transparent py-8"
+          ? "bg-white/95 backdrop-blur-xl py-2 shadow-soft border-b border-slate-100"
+          : "bg-transparent py-4"
           }`}
       >
         <div className="max-w-[1600px] mx-auto px-4 lg:px-8">
           <div className="flex justify-between items-center gap-4">
             {/* Logo */}
             <Link href="/" className="flex-shrink-0 flex items-center group">
-              <div className="h-12 w-24 md:h-16 md:w-32 relative transition-transform duration-500 group-hover:scale-110">
+              <div className="h-14 w-28 md:h-20 md:w-40 relative transition-transform duration-500 group-hover:scale-110">
                 <Image
-                  src="/effervescent-logo.jpeg"
+                  src="/effervescent-side-log-1.jpeg"
                   alt="Effervescent"
                   fill
                   className="object-contain"
@@ -76,7 +76,7 @@ const Navbar = () => {
                 />
               </div>
             </Link>
-            
+
             {/* Center Navigation */}
             <div className="hidden xl:flex items-center gap-2">
               {[
@@ -92,11 +92,10 @@ const Navbar = () => {
                   <Link
                     key={link.name}
                     href={link.href}
-                    className={`px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.1em] transition-all duration-300 ${
-                      isActive 
-                        ? "bg-primary text-white shadow-md" 
-                        : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
-                    }`}
+                    className={`px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.1em] transition-all duration-300 ${isActive
+                      ? "bg-primary text-white shadow-md"
+                      : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+                      }`}
                   >
                     {link.name}
                   </Link>
@@ -154,11 +153,10 @@ const Navbar = () => {
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`block w-full text-center py-4 rounded-xl text-sm font-black uppercase tracking-widest transition-all ${
-                    isActive 
-                      ? "bg-primary text-white shadow-lg" 
-                      : "bg-slate-50 text-slate-600 border border-slate-100"
-                  }`}
+                  className={`block w-full text-center py-4 rounded-xl text-sm font-black uppercase tracking-widest transition-all ${isActive
+                    ? "bg-primary text-white shadow-lg"
+                    : "bg-slate-50 text-slate-600 border border-slate-100"
+                    }`}
                 >
                   {link.name}
                 </Link>

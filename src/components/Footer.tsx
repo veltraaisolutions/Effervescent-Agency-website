@@ -42,7 +42,7 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="lg:col-span-5 space-y-10">
             <Link href="/" className="flex items-center group">
-              <div className="h-20 w-40 relative transition-transform duration-500 group-hover:scale-110">
+              <div className="h-32 w-64 relative transition-transform duration-500 group-hover:scale-110">
                 <Image
                   src="/effervescent-logo.jpeg"
                   alt="Effervescent"
