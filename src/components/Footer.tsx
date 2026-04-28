@@ -4,14 +4,14 @@ import { MessageCircle } from "lucide-react";
 
 const Footer = () => {
   const TikTokIcon = ({ size = 20 }: { size?: number }) => (
-    <svg 
-      width={size} 
-      height={size} 
-      viewBox="0 0 24 24" 
-      fill="none" 
-      stroke="currentColor" 
-      strokeWidth="2" 
-      strokeLinecap="round" 
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
       strokeLinejoin="round"
     >
       <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
@@ -44,7 +44,7 @@ const Footer = () => {
             <Link href="/" className="flex items-center group">
               <div className="h-32 w-64 relative transition-transform duration-500 group-hover:scale-110">
                 <Image
-                  src="/effervescent-logo.jpeg"
+                  src="/effervescent-side-log-1.jpeg"
                   alt="Effervescent"
                   fill
                   className="object-contain"
