@@ -152,7 +152,15 @@ export default function Home() {
       </div>
 
       {/* Final CTA Banner */}
-      <section className="relative py-24 md:py-32 overflow-hidden" style={{ background: 'radial-gradient(circle at 90% 10%, #C874E2 0%, transparent 50%), radial-gradient(circle at 10% 90%, #C874E2 0%, transparent 50%), #fbcfe8' }}>
+      <section className="relative py-24 md:py-32 overflow-hidden bg-[#fbcfe8]">
+        <div 
+          className="absolute inset-0 z-0 pointer-events-none"
+          style={{ 
+            background: 'radial-gradient(circle at 90% 10%, #C874E2 0%, transparent 50%), radial-gradient(circle at 10% 90%, #C874E2 0%, transparent 50%)',
+            WebkitMaskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)',
+            maskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)'
+          }}
+        />
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
             <div className="space-y-10 text-center lg:text-left order-2 lg:order-1">

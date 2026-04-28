@@ -3,7 +3,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 export default function ShotSellersPage() {
   return (
-    <section className="relative pt-24 md:pt-32 pb-0 overflow-hidden" style={{ background: 'radial-gradient(circle at 90% 10%, #C874E2 0%, transparent 50%), radial-gradient(circle at 10% 90%, #C874E2 0%, transparent 50%), #fbcfe8' }}>
+    <section className="relative pt-24 md:pt-32 pb-0 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Title */}
         <motion.h2

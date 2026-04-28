@@ -27,7 +27,9 @@ export default function RootLayout({
       lang="en"
       className={`${academyBold.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col bg-[#fbcfe8] relative">
+        {/* Global Fixed Background to Ensure 100% Connectivity Across All Pages */}
+        <div className="fixed inset-0 z-[-1] pointer-events-none" style={{ background: 'radial-gradient(circle at 100% 0%, #C874E2 0%, #C874E200 60%)' }} />
         <Navbar />
         <main className="flex-grow">
           {children}

@@ -45,17 +45,10 @@ export default function FAQPage() {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   return (
-    <main className="flex flex-col bg-white min-h-screen">
-      <Navbar />
+    <main className="flex flex-col min-h-screen">
 
       {/* Hero Section — matches global gradient */}
-      <section
-        className="relative pt-40 pb-32 md:pt-56 md:pb-48 overflow-hidden"
-        style={{
-          background:
-            "radial-gradient(circle at 90% 10%, #C874E2 0%, transparent 50%), radial-gradient(circle at 10% 90%, #C874E2 0%, transparent 50%), #fbcfe8",
-        }}
-      >
+      <section className="relative pt-40 pb-32 md:pt-56 md:pb-48 overflow-hidden">
         {/* Decorative star */}
         <div className="absolute bottom-12 right-12 opacity-90 scale-125 z-30">
           <div className="w-20 h-20 relative">
@@ -102,7 +95,7 @@ export default function FAQPage() {
       </section>
 
       {/* FAQ Accordion — pink section */}
-      <section className="py-24 md:py-36 bg-[#fbcfe8]">
+      <section className="py-24 md:py-36">
         <div className="max-w-4xl mx-auto px-6">
           <div className="space-y-2">
             {faqs.map((faq, index) => (
@@ -161,13 +154,7 @@ export default function FAQPage() {
       </section>
 
       {/* CTA / Contact Section — full global gradient, white card form */}
-      <section
-        className="relative py-24 md:py-32 overflow-hidden"
-        style={{
-          background:
-            "radial-gradient(circle at 90% 10%, #C874E2 0%, transparent 50%), radial-gradient(circle at 10% 90%, #C874E2 0%, transparent 50%), #fbcfe8",
-        }}
-      >
+      <section className="relative py-24 md:py-32 overflow-hidden">
         {/* Decorative star */}
         <div className="absolute bottom-12 right-12 opacity-90 scale-125 z-30">
           <div className="w-20 h-20 relative">
@@ -295,7 +282,7 @@ export default function FAQPage() {
         </div>
       </section>
 
-      <Footer />
+
     </main>
   );
 }

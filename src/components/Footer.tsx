@@ -36,7 +36,7 @@ const Footer = () => {
   );
 
   return (
-    <footer className="relative pt-32 pb-16 overflow-hidden" style={{ background: 'radial-gradient(circle at 90% 10%, #C874E2 0%, transparent 50%), radial-gradient(circle at 10% 90%, #C874E2 0%, transparent 50%), #fbcfe8' }}>
+    <footer className="relative pt-32 pb-16 overflow-hidden bg-[#fbcfe8]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 mb-24">
           {/* Brand Column */}

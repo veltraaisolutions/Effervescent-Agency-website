@@ -7,8 +7,8 @@ import { motion } from "framer-motion";
 
 export default function ApplyPage() {
   return (
-    <div className="flex flex-col bg-white min-h-screen">
-      <section className="relative py-24 md:py-48 overflow-hidden" style={{ background: 'radial-gradient(circle at 90% 10%, #C874E2 0%, transparent 50%), radial-gradient(circle at 10% 90%, #C874E2 0%, transparent 50%), #fbcfe8' }}>
+    <div className="flex flex-col min-h-screen">
+      <section className="relative py-24 md:py-48 overflow-hidden">
         {/* Background Decorative Elements */}
         <div className="absolute inset-0 z-0 opacity-20">
           <div className="absolute top-0 right-0 w-[50%] h-full" style={{ backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)', backgroundSize: '20px 20px' }} />
