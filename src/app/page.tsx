@@ -47,7 +47,7 @@ export default function Home() {
                 src="/effervescent-logo.jpeg"
                 alt="Effervescent"
                 fill
-                className="object-contain scale-155 md:scale-195"
+                className="object-contain scale-145 md:scale-195"
                 priority
               />
             </div>
