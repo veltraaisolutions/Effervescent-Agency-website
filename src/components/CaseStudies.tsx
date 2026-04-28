@@ -4,9 +4,15 @@ import { motion } from "framer-motion";
 
 const CaseStudies = () => {
   return (
-    <section className="relative pt-24 md:pt-32 pb-0 overflow-hidden">
+    <section className="relative pt-24 md:pt-32 pb-0 overflow-hidden bg-[#fbcfe8]">
       {/* Background Image and Gradient Overlay */}
-      <div className="absolute inset-0 z-0">
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)',
+          maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)'
+        }}
+      >
         <Image
           src="/case-studies-bg.jpeg"
           alt="Case Studies Background"

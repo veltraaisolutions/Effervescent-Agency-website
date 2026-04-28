@@ -22,9 +22,15 @@ const partnersConfig: Partner[] = [
 
 const Partners = () => {
   return (
-    <section className="relative py-24 md:py-40 overflow-hidden">
+    <section className="relative py-24 md:py-40 overflow-hidden bg-[#fbcfe8]">
       {/* Background Image & Gradient Overlay */}
-      <div className="absolute inset-0 z-0">
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)',
+          maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)'
+        }}
+      >
         <Image
           src="/partner-bg.jpeg"
           alt="Our Partners Background"

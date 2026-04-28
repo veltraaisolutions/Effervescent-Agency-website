@@ -36,7 +36,7 @@ const Footer = () => {
   );
 
   return (
-    <footer className="relative pt-32 pb-16 overflow-hidden bg-[#fbcfe8]">
+    <footer className="relative pt-32 pb-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 mb-24">
           {/* Brand Column */}

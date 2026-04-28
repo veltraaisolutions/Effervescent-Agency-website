@@ -9,7 +9,7 @@ import Partners from "@/components/Partners";
 
 export default function Home() {
   return (
-    <div className="flex flex-col bg-white min-h-screen">
+    <div className="flex flex-col min-h-screen">
       {/* Modern SaaS-Style Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden" style={{ background: 'radial-gradient(circle at 100% 0%, #C874E2 0%, transparent 50%), #fbcfe8' }}>
         <div className="absolute bottom-12 right-12 opacity-60">
@@ -68,8 +68,14 @@ export default function Home() {
       </div>
 
       {/* Impact/Revenue Section */}
-      <section className="relative h-[70vh] md:h-[90vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
+      <section className="relative h-[70vh] md:h-[90vh] flex items-center justify-center overflow-hidden bg-[#fbcfe8]">
+        <div 
+          className="absolute inset-0 z-0"
+          style={{
+            WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)',
+            maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)'
+          }}
+        >
           <Image
             src="/bg-image-200,000.jpeg"
             alt="Impact"
@@ -108,7 +114,13 @@ export default function Home() {
 
       {/* Testimonial Section */}
       <section className="relative py-32 md:py-48 overflow-hidden bg-[#fbcfe8]">
-        <div className="absolute inset-0 z-0">
+        <div 
+          className="absolute inset-0 z-0 pointer-events-none"
+          style={{
+            WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)',
+            maskImage: 'linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)'
+          }}
+        >
           <div className="absolute inset-0" style={{ background: 'radial-gradient(circle at 80% 20%, #C874E2 0%, transparent 60%)' }} />
           <div className="absolute inset-0" style={{ background: 'radial-gradient(circle at 20% 80%, #C874E2 0%, transparent 60%)' }} />
           <div className="absolute -top-[30%] right-[-10%] w-[80%] h-[160%] bg-[#d690eb]/20 transform rotate-[35deg] border-l-2 border-white/30" />
@@ -152,13 +164,13 @@ export default function Home() {
       </div>
 
       {/* Final CTA Banner */}
-      <section className="relative py-24 md:py-32 overflow-hidden bg-[#fbcfe8]">
+      <section className="relative py-24 md:py-32 overflow-hidden">
         <div 
           className="absolute inset-0 z-0 pointer-events-none"
           style={{ 
             background: 'radial-gradient(circle at 90% 10%, #C874E2 0%, transparent 50%), radial-gradient(circle at 10% 90%, #C874E2 0%, transparent 50%)',
-            WebkitMaskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)',
-            maskImage: 'linear-gradient(to bottom, black 70%, transparent 100%)'
+            WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)',
+            maskImage: 'linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)'
           }}
         />
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
