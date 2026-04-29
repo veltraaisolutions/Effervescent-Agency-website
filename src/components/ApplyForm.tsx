@@ -238,7 +238,7 @@ function toBase64(file: File): Promise<string> {
   });
 }
 
-// ─── Shared focus handlers (brand ring on dark inputs) ────────────────────────
+// ─── Shared focus handlers ────────────────────────────────────────────────────
 
 const onFocusBrand = (
   e: React.FocusEvent<
@@ -267,7 +267,7 @@ function FieldLabel({
   required?: boolean;
 }) {
   return (
-    <label className="block text-sm font-semibold text-gray-300 mb-1.5">
+    <label className="block text-sm font-semibold text-slate-800 mb-1.5">
       {children}
       {required && (
         <span
@@ -284,7 +284,7 @@ function FieldLabel({
 function FieldError({ message }: { message?: string }) {
   if (!message) return null;
   return (
-    <p className="mt-1.5 text-xs text-red-400 flex items-center gap-1">
+    <p className="mt-1.5 text-xs text-red-600 flex items-center gap-1">
       <AlertCircle className="w-3 h-3 flex-shrink-0" />
       {message}
     </p>
@@ -317,9 +317,9 @@ function TextInput({
         onBlurBrand(e);
         onBlur?.();
       }}
-      style={{ colorScheme: "dark" }}
-      className="w-full px-3 py-2.5 border border-[#2a2a2a] rounded-xl text-sm
-        bg-[#1a1a1a] text-white placeholder:text-gray-600
+      style={{ colorScheme: "light" }}
+      className="w-full px-3 py-2.5 border border-slate-200 rounded-xl text-sm
+        bg-slate-50 text-slate-900 placeholder:text-slate-400
         focus:outline-none disabled:opacity-50 transition-all"
       onFocus={onFocusBrand}
     />
@@ -343,8 +343,8 @@ function TextareaInput({
       rows={rows}
       placeholder={placeholder}
       onChange={(e) => onChange(e.target.value)}
-      className="w-full px-3 py-2.5 border border-[#2a2a2a] rounded-xl text-sm
-        bg-[#1a1a1a] text-white placeholder:text-gray-600
+      className="w-full px-3 py-2.5 border border-slate-200 rounded-xl text-sm
+        bg-slate-50 text-slate-900 placeholder:text-slate-400
         focus:outline-none resize-none transition-all"
       onFocus={onFocusBrand}
       onBlur={onBlurBrand}
@@ -368,15 +368,15 @@ function SelectInput({
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        style={{ colorScheme: "dark" }}
-        className="w-full appearance-none px-3 py-2.5 border border-[#2a2a2a] rounded-xl text-sm
-          bg-[#1a1a1a] text-white focus:outline-none transition-all"
+        style={{ colorScheme: "light" }}
+        className="w-full appearance-none px-3 py-2.5 border border-slate-200 rounded-xl text-sm
+          bg-slate-50 text-slate-900 focus:outline-none transition-all"
         onFocus={onFocusBrand}
         onBlur={onBlurBrand}
       >
         <option
           value=""
-          className="text-gray-500"
+          className="text-slate-400"
         >
           {placeholder}
         </option>
@@ -384,13 +384,13 @@ function SelectInput({
           <option
             key={opt}
             value={opt}
-            className="text-white bg-[#1a1a1a]"
+            className="text-slate-900 bg-white"
           >
             {opt}
           </option>
         ))}
       </select>
-      <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none" />
+      <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
     </div>
   );
 }
@@ -417,7 +417,7 @@ function YesNoToggle({
           className={`px-6 py-2 rounded-xl text-sm font-semibold border transition-all ${
             value === opt
               ? "shadow-sm"
-              : "bg-[#1a1a1a] text-gray-400 border-[#2a2a2a] hover:border-[#FDB8D7]/60 hover:text-gray-200"
+              : "bg-slate-50 text-slate-600 border-slate-200 hover:border-[#FDB8D7]/80 hover:text-slate-900"
           }`}
         >
           {opt === "yes" ? "Yes" : "No"}
@@ -448,14 +448,14 @@ function RadioGroup({
           }
           className={`flex items-center gap-3 px-4 py-3 rounded-xl border text-sm font-medium text-left transition-all ${
             value === opt
-              ? "text-white"
-              : "border-[#2a2a2a] bg-[#1a1a1a] text-gray-400 hover:border-[#FDB8D7]/40 hover:text-gray-300"
+              ? "text-slate-900"
+              : "border-slate-200 bg-slate-50 text-slate-600 hover:border-[#FDB8D7]/70 hover:text-slate-900"
           }`}
         >
           <div
             style={value === opt ? { borderColor: B } : {}}
             className={`w-4 h-4 rounded-full border-2 flex-shrink-0 flex items-center justify-center ${
-              value === opt ? "" : "border-[#444]"
+              value === opt ? "" : "border-slate-300"
             }`}
           >
             {value === opt && (
@@ -491,7 +491,7 @@ function StyledCheckbox({
         onCheckedChange={(v) => onCheckedChange(!!v)}
         style={checked ? { backgroundColor: B, borderColor: B } : {}}
         className={`mt-0.5 w-5 h-5 rounded-md border-2 flex items-center justify-center flex-shrink-0 transition-all ${
-          checked ? "" : "border-[#444] bg-[#1a1a1a] hover:border-[#FDB8D7]/60"
+          checked ? "" : "border-slate-300 bg-white hover:border-[#FDB8D7]/80"
         }`}
       >
         <CheckboxPrimitive.Indicator>
@@ -503,7 +503,7 @@ function StyledCheckbox({
       </CheckboxPrimitive.Root>
       <label
         htmlFor={id}
-        className="text-sm text-gray-300 cursor-pointer leading-relaxed"
+        className="text-sm text-slate-700 cursor-pointer leading-relaxed"
       >
         {label}
       </label>
@@ -555,8 +555,8 @@ function SuccessScreen() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] flex items-center justify-center p-4">
-      <div className="bg-[#111111] border border-[#1f1f1f] rounded-3xl shadow-2xl p-10 max-w-md w-full text-center">
+    <div className="min-h-screen bg-transparent flex items-center justify-center p-4">
+      <div className="bg-white border border-white/60 rounded-3xl shadow-2xl p-10 max-w-md w-full text-center">
         <div
           className="w-24 h-24 rounded-2xl overflow-hidden mx-auto mb-6 shadow-lg"
           style={{ boxShadow: `0 0 0 2px ${B}40` }}
@@ -569,10 +569,10 @@ function SuccessScreen() {
             className="w-full h-full object-cover"
           />
         </div>
-        <h2 className="text-2xl font-bold text-white mb-3">
+        <h2 className="text-2xl font-bold text-slate-900 mb-3">
           Application Submitted!
         </h2>
-        <p className="text-gray-300 text-base leading-relaxed">
+        <p className="text-slate-600 text-base leading-relaxed">
           Thank you! We&apos;ll be in touch soon.
         </p>
       </div>
@@ -830,7 +830,7 @@ export default function ApplyPage() {
                 className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300 ${
                   s <= slide
                     ? ""
-                    : "bg-[#1a1a1a] text-gray-600 border border-[#2a2a2a]"
+                    : "bg-white/70 text-slate-400 border border-white/80"
                 }`}
               >
                 {s < slide ? (
@@ -844,14 +844,14 @@ export default function ApplyPage() {
               </div>
               <span
                 style={s === slide ? { color: B } : {}}
-                className={`text-[10px] font-medium text-center leading-none hidden sm:block ${s === slide ? "" : "text-gray-600"}`}
+                className={`text-[10px] font-medium text-center leading-none hidden sm:block ${s === slide ? "" : "text-slate-500"}`}
               >
                 {SLIDE_LABELS[s - 1]}
               </span>
             </div>
           ))}
         </div>
-        <div className="h-1 bg-[#1a1a1a] rounded-full overflow-hidden">
+        <div className="h-1 bg-white/70 rounded-full overflow-hidden">
           <div
             style={{
               width: `${((slide - 1) / 4) * 100}%`,
@@ -866,21 +866,21 @@ export default function ApplyPage() {
       <div
         className={`max-w-xl mx-auto px-4 py-4 transition-all duration-200 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}
       >
-        <div className="bg-[#111111] rounded-3xl border border-[#1f1f1f] overflow-hidden shadow-2xl">
+        <div className="bg-white rounded-3xl border border-white/70 overflow-hidden shadow-2xl">
           {/* Card Header */}
           <div
             className="px-6 py-5"
-            style={{ background: `linear-gradient(135deg, #2a0d1c, #3d1228)` }}
+            style={{ background: `linear-gradient(135deg, #ffffff, #fff1f7)` }}
           >
             <p
               className="text-xs font-semibold uppercase tracking-widest mb-1"
-              style={{ color: `${B}90` }}
+              style={{ color: "#be185d" }}
             >
               Step {slide} of 5
             </p>
             <h2
               className="text-xl font-bold"
-              style={{ color: B }}
+              style={{ color: "#0f172a" }}
             >
               {SLIDE_TITLES[slide - 1]}
             </h2>
@@ -958,20 +958,20 @@ export default function ApplyPage() {
                     >
                       ⚠️ Important — include your country code
                     </p>
-                    <p className="text-gray-400">
+                    <p className="text-slate-600">
                       Start with{" "}
-                      <span className="text-gray-200 font-medium">+</span>{" "}
+                      <span className="text-slate-900 font-medium">+</span>{" "}
                       followed by your country code, then your number. No spaces
                       or dashes.
                     </p>
-                    <p className="text-gray-500">
-                      🇬🇧 UK: <span className="text-gray-300">+44</span>
+                    <p className="text-slate-500">
+                      🇬🇧 UK: <span className="text-slate-800">+44</span>
                       7700000000 &nbsp;·&nbsp; 🇦🇪 UAE:{" "}
-                      <span className="text-gray-300">+971</span>501234567
+                      <span className="text-slate-800">+971</span>501234567
                       &nbsp;·&nbsp; 🇪🇸 Spain:{" "}
-                      <span className="text-gray-300">+34</span>600000000
+                      <span className="text-slate-800">+34</span>600000000
                     </p>
-                    <p className="text-gray-600">
+                    <p className="text-slate-500">
                       We use this number to contact you via WhatsApp — a wrong
                       number means we can&apos;t reach you.
                     </p>
@@ -1007,7 +1007,7 @@ export default function ApplyPage() {
                 <div>
                   <FieldLabel>
                     Second Choice Location{" "}
-                    <span className="text-gray-600 font-normal text-xs">
+                    <span className="text-slate-500 font-normal text-xs">
                       (optional)
                     </span>
                   </FieldLabel>
@@ -1021,7 +1021,7 @@ export default function ApplyPage() {
                 <div>
                   <FieldLabel>
                     Location Not Listed?{" "}
-                    <span className="text-gray-600 font-normal text-xs">
+                    <span className="text-slate-500 font-normal text-xs">
                       (optional)
                     </span>
                   </FieldLabel>
@@ -1069,12 +1069,12 @@ export default function ApplyPage() {
               <>
                 <div>
                   <FieldLabel required>Photos of Yourself</FieldLabel>
-                  <p className="text-xs text-gray-500 mb-2">
+                  <p className="text-xs text-slate-500 mb-2">
                     Upload 2 photos. JPG, PNG, or WEBP only. Max 10MB each.
                   </p>
                   <div
                     onClick={() => photosRef.current?.click()}
-                    className="border-2 border-dashed border-[#2a2a2a] rounded-2xl p-6 text-center bg-[#141414] cursor-pointer transition-all"
+                    className="border-2 border-dashed border-slate-200 rounded-2xl p-6 text-center bg-slate-50 cursor-pointer transition-all"
                     onMouseEnter={(e) => {
                       e.currentTarget.style.borderColor = B;
                     }}
@@ -1092,7 +1092,7 @@ export default function ApplyPage() {
                     >
                       Click to add photos
                     </p>
-                    <p className="text-xs text-gray-600 mt-1">
+                    <p className="text-xs text-slate-500 mt-1">
                       {form.photos.length} / 2 uploaded
                       {form.photos.length < 2 && " (need at least 2)"}
                     </p>
@@ -1114,7 +1114,7 @@ export default function ApplyPage() {
                       {form.photos.map((p, i) => (
                         <div
                           key={i}
-                          className="relative rounded-xl overflow-hidden bg-[#1a1a1a] aspect-square group"
+                          className="relative rounded-xl overflow-hidden bg-slate-100 aspect-square group"
                         >
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
@@ -1145,18 +1145,18 @@ export default function ApplyPage() {
                   <FieldLabel required>
                     Upload Photo ID (Passport Only)
                   </FieldLabel>
-                  <div className="bg-amber-500/10 border border-amber-500/20 rounded-xl p-3 mb-3 text-xs text-amber-400 leading-relaxed">
+                  <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 mb-3 text-xs text-amber-800 leading-relaxed">
                     <strong>Note:</strong> We require a passport copy for Right
                     to Work in UK check. If you have a non-UK passport, you will
                     also need to provide your Share Code.{" "}
-                    <span className="text-amber-500/80">
+                    <span className="text-amber-700">
                       We do NOT accept driving licences.
                     </span>
                   </div>
                   {!form.passportId ? (
                     <div
                       onClick={() => idRef.current?.click()}
-                      className="border-2 border-dashed border-[#2a2a2a] rounded-2xl p-6 text-center bg-[#141414] cursor-pointer transition-all"
+                      className="border-2 border-dashed border-slate-200 rounded-2xl p-6 text-center bg-slate-50 cursor-pointer transition-all"
                       onMouseEnter={(e) => {
                         e.currentTarget.style.borderColor = B;
                       }}
@@ -1174,13 +1174,13 @@ export default function ApplyPage() {
                       >
                         Click to upload passport
                       </p>
-                      <p className="text-xs text-gray-600 mt-1">
+                      <p className="text-xs text-slate-500 mt-1">
                         JPG or PNG only — max 10MB
                       </p>
                     </div>
                   ) : (
-                    <div className="flex items-center gap-3 bg-[#1a1a1a] rounded-xl p-3 border border-[#2a2a2a]">
-                      <div className="w-12 h-12 rounded-lg overflow-hidden bg-[#222] flex-shrink-0">
+                    <div className="flex items-center gap-3 bg-slate-50 rounded-xl p-3 border border-slate-200">
+                      <div className="w-12 h-12 rounded-lg overflow-hidden bg-slate-100 flex-shrink-0">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={form.passportId.base64}
@@ -1189,17 +1189,17 @@ export default function ApplyPage() {
                         />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm font-medium text-gray-200 truncate">
+                        <p className="text-sm font-medium text-slate-800 truncate">
                           {form.passportId.name}
                         </p>
-                        <p className="text-xs text-gray-500">
+                        <p className="text-xs text-slate-500">
                           {(form.passportId.size / 1024 / 1024).toFixed(2)} MB
                         </p>
                       </div>
                       <button
                         type="button"
                         onClick={() => upd({ passportId: null })}
-                        className="text-red-400 p-2"
+                        className="text-red-600 p-2"
                       >
                         <X className="w-4 h-4" />
                       </button>
@@ -1352,7 +1352,7 @@ export default function ApplyPage() {
                       label={
                         <span>
                           I understand this is{" "}
-                          <strong className="text-white">
+                          <strong className="text-slate-900">
                             self-employed work, NOT employment
                           </strong>
                         </span>
@@ -1368,7 +1368,7 @@ export default function ApplyPage() {
                       label={
                         <span>
                           I understand this is predominantly{" "}
-                          <strong className="text-white">
+                          <strong className="text-slate-900">
                             weekend / night time work
                           </strong>
                         </span>
@@ -1389,8 +1389,8 @@ export default function ApplyPage() {
                 </div>
                 {submitError && (
                   <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4 flex items-start gap-3">
-                    <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0 mt-0.5" />
-                    <p className="text-sm text-red-400">{submitError}</p>
+                    <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-sm text-red-600">{submitError}</p>
                   </div>
                 )}
               </>
@@ -1398,12 +1398,12 @@ export default function ApplyPage() {
           </div>
 
           {/* Navigation Footer */}
-          <div className="px-6 py-4 border-t border-[#1a1a1a] flex justify-between items-center">
+          <div className="px-6 py-4 border-t border-slate-100 flex justify-between items-center bg-slate-50/70">
             <button
               type="button"
               onClick={() => slide > 1 && goToSlide(slide - 1)}
               disabled={slide === 1}
-              className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold border border-[#2a2a2a] text-gray-400 bg-[#141414] hover:border-[#FDB8D7]/50 hover:text-gray-200 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+              className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold border border-slate-200 text-slate-600 bg-white hover:border-[#FDB8D7]/80 hover:text-slate-900 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
             >
               <ChevronLeft className="w-4 h-4" />
               Back
@@ -1435,7 +1435,7 @@ export default function ApplyPage() {
           </div>
         </div>
 
-        <p className="text-center text-xs text-gray-700 mt-4 pb-4">
+        <p className="text-center text-xs text-slate-700 mt-4 pb-4">
           Your information is handled securely and will only be used for your
           application.
         </p>
