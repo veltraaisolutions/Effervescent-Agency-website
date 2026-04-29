@@ -4,13 +4,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
 import { usePathname } from "next/navigation";
 import AnnouncementBar from "./AnnouncementBar";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -154,7 +155,29 @@ const Navbar = () => {
             </div>
 
             {/* Mobile menu button */}
-            <div className="xl:hidden flex items-center">
+            <div className="xl:hidden flex items-center gap-2">
+              <div className="relative">
+                <button
+                  onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
+                  className="bg-primary text-white px-4 py-2 rounded-xl text-xs font-black shadow-md flex items-center gap-1"
+                >
+                  Get Started <ChevronDown size={14} className={`transition-transform ${mobileDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+                <AnimatePresence>
+                  {mobileDropdownOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      className="absolute right-0 top-full mt-2 w-56 bg-white rounded-xl shadow-premium border border-slate-100 overflow-hidden flex flex-col"
+                    >
+                      <Link href="/shot-sellers" onClick={() => setMobileDropdownOpen(false)} className="px-4 py-3 text-xs font-bold text-slate-700 hover:bg-slate-50 border-b border-slate-50">Become a shot seller</Link>
+                      <Link href="/referrals" onClick={() => setMobileDropdownOpen(false)} className="px-4 py-3 text-xs font-bold text-slate-700 hover:bg-slate-50 border-b border-slate-50">Referral section</Link>
+                      <Link href="/contact" onClick={() => setMobileDropdownOpen(false)} className="px-4 py-3 text-xs font-bold text-slate-700 hover:bg-slate-50">Discuss your venue</Link>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="text-slate-900 p-2 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors"
