@@ -117,7 +117,7 @@ const Navbar = () => {
                   onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
                   className="bg-primary text-white px-4 py-2 rounded-xl text-xs font-black shadow-md flex items-center gap-1 whitespace-nowrap"
                 >
-                  Get Started <ChevronDown size={14} className={`transition-transform ${mobileDropdownOpen ? 'rotate-180' : ''}`} />
+                  Partner With Us <ChevronDown size={14} className={`transition-transform ${mobileDropdownOpen ? 'rotate-180' : ''}`} />
                 </button>
                 <AnimatePresence>
                   {mobileDropdownOpen && (
@@ -129,7 +129,7 @@ const Navbar = () => {
                     >
                       <Link href="/shot-sellers" onClick={() => setMobileDropdownOpen(false)} className="px-4 py-3 text-xs font-bold text-slate-700 hover:bg-slate-50 border-b border-slate-50">Become a shot seller</Link>
                       <Link href="/referrals" onClick={() => setMobileDropdownOpen(false)} className="px-4 py-3 text-xs font-bold text-slate-700 hover:bg-slate-50 border-b border-slate-50">Referral section</Link>
-                      <Link href="/contact" onClick={() => setMobileDropdownOpen(false)} className="px-4 py-3 text-xs font-bold text-slate-700 hover:bg-slate-50">Discuss your venue</Link>
+                      <Link href="/contact" onClick={() => setMobileDropdownOpen(false)} className="px-4 py-3 text-xs font-bold text-slate-700 hover:bg-slate-50">Discuss your venue with Us</Link>
                     </motion.div>
                   )}
                 </AnimatePresence>
