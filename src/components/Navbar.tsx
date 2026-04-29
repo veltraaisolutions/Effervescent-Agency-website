@@ -64,7 +64,7 @@ const Navbar = () => {
           }`}
       >
         <div className="max-w-[1600px] mx-auto px-4 lg:px-8">
-          <div className="flex justify-between items-center gap-4">
+          <div className="flex justify-between items-center gap-4 relative">
             {/* Logo */}
             <Link href="/" className="flex-shrink-0 flex items-center group">
               <div className="h-14 w-28 md:h-20 md:w-40 relative transition-transform duration-500 group-hover:scale-110">
@@ -109,6 +109,32 @@ const Navbar = () => {
                 </AnimatePresence>
               </div>
             </Link>
+
+            {/* Mobile Action Dropdown (Centered) */}
+            <div className="xl:hidden absolute left-1/2 -translate-x-1/2">
+              <div className="relative">
+                <button
+                  onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
+                  className="bg-primary text-white px-4 py-2 rounded-xl text-xs font-black shadow-md flex items-center gap-1 whitespace-nowrap"
+                >
+                  Get Started <ChevronDown size={14} className={`transition-transform ${mobileDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+                <AnimatePresence>
+                  {mobileDropdownOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-56 bg-white rounded-xl shadow-premium border border-slate-100 overflow-hidden flex flex-col"
+                    >
+                      <Link href="/shot-sellers" onClick={() => setMobileDropdownOpen(false)} className="px-4 py-3 text-xs font-bold text-slate-700 hover:bg-slate-50 border-b border-slate-50">Become a shot seller</Link>
+                      <Link href="/referrals" onClick={() => setMobileDropdownOpen(false)} className="px-4 py-3 text-xs font-bold text-slate-700 hover:bg-slate-50 border-b border-slate-50">Referral section</Link>
+                      <Link href="/contact" onClick={() => setMobileDropdownOpen(false)} className="px-4 py-3 text-xs font-bold text-slate-700 hover:bg-slate-50">Discuss your venue</Link>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </div>
 
             {/* Center Navigation */}
             <div className="hidden xl:flex items-center gap-2">
@@ -156,28 +182,6 @@ const Navbar = () => {
 
             {/* Mobile menu button */}
             <div className="xl:hidden flex items-center gap-2">
-              <div className="relative">
-                <button
-                  onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
-                  className="bg-primary text-white px-4 py-2 rounded-xl text-xs font-black shadow-md flex items-center gap-1"
-                >
-                  Get Started <ChevronDown size={14} className={`transition-transform ${mobileDropdownOpen ? 'rotate-180' : ''}`} />
-                </button>
-                <AnimatePresence>
-                  {mobileDropdownOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 10 }}
-                      className="absolute right-0 top-full mt-2 w-56 bg-white rounded-xl shadow-premium border border-slate-100 overflow-hidden flex flex-col"
-                    >
-                      <Link href="/shot-sellers" onClick={() => setMobileDropdownOpen(false)} className="px-4 py-3 text-xs font-bold text-slate-700 hover:bg-slate-50 border-b border-slate-50">Become a shot seller</Link>
-                      <Link href="/referrals" onClick={() => setMobileDropdownOpen(false)} className="px-4 py-3 text-xs font-bold text-slate-700 hover:bg-slate-50 border-b border-slate-50">Referral section</Link>
-                      <Link href="/contact" onClick={() => setMobileDropdownOpen(false)} className="px-4 py-3 text-xs font-bold text-slate-700 hover:bg-slate-50">Discuss your venue</Link>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="text-slate-900 p-2 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors"
@@ -218,23 +222,8 @@ const Navbar = () => {
               );
             })}
             <div className="pt-4 space-y-3">
-              <Link
-                href="/contact"
-                onClick={() => setMobileMenuOpen(false)}
-                className={`block w-full bg-primary text-white text-center py-4 rounded-xl font-black text-sm shadow-lg ${pathname === "/contact" ? "ring-4 ring-primary/20" : ""
-                  }`}
-              >
-                Discuss Your Venue With Us
-              </Link>
-              <Link
-                href="https://effervescent-agency.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setMobileMenuOpen(false)}
-                className="block w-full bg-slate-900 text-white text-center py-4 rounded-xl font-black text-sm shadow-lg"
-              >
-                Start Making £ Today
-              </Link>
+
+
 
               <div className="flex justify-center gap-8 pt-4">
                 <Link href="https://instagram.com/effervescent.agency" target="_blank" className="text-slate-500 hover:text-primary transition-colors">
