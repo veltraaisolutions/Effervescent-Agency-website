@@ -89,7 +89,6 @@ const HEARD_ABOUT_OPTIONS = [
 
 const GENDER_OPTIONS = ["Female", "Male", "Non-binary", "Prefer not to say"];
 
-const WEBHOOK_URL = "https://n8n.veltraai.net/webhook/web-form-milli";
 const MAX_FILE_SIZE = 10 * 1024 * 1024;
 const ALLOWED_PHOTO_TYPES = [
   "image/jpeg",
@@ -732,73 +731,65 @@ export default function ApplyPage() {
     if (idRef.current) idRef.current.value = "";
   }
 
-  async function handleSubmit() {
+  function handleSubmit() {
     setSubmitting(true);
     setSubmitError("");
-    try {
-      const payload = {
-        personalInfo: {
-          fullName: form.fullName,
-          dateOfBirth: form.dob,
-          gender: form.gender,
-          email: form.email,
-          // phone is already normalised to E.164 via onBlur — safe for DB + WhatsApp API
-          phone: form.phone,
-          instagram: form.instagram,
-        },
-        location: {
-          primaryLocation: form.primaryCity,
-          secondLocation: form.secondCity,
-          manualLocation: form.manualCity,
-          isStudent: form.isStudent,
-          homeCity: form.homeCity,
-          doesDrive: form.doesDrive,
-        },
-        photos: {
-          selfPhotos: form.photos.map((p) => ({
-            name: p.name,
-            base64: p.base64,
-            type: p.type,
-          })),
-          passportId: form.passportId
-            ? {
-                name: form.passportId.name,
-                base64: form.passportId.base64,
-                type: form.passportId.type,
-              }
-            : null,
-          hasNonUkPassport: form.nonUkPassport,
-          shareCode: form.shareCode,
-        },
-        experience: {
-          hasPriorExperience: form.priorExp,
-          previousCompany: form.prevCompany,
-          yearsOfExperience: form.yearsExp,
-          understandRole: form.understandRole,
-          whyGoodFit: form.whyFit,
-          salesExperience: form.salesExp,
-          availableFrom: form.startDate,
-        },
-        declarations: {
-          selfEmployed: form.selfEmployed,
-          weekendWork: form.weekendWork,
-          heardAbout: form.heardAbout,
-        },
-      };
-      const res = await fetch(WEBHOOK_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-      if (!res.ok) throw new Error(`Status ${res.status}`);
+    const payload = {
+      personalInfo: {
+        fullName: form.fullName,
+        dateOfBirth: form.dob,
+        gender: form.gender,
+        email: form.email,
+        phone: form.phone,
+        instagram: form.instagram,
+      },
+      location: {
+        primaryLocation: form.primaryCity,
+        secondLocation: form.secondCity,
+        manualLocation: form.manualCity,
+        isStudent: form.isStudent,
+        homeCity: form.homeCity,
+        doesDrive: form.doesDrive,
+      },
+      photos: {
+        selfPhotos: form.photos.map((p) => ({
+          name: p.name,
+          base64: p.base64,
+          type: p.type,
+        })),
+        passportId: form.passportId
+          ? {
+              name: form.passportId.name,
+              base64: form.passportId.base64,
+              type: form.passportId.type,
+            }
+          : null,
+        hasNonUkPassport: form.nonUkPassport,
+        shareCode: form.shareCode,
+      },
+      experience: {
+        hasPriorExperience: form.priorExp,
+        previousCompany: form.prevCompany,
+        yearsOfExperience: form.yearsExp,
+        understandRole: form.understandRole,
+        whyGoodFit: form.whyFit,
+        salesExperience: form.salesExp,
+        availableFrom: form.startDate,
+      },
+      declarations: {
+        selfEmployed: form.selfEmployed,
+        weekendWork: form.weekendWork,
+        heardAbout: form.heardAbout,
+      },
+    };
+
+    console.log("Apply form payload:", payload);
+
+    window.setTimeout(() => {
+      setForm(INITIAL);
       setSubmitted(true);
-    } catch {
-      setSubmitError(
-        "Something went wrong. Please try again or contact us directly.",
-      );
-    } finally {
       setSubmitting(false);
-    }
+    }, 250);
   }
 
   // ─── Success Screen ──────────────────────────────────────────────────────────
