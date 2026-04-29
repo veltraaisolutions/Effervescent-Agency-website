@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { usePathname } from "next/navigation";
 import AnnouncementBar from "./AnnouncementBar";
@@ -66,14 +67,45 @@ const Navbar = () => {
             {/* Logo */}
             <Link href="/" className="flex-shrink-0 flex items-center group">
               <div className="h-14 w-28 md:h-20 md:w-40 relative transition-transform duration-500 group-hover:scale-110">
-                <Image
-                  src="/effervescent-side-log-1.jpeg"
-                  alt="Effervescent"
-                  fill
-                  className="object-contain"
-                  style={{ mixBlendMode: 'multiply' }}
-                  priority
-                />
+                <AnimatePresence mode="wait">
+                  {!isScrolled ? (
+                    <motion.div
+                      key="white-logo"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="absolute inset-0"
+                    >
+                      <Image
+                        src="/effervescent-side-log-1.jpeg"
+                        alt="Effervescent"
+                        fill
+                        className="object-contain"
+                        style={{ mixBlendMode: 'multiply' }}
+                        priority
+                      />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="pink-logo"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="absolute inset-0 scale-[1.3]"
+                    >
+                      <Image
+                        src="/effervescent-pink.png"
+                        alt="Effervescent"
+                        fill
+                        className="object-contain"
+                        style={{ mixBlendMode: 'multiply' }}
+                        priority
+                      />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             </Link>
 

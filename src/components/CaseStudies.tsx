@@ -6,7 +6,7 @@ const CaseStudies = () => {
   return (
     <section className="relative pt-24 md:pt-32 pb-0 overflow-hidden">
       {/* Background Image and Gradient Overlay */}
-      <div 
+      <div
         className="absolute inset-0 z-0"
         style={{
           WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)',
