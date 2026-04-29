@@ -127,7 +127,7 @@ const Navbar = () => {
                       exit={{ opacity: 0, y: 10 }}
                       className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-56 bg-white rounded-xl shadow-premium border border-slate-100 overflow-hidden flex flex-col"
                     >
-                      <Link href="/shot-sellers" onClick={() => setMobileDropdownOpen(false)} className="px-4 py-3 text-xs font-bold text-slate-700 hover:bg-slate-50 border-b border-slate-50">Become a shot seller</Link>
+                      <Link href="/apply" onClick={() => setMobileDropdownOpen(false)} className="px-4 py-3 text-xs font-bold text-slate-700 hover:bg-slate-50 border-b border-slate-50">Become a shot seller</Link>
                       <Link href="/referrals" onClick={() => setMobileDropdownOpen(false)} className="px-4 py-3 text-xs font-bold text-slate-700 hover:bg-slate-50 border-b border-slate-50">Referral section</Link>
                       <Link href="/contact" onClick={() => setMobileDropdownOpen(false)} className="px-4 py-3 text-xs font-bold text-slate-700 hover:bg-slate-50">Discuss your venue with Us</Link>
                     </motion.div>
