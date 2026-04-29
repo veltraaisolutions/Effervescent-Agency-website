@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { usePathname } from "next/navigation";
 import AnnouncementBar from "./AnnouncementBar";
 
@@ -12,6 +12,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
+  const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -94,7 +95,7 @@ const Navbar = () => {
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="absolute inset-0 scale-[1.3]"
+                      className="absolute inset-0 scale-[1.8]"
                     >
                       <Image
                         src="/effervescent-pink.png"
@@ -172,18 +173,51 @@ const Navbar = () => {
                   <TikTokIcon size={18} />
                 </Link>
               </div>
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 bg-primary text-white px-8 py-3 rounded-full text-xs font-black shadow-lg transition-all hover:scale-105 active:scale-95 group whitespace-nowrap"
-              >
-                Discuss Your Venue with Us<ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
-              </Link>
-              <Link
-                href="/apply"
-                className="inline-flex items-center gap-2 bg-primary text-white px-8 py-3 rounded-full text-xs font-black shadow-lg transition-all hover:scale-105 active:scale-95 group whitespace-nowrap"
-              >
-                Start Making £ Today<ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
-              </Link>
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={() => setDesktopDropdownOpen(!desktopDropdownOpen)}
+                  className="inline-flex items-center gap-2 bg-primary text-white px-8 py-3 rounded-full text-xs font-black shadow-lg transition-all hover:scale-105 active:scale-95 whitespace-nowrap"
+                >
+                  Partner With Us
+                  <ChevronDown
+                    size={14}
+                    className={`transition-transform ${desktopDropdownOpen ? "rotate-180" : ""}`}
+                  />
+                </button>
+                <AnimatePresence>
+                  {desktopDropdownOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      className="absolute right-0 top-full mt-3 w-64 bg-white rounded-xl shadow-premium border border-slate-100 overflow-hidden flex flex-col"
+                    >
+                      <Link
+                        href="/apply"
+                        onClick={() => setDesktopDropdownOpen(false)}
+                        className="px-4 py-3 text-xs font-bold text-slate-700 hover:bg-slate-50 border-b border-slate-50"
+                      >
+                        Become a shot seller
+                      </Link>
+                      <Link
+                        href="/referrals"
+                        onClick={() => setDesktopDropdownOpen(false)}
+                        className="px-4 py-3 text-xs font-bold text-slate-700 hover:bg-slate-50 border-b border-slate-50"
+                      >
+                        Referral section
+                      </Link>
+                      <Link
+                        href="/contact"
+                        onClick={() => setDesktopDropdownOpen(false)}
+                        className="px-4 py-3 text-xs font-bold text-slate-700 hover:bg-slate-50"
+                      >
+                        Discuss your venue with Us
+                      </Link>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             </div>
 
             {/* Mobile menu button */}
