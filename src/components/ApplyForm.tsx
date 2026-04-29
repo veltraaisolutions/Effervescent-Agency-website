@@ -413,11 +413,10 @@ function YesNoToggle({
               ? { backgroundColor: B, borderColor: B, color: "#1a0a10" }
               : {}
           }
-          className={`px-6 py-2 rounded-xl text-sm font-semibold border transition-all ${
-            value === opt
+          className={`px-6 py-2 rounded-xl text-sm font-semibold border transition-all ${value === opt
               ? "shadow-sm"
               : "bg-slate-50 text-slate-600 border-slate-200 hover:border-[#FDB8D7]/80 hover:text-slate-900"
-          }`}
+            }`}
         >
           {opt === "yes" ? "Yes" : "No"}
         </button>
@@ -445,17 +444,15 @@ function RadioGroup({
           style={
             value === opt ? { borderColor: B, backgroundColor: `${B}14` } : {}
           }
-          className={`flex items-center gap-3 px-4 py-3 rounded-xl border text-sm font-medium text-left transition-all ${
-            value === opt
+          className={`flex items-center gap-3 px-4 py-3 rounded-xl border text-sm font-medium text-left transition-all ${value === opt
               ? "text-slate-900"
               : "border-slate-200 bg-slate-50 text-slate-600 hover:border-[#FDB8D7]/70 hover:text-slate-900"
-          }`}
+            }`}
         >
           <div
             style={value === opt ? { borderColor: B } : {}}
-            className={`w-4 h-4 rounded-full border-2 flex-shrink-0 flex items-center justify-center ${
-              value === opt ? "" : "border-slate-300"
-            }`}
+            className={`w-4 h-4 rounded-full border-2 flex-shrink-0 flex items-center justify-center ${value === opt ? "" : "border-slate-300"
+              }`}
           >
             {value === opt && (
               <div
@@ -489,9 +486,8 @@ function StyledCheckbox({
         checked={checked}
         onCheckedChange={(v) => onCheckedChange(!!v)}
         style={checked ? { backgroundColor: B, borderColor: B } : {}}
-        className={`mt-0.5 w-5 h-5 rounded-md border-2 flex items-center justify-center flex-shrink-0 transition-all ${
-          checked ? "" : "border-slate-300 bg-white hover:border-[#FDB8D7]/80"
-        }`}
+        className={`mt-0.5 w-5 h-5 rounded-md border-2 flex items-center justify-center flex-shrink-0 transition-all ${checked ? "" : "border-slate-300 bg-white hover:border-[#FDB8D7]/80"
+          }`}
       >
         <CheckboxPrimitive.Indicator>
           <Check
@@ -561,7 +557,7 @@ function SuccessScreen() {
           style={{ boxShadow: `0 0 0 2px ${B}40` }}
         >
           <Image
-            src="/logo.jpeg"
+            src="/effervescent-pink.png"
             alt="Effervescent Agency"
             width={96}
             height={96}
@@ -759,10 +755,10 @@ export default function ApplyPage() {
         })),
         passportId: form.passportId
           ? {
-              name: form.passportId.name,
-              base64: form.passportId.base64,
-              type: form.passportId.type,
-            }
+            name: form.passportId.name,
+            base64: form.passportId.base64,
+            type: form.passportId.type,
+          }
           : null,
         hasNonUkPassport: form.nonUkPassport,
         shareCode: form.shareCode,
@@ -812,17 +808,16 @@ export default function ApplyPage() {
                 style={
                   s <= slide
                     ? {
-                        backgroundColor: B,
-                        color: "#1a0a10",
-                        boxShadow: s === slide ? `0 0 0 4px ${B}30` : undefined,
-                      }
+                      backgroundColor: B,
+                      color: "#1a0a10",
+                      boxShadow: s === slide ? `0 0 0 4px ${B}30` : undefined,
+                    }
                     : {}
                 }
-                className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300 ${
-                  s <= slide
+                className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300 ${s <= slide
                     ? ""
                     : "bg-white/70 text-slate-400 border border-white/80"
-                }`}
+                  }`}
               >
                 {s < slide ? (
                   <Check
