@@ -176,7 +176,13 @@ const Navbar = () => {
                 href="/contact"
                 className="inline-flex items-center gap-2 bg-primary text-white px-8 py-3 rounded-full text-xs font-black shadow-lg transition-all hover:scale-105 active:scale-95 group whitespace-nowrap"
               >
-                Discuss Your Venue <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+                Discuss Your Venue with Us<ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link
+                href="/apply"
+                className="inline-flex items-center gap-2 bg-primary text-white px-8 py-3 rounded-full text-xs font-black shadow-lg transition-all hover:scale-105 active:scale-95 group whitespace-nowrap"
+              >
+                Start Making £ Today<ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
 
