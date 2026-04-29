@@ -808,35 +808,7 @@ export default function ApplyPage() {
   // ─── Form Layout ─────────────────────────────────────────────────────────────
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a]">
-      {/* Header */}
-      <header className="bg-[#0d0d0d]/95 backdrop-blur-sm border-b border-[#1a1a1a] sticky top-0 z-20">
-        <div className="max-w-xl mx-auto px-4 py-3 flex items-center justify-between">
-          <div
-            className="h-10 rounded-xl overflow-hidden"
-            style={{ boxShadow: `0 0 0 1px ${B}30` }}
-          >
-            <Image
-              src="/logo.jpeg"
-              alt="Effervescent Agency"
-              width={180}
-              height={40}
-              className="h-10 w-auto object-contain"
-            />
-          </div>
-          <span
-            className="text-xs font-semibold px-3 py-1 rounded-full border"
-            style={{
-              color: B,
-              backgroundColor: `${B}12`,
-              borderColor: `${B}35`,
-            }}
-          >
-            {slide} / 5
-          </span>
-        </div>
-      </header>
-
+    <div className="min-h-screen bg-transparent pt-32 pb-12">
       {/* Progress */}
       <div className="max-w-xl mx-auto px-4 pt-5 pb-2">
         <div className="flex items-start justify-between mb-3">
