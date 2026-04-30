@@ -11,6 +11,8 @@ const partnersConfig = [
   { name: "Pop World", src: "/pop-world.png" },
   { name: "XOYO", src: "/xoyo.png" },
   { name: "The Nest", src: "/the-nest.png" },
+  { name: "Venues Independent", src: "/venues_independent.webp" },
+  { name: "Boxpark", src: "/box_park.png" },
 ];
 
 const PartnerMarquee = () => {
@@ -27,7 +29,7 @@ const PartnerMarquee = () => {
           <span className="text-white font-black uppercase tracking-[0.4em] text-[10px] md:text-xs">
             Trusted Industry Partners
           </span>
-          <h3 className="text-2xl md:text-3xl font-serif text-white italic">The World's Leading Venues</h3>
+          <h3 className="text-2xl md:text-3xl font-serif text-white italic">The World&apos;s Leading Venues</h3>
         </div>
       </div>
       
