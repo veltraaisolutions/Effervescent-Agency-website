@@ -1,42 +1,184 @@
 "use client";
 
 import { useState } from "react";
-import { MessageSquare, Phone, Mail, CheckCircle2, Loader2, ArrowRight } from "lucide-react";
+import { AlertCircle, CheckCircle2, Loader2, ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { WEBHOOK_URL } from "@/lib/apply-utils";
+import {
+  venueInquirySchema,
+  type VenueInquiryInput,
+} from "@/lib/validations/venue";
+
+type VenueFieldErrors = Partial<Record<keyof VenueInquiryInput, string>>;
+
+const B = "#FDB8D7";
+
+const onFocusBrand = (
+  e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>,
+) => {
+  e.currentTarget.style.boxShadow = `0 0 0 2px ${B}55`;
+  e.currentTarget.style.borderColor = B;
+};
+
+const onBlurBrand = (
+  e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>,
+) => {
+  e.currentTarget.style.boxShadow = "";
+  e.currentTarget.style.borderColor = "";
+};
+
+function FieldLabel({
+  children,
+  required,
+}: {
+  children: React.ReactNode;
+  required?: boolean;
+}) {
+  return (
+    <label className="block text-sm font-semibold text-slate-800 mb-1.5">
+      {children}
+      {required && (
+        <span
+          style={{ color: B }}
+          className="ml-0.5"
+        >
+          *
+        </span>
+      )}
+    </label>
+  );
+}
+
+function FieldError({ message }: { message?: string }) {
+  if (!message) return null;
+
+  return (
+    <p className="mt-1.5 text-xs text-red-600 flex items-center gap-1">
+      <AlertCircle className="w-3 h-3 flex-shrink-0" />
+      {message}
+    </p>
+  );
+}
+
+function TextInput({
+  value,
+  onChange,
+  placeholder = "",
+  type = "text",
+}: {
+  value: string;
+  onChange: (value: string) => void;
+  placeholder?: string;
+  type?: string;
+}) {
+  return (
+    <input
+      required
+      type={type}
+      value={value}
+      placeholder={placeholder}
+      onChange={(e) => onChange(e.target.value)}
+      onFocus={onFocusBrand}
+      onBlur={onBlurBrand}
+      style={{ colorScheme: "light" }}
+      className="w-full px-3 py-2.5 border border-slate-200 rounded-xl text-sm bg-slate-50 text-slate-900 placeholder:text-slate-400 focus:outline-none disabled:opacity-50 transition-all"
+    />
+  );
+}
+
+function TextareaInput({
+  value,
+  onChange,
+  placeholder = "",
+  rows = 4,
+}: {
+  value: string;
+  onChange: (value: string) => void;
+  placeholder?: string;
+  rows?: number;
+}) {
+  return (
+    <textarea
+      required
+      value={value}
+      rows={rows}
+      placeholder={placeholder}
+      onChange={(e) => onChange(e.target.value)}
+      onFocus={onFocusBrand}
+      onBlur={onBlurBrand}
+      className="w-full px-3 py-2.5 border border-slate-200 rounded-xl text-sm bg-slate-50 text-slate-900 placeholder:text-slate-400 focus:outline-none resize-none transition-all"
+    />
+  );
+}
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<VenueInquiryInput>({
     name: "",
-    venueName: "",
     email: "",
     phone: "",
+    position: "",
+    venueName: "",
     message: "",
   });
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const [fieldErrors, setFieldErrors] = useState<VenueFieldErrors>({});
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const parsed = venueInquirySchema.safeParse(formData);
+
+    if (!parsed.success) {
+      const nextErrors = Object.fromEntries(
+        Object.entries(parsed.error.flatten().fieldErrors).map(([key, value]) => [
+          key,
+          value?.[0] ?? "",
+        ]),
+      ) as VenueFieldErrors;
+
+      setFieldErrors(nextErrors);
+      setError("Please check the highlighted fields.");
+      return;
+    }
+
     setSubmitting(true);
     setError("");
+    setFieldErrors({});
 
     try {
-      const response = await fetch(WEBHOOK_URL, {
+      const response = await fetch("/api/venue-inquiry", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          type: "B2B_INQUIRY",
-          ...formData,
-          timestamp: new Date().toISOString(),
-        }),
+        body: JSON.stringify(parsed.data),
       });
 
-      if (!response.ok) throw new Error("Failed to send inquiry");
+      if (!response.ok) {
+        const result = await response.json().catch(() => null);
+
+        if (result?.fieldErrors) {
+          const nextErrors = Object.fromEntries(
+            Object.entries(result.fieldErrors).map(([key, value]) => [
+              key,
+              Array.isArray(value) ? value[0] ?? "" : "",
+            ]),
+          ) as VenueFieldErrors;
+
+          setFieldErrors(nextErrors);
+        }
+
+        throw new Error(result?.error ?? "Failed to send inquiry");
+      }
 
       setSubmitted(true);
-    } catch (err) {
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        position: "",
+        venueName: "",
+        message: "",
+      });
+    } catch {
       setError("Something went wrong. Please try again or contact us directly via WhatsApp.");
     } finally {
       setSubmitting(false);
@@ -99,100 +241,121 @@ export default function ContactPage() {
             </div>
 
             {/* B2B Inquiry Form */}
-            <div className="bg-white rounded-[3rem] p-1 md:p-4 shadow-2xl relative z-10 overflow-hidden order-1 lg:order-2">
-              <div className="p-8 md:p-16">
-                <div className="mb-12">
-                  <h3 className="text-3xl font-serif text-slate-900 mb-4">Venue Inquiry</h3>
-                  <div className="w-16 h-1 bg-primary rounded-full"></div>
+            <div className="relative z-10 order-1 lg:order-2">
+              <div className="bg-white rounded-3xl border border-white/70 overflow-hidden shadow-2xl">
+                <div
+                  className="px-6 py-5"
+                  style={{ background: "linear-gradient(135deg, #ffffff, #fff1f7)" }}
+                >
+                  <p
+                    className="text-xs font-semibold uppercase tracking-widest mb-1"
+                    style={{ color: "#be185d" }}
+                  >
+                    Venue enquiry
+                  </p>
+                  <h3
+                    className="text-xl font-bold"
+                    style={{ color: "#0f172a" }}
+                  >
+                    Discuss your venue with us
+                  </h3>
                 </div>
 
                 {submitted ? (
-                  <div className="text-center py-12 space-y-6">
-                    <div className="w-20 h-20 bg-green-50 text-green-500 rounded-2xl flex items-center justify-center mx-auto border border-green-100">
+                  <div className="text-center px-6 py-12 space-y-6">
+                    <div className="w-20 h-20 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto shadow-inner">
                       <CheckCircle2 size={40} />
                     </div>
                     <h4 className="text-2xl font-bold text-slate-900">Inquiry Sent!</h4>
                     <p className="text-slate-500 font-light">Thank you for reaching out. Maddison will be in touch shortly to discuss your venue's growth.</p>
                     <button
                       onClick={() => setSubmitted(false)}
-                      className="text-primary font-black uppercase tracking-widest text-xs hover:underline pt-4"
+                      className="text-primary font-bold text-sm hover:underline pt-4"
                     >
                       Send another message
                     </button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-8">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                      <div className="space-y-3">
-                        <label className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 ml-1">Full Name</label>
-                        <input
-                          required
-                          type="text"
-                          placeholder="Your Name"
+                  <form onSubmit={handleSubmit} className="px-6 py-6 space-y-5">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                      <div>
+                        <FieldLabel required>Name</FieldLabel>
+                        <TextInput
+                          placeholder="Jane Smith"
                           value={formData.name}
-                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                          className="premium-input bg-slate-50 border-slate-100 text-slate-900 placeholder:text-slate-400"
+                          onChange={(value) => setFormData({ ...formData, name: value })}
                         />
+                        <FieldError message={fieldErrors.name} />
                       </div>
-                      <div className="space-y-3">
-                        <label className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 ml-1">Venue Name</label>
-                        <input
-                          required
-                          type="text"
-                          placeholder="Venue"
-                          value={formData.venueName}
-                          onChange={(e) => setFormData({ ...formData, venueName: e.target.value })}
-                          className="premium-input bg-slate-50 border-slate-100 text-slate-900 placeholder:text-slate-400"
-                        />
-                      </div>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                      <div className="space-y-3">
-                        <label className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 ml-1">Email Address</label>
-                        <input
-                          required
+                      <div>
+                        <FieldLabel required>Email</FieldLabel>
+                        <TextInput
                           type="email"
                           placeholder="email@venue.com"
                           value={formData.email}
-                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          className="premium-input bg-slate-50 border-slate-100 text-slate-900 placeholder:text-slate-400"
+                          onChange={(value) => setFormData({ ...formData, email: value })}
                         />
-                      </div>
-                      <div className="space-y-3">
-                        <label className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 ml-1">Phone</label>
-                        <input
-                          required
-                          type="tel"
-                          placeholder="Number"
-                          value={formData.phone}
-                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          className="premium-input bg-slate-50 border-slate-100 text-slate-900 placeholder:text-slate-400"
-                        />
+                        <FieldError message={fieldErrors.email} />
                       </div>
                     </div>
-                    <div className="space-y-3">
-                      <label className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 ml-1">Project Details</label>
-                      <textarea
-                        required
-                        rows={4}
-                        placeholder="Tell us about your venue's needs..."
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                      <div>
+                        <FieldLabel required>Phone</FieldLabel>
+                        <TextInput
+                          type="tel"
+                          placeholder="+44 7700 000000"
+                          value={formData.phone}
+                          onChange={(value) => setFormData({ ...formData, phone: value })}
+                        />
+                        <FieldError message={fieldErrors.phone} />
+                      </div>
+                      <div>
+                        <FieldLabel required>Position</FieldLabel>
+                        <TextInput
+                          placeholder="Owner, GM, Events Manager"
+                          value={formData.position}
+                          onChange={(value) => setFormData({ ...formData, position: value })}
+                        />
+                        <FieldError message={fieldErrors.position} />
+                      </div>
+                    </div>
+                    <div>
+                      <FieldLabel required>Venue or brand name</FieldLabel>
+                      <TextInput
+                        placeholder="Venue or brand"
+                        value={formData.venueName}
+                        onChange={(value) => setFormData({ ...formData, venueName: value })}
+                      />
+                      <FieldError message={fieldErrors.venueName} />
+                    </div>
+                    <div>
+                      <FieldLabel required>Enquiry info</FieldLabel>
+                      <TextareaInput
+                        rows={5}
+                        placeholder="Tell us about your enquiry..."
                         value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        className="premium-input bg-slate-50 border-slate-100 text-slate-900 placeholder:text-slate-400 resize-none"
-                      ></textarea>
+                        onChange={(value) => setFormData({ ...formData, message: value })}
+                      />
+                      <FieldError message={fieldErrors.message} />
                     </div>
 
-                    {error && <p className="text-red-500 text-sm font-medium text-center">{error}</p>}
+                    {error && (
+                      <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-4 flex items-start gap-3">
+                        <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
+                        <p className="text-sm text-red-600 font-medium">{error}</p>
+                      </div>
+                    )}
 
                     <button
                       type="submit"
                       disabled={submitting}
-                      className="w-full bg-slate-900 py-6 rounded-2xl text-white font-black text-lg shadow-premium hover:bg-slate-800 hover:-translate-y-1 active:scale-95 transition-all flex items-center justify-center gap-3 disabled:opacity-70 disabled:hover:scale-100"
+                      style={{ backgroundColor: B, color: "#1a0a10" }}
+                      className="w-full flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl text-sm font-bold shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all hover:opacity-90"
                     >
                       {submitting ? (
-                        <>Processing... <Loader2 className="animate-spin" size={20} /></>
+                        <>Processing... <Loader2 className="animate-spin" size={16} /></>
                       ) : (
-                        <>Send Inquiry <ArrowRight size={20} /></>
+                        <>Send Inquiry <ArrowRight size={16} /></>
                       )}
                     </button>
                   </form>

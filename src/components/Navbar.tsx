@@ -14,6 +14,7 @@ const Navbar = () => {
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false);
   const pathname = usePathname();
+  const navIsSolid = isScrolled || mobileMenuOpen;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,7 +60,7 @@ const Navbar = () => {
     <div className="fixed top-0 left-0 right-0 z-[100]">
       <AnnouncementBar />
       <nav
-        className={`transition-all duration-500 ${isScrolled || mobileMenuOpen
+        className={`transition-all duration-500 ${navIsSolid
           ? "bg-white/95 backdrop-blur-xl py-2 shadow-soft border-b border-slate-100"
           : "bg-transparent py-4"
           }`}
@@ -70,7 +71,7 @@ const Navbar = () => {
             <Link href="/" className="flex-shrink-0 flex items-center group">
               <div className="h-14 w-28 md:h-20 md:w-40 relative transition-transform duration-500 group-hover:scale-110">
                 <AnimatePresence mode="wait">
-                  {!isScrolled ? (
+                  {!navIsSolid ? (
                     <motion.div
                       key="white-logo"
                       initial={{ opacity: 0 }}
