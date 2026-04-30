@@ -101,6 +101,7 @@ const Navbar = () => {
                         src="/effervescent-side-log-1.jpeg"
                         alt="Effervescent"
                         fill
+                        sizes="(max-width: 768px) 112px, 160px"
                         className="object-contain"
                         style={{ mixBlendMode: 'multiply' }}
                         priority
@@ -119,6 +120,7 @@ const Navbar = () => {
                         src="/effervescent-pink.png"
                         alt="Effervescent"
                         fill
+                        sizes="(max-width: 768px) 112px, 160px"
                         className="object-contain"
                         style={{ mixBlendMode: 'multiply' }}
                         priority

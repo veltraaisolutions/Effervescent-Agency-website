@@ -727,65 +727,118 @@ export default function ApplyPage() {
     if (idRef.current) idRef.current.value = "";
   }
 
-  function handleSubmit() {
+  async function handleSubmit() {
     setSubmitting(true);
     setSubmitError("");
-    const payload = {
-      personalInfo: {
-        fullName: form.fullName,
-        dateOfBirth: form.dob,
-        gender: form.gender,
-        email: form.email,
-        phone: form.phone,
-        instagram: form.instagram,
-      },
-      location: {
-        primaryLocation: form.primaryCity,
-        secondLocation: form.secondCity,
-        manualLocation: form.manualCity,
-        isStudent: form.isStudent,
-        homeCity: form.homeCity,
-        doesDrive: form.doesDrive,
-      },
-      photos: {
-        selfPhotos: form.photos.map((p) => ({
-          name: p.name,
-          base64: p.base64,
-          type: p.type,
-        })),
-        passportId: form.passportId
-          ? {
-            name: form.passportId.name,
-            base64: form.passportId.base64,
-            type: form.passportId.type,
-          }
-          : null,
-        hasNonUkPassport: form.nonUkPassport,
-        shareCode: form.shareCode,
-      },
-      experience: {
-        hasPriorExperience: form.priorExp,
-        previousCompany: form.prevCompany,
-        yearsOfExperience: form.yearsExp,
-        understandRole: form.understandRole,
-        whyGoodFit: form.whyFit,
-        salesExperience: form.salesExp,
-        availableFrom: form.startDate,
-      },
-      declarations: {
-        selfEmployed: form.selfEmployed,
-        weekendWork: form.weekendWork,
-        heardAbout: form.heardAbout,
-      },
-    };
 
-    console.log("Apply form payload:", payload);
+    try {
+      const payload = {
+        personalInfo: {
+          fullName: form.fullName,
+          dateOfBirth: form.dob,
+          gender: form.gender,
+          email: form.email,
+          // Phone is already normalised to E.164 via onBlur, so it is safe for DB + WhatsApp API.
+          phone: form.phone,
+          instagram: form.instagram,
+        },
+        location: {
+          primaryLocation: form.primaryCity,
+          secondLocation: form.secondCity,
+          manualLocation: form.manualCity,
+          isStudent: form.isStudent,
+          homeCity: form.homeCity,
+          doesDrive: form.doesDrive,
+        },
+        photos: {
+          selfPhotos: form.photos.map((p) => ({
+            name: p.name,
+            base64: p.base64,
+            type: p.type,
+          })),
+          passportId: form.passportId
+            ? {
+              name: form.passportId.name,
+              base64: form.passportId.base64,
+              type: form.passportId.type,
+            }
+            : null,
+          hasNonUkPassport: form.nonUkPassport,
+          shareCode: form.shareCode,
+        },
+        experience: {
+          hasPriorExperience: form.priorExp,
+          previousCompany: form.prevCompany,
+          yearsOfExperience: form.yearsExp,
+          understandRole: form.understandRole,
+          whyGoodFit: form.whyFit,
+          salesExperience: form.salesExp,
+          availableFrom: form.startDate,
+        },
+        declarations: {
+          selfEmployed: form.selfEmployed,
+          weekendWork: form.weekendWork,
+          heardAbout: form.heardAbout,
+        },
+      };
 
-    window.setTimeout(() => {
+      const debugSummary = {
+        endpoint: "/api/apply",
+        applicant: {
+          fullName: payload.personalInfo.fullName,
+          email: payload.personalInfo.email,
+          phone: payload.personalInfo.phone,
+          primaryLocation: payload.location.primaryLocation,
+        },
+        attachments: {
+          selfPhotoCount: payload.photos.selfPhotos.length,
+          selfPhotos: payload.photos.selfPhotos.map((photo) => ({
+            name: photo.name,
+            type: photo.type,
+            base64Length: photo.base64.length,
+          })),
+          passportId: payload.photos.passportId
+            ? {
+              name: payload.photos.passportId.name,
+              type: payload.photos.passportId.type,
+              base64Length: payload.photos.passportId.base64.length,
+            }
+            : null,
+        },
+      };
+
+      console.groupCollapsed("[ApplyForm] Submitting application");
+      console.debug("[ApplyForm] Debug summary:", debugSummary);
+
+      const res = await fetch("/api/apply", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const responseBody = await res.json().catch(() => null);
+
+      console.debug("[ApplyForm] Webhook response:", {
+        ok: res.ok,
+        status: res.status,
+        statusText: res.statusText,
+        body: responseBody,
+      });
+      console.groupEnd();
+
+      if (!res.ok) {
+        throw new Error(`Status ${res.status}: ${JSON.stringify(responseBody)}`);
+      }
+
       setForm(INITIAL);
       setSubmitted(true);
+    } catch (error) {
+      console.error("[ApplyForm] Submission failed:", error);
+      setSubmitError(
+        "Something went wrong. Please try again or contact us directly.",
+      );
+    } finally {
       setSubmitting(false);
-    }, 250);
+    }
   }
 
   // ─── Success Screen ──────────────────────────────────────────────────────────
