@@ -7,6 +7,15 @@ const requiredText = (label: string, max: number) =>
     .min(1, `${label} is required`)
     .max(max, `${label} must be ${max} characters or fewer`);
 
+export const venuePositionOptions = [
+  "Owner",
+  "General Manager",
+  "Events Manager",
+  "Marketing Manager",
+  "Shot Seller / Shot Girl",
+  "Other",
+] as const;
+
 export const venueInquirySchema = z.strictObject({
   name: requiredText("Name", 80),
   email: z
@@ -20,7 +29,9 @@ export const venueInquirySchema = z.strictObject({
     .min(7, "Phone number is required")
     .max(25, "Phone must be 25 characters or fewer")
     .regex(/^\+?[0-9\s().-]+$/, "Please enter a valid phone number"),
-  position: requiredText("Position", 80),
+  position: z.enum(venuePositionOptions, {
+    message: "Please choose a position",
+  }),
   venueName: requiredText("Venue or brand name", 120),
   message: requiredText("Enquiry info", 1500).min(
     10,

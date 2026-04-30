@@ -44,7 +44,7 @@ export default function ServicesPage() {
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex flex-col items-center justify-center overflow-hidden">
         <div className="absolute top-0 right-0 w-[50%] h-full opacity-10 z-[1]" style={{ backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)', backgroundSize: '20px 20px' }} />
-        
+
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full flex flex-col items-center text-center pt-32">
           <motion.div
             initial={{ y: -10, opacity: 0 }}
@@ -59,11 +59,11 @@ export default function ServicesPage() {
               </div>              <div className="h-4 w-px bg-white/20 hidden md:block" />
             </div>
             <p className="text-[10px] md:text-xs font-black uppercase tracking-[0.15em] text-white text-center md:text-left leading-relaxed">
-              5/5 BY 400+ VENUES <span className="mx-1 md:mx-2 opacity-30">•</span> Short-Sellers <span className="mx-1 md:mx-2 opacity-30">•</span> Hostesses <span className="mx-1 md:mx-2 opacity-30">•</span> Entertainment <span className="mx-1 md:mx-2 opacity-30">•</span> Trust Partner
+              5/5 BY 400+ VENUES <span className="mx-1 md:mx-2 opacity-30">•</span> Shot-Sellers <span className="mx-1 md:mx-2 opacity-30">•</span> Hostesses <span className="mx-1 md:mx-2 opacity-30">•</span> Entertainment <span className="mx-1 md:mx-2 opacity-30">•</span> Trust Partner
             </p>
           </motion.div>
 
-          <motion.h1 
+          <motion.h1
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             className="text-6xl md:text-9xl font-serif text-white leading-tight tracking-tighter mb-8"
@@ -71,7 +71,7 @@ export default function ServicesPage() {
             Our <span className="italic underline decoration-white/30 underline-offset-8">Services</span>
           </motion.h1>
 
-          <motion.p 
+          <motion.p
             initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             className="text-2xl md:text-4xl text-white font-serif italic tracking-tight max-w-4xl mx-auto leading-relaxed"
@@ -79,7 +79,7 @@ export default function ServicesPage() {
             “Transforming hospitality revenue through professional talent and unforgettable guest experiences.”
           </motion.p>
         </div>
-        
+
         <div className="absolute bottom-12 right-12 opacity-60">
           <div className="w-24 h-24 relative">
             <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
@@ -89,17 +89,17 @@ export default function ServicesPage() {
 
       {/* Services Grid */}
       {services.map((service, idx) => (
-        <section 
-          key={idx} 
+        <section
+          key={idx}
           className="relative py-24 md:py-40 overflow-hidden"
         >
           {/* Dotted Texture */}
           <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none z-[1]" style={{ backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)', backgroundSize: '30px 30px' }} />
-          
+
           <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
             <div className={`grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center ${service.align === 'right' ? 'lg:flex-row-reverse' : ''}`}>
-              
-              <motion.div 
+
+              <motion.div
                 initial={{ opacity: 0, x: service.align === 'left' ? -30 : 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -108,13 +108,13 @@ export default function ServicesPage() {
                 <div className="w-16 h-16 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center border border-white/20 shadow-xl">
                   {service.icon}
                 </div>
-                
+
                 <h2 className="text-5xl md:text-7xl font-serif text-white leading-tight">
                   {service.title.split(' & ').map((part, i, arr) => (
                     Part(part, i, arr)
                   ))}
                 </h2>
-                
+
                 <div className="space-y-6">
                   <p className="text-xl md:text-2xl text-white font-serif italic leading-relaxed opacity-95">
                     “{service.description}”
@@ -125,13 +125,13 @@ export default function ServicesPage() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-6 pt-6">
-                  <Link 
+                  <Link
                     href="/contact"
                     className="bg-white text-slate-900 px-8 py-4 rounded-full font-black text-sm uppercase tracking-widest shadow-xl transition-all hover:scale-105 flex items-center justify-center gap-2"
                   >
                     New Booking <ArrowRight size={18} className="text-primary" />
                   </Link>
-                  <Link 
+                  <Link
                     href="https://effervescent-agency.vercel.app"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -141,18 +141,18 @@ export default function ServicesPage() {
                   </Link>
                 </div>
               </motion.div>
-              
-              <motion.div 
+
+              <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 className={`relative group ${service.align === 'right' ? 'lg:order-1' : ''}`}
               >
                 <div className="relative h-[400px] md:h-[600px] w-full rounded-[3rem] overflow-hidden border-8 border-white/10 shadow-3xl transition-all duration-700">
-                  <Image 
-                    src={service.image} 
-                    alt={service.title} 
-                    fill 
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-60"></div>
@@ -166,7 +166,7 @@ export default function ServicesPage() {
       {/* Decorative Star Footer */}
       <section className="relative py-24 md:py-32 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none z-[1]" style={{ backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)', backgroundSize: '30px 30px' }} />
-        
+
         <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}

@@ -33,7 +33,7 @@ export default function Home() {
               <div className="h-4 w-px bg-white/20 hidden md:block" />
             </div>
             <p className="text-[10px] md:text-xs font-black uppercase tracking-[0.15em] text-white text-center md:text-left leading-relaxed">
-              5/5 BY 400+ VENUES <span className="mx-1 md:mx-2 opacity-30">•</span> Short-Sellers <span className="mx-1 md:mx-2 opacity-30">•</span> Hostesses <span className="mx-1 md:mx-2 opacity-30">•</span> Entertainment <span className="mx-1 md:mx-2 opacity-30">•</span> Trust Partner
+              5/5 BY 400+ VENUES <span className="mx-1 md:mx-2 opacity-30">•</span> Shot-Sellers <span className="mx-1 md:mx-2 opacity-30">•</span> Hostesses <span className="mx-1 md:mx-2 opacity-30">•</span> Entertainment <span className="mx-1 md:mx-2 opacity-30">•</span> Trust Partner
             </p>
           </motion.div>
 
@@ -69,7 +69,7 @@ export default function Home() {
 
       {/* Impact/Revenue Section */}
       <section className="relative h-[70vh] md:h-[90vh] flex items-center justify-center overflow-hidden">
-        <div 
+        <div
           className="absolute inset-0 z-0"
           style={{
             WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)',
@@ -114,7 +114,7 @@ export default function Home() {
 
       {/* Testimonial Section */}
       <section className="relative py-32 md:py-48 overflow-hidden">
-        <div 
+        <div
           className="absolute inset-0 z-0 pointer-events-none"
           style={{
             WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)',
@@ -165,9 +165,9 @@ export default function Home() {
 
       {/* Final CTA Banner */}
       <section className="relative py-24 md:py-32 overflow-hidden">
-        <div 
+        <div
           className="absolute inset-0 z-0 pointer-events-none"
-          style={{ 
+          style={{
             background: 'radial-gradient(circle at 90% 10%, #C874E2 0%, transparent 50%), radial-gradient(circle at 10% 90%, #C874E2 0%, transparent 50%)',
             WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)',
             maskImage: 'linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)'

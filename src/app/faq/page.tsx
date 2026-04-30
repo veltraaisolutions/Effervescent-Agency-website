@@ -71,7 +71,7 @@ export default function FAQPage() {
               </div>              <div className="h-4 w-px bg-white/20 hidden md:block" />
             </div>
             <p className="text-[10px] font-black uppercase tracking-[0.15em] text-white text-center md:text-left leading-relaxed">
-              5/5 BY 400+ VENUES <span className="mx-1 md:mx-2 opacity-30">•</span> Short-Sellers <span className="mx-1 md:mx-2 opacity-30">•</span> Hostesses <span className="mx-1 md:mx-2 opacity-30">•</span> Entertainment <span className="mx-1 md:mx-2 opacity-30">•</span> Trust Partner
+              5/5 BY 400+ VENUES <span className="mx-1 md:mx-2 opacity-30">•</span> Shot-Sellers <span className="mx-1 md:mx-2 opacity-30">•</span> Hostesses <span className="mx-1 md:mx-2 opacity-30">•</span> Entertainment <span className="mx-1 md:mx-2 opacity-30">•</span> Trust Partner
             </p>
           </motion.div>
 
@@ -112,20 +112,18 @@ export default function FAQPage() {
                   className="w-full py-8 flex items-center justify-between text-left group"
                 >
                   <span
-                    className={`text-xl md:text-2xl font-serif transition-colors ${
-                      activeIndex === index
+                    className={`text-xl md:text-2xl font-serif transition-colors ${activeIndex === index
                         ? "text-white"
                         : "text-white/80 group-hover:text-white"
-                    }`}
+                      }`}
                   >
                     {faq.question}
                   </span>
                   <div
-                    className={`flex-shrink-0 ml-4 w-9 h-9 rounded-full border flex items-center justify-center transition-all ${
-                      activeIndex === index
+                    className={`flex-shrink-0 ml-4 w-9 h-9 rounded-full border flex items-center justify-center transition-all ${activeIndex === index
                         ? "bg-white text-[#C874E2] border-white"
                         : "border-white/20 text-white/60 group-hover:border-white group-hover:text-white"
-                    }`}
+                      }`}
                   >
                     {activeIndex === index ? <Minus size={16} /> : <Plus size={16} />}
                   </div>

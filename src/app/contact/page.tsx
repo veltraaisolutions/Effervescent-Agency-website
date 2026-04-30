@@ -1,26 +1,31 @@
 "use client";
 
 import { useState } from "react";
-import { AlertCircle, CheckCircle2, Loader2, ArrowRight } from "lucide-react";
+import { AlertCircle, CheckCircle2, Loader2, ArrowRight, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import {
   venueInquirySchema,
+  venuePositionOptions,
+  type VenueInquiry,
   type VenueInquiryInput,
 } from "@/lib/validations/venue";
 
-type VenueFieldErrors = Partial<Record<keyof VenueInquiryInput, string>>;
+type VenueInquiryFormState = Omit<VenueInquiryInput, "position"> & {
+  position: VenueInquiry["position"] | "";
+};
+type VenueFieldErrors = Partial<Record<keyof VenueInquiryFormState, string>>;
 
 const B = "#FDB8D7";
 
 const onFocusBrand = (
-  e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>,
+  e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
 ) => {
   e.currentTarget.style.boxShadow = `0 0 0 2px ${B}55`;
   e.currentTarget.style.borderColor = B;
 };
 
 const onBlurBrand = (
-  e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>,
+  e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
 ) => {
   e.currentTarget.style.boxShadow = "";
   e.currentTarget.style.borderColor = "";
@@ -110,8 +115,44 @@ function TextareaInput({
   );
 }
 
+function SelectInput({
+  options,
+  value,
+  onChange,
+  placeholder = "Select...",
+}: {
+  options: readonly string[];
+  value: string;
+  onChange: (value: VenueInquiry["position"]) => void;
+  placeholder?: string;
+}) {
+  return (
+    <div className="relative">
+      <select
+        required
+        value={value}
+        onChange={(e) => onChange(e.target.value as VenueInquiry["position"])}
+        onFocus={onFocusBrand}
+        onBlur={onBlurBrand}
+        style={{ colorScheme: "light" }}
+        className="w-full appearance-none px-3 py-2.5 border border-slate-200 rounded-xl text-sm bg-slate-50 text-slate-900 focus:outline-none transition-all"
+      >
+        <option value="" className="text-slate-400">
+          {placeholder}
+        </option>
+        {options.map((option) => (
+          <option key={option} value={option} className="text-slate-900 bg-white">
+            {option}
+          </option>
+        ))}
+      </select>
+      <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
+    </div>
+  );
+}
+
 export default function ContactPage() {
-  const [formData, setFormData] = useState<VenueInquiryInput>({
+  const [formData, setFormData] = useState<VenueInquiryFormState>({
     name: "",
     email: "",
     phone: "",
@@ -311,8 +352,9 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <FieldLabel required>Position</FieldLabel>
-                        <TextInput
-                          placeholder="Owner, GM, Events Manager"
+                        <SelectInput
+                          options={venuePositionOptions}
+                          placeholder="Choose your position"
                           value={formData.position}
                           onChange={(value) => setFormData({ ...formData, position: value })}
                         />

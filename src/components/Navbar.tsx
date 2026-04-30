@@ -8,13 +8,22 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { usePathname } from "next/navigation";
 import AnnouncementBar from "./AnnouncementBar";
 
+const partnerCtas = [
+  { label: "Partner With Us", mobileLabel: "Partner", href: "/contact" },
+  { label: "Become a Shot Seller", mobileLabel: "Shot Seller", href: "/apply" },
+  { label: "Referral Section", mobileLabel: "Referrals", href: "/referrals" },
+  { label: "Discuss Your Venue With Us", mobileLabel: "Venues", href: "/contact" },
+];
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false);
+  const [partnerCtaIndex, setPartnerCtaIndex] = useState(0);
   const pathname = usePathname();
   const navIsSolid = isScrolled || mobileMenuOpen;
+  const activePartnerCta = partnerCtas[partnerCtaIndex];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +31,14 @@ const Navbar = () => {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setPartnerCtaIndex((current) => (current + 1) % partnerCtas.length);
+    }, 2400);
+
+    return () => window.clearInterval(interval);
   }, []);
 
   const TikTokIcon = ({ size = 20 }: { size?: number }) => (
@@ -112,14 +129,29 @@ const Navbar = () => {
               </div>
             </Link>
 
-            {/* Mobile Action Dropdown (Centered) */}
+            {/* Mobile Rotating CTA (Centered) */}
             <div className="xl:hidden absolute left-1/2 -translate-x-1/2">
               <div className="relative">
                 <button
+                  type="button"
                   onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
-                  className="bg-primary text-white px-4 py-2 rounded-xl text-xs font-black shadow-md flex items-center gap-1 whitespace-nowrap"
+                  className="bg-primary text-white px-3 py-2 rounded-xl text-xs font-black shadow-md flex items-center justify-center gap-1 whitespace-nowrap overflow-hidden min-w-[112px] max-w-[128px]"
                 >
-                  Partner With Us <ChevronDown size={14} className={`transition-transform ${mobileDropdownOpen ? 'rotate-180' : ''}`} />
+                  <span className="overflow-hidden">
+                    <AnimatePresence mode="wait">
+                      <motion.span
+                        key={activePartnerCta.mobileLabel}
+                        initial={{ y: 18, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: -18, opacity: 0 }}
+                        transition={{ duration: 0.35, ease: "easeInOut" }}
+                        className="block truncate"
+                      >
+                        {activePartnerCta.mobileLabel}
+                      </motion.span>
+                    </AnimatePresence>
+                  </span>
+                  <ChevronDown size={14} className={`transition-transform ${mobileDropdownOpen ? "rotate-180" : ""}`} />
                 </button>
                 <AnimatePresence>
                   {mobileDropdownOpen && (
@@ -127,11 +159,18 @@ const Navbar = () => {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
-                      className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-56 bg-white rounded-xl shadow-premium border border-slate-100 overflow-hidden flex flex-col"
+                      className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white rounded-xl shadow-premium border border-slate-100 overflow-hidden flex flex-col"
                     >
-                      <Link href="/apply" onClick={() => setMobileDropdownOpen(false)} className="px-4 py-3 text-xs font-bold text-slate-700 hover:bg-slate-50 border-b border-slate-50">Become a shot seller</Link>
-                      <Link href="/referrals" onClick={() => setMobileDropdownOpen(false)} className="px-4 py-3 text-xs font-bold text-slate-700 hover:bg-slate-50 border-b border-slate-50">Referral section</Link>
-                      <Link href="/contact" onClick={() => setMobileDropdownOpen(false)} className="px-4 py-3 text-xs font-bold text-slate-700 hover:bg-slate-50">Discuss your venue with Us</Link>
+                      {partnerCtas.map((cta, index) => (
+                        <Link
+                          key={`${cta.label}-${index}`}
+                          href={cta.href}
+                          onClick={() => setMobileDropdownOpen(false)}
+                          className="px-4 py-3 text-xs font-bold text-slate-700 hover:bg-slate-50 border-b border-slate-50 last:border-b-0"
+                        >
+                          {cta.label}
+                        </Link>
+                      ))}
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -178,9 +217,22 @@ const Navbar = () => {
                 <button
                   type="button"
                   onClick={() => setDesktopDropdownOpen(!desktopDropdownOpen)}
-                  className="inline-flex items-center gap-2 bg-primary text-white px-8 py-3 rounded-full text-xs font-black shadow-lg transition-all hover:scale-105 active:scale-95 whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-3 rounded-full text-xs font-black shadow-lg transition-all hover:scale-105 active:scale-95 whitespace-nowrap overflow-hidden min-w-[252px]"
                 >
-                  Partner With Us
+                  <span className="overflow-hidden">
+                    <AnimatePresence mode="wait">
+                      <motion.span
+                        key={activePartnerCta.label}
+                        initial={{ y: 18, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        exit={{ y: -18, opacity: 0 }}
+                        transition={{ duration: 0.35, ease: "easeInOut" }}
+                        className="block"
+                      >
+                        {activePartnerCta.label}
+                      </motion.span>
+                    </AnimatePresence>
+                  </span>
                   <ChevronDown
                     size={14}
                     className={`transition-transform ${desktopDropdownOpen ? "rotate-180" : ""}`}
@@ -194,27 +246,16 @@ const Navbar = () => {
                       exit={{ opacity: 0, y: 10 }}
                       className="absolute right-0 top-full mt-3 w-64 bg-white rounded-xl shadow-premium border border-slate-100 overflow-hidden flex flex-col"
                     >
-                      <Link
-                        href="/apply"
-                        onClick={() => setDesktopDropdownOpen(false)}
-                        className="px-4 py-3 text-xs font-bold text-slate-700 hover:bg-slate-50 border-b border-slate-50"
-                      >
-                        Become a shot seller
-                      </Link>
-                      <Link
-                        href="/referrals"
-                        onClick={() => setDesktopDropdownOpen(false)}
-                        className="px-4 py-3 text-xs font-bold text-slate-700 hover:bg-slate-50 border-b border-slate-50"
-                      >
-                        Referral section
-                      </Link>
-                      <Link
-                        href="/contact"
-                        onClick={() => setDesktopDropdownOpen(false)}
-                        className="px-4 py-3 text-xs font-bold text-slate-700 hover:bg-slate-50"
-                      >
-                        Discuss your venue with Us
-                      </Link>
+                      {partnerCtas.map((cta, index) => (
+                        <Link
+                          key={`${cta.label}-${index}`}
+                          href={cta.href}
+                          onClick={() => setDesktopDropdownOpen(false)}
+                          className="px-4 py-3 text-xs font-bold text-slate-700 hover:bg-slate-50 border-b border-slate-50 last:border-b-0"
+                        >
+                          {cta.label}
+                        </Link>
+                      ))}
                     </motion.div>
                   )}
                 </AnimatePresence>
