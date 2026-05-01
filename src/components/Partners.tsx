@@ -16,10 +16,9 @@ const partnersConfig: Partner[] = [
   { name: "S&L", src: "/s&l1.png", scale: "scale-125" },
   { name: "Live Republic", src: "/live-republic1.png" },
   { name: "Marston's", src: "/marteson1.png" },
-  { name: "Breathe", src: "/breathe-icon2.png", scale: "scale-150" },
+  { name: "Boxpark", src: "/box_park.png" },
   { name: "Binks Yard", src: "/bink-yard1.png" },
   { name: "Venues Independent", src: "/venues_independent.webp" },
-  { name: "Boxpark", src: "/box_park.png" },
 ];
 
 const Partners = () => {
