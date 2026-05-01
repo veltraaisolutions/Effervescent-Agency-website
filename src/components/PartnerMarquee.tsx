@@ -16,8 +16,8 @@ const partnersConfig = [
 ];
 
 const PartnerMarquee = () => {
-  // Duplicate icons for seamless loop
-  const duplicatedPartners = [...partnersConfig, ...partnersConfig, ...partnersConfig, ...partnersConfig];
+  // Duplicate icons once for seamless loop
+  const duplicatedPartners = [...partnersConfig, ...partnersConfig];
 
   return (
     <section className="relative py-16 overflow-hidden border-y border-white/20">
@@ -36,17 +36,17 @@ const PartnerMarquee = () => {
       <div className="flex whitespace-nowrap relative z-10 [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
         <motion.div
           animate={{
-            x: [0, -1920],
+            x: ["0%", "-50%"],
           }}
           transition={{
             x: {
               repeat: Infinity,
               repeatType: "loop",
-              duration: 30,
+              duration: 25,
               ease: "linear",
             },
           }}
-          className="flex gap-20 md:gap-40 items-center py-4"
+          className="flex gap-20 md:gap-40 items-center py-4 w-fit"
         >
           {duplicatedPartners.map((partner, index) => (
             <div key={index} className="relative w-32 h-14 md:w-56 md:h-20 group transition-all duration-500">
