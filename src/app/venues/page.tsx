@@ -1,7 +1,6 @@
 import CorporateDefinition from "@/components/CorporateDefinition";
 import CaseStudies from "@/components/CaseStudies";
 import HowItWorks from "@/components/HowItWorks";
-import OtherServices from "@/components/OtherServices";
 
 export default function VenuesPage() {
   return (
@@ -16,7 +15,6 @@ export default function VenuesPage() {
         <HowItWorks />
         <CorporateDefinition />
         <CaseStudies />
-        <OtherServices />
       </div>
     </div>
   );
