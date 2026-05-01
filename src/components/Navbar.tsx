@@ -9,7 +9,6 @@ import { usePathname } from "next/navigation";
 import AnnouncementBar from "./AnnouncementBar";
 
 const partnerCtas = [
-  { label: "Partner With Us", mobileLabel: "Partner", href: "/contact" },
   { label: "Become a Shot Seller", mobileLabel: "Shot Seller", href: "/apply" },
   { label: "Referral Section", mobileLabel: "Referrals", href: "/referrals" },
   { label: "Discuss Your Venue With Us", mobileLabel: "Venues", href: "/contact" },
