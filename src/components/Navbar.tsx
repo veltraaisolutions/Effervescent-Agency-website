@@ -184,7 +184,7 @@ const Navbar = () => {
                     href={link.href}
                     className={`px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.1em] transition-all duration-300 ${isActive
                       ? "bg-primary text-white shadow-md"
-                      : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+                      : "text-black hover:bg-slate-100 hover:text-black"
                       }`}
                   >
                     {link.name}
