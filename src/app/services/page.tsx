@@ -60,7 +60,7 @@ export default function ServicesPage() {
               <div className="h-4 w-px bg-white/20 hidden md:block" />
             </div>
             <p className="text-[10px] font-black uppercase tracking-[0.15em] text-white text-center md:text-left leading-relaxed">
-              5/5 BY 400+ VENUES <span className="mx-1 md:mx-2 opacity-30">•</span> Shot-Sellers <span className="mx-1 md:mx-2 opacity-30">•</span> Hostesses <span className="mx-1 md:mx-2 opacity-30">•</span> Entertainment <span className="mx-1 md:mx-2 opacity-30">•</span> Trust Partner
+              5/5 BY 400+ VENUES <span className="mx-1 md:mx-2 opacity-30">•</span> Shot-Sellers <span className="mx-1 md:mx-2 opacity-30">•</span> Hostesses <span className="mx-1 md:mx-2 opacity-30">•</span> Entertainment
             </p>
           </motion.div>
 

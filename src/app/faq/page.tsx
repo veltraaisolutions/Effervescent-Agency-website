@@ -5,8 +5,6 @@ import { useState } from "react";
 import { Plus, Minus, ArrowRight, Globe, Users, Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 const faqs = [
   {
@@ -47,11 +45,11 @@ export default function FAQPage() {
   return (
     <main className="flex flex-col min-h-screen">
 
-      {/* Hero Section — matches global gradient */}
-      <section className="relative pt-40 pb-32 md:pt-56 md:pb-48 overflow-hidden">
+      {/* Hero Section — matches global background */}
+      <section className="relative pt-24 pb-16 md:pt-36 md:pb-24 overflow-hidden">
         {/* Decorative star */}
-        <div className="absolute bottom-12 right-12 opacity-90 scale-125 z-30">
-          <div className="w-20 h-20 relative">
+        <div className="absolute bottom-8 right-12 opacity-40 scale-100 z-30">
+          <div className="w-16 h-16 relative">
             <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
           </div>
         </div>
@@ -61,17 +59,18 @@ export default function FAQPage() {
           <motion.div
             initial={{ y: -10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            className="flex flex-col md:flex-row items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-3 md:py-2 rounded-3xl md:rounded-full border border-white/20 mb-8 mx-auto w-fit"
+            className="flex flex-col md:flex-row items-center gap-3 bg-white/10 backdrop-blur-md px-5 py-1.5 rounded-full border border-white/20 mb-6 mx-auto w-fit"
           >
             <div className="flex items-center gap-3">
               <div className="flex gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={14} className="fill-white text-white" />
+                  <Star key={i} size={12} className="fill-white text-white" />
                 ))}
-              </div>              <div className="h-4 w-px bg-white/20 hidden md:block" />
+              </div>
+              <div className="h-4 w-px bg-white/20 hidden md:block" />
             </div>
             <p className="text-[10px] font-black uppercase tracking-[0.15em] text-white text-center md:text-left leading-relaxed">
-              5/5 BY 400+ VENUES <span className="mx-1 md:mx-2 opacity-30">•</span> Shot-Sellers <span className="mx-1 md:mx-2 opacity-30">•</span> Hostesses <span className="mx-1 md:mx-2 opacity-30">•</span> Entertainment <span className="mx-1 md:mx-2 opacity-30">•</span> Trust Partner
+              5/5 BY 400+ VENUES <span className="mx-1 md:mx-2 opacity-30">•</span> Shot-Sellers <span className="mx-1 md:mx-2 opacity-30">•</span> Hostesses <span className="mx-1 md:mx-2 opacity-30">•</span> Entertainment
             </p>
           </motion.div>
 
@@ -79,7 +78,7 @@ export default function FAQPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.05 }}
-            className="text-6xl md:text-9xl font-serif text-white italic tracking-tight mb-6"
+            className="text-5xl md:text-8xl font-serif text-white italic tracking-tight mb-4"
           >
             FAQs
           </motion.h1>
@@ -87,17 +86,17 @@ export default function FAQPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-white/90 text-xl md:text-2xl font-medium italic max-w-2xl mx-auto"
+            className="text-white/90 text-lg md:text-xl font-medium italic max-w-xl mx-auto"
           >
             Partnering with Effervescent — answered.
           </motion.p>
         </div>
       </section>
 
-      {/* FAQ Accordion — pink section */}
-      <section className="py-24 md:py-36">
+      {/* FAQ Accordion */}
+      <section className="py-12 md:py-20">
         <div className="max-w-4xl mx-auto px-6">
-          <div className="space-y-2">
+          <div className="space-y-1">
             {faqs.map((faq, index) => (
               <motion.div
                 key={index}
@@ -105,14 +104,14 @@ export default function FAQPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.07 }}
-                className="border-b border-white/20"
+                className="border-b border-white/10"
               >
                 <button
                   onClick={() => setActiveIndex(activeIndex === index ? null : index)}
-                  className="w-full py-8 flex items-center justify-between text-left group"
+                  className="w-full py-6 flex items-center justify-between text-left group"
                 >
                   <span
-                    className={`text-xl md:text-2xl font-serif transition-colors ${activeIndex === index
+                    className={`text-lg md:text-xl font-serif transition-colors ${activeIndex === index
                         ? "text-white"
                         : "text-white/80 group-hover:text-white"
                       }`}
@@ -120,12 +119,12 @@ export default function FAQPage() {
                     {faq.question}
                   </span>
                   <div
-                    className={`flex-shrink-0 ml-4 w-9 h-9 rounded-full border flex items-center justify-center transition-all ${activeIndex === index
-                        ? "bg-white text-[#C874E2] border-white"
-                        : "border-white/20 text-white/60 group-hover:border-white group-hover:text-white"
+                    className={`flex-shrink-0 ml-4 w-8 h-8 rounded-full border flex items-center justify-center transition-all ${activeIndex === index
+                        ? "bg-white text-primary border-white"
+                        : "border-white/10 text-white/60 group-hover:border-white group-hover:text-white"
                       }`}
                   >
-                    {activeIndex === index ? <Minus size={16} /> : <Plus size={16} />}
+                    {activeIndex === index ? <Minus size={14} /> : <Plus size={14} />}
                   </div>
                 </button>
                 <AnimatePresence>
@@ -137,8 +136,8 @@ export default function FAQPage() {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="overflow-hidden"
                     >
-                      <div className="pb-8 pr-12">
-                        <p className="text-white/90 text-lg leading-relaxed md:text-xl font-medium">
+                      <div className="pb-6 pr-8">
+                        <p className="text-white/80 text-base leading-relaxed md:text-lg font-medium">
                           {faq.answer}
                         </p>
                       </div>
@@ -151,55 +150,55 @@ export default function FAQPage() {
         </div>
       </section>
 
-      {/* CTA / Contact Section — full global gradient, white card form */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
+      {/* CTA / Contact Section */}
+      <section className="relative py-16 md:py-24 overflow-hidden">
         {/* Decorative star */}
-        <div className="absolute bottom-12 right-12 opacity-90 scale-125 z-30">
-          <div className="w-20 h-20 relative">
+        <div className="absolute bottom-8 right-12 opacity-60 scale-100 z-30">
+          <div className="w-16 h-16 relative">
             <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
           </div>
         </div>
 
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
 
             {/* Left — content */}
-            <div className="space-y-12 order-2 lg:order-1">
-              <div className="space-y-6">
-                <h2 className="text-5xl md:text-7xl font-serif text-white leading-tight">
+            <div className="space-y-8 order-2 lg:order-1">
+              <div className="space-y-4">
+                <h2 className="text-4xl md:text-6xl font-serif text-white leading-tight">
                   Still got <br />
                   <span className="italic underline decoration-white/30 underline-offset-8">
                     questions?
                   </span>
                 </h2>
-                <p className="text-xl md:text-2xl text-white/90 font-medium italic max-w-xl leading-relaxed">
+                <p className="text-lg md:text-xl text-white/90 font-medium italic max-w-xl leading-relaxed">
                   Use the contact form and a member of our team will be happy to help!
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-4">
-                <div className="space-y-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+                <div className="space-y-1">
                   <div className="flex items-center gap-3 text-white">
-                    <Globe size={20} className="opacity-70" />
-                    <h4 className="font-black uppercase tracking-widest text-sm">Global Coverage</h4>
+                    <Globe size={18} className="opacity-70" />
+                    <h4 className="font-black uppercase tracking-widest text-[10px]">Global Coverage</h4>
                   </div>
-                  <p className="text-white/70 text-sm leading-relaxed">UK • Spain • Dubai</p>
+                  <p className="text-white/60 text-[10px] leading-relaxed">UK • Spain • Dubai</p>
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-1">
                   <div className="flex items-center gap-3 text-white">
-                    <Users size={20} className="opacity-70" />
-                    <h4 className="font-black uppercase tracking-widest text-sm">Trusted By</h4>
+                    <Users size={18} className="opacity-70" />
+                    <h4 className="font-black uppercase tracking-widest text-[10px]">Trusted By</h4>
                   </div>
-                  <p className="text-white/70 text-sm leading-relaxed">400+ Venues Worldwide</p>
+                  <p className="text-white/60 text-[10px] leading-relaxed">400+ Venues Worldwide</p>
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-6 pt-4">
+              <div className="flex flex-col sm:flex-row gap-4 pt-2">
                 <Link
                   href="/contact"
-                  className="bg-white text-slate-900 px-10 py-5 rounded-full text-lg font-black shadow-2xl transition-all hover:scale-105 hover:shadow-white/20 flex items-center justify-center gap-2"
+                  className="bg-white text-slate-900 px-8 py-4 rounded-full text-base font-black shadow-2xl transition-all hover:scale-105 flex items-center justify-center gap-2"
                 >
-                  New Booking <ArrowRight size={20} className="text-[#C874E2]" />
+                  Get in Touch <ArrowRight size={18} className="text-primary" />
                 </Link>
               </div>
             </div>
@@ -209,43 +208,43 @@ export default function FAQPage() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-white rounded-[3rem] p-1 md:p-4 shadow-2xl relative z-10 overflow-hidden order-1 lg:order-2"
+              className="bg-white rounded-[2.5rem] p-1 md:p-2 shadow-2xl relative z-10 overflow-hidden order-1 lg:order-2"
             >
-              <div className="p-8 md:p-16">
-                <div className="mb-12">
-                  <h3 className="text-3xl font-serif text-slate-900 mb-4">Send a Message</h3>
-                  <div className="w-16 h-1 bg-primary rounded-full" />
+              <div className="p-6 md:p-12">
+                <div className="mb-8">
+                  <h3 className="text-2xl font-serif text-slate-900 mb-2">Send a Message</h3>
+                  <div className="w-12 h-0.5 bg-primary rounded-full" />
                 </div>
 
-                <form className="space-y-8">
-                  <div className="space-y-3">
+                <form className="space-y-6">
+                  <div className="space-y-2">
                     <label className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 ml-1">
                       Full Name
                     </label>
                     <input
                       type="text"
                       placeholder="John Doe"
-                      className="premium-input"
+                      className="premium-input text-sm py-3"
                     />
                   </div>
 
-                  <div className="space-y-3">
+                  <div className="space-y-2">
                     <label className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 ml-1">
                       Email Address
                     </label>
                     <input
                       type="email"
                       placeholder="john@example.com"
-                      className="premium-input"
+                      className="premium-input text-sm py-3"
                     />
                   </div>
 
-                  <div className="space-y-3">
+                  <div className="space-y-2">
                     <label className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 ml-1">
                       How did you hear about us?
                     </label>
                     <div className="relative">
-                      <select className="premium-input appearance-none cursor-pointer">
+                      <select className="premium-input appearance-none cursor-pointer text-sm py-3">
                         <option>Instagram</option>
                         <option>LinkedIn</option>
                         <option>Referral</option>
@@ -255,22 +254,22 @@ export default function FAQPage() {
                     </div>
                   </div>
 
-                  <div className="space-y-3">
+                  <div className="space-y-2">
                     <label className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 ml-1">
                       Message
                     </label>
                     <textarea
-                      rows={4}
+                      rows={3}
                       placeholder="Tell us what's on your mind..."
-                      className="premium-input resize-none"
+                      className="premium-input resize-none text-sm py-3"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-slate-900 py-6 rounded-2xl text-white font-black text-lg shadow-premium hover:bg-slate-800 hover:-translate-y-1 active:scale-95 transition-all flex items-center justify-center gap-3"
+                    className="w-full bg-slate-900 py-4 rounded-xl text-white font-black text-base shadow-premium hover:bg-slate-800 transition-all flex items-center justify-center gap-2"
                   >
-                    Send Message <ArrowRight size={20} />
+                    Send Message <ArrowRight size={18} />
                   </button>
                 </form>
               </div>
@@ -279,7 +278,6 @@ export default function FAQPage() {
           </div>
         </div>
       </section>
-
 
     </main>
   );
