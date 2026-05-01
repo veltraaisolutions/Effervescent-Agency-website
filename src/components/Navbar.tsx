@@ -9,9 +9,9 @@ import { usePathname } from "next/navigation";
 import AnnouncementBar from "./AnnouncementBar";
 
 const partnerCtas = [
-  { label: "Become a Shot Seller", mobileLabel: "Shot Seller", href: "/apply" },
-  { label: "Referral Section", mobileLabel: "Referrals", href: "/referrals" },
-  { label: "Discuss Your Venue With Us", mobileLabel: "Venues", href: "/contact" },
+  { label: "Become a Shot Seller", href: "/apply" },
+  { label: "Enquires", href: "/referrals" },
+  { label: "Discuss Your Venue", href: "/contact" },
 ];
 
 const Navbar = () => {
@@ -139,18 +139,7 @@ const Navbar = () => {
                   className="bg-primary text-white px-3 py-2 rounded-xl text-xs font-black shadow-md flex items-center justify-center gap-1 whitespace-nowrap overflow-hidden min-w-[112px] max-w-[128px]"
                 >
                   <span className="overflow-hidden">
-                    <AnimatePresence mode="wait">
-                      <motion.span
-                        key={activePartnerCta.mobileLabel}
-                        initial={{ y: 18, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        exit={{ y: -18, opacity: 0 }}
-                        transition={{ duration: 0.35, ease: "easeInOut" }}
-                        className="block truncate"
-                      >
-                        {activePartnerCta.mobileLabel}
-                      </motion.span>
-                    </AnimatePresence>
+                    Get in Touch
                   </span>
                   <ChevronDown size={14} className={`transition-transform ${mobileDropdownOpen ? "rotate-180" : ""}`} />
                 </button>
@@ -185,7 +174,7 @@ const Navbar = () => {
                 { name: "About Us", href: "/about" },
                 { name: "Services", href: "/services" },
                 { name: "Shot-Sellers", href: "/shot-sellers" },
-                { name: "Venues", href: "/venues" },
+                { name: "Case Studies", href: "/venues" },
                 { name: "FAQ", href: "/faq" },
               ].map((link) => {
                 const isActive = pathname === link.href;
@@ -220,20 +209,7 @@ const Navbar = () => {
                   onClick={() => setDesktopDropdownOpen(!desktopDropdownOpen)}
                   className="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-3 rounded-full text-xs font-black shadow-lg transition-all hover:scale-105 active:scale-95 whitespace-nowrap overflow-hidden min-w-[252px]"
                 >
-                  <span className="overflow-hidden">
-                    <AnimatePresence mode="wait">
-                      <motion.span
-                        key={activePartnerCta.label}
-                        initial={{ y: 18, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        exit={{ y: -18, opacity: 0 }}
-                        transition={{ duration: 0.35, ease: "easeInOut" }}
-                        className="block"
-                      >
-                        {activePartnerCta.label}
-                      </motion.span>
-                    </AnimatePresence>
-                  </span>
+                  Get in Touch
                   <ChevronDown
                     size={14}
                     className={`transition-transform ${desktopDropdownOpen ? "rotate-180" : ""}`}
@@ -286,7 +262,7 @@ const Navbar = () => {
               { name: "About Us", href: "/about" },
               { name: "Services", href: "/services" },
               { name: "What is a Shot-Seller?", href: "/shot-sellers" },
-              { name: "Venues", href: "/venues" },
+              { name: "Case Studies", href: "/venues" },
               { name: "FAQ", href: "/faq" },
             ].map((link) => {
               const isActive = pathname === link.href;
