@@ -35,14 +35,23 @@ const Footer = () => {
     </svg>
   );
 
+  const mainLinks = [
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "/about" },
+    { name: "Services", href: "/services" },
+    { name: "Shot-Sellers", href: "/shot-sellers" },
+    { name: "Case studies", href: "/venues" },
+    { name: "FAQ", href: "/faq" },
+  ];
+
   return (
-    <footer className="relative pt-32 pb-16 overflow-hidden">
+    <footer className="relative pt-16 pb-12 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16 items-start">
           {/* Brand Column */}
-          <div className="lg:col-span-5 space-y-10">
-            <Link href="/" className="flex items-center group">
-              <div className="h-32 w-64 relative transition-transform duration-500 group-hover:scale-110">
+          <div className="lg:col-span-5 space-y-6">
+            <Link href="/" className="flex items-center group w-fit">
+              <div className="h-20 w-40 relative transition-transform duration-500 group-hover:scale-110">
                 <Image
                   src="/effervescent-side-log-1.jpeg"
                   alt="Effervescent"
@@ -52,71 +61,67 @@ const Footer = () => {
                 />
               </div>
             </Link>
-            <p className="text-white/80 max-w-sm text-xl leading-relaxed font-light">
+            <p className="text-white/70 max-w-sm text-lg leading-relaxed font-light">
               Transforming hospitality revenue through professional sales talent across the UK, Spain, and Dubai.
             </p>
-            <div className="flex gap-4">
-              <Link href="https://instagram.com/effervescent.agency" target="_blank" className="bg-white/10 hover:bg-white hover:text-primary p-4 rounded-2xl transition-all border border-white/10 text-white group">
-                <InstagramIcon size={24} />
+            <div className="flex gap-3">
+              <Link href="https://instagram.com/effervescent.agency" target="_blank" className="bg-white/5 hover:bg-white hover:text-primary p-3 rounded-xl transition-all border border-white/10 text-white group">
+                <InstagramIcon size={20} />
               </Link>
-              <Link href="https://tiktok.com/@effervescent.agency" target="_blank" className="bg-white/10 hover:bg-white hover:text-primary p-4 rounded-2xl transition-all border border-white/10 text-white group">
-                <TikTokIcon size={24} />
+              <Link href="https://tiktok.com/@effervescent.agency" target="_blank" className="bg-white/5 hover:bg-white hover:text-primary p-3 rounded-xl transition-all border border-white/10 text-white group">
+                <TikTokIcon size={20} />
               </Link>
-              <Link href="https://wa.me/971585216771" target="_blank" className="bg-white/10 hover:bg-white hover:text-primary p-4 rounded-2xl transition-all border border-white/10 text-white">
-                <MessageCircle size={24} />
+              <Link href="https://wa.me/971585216771" target="_blank" className="bg-white/5 hover:bg-white hover:text-primary p-3 rounded-xl transition-all border border-white/10 text-white">
+                <MessageCircle size={20} />
               </Link>
             </div>
           </div>
 
           {/* Navigation Columns */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
-            <div className="space-y-8">
-              <h4 className="text-white font-bold text-2xl tracking-tight">For Partners</h4>
-              <ul className="space-y-5">
+          <div className="lg:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-10">
+            <div className="space-y-6">
+              <h4 className="text-white font-bold text-xl tracking-tight">Navigation</h4>
+              <ul className="space-y-3">
+                {mainLinks.map((link) => (
+                  <li key={link.name}>
+                    <Link href={link.href} className="text-white/50 hover:text-white transition-all font-medium text-base">{link.name}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="space-y-6">
+              <h4 className="text-white font-bold text-xl tracking-tight">Get in Touch</h4>
+              <ul className="space-y-3">
                 <li>
-                  <Link href="/services" className="text-white/60 hover:text-white transition-all font-medium text-lg">Venue Services</Link>
+                  <Link href="/contact" className="text-white/50 hover:text-white transition-all font-medium text-base">Discuss your Venue</Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="text-white/60 hover:text-white transition-all font-medium text-lg">Discuss Your Venue With Us</Link>
+                  <Link href="/referrals" className="text-white/50 hover:text-white transition-all font-medium text-base">Enquiries</Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="text-white/50 hover:text-white transition-all font-medium text-base">Management</Link>
                 </li>
               </ul>
             </div>
 
-            <div className="space-y-8">
-              <h4 className="text-white font-bold text-2xl tracking-tight">The Team</h4>
-              <ul className="space-y-5">
+            <div className="space-y-6">
+              <h4 className="text-white font-bold text-xl tracking-tight">The Team</h4>
+              <ul className="space-y-3">
                 <li>
-                  <Link href="https://effervescent-agency.vercel.app" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-all font-medium text-lg">Start Making £ Today</Link>
+                  <Link href="/apply" className="text-white/50 hover:text-white transition-all font-medium text-base">Become a Shot Seller</Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="text-white/60 hover:text-white transition-all font-medium text-lg">Management</Link>
-                </li>
-              </ul>
-            </div>
-
-            <div className="space-y-8">
-              <h4 className="text-white font-bold text-2xl tracking-tight">Company</h4>
-              <ul className="space-y-5">
-                <li>
-                  <Link href="/about" className="text-white/60 hover:text-white transition-all font-medium text-lg">About Us</Link>
-                </li>
-                <li>
-                  <Link href="/services" className="text-white/60 hover:text-white transition-all font-medium text-lg">Services</Link>
-                </li>
-                <li>
-                  <Link href="/faq" className="text-white/60 hover:text-white transition-all font-medium text-lg">FAQ</Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-white/60 hover:text-white transition-all font-medium text-lg">Global Locations</Link>
+                  <Link href="https://effervescent-agency.vercel.app" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-white transition-all font-medium text-base">Start Making £ Today</Link>
                 </li>
               </ul>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-center gap-8 text-xs text-white/40 font-bold uppercase tracking-[0.2em]">
+        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] text-white/30 font-bold uppercase tracking-[0.2em]">
           <p>© {new Date().getFullYear()} Effervescent Agency. Built for impact.</p>
-          <div className="flex gap-10">
+          <div className="flex gap-8">
             <Link href="#" className="hover:text-white transition-colors">Privacy</Link>
             <Link href="#" className="hover:text-white transition-colors">Terms</Link>
           </div>

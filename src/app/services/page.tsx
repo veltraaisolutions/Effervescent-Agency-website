@@ -42,23 +42,24 @@ export default function ServicesPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex flex-col items-center justify-center overflow-hidden">
+      <section className="relative min-h-[60vh] flex flex-col items-center justify-center overflow-hidden">
         <div className="absolute top-0 right-0 w-[50%] h-full opacity-10 z-[1]" style={{ backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)', backgroundSize: '20px 20px' }} />
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full flex flex-col items-center text-center pt-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full flex flex-col items-center text-center pt-24 md:pt-32">
           <motion.div
             initial={{ y: -10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            className="flex flex-col md:flex-row items-center gap-3 bg-white/10 backdrop-blur-md px-6 py-3 md:py-2 rounded-3xl md:rounded-full border border-white/20 mb-8 mx-auto w-fit"
+            className="flex flex-col md:flex-row items-center gap-3 bg-white/10 backdrop-blur-md px-5 py-1.5 rounded-full border border-white/20 mb-6 mx-auto w-fit"
           >
             <div className="flex items-center gap-3">
               <div className="flex gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={14} className="fill-white text-white" />
+                  <Star key={i} size={12} className="fill-white text-white" />
                 ))}
-              </div>              <div className="h-4 w-px bg-white/20 hidden md:block" />
+              </div>
+              <div className="h-4 w-px bg-white/20 hidden md:block" />
             </div>
-            <p className="text-[10px] md:text-xs font-black uppercase tracking-[0.15em] text-white text-center md:text-left leading-relaxed">
+            <p className="text-[10px] font-black uppercase tracking-[0.15em] text-white text-center md:text-left leading-relaxed">
               5/5 BY 400+ VENUES <span className="mx-1 md:mx-2 opacity-30">•</span> Shot-Sellers <span className="mx-1 md:mx-2 opacity-30">•</span> Hostesses <span className="mx-1 md:mx-2 opacity-30">•</span> Entertainment <span className="mx-1 md:mx-2 opacity-30">•</span> Trust Partner
             </p>
           </motion.div>
@@ -66,7 +67,7 @@ export default function ServicesPage() {
           <motion.h1
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            className="text-6xl md:text-9xl font-serif text-white leading-tight tracking-tighter mb-8"
+            className="text-5xl md:text-8xl font-serif text-white leading-tight tracking-tighter mb-6"
           >
             Our <span className="italic underline decoration-white/30 underline-offset-8">Services</span>
           </motion.h1>
@@ -74,14 +75,14 @@ export default function ServicesPage() {
           <motion.p
             initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            className="text-2xl md:text-4xl text-white font-serif italic tracking-tight max-w-4xl mx-auto leading-relaxed"
+            className="text-xl md:text-3xl text-white font-serif italic tracking-tight max-w-3xl mx-auto leading-relaxed"
           >
             “Transforming hospitality revenue through professional talent and unforgettable guest experiences.”
           </motion.p>
         </div>
 
-        <div className="absolute bottom-12 right-12 opacity-60">
-          <div className="w-24 h-24 relative">
+        <div className="absolute bottom-12 right-12 opacity-40">
+          <div className="w-16 h-16 relative">
             <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
           </div>
         </div>
@@ -91,53 +92,53 @@ export default function ServicesPage() {
       {services.map((service, idx) => (
         <section
           key={idx}
-          className="relative py-24 md:py-40 overflow-hidden"
+          className="relative py-12 md:py-20 overflow-hidden"
         >
           {/* Dotted Texture */}
           <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none z-[1]" style={{ backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)', backgroundSize: '30px 30px' }} />
 
           <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-            <div className={`grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center ${service.align === 'right' ? 'lg:flex-row-reverse' : ''}`}>
+            <div className={`grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center ${service.align === 'right' ? 'lg:flex-row-reverse' : ''}`}>
 
               <motion.div
                 initial={{ opacity: 0, x: service.align === 'left' ? -30 : 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className={`space-y-8 ${service.align === 'right' ? 'lg:order-2' : ''}`}
+                className={`space-y-6 ${service.align === 'right' ? 'lg:order-2' : ''}`}
               >
-                <div className="w-16 h-16 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center border border-white/20 shadow-xl">
+                <div className="w-14 h-14 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center border border-white/20 shadow-xl">
                   {service.icon}
                 </div>
 
-                <h2 className="text-5xl md:text-7xl font-serif text-white leading-tight">
+                <h2 className="text-4xl md:text-6xl font-serif text-white leading-tight">
                   {service.title.split(' & ').map((part, i, arr) => (
                     Part(part, i, arr)
                   ))}
                 </h2>
 
-                <div className="space-y-6">
-                  <p className="text-xl md:text-2xl text-white font-serif italic leading-relaxed opacity-95">
+                <div className="space-y-4">
+                  <p className="text-lg md:text-xl text-white font-serif italic leading-relaxed opacity-95">
                     “{service.description}”
                   </p>
-                  <p className="text-lg text-white/80 font-light leading-relaxed">
+                  <p className="text-base text-white/80 font-light leading-relaxed">
                     {service.extra}
                   </p>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-6 pt-6">
+                <div className="flex flex-col sm:flex-row gap-4 pt-4">
                   <Link
                     href="/contact"
-                    className="bg-white text-slate-900 px-8 py-4 rounded-full font-black text-sm uppercase tracking-widest shadow-xl transition-all hover:scale-105 flex items-center justify-center gap-2"
+                    className="bg-white text-slate-900 px-7 py-3.5 rounded-full font-black text-xs uppercase tracking-widest shadow-xl transition-all hover:scale-105 flex items-center justify-center gap-2"
                   >
-                    New Booking <ArrowRight size={18} className="text-primary" />
+                    New Booking <ArrowRight size={16} className="text-primary" />
                   </Link>
                   <Link
                     href="https://effervescent-agency.vercel.app"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-slate-900/20 backdrop-blur-md text-white border-2 border-white/30 px-8 py-4 rounded-full font-black text-sm uppercase tracking-widest transition-all hover:scale-105 flex items-center justify-center gap-2 group"
+                    className="bg-slate-900/20 backdrop-blur-md text-white border-2 border-white/30 px-7 py-3.5 rounded-full font-black text-xs uppercase tracking-widest transition-all hover:scale-105 flex items-center justify-center gap-2 group"
                   >
-                    Join The Team <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+                    Join The Team <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
                   </Link>
                 </div>
               </motion.div>
@@ -148,7 +149,7 @@ export default function ServicesPage() {
                 viewport={{ once: true }}
                 className={`relative group ${service.align === 'right' ? 'lg:order-1' : ''}`}
               >
-                <div className="relative h-[400px] md:h-[600px] w-full rounded-[3rem] overflow-hidden border-8 border-white/10 shadow-3xl transition-all duration-700">
+                <div className="relative h-[300px] md:h-[450px] w-full rounded-[2.5rem] overflow-hidden border-4 border-white/10 shadow-3xl transition-all duration-700">
                   <Image
                     src={service.image}
                     alt={service.title}
@@ -164,7 +165,7 @@ export default function ServicesPage() {
       ))}
 
       {/* Decorative Star Footer */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
+      <section className="relative py-16 md:py-20 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none z-[1]" style={{ backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)', backgroundSize: '30px 30px' }} />
 
         <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
@@ -173,13 +174,13 @@ export default function ServicesPage() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
           >
-            <div className="w-24 h-24 relative mx-auto mb-10">
+            <div className="w-16 h-16 relative mx-auto mb-6">
               <Image src="/effervescent-sign1.png" alt="Star" fill className="object-contain" />
             </div>
-            <h3 className="text-4xl md:text-5xl font-serif italic text-white tracking-tight">
+            <h3 className="text-3xl md:text-4xl font-serif italic text-white tracking-tight">
               Excellence in every detail.
             </h3>
-            <div className="mt-12 h-px w-32 bg-white/30 mx-auto" />
+            <div className="mt-8 h-px w-24 bg-white/30 mx-auto" />
           </motion.div>
         </div>
       </section>
