@@ -35,6 +35,38 @@ const Footer = () => {
     </svg>
   );
 
+  const LinkedInIcon = ({ size = 20 }: { size?: number }) => (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+      <rect width="4" height="12" x="2" y="9" />
+      <circle cx="4" cy="4" r="2" />
+    </svg>
+  );
+
+  const FacebookIcon = ({ size = 20 }: { size?: number }) => (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+    </svg>
+  );
+
   const mainLinks = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
@@ -70,6 +102,12 @@ const Footer = () => {
               </Link>
               <Link href="https://tiktok.com/@effervescent.agency" target="_blank" className="bg-white/5 hover:bg-white hover:text-primary p-3 rounded-xl transition-all border border-white/10 text-white group">
                 <TikTokIcon size={20} />
+              </Link>
+              <Link href="https://linkedin.com/company/effervescent-agency" target="_blank" className="bg-white/5 hover:bg-white hover:text-primary p-3 rounded-xl transition-all border border-white/10 text-white group">
+                <LinkedInIcon size={20} />
+              </Link>
+              <Link href="https://facebook.com/effervescent.agency" target="_blank" className="bg-white/5 hover:bg-white hover:text-primary p-3 rounded-xl transition-all border border-white/10 text-white group">
+                <FacebookIcon size={20} />
               </Link>
               <Link href="https://wa.me/971585216771" target="_blank" className="bg-white/5 hover:bg-white hover:text-primary p-3 rounded-xl transition-all border border-white/10 text-white">
                 <MessageCircle size={20} />

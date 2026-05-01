@@ -72,6 +72,38 @@ const Navbar = () => {
     </svg>
   );
 
+  const LinkedInIcon = ({ size = 20 }: { size?: number }) => (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+      <rect width="4" height="12" x="2" y="9" />
+      <circle cx="4" cy="4" r="2" />
+    </svg>
+  );
+
+  const FacebookIcon = ({ size = 20 }: { size?: number }) => (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+    </svg>
+  );
+
   return (
     <div className="fixed top-0 left-0 right-0 z-[100]">
       <AnnouncementBar />
@@ -202,6 +234,12 @@ const Navbar = () => {
                 <Link href="https://tiktok.com/@effervescent.agency" target="_blank" className="text-slate-900 hover:text-primary transition-colors">
                   <TikTokIcon size={18} />
                 </Link>
+                <Link href="https://linkedin.com/company/effervescent-agency" target="_blank" className="text-slate-900 hover:text-primary transition-colors">
+                  <LinkedInIcon size={18} />
+                </Link>
+                <Link href="https://facebook.com/effervescent.agency" target="_blank" className="text-slate-900 hover:text-primary transition-colors">
+                  <FacebookIcon size={18} />
+                </Link>
               </div>
               <div className="relative">
                 <button
@@ -290,6 +328,12 @@ const Navbar = () => {
                 </Link>
                 <Link href="https://tiktok.com/@effervescent.agency" target="_blank" className="text-slate-500 hover:text-primary transition-colors">
                   <TikTokIcon size={28} />
+                </Link>
+                <Link href="https://linkedin.com/company/effervescent-agency" target="_blank" className="text-slate-500 hover:text-primary transition-colors">
+                  <LinkedInIcon size={28} />
+                </Link>
+                <Link href="https://facebook.com/effervescent.agency" target="_blank" className="text-slate-500 hover:text-primary transition-colors">
+                  <FacebookIcon size={28} />
                 </Link>
               </div>
             </div>
