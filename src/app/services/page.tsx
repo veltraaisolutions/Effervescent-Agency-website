@@ -136,7 +136,7 @@ export default function ServicesPage() {
                 <div className="flex flex-col sm:flex-row gap-3 pt-2">
                   <Link
                     href="/contact"
-                    className="bg-white text-slate-900 px-6 py-3 rounded-full font-black text-[10px] uppercase tracking-widest shadow-xl transition-all hover:scale-105 flex items-center justify-center gap-2"
+                    className="bg-white text-slate-900 px-6 py-3 rounded-full font-black text-xs uppercase tracking-widest shadow-xl transition-all hover:scale-105 flex items-center justify-center gap-2"
                   >
                     Get in Touch <ArrowRight size={14} className="text-primary" />
                   </Link>
@@ -144,7 +144,7 @@ export default function ServicesPage() {
                     href="https://effervescent-agency.vercel.app"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-slate-900/20 backdrop-blur-md text-white border-2 border-white/30 px-6 py-3 rounded-full font-black text-[10px] uppercase tracking-widest transition-all hover:scale-105 flex items-center justify-center gap-2 group"
+                    className="bg-slate-900/20 backdrop-blur-md text-white border-2 border-white/30 px-6 py-3 rounded-full font-black text-xs uppercase tracking-widest transition-all hover:scale-105 flex items-center justify-center gap-2 group"
                   >
                     Join The Team <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
                   </Link>

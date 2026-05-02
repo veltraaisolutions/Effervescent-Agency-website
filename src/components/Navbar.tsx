@@ -168,7 +168,7 @@ const Navbar = () => {
                 <button
                   type="button"
                   onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
-                  className="bg-primary text-white px-3 py-2 rounded-xl text-xs font-black shadow-md flex items-center justify-center gap-1 whitespace-nowrap overflow-hidden min-w-[112px] max-w-[128px]"
+                  className="bg-primary text-white px-3 py-2 rounded-xl text-sm font-black shadow-md flex items-center justify-center gap-1 whitespace-nowrap overflow-hidden min-w-[112px] max-w-[128px]"
                 >
                   <span className="overflow-hidden">
                     Get in Touch
@@ -244,7 +244,7 @@ const Navbar = () => {
                 <button
                   type="button"
                   onClick={() => setDesktopDropdownOpen(!desktopDropdownOpen)}
-                  className="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-3 rounded-full text-xs font-black shadow-lg transition-all hover:scale-105 active:scale-95 whitespace-nowrap overflow-hidden min-w-[252px]"
+                  className="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-3 rounded-full text-sm font-black shadow-lg transition-all hover:scale-105 active:scale-95 whitespace-nowrap overflow-hidden min-w-[252px]"
                 >
                   Get in Touch
                   <ChevronDown
