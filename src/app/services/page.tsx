@@ -19,7 +19,7 @@ export default function ServicesPage() {
       title: "Bottle Service",
       description: "Our dedicated bottle service teams are trained to deliver high-energy, premium presentations that drive sales and enhance the VIP experience.",
       extra: "From synchronized sparkler entries to expert table management, we ensure your high-spending guests receive the attention and spectacle they expect, maximizing your table revenue.",
-      image: "/HostessService.jpeg",
+      image: "/case-studies-bg.jpeg",
       icon: <UserCheck className="text-white" size={24} />,
       align: "right"
     },
@@ -27,7 +27,7 @@ export default function ServicesPage() {
       title: "Hostesses",
       description: "Effervescent provides professional hostesses and promo-staff to ensure a seamless guest journey from the moment they arrive.",
       extra: "Whether it's front-of-house greeting, guestlist management, or atmospheric promotion, our hostesses represent your brand with elegance and professional excellence.",
-      image: "/Promtoers-Services.jpeg",
+      image: "/HostessService.jpeg",
       icon: <UserCheck className="text-white" size={24} />,
       align: "left"
     },

@@ -74,20 +74,20 @@ export default function VenuesPage() {
           </div>
 
           {/* Bottom Image Collage - Compact & Mobile Optimized */}
-          <div className="relative w-full h-[350px] md:h-[450px]">
-            {/* Left Image - More visible on mobile */}
+          <div className="relative w-full h-[350px] md:h-[450px] px-6 md:px-0">
+            {/* Main Image - Centered on mobile, anchored left on desktop */}
             <motion.div
               initial={{ y: 40, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="absolute bottom-0 left-0 w-[60%] md:w-[35%] h-full rounded-tr-[3rem] md:rounded-tr-[5rem] overflow-hidden shadow-2xl z-10 border-r border-white/10 group"
+              className="absolute bottom-0 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-[90%] md:w-[35%] h-full rounded-[2rem] md:rounded-none md:rounded-tr-[5rem] overflow-hidden shadow-2xl z-10 border border-white/10 group"
             >
               <Image
                 src="/tray-girl.jpeg"
                 alt="Shot seller at work"
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className="object-cover object-top md:object-center transition-transform duration-700 group-hover:scale-105"
               />
             </motion.div>
 
