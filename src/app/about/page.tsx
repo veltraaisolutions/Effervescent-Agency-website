@@ -49,7 +49,7 @@ export default function AboutPage() {
             animate={{ y: 0, opacity: 1 }}
             className="text-xl md:text-3xl text-white font-serif italic tracking-tight max-w-3xl mx-auto leading-relaxed"
           >
-            “Our extensive experience equips us with the insights needed to tailor shot girl services that deliver exceptional results.”
+            Our extensive experience equips us with the insights needed to tailor shot girl services that deliver exceptional results.
           </motion.p>
         </div>
         <div className="absolute bottom-12 right-12 opacity-40">
@@ -75,7 +75,7 @@ export default function AboutPage() {
                 <span className="italic underline decoration-white/50 underline-offset-8">Across Borders</span>
               </h2>
               <p className="text-lg md:text-xl text-white font-serif italic leading-relaxed opacity-90">
-                “With a proven track record of success nationwide across the UK, in Ibiza & Dubai, we've demonstrated our ability to excel in diverse markets.”
+                With a proven track record of success nationwide across the UK, in Ibiza & Dubai, we've demonstrated our ability to excel in diverse markets.
               </p>
               <p className="text-base text-white/80 font-light leading-relaxed max-w-xl">
                 We work seamlessly with both corporate brands like Stonegate and cherished family-owned businesses, bringing a standard of excellence that is unmatched in the hospitality industry.
@@ -143,8 +143,8 @@ export default function AboutPage() {
                 <span className="italic underline decoration-white/50 underline-offset-8">Driven</span> Approach
               </h2>
               <div className="space-y-6 text-lg md:text-xl text-white font-serif italic leading-relaxed opacity-90">
-                <p>“We provide comprehensive sales training and our innovative commission-based pay structure is designed to drive results.”</p>
-                <p>“This means that our shot-sellers are not just servers, but motivated sales professionals incentivised to sell, ensuring they are as committed to your venue's success as you are.”</p>
+                <p>We provide comprehensive sales training and our innovative commission-based pay structure is designed to drive results.</p>
+                <p>This means that our shot-sellers are not just servers, but motivated sales professionals incentivised to sell, ensuring they are as committed to your venue's success as you are.</p>
               </div>
               <div className="pt-4">
                 <div className="h-px w-16 bg-white/30 mb-6" />

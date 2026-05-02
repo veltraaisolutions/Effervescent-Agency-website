@@ -18,7 +18,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full flex flex-col items-center text-center pt-32 md:pt-48">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full flex flex-col items-center text-center pt-24 md:pt-32">
           <motion.div
             initial={{ y: -10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -40,14 +40,14 @@ export default function Home() {
           <motion.div
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            className="w-full max-w-[1400px] h-[300px] md:h-[600px] mb-0"
+            className="w-full max-w-[1400px] h-[250px] md:h-[450px] mb-0"
           >
             <div className="relative w-full h-full">
               <Image
                 src="/effervescent-logo.jpeg"
                 alt="Effervescent"
                 fill
-                className="object-contain scale-145 md:scale-195"
+                className="object-contain scale-135 md:scale-175"
                 priority
               />
             </div>

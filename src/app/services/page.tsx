@@ -77,7 +77,7 @@ export default function ServicesPage() {
             animate={{ y: 0, opacity: 1 }}
             className="text-xl md:text-3xl text-white font-serif italic tracking-tight max-w-3xl mx-auto leading-relaxed"
           >
-            “Transforming hospitality revenue through professional talent and unforgettable guest experiences.”
+            Transforming hospitality revenue through professional talent and unforgettable guest experiences.
           </motion.p>
         </div>
 
@@ -118,7 +118,7 @@ export default function ServicesPage() {
 
                 <div className="space-y-4">
                   <p className="text-lg md:text-xl text-white font-serif italic leading-relaxed opacity-95">
-                    “{service.description}”
+                    {service.description}
                   </p>
                   <p className="text-base text-white/80 font-light leading-relaxed">
                     {service.extra}
@@ -130,7 +130,7 @@ export default function ServicesPage() {
                     href="/contact"
                     className="bg-white text-slate-900 px-7 py-3.5 rounded-full font-black text-xs uppercase tracking-widest shadow-xl transition-all hover:scale-105 flex items-center justify-center gap-2"
                   >
-                    New Booking <ArrowRight size={16} className="text-primary" />
+                    Get in Touch <ArrowRight size={16} className="text-primary" />
                   </Link>
                   <Link
                     href="https://effervescent-agency.vercel.app"
