@@ -74,7 +74,7 @@ const Footer = () => {
     { name: "Shot-Sellers", href: "/shot-sellers" },
     { name: "Venues", href: "/venues" },
     { name: "FAQ", href: "/faq" },
-  ];
+    ];
 
   return (
     <footer className="relative pt-10 pb-8 overflow-hidden">
@@ -116,7 +116,7 @@ const Footer = () => {
           </div>
 
           {/* Navigation Columns */}
-          <div className="lg:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-8 lg:gap-12">
+          <div className="lg:col-span-7 grid grid-cols-2 gap-8 lg:gap-12">
             <div className="space-y-5">
               <h4 className="text-white font-bold text-lg tracking-tight">Navigation</h4>
               <ul className="space-y-3">
@@ -140,10 +140,11 @@ const Footer = () => {
                 <li>
                   <Link href="/referrals" className="text-white/70 hover:text-white transition-all font-medium text-[15px]">Inquiries</Link>
                 </li>
+                <li>
+                  <Link href="/apply" className="text-white/70 hover:text-white transition-all font-medium text-[15px]">Apply Now</Link>
+                </li>
               </ul>
             </div>
-
-
           </div>
         </div>
 

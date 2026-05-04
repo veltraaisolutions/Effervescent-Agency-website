@@ -205,6 +205,7 @@ const Navbar = () => {
                 { name: "Home", href: "/" },
                 { name: "About Us", href: "/about" },
                 { name: "Services", href: "/services" },
+                { name: "Shot-Sellers", href: "/shot-sellers" },
                 { name: "Venues", href: "/venues" },
                 { name: "FAQ", href: "/faq" },
               ].map((link) => {
@@ -298,6 +299,7 @@ const Navbar = () => {
               { name: "Home", href: "/" },
               { name: "About Us", href: "/about" },
               { name: "Services", href: "/services" },
+              { name: "Shot-Sellers", href: "/shot-sellers" },
               { name: "Venues", href: "/venues" },
               { name: "FAQ", href: "/faq" },
             ].map((link) => {
