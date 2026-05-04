@@ -87,7 +87,6 @@ const HEARD_ABOUT_OPTIONS = [
   "Trade shows / Exhibitions",
 ];
 
-const GENDER_OPTIONS = ["Female", "Male", "Non-binary", "Prefer not to say"];
 
 const MAX_FILE_SIZE = 10 * 1024 * 1024;
 const ALLOWED_PHOTO_TYPES = [
@@ -128,7 +127,6 @@ interface FileData {
 interface FormState {
   fullName: string;
   dob: string;
-  gender: string;
   email: string;
   phone: string;
   instagram: string;
@@ -157,7 +155,6 @@ interface FormState {
 const INITIAL: FormState = {
   fullName: "",
   dob: "",
-  gender: "",
   email: "",
   phone: "",
   instagram: "",
@@ -414,8 +411,8 @@ function YesNoToggle({
               : {}
           }
           className={`px-6 py-2 rounded-xl text-sm font-semibold border transition-all ${value === opt
-              ? "shadow-sm"
-              : "bg-slate-50 text-slate-600 border-slate-200 hover:border-[#FDB8D7]/80 hover:text-slate-900"
+            ? "shadow-sm"
+            : "bg-slate-50 text-slate-600 border-slate-200 hover:border-[#FDB8D7]/80 hover:text-slate-900"
             }`}
         >
           {opt === "yes" ? "Yes" : "No"}
@@ -445,8 +442,8 @@ function RadioGroup({
             value === opt ? { borderColor: B, backgroundColor: `${B}14` } : {}
           }
           className={`flex items-center gap-3 px-4 py-3 rounded-xl border text-sm font-medium text-left transition-all ${value === opt
-              ? "text-slate-900"
-              : "border-slate-200 bg-slate-50 text-slate-600 hover:border-[#FDB8D7]/70 hover:text-slate-900"
+            ? "text-slate-900"
+            : "border-slate-200 bg-slate-50 text-slate-600 hover:border-[#FDB8D7]/70 hover:text-slate-900"
             }`}
         >
           <div
@@ -611,7 +608,6 @@ export default function ApplyPage() {
       if (!form.dob) e.dob = "Date of birth is required";
       else if (!isAtLeast18(form.dob))
         e.dob = "You must be at least 18 years old to apply";
-      if (!form.gender) e.gender = "Please select your gender identity";
       if (!form.email.trim()) e.email = "Email address is required";
       else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
         e.email = "Please enter a valid email address";
@@ -736,7 +732,6 @@ export default function ApplyPage() {
         personalInfo: {
           fullName: form.fullName,
           dateOfBirth: form.dob,
-          gender: form.gender,
           email: form.email,
           // Phone is already normalised to E.164 via onBlur, so it is safe for DB + WhatsApp API.
           phone: form.phone,
@@ -868,8 +863,8 @@ export default function ApplyPage() {
                     : {}
                 }
                 className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300 ${s <= slide
-                    ? ""
-                    : "bg-white/70 text-slate-400 border border-white/80"
+                  ? ""
+                  : "bg-white/70 text-slate-400 border border-white/80"
                   }`}
               >
                 {s < slide ? (
@@ -948,15 +943,7 @@ export default function ApplyPage() {
                   />
                   <FieldError message={errors.dob} />
                 </div>
-                <div>
-                  <FieldLabel required>What do you identify as?</FieldLabel>
-                  <RadioGroup
-                    options={GENDER_OPTIONS}
-                    value={form.gender}
-                    onChange={(v) => upd({ gender: v })}
-                  />
-                  <FieldError message={errors.gender} />
-                </div>
+
                 <div>
                   <FieldLabel required>Email Address</FieldLabel>
                   <TextInput
