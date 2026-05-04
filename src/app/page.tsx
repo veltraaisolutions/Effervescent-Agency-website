@@ -62,15 +62,7 @@ export default function Home() {
             Transforming Venues and Events Around the Globe
           </motion.p>
 
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2 }}
-          >
-            <GetInTouchButton 
-              buttonClassName="text-xl px-12 py-5 shadow-2xl hover:shadow-white/20"
-            />
-          </motion.div>
+
         </div>
       </section>
 
@@ -199,8 +191,8 @@ export default function Home() {
                 Join the elite network of venues and shot-sellers redefining the global nightlife experience.
               </p>
               <div className="flex justify-center lg:justify-start pt-4">
-                <GetInTouchButton 
-                  buttonClassName="text-xl px-12 py-5 shadow-2xl hover:shadow-white/20" 
+                <GetInTouchButton
+                  buttonClassName="text-xl px-12 py-5 shadow-2xl hover:shadow-white/20"
                 />
               </div>
             </div>
