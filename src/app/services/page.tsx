@@ -35,7 +35,7 @@ export default function ServicesPage() {
       title: "Dancers & Multi Skilled Performers",
       description: "Through our sister business, Effervescent Entertainment, we offer a variety of additional experiences to enrich your venue.",
       extra: "From fire performers to specialized dancers, we're committed to creating tailored performance packages that guarantee unique and unforgettable experiences for your guests.",
-      image: "/fungala-girl.png",
+      image: "/fire-shot-worker.jpeg",
       icon: <Sparkles className="text-white" size={24} />,
       align: "right"
     }
