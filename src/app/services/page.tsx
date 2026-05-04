@@ -2,17 +2,17 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Star, Sparkles, UserCheck, Zap } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 import Link from "next/link";
+import GetInTouchButton from "@/components/GetInTouchButton";
 
 export default function ServicesPage() {
   const services = [
     {
       title: "Shot-Sales People",
-      description: "Shot-sellers ARE a valuable addition to your venue, positively impacting customer experience and bringing revenue to new heights, at no additional cost to yourselves.",
+      description: "Shot-sellers are a valuable addition to your venue, positively impacting customer experience and bringing revenue to new heights, at no additional cost to yourselves.",
       extra: "Beyond that, shot-sellers excel at creating an engaging and enjoyable experience for customers, fostering a vibrant and social atmosphere. Customers also benefit from shorter wait times streamlining your service, taking pressure off bar staff and improving customer satisfaction overall.",
       image: "/tray-girl.jpeg",
-      icon: <Zap className="text-white" size={24} />,
       align: "left"
     },
     {
@@ -20,7 +20,6 @@ export default function ServicesPage() {
       description: "Our dedicated bottle service teams are trained to deliver high-energy, premium presentations that drive sales and enhance the VIP experience.",
       extra: "From synchronized sparkler entries to expert table management, we ensure your high-spending guests receive the attention and spectacle they expect, maximizing your table revenue.",
       image: "/case-studies-bg.jpeg",
-      icon: <UserCheck className="text-white" size={24} />,
       align: "right"
     },
     {
@@ -28,7 +27,6 @@ export default function ServicesPage() {
       description: "Effervescent provides professional hostesses and promo-staff to ensure a seamless guest journey from the moment they arrive.",
       extra: "Whether it's front-of-house greeting, guestlist management, or atmospheric promotion, our hostesses represent your brand with elegance and professional excellence.",
       image: "/HostessService.jpeg",
-      icon: <UserCheck className="text-white" size={24} />,
       align: "left"
     },
     {
@@ -36,7 +34,6 @@ export default function ServicesPage() {
       description: "Through our sister business, Effervescent Entertainment, we offer a variety of additional experiences to enrich your venue.",
       extra: "From fire performers to specialized dancers, we're committed to creating tailored performance packages that guarantee unique and unforgettable experiences for your guests.",
       image: "/fire-shot-worker.jpeg",
-      icon: <Sparkles className="text-white" size={24} />,
       align: "right"
     }
   ];
@@ -100,10 +97,10 @@ export default function ServicesPage() {
       {services.map((service, idx) => (
         <section
           key={idx}
-          className="relative py-8 md:py-12 overflow-hidden"
+          className="relative py-8 md:py-12"
         >
           {/* Dotted Texture */}
-          <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none z-[1]" style={{ backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)', backgroundSize: '30px 30px' }} />
+          <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none z-[1] overflow-hidden" style={{ backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)', backgroundSize: '30px 30px' }} />
 
           <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
             <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center ${service.align === 'right' ? 'lg:flex-row-reverse' : ''}`}>
@@ -114,10 +111,6 @@ export default function ServicesPage() {
                 viewport={{ once: true }}
                 className={`space-y-4 ${service.align === 'right' ? 'lg:order-2' : ''}`}
               >
-                <div className="w-12 h-12 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center border border-white/20 shadow-xl">
-                  {service.icon}
-                </div>
-
                 <h2 className="text-3xl md:text-5xl font-serif text-white leading-tight">
                   {service.title.split(' & ').map((part, i, arr) => (
                     Part(part, i, arr)
@@ -133,21 +126,8 @@ export default function ServicesPage() {
                   </p>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                  <Link
-                    href="/contact"
-                    className="bg-white text-slate-900 px-6 py-3 rounded-full font-black text-xs uppercase tracking-widest shadow-xl transition-all hover:scale-105 flex items-center justify-center gap-2"
-                  >
-                    Get in Touch <ArrowRight size={14} className="text-primary" />
-                  </Link>
-                  <Link
-                    href="https://effervescent-agency.vercel.app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-slate-900/20 backdrop-blur-md text-white border-2 border-white/30 px-6 py-3 rounded-full font-black text-xs uppercase tracking-widest transition-all hover:scale-105 flex items-center justify-center gap-2 group"
-                  >
-                    Join The Team <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
-                  </Link>
+                <div className="flex pt-2">
+                  <GetInTouchButton />
                 </div>
               </motion.div>
 

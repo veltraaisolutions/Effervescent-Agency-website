@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Star } from "lucide-react";
 import PartnerMarquee from "@/components/PartnerMarquee";
 import Partners from "@/components/Partners";
+import GetInTouchButton from "@/components/GetInTouchButton";
 
 export default function Home() {
   return (
@@ -56,10 +57,20 @@ export default function Home() {
           <motion.p
             initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            className="text-2xl md:text-5xl text-white font-serif italic tracking-tight mb-12 md:mb-20"
+            className="text-2xl md:text-5xl text-white font-serif italic tracking-tight mb-12"
           >
             Transforming Venues and Events Around the Globe
           </motion.p>
+
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            <GetInTouchButton 
+              buttonClassName="text-xl px-12 py-5 shadow-2xl hover:shadow-white/20"
+            />
+          </motion.div>
         </div>
       </section>
 
@@ -164,9 +175,9 @@ export default function Home() {
       </div>
 
       {/* Final CTA Banner */}
-      <section className="relative py-24 md:py-32 overflow-hidden">
+      <section className="relative py-24 md:py-32">
         <div
-          className="absolute inset-0 z-0 pointer-events-none"
+          className="absolute inset-0 z-0 pointer-events-none overflow-hidden"
           style={{
             background: 'radial-gradient(circle at 90% 10%, #C874E2 0%, transparent 50%), radial-gradient(circle at 10% 90%, #C874E2 0%, transparent 50%)',
             WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)',
@@ -187,21 +198,10 @@ export default function Home() {
               <p className="text-xl md:text-2xl text-white/90 font-medium italic max-w-xl leading-relaxed mx-auto lg:mx-0">
                 Join the elite network of venues and shot-sellers redefining the global nightlife experience.
               </p>
-              <div className="flex flex-col sm:flex-row flex-wrap gap-6 pt-4 justify-center lg:justify-start">
-                <Link
-                  href="/contact"
-                  className="bg-white text-slate-900 px-10 py-5 rounded-full text-xl font-black shadow-2xl transition-all hover:scale-105 hover:shadow-white/20 flex items-center justify-center gap-2"
-                >
-                  New Booking <ArrowRight size={22} className="text-primary" />
-                </Link>
-                <Link
-                  href="https://effervescent-agency.vercel.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-slate-900/20 backdrop-blur-md text-white border-2 border-white/30 px-10 py-5 rounded-full text-xl font-black shadow-2xl transition-all hover:scale-105 flex items-center justify-center gap-2 group"
-                >
-                  Join The Team <ArrowRight size={22} className="transition-transform group-hover:translate-x-1" />
-                </Link>
+              <div className="flex justify-center lg:justify-start pt-4">
+                <GetInTouchButton 
+                  buttonClassName="text-xl px-12 py-5 shadow-2xl hover:shadow-white/20" 
+                />
               </div>
             </div>
             <div className="relative group lg:justify-self-end w-full max-w-[650px] mx-auto lg:mx-0 order-1 lg:order-2">

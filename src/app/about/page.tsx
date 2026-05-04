@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Globe, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import GetInTouchButton from "@/components/GetInTouchButton";
 
 export default function AboutPage() {
   const stats = [
@@ -107,12 +108,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Winning Approach */}
-      <section className="relative py-12 md:py-16 overflow-hidden">
-        <div className="absolute inset-0 z-0">
+      {/* Final CTA Banner */}
+      <section className="relative py-12 md:py-16">
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <div className="absolute -top-[30%] right-[-10%] w-[80%] h-[160%] bg-[#d690eb]/10 transform rotate-[35deg] border-l-2 border-white/20" />
         </div>
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-5xl mx-auto px-6 text-center relative z-10 space-y-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }}
@@ -174,21 +175,10 @@ export default function AboutPage() {
             <h2 className="text-4xl md:text-6xl font-serif text-white leading-tight tracking-tight text-balance">
               Ready to scale your <br /> revenue with the <span className="italic underline decoration-white/50 underline-offset-8">elite</span>
             </h2>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
-              <Link 
-                href="/contact"
-                className="bg-white text-slate-900 px-10 py-5 rounded-full text-lg font-black shadow-2xl transition-all hover:scale-105 flex items-center justify-center gap-3"
-              >
-                Get in Touch <ArrowRight size={20} className="text-primary" />
-              </Link>
-              <Link 
-                href="https://effervescent-agency.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-slate-900/20 backdrop-blur-md text-white border-2 border-white/30 px-10 py-5 rounded-full text-lg font-black shadow-2xl transition-all hover:scale-105 flex items-center justify-center gap-3 group"
-              >
-                Join The Team <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
-              </Link>
+            <div className="flex justify-center pt-2">
+              <GetInTouchButton 
+                buttonClassName="text-xl px-12 py-5 shadow-2xl hover:shadow-white/20" 
+              />
             </div>
           </motion.div>
         </div>

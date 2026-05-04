@@ -10,8 +10,8 @@ import AnnouncementBar from "./AnnouncementBar";
 
 const partnerCtas = [
   { label: "Become a Shot Seller", href: "/apply" },
-  { label: "Enquires", href: "/referrals" },
   { label: "Discuss Your Venue", href: "/contact" },
+  { label: "Inquiries", href: "/referrals" },
 ];
 
 const Navbar = () => {
@@ -205,7 +205,7 @@ const Navbar = () => {
                 { name: "Home", href: "/" },
                 { name: "About Us", href: "/about" },
                 { name: "Services", href: "/services" },
-                { name: "Case Studies", href: "/venues" },
+                { name: "Venues", href: "/venues" },
                 { name: "FAQ", href: "/faq" },
               ].map((link) => {
                 const isActive = pathname === link.href;
@@ -298,7 +298,7 @@ const Navbar = () => {
               { name: "Home", href: "/" },
               { name: "About Us", href: "/about" },
               { name: "Services", href: "/services" },
-              { name: "Case Studies", href: "/venues" },
+              { name: "Venues", href: "/venues" },
               { name: "FAQ", href: "/faq" },
             ].map((link) => {
               const isActive = pathname === link.href;
