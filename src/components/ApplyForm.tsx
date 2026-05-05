@@ -12,6 +12,8 @@ import {
   AlertCircle,
   ChevronDown,
 } from "lucide-react";
+import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 import { supabase } from "@/lib/supabase";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
@@ -191,39 +193,6 @@ function isAtLeast18(dob: string): boolean {
   const m = today.getMonth() - birth.getMonth();
   if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) age--;
   return age >= 18;
-}
-
-/**
- * Normalise any phone number to strict E.164 format: +[countrycode][number]
- * - Strips ALL spaces, dashes, dots, parentheses
- * - Does NOT assume any country — user must include their own country code
- * - If user typed digits without a leading +, we prepend + (they probably forgot it)
- * - Result is safe to store in DB and pass directly to WhatsApp / n8n API as-is
- *
- * Examples:
- *   "+971 50 123 4567"  → "+971501234567"
- *   "+44 7700 000000"   → "+447700000000"
- *   "+34 600 000 000"   → "+34600000000"
- *   "971501234567"      → "+971501234567"  (forgot the +)
- */
-function normalizePhone(raw: string): string {
-  // Step 1: trim leading/trailing whitespace
-  let v = raw.trim();
-  // Step 2: strip all spaces, dashes, dots, parentheses, hyphens
-  v = v.replace(/[\s\-().]/g, "");
-  // Step 3: if it's purely digits (user forgot the +), prepend +
-  if (!v.startsWith("+") && /^\d+$/.test(v)) {
-    v = "+" + v;
-  }
-  return v;
-}
-
-/**
- * Validate E.164: must be + followed by 7–15 digits (ITU-T standard).
- * This covers all countries worldwide.
- */
-function isValidPhone(v: string): boolean {
-  return /^\+\d{7,15}$/.test(v);
 }
 
 function toBase64(file: File): Promise<string> {
@@ -423,49 +392,6 @@ function YesNoToggle({
   );
 }
 
-function RadioGroup({
-  options,
-  value,
-  onChange,
-}: {
-  options: string[];
-  value: string;
-  onChange: (v: string) => void;
-}) {
-  return (
-    <div className="flex flex-col gap-2">
-      {options.map((opt) => (
-        <button
-          key={opt}
-          type="button"
-          onClick={() => onChange(opt)}
-          style={
-            value === opt ? { borderColor: B, backgroundColor: `${B}14` } : {}
-          }
-          className={`flex items-center gap-3 px-4 py-3 rounded-xl border text-sm font-medium text-left transition-all ${value === opt
-            ? "text-slate-900"
-            : "border-slate-200 bg-slate-50 text-slate-600 hover:border-[#FDB8D7]/70 hover:text-slate-900"
-            }`}
-        >
-          <div
-            style={value === opt ? { borderColor: B } : {}}
-            className={`w-4 h-4 rounded-full border-2 flex-shrink-0 flex items-center justify-center ${value === opt ? "" : "border-slate-300"
-              }`}
-          >
-            {value === opt && (
-              <div
-                style={{ backgroundColor: B }}
-                className="w-2 h-2 rounded-full"
-              />
-            )}
-          </div>
-          {opt}
-        </button>
-      ))}
-    </div>
-  );
-}
-
 function StyledCheckbox({
   checked,
   onCheckedChange,
@@ -612,10 +538,9 @@ export default function ApplyPage() {
       if (!form.email.trim()) e.email = "Email address is required";
       else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
         e.email = "Please enter a valid email address";
-      if (!form.phone.trim()) e.phone = "Phone number is required";
-      else if (!isValidPhone(form.phone))
-        e.phone =
-          "Must include your country code with no spaces — UK: +447700000000 · UAE: +971501234567 · Spain: +34600000000";
+      if (!form.phone || !form.phone.trim()) e.phone = "Phone number is required";
+      else if (!isValidPhoneNumber(form.phone))
+        e.phone = "Please enter a valid phone number with country code";
       if (!form.instagram.trim())
         e.instagram = "Instagram username is required";
     }
@@ -753,7 +678,6 @@ export default function ApplyPage() {
           fullName: form.fullName,
           dateOfBirth: form.dob,
           email: form.email,
-          // Phone is already normalised to E.164 via onBlur, so it is safe for DB + WhatsApp API.
           phone: form.phone,
           instagram: form.instagram,
         },
@@ -975,53 +899,44 @@ export default function ApplyPage() {
                   <FieldError message={errors.email} />
                 </div>
 
-                {/* ── Phone — international-aware ── */}
+                {/* ── Phone — international ── */}
                 <div>
                   <FieldLabel required>Mobile Phone / WhatsApp</FieldLabel>
-                  <TextInput
-                    type="tel"
-                    value={form.phone}
-                    onChange={(v) => upd({ phone: v })}
-                    onBlur={() => {
-                      // Normalise on blur: strips spaces/dashes, ensures leading +
-                      if (form.phone.trim()) {
-                        upd({ phone: normalizePhone(form.phone) });
-                      }
-                    }}
-                    placeholder="+971501234567  ·  +447700000000  ·  +34600000000"
-                  />
-                  {/* Clear, non-technical hint for all countries */}
-                  <div
-                    className="mt-2 rounded-xl px-3 py-2.5 text-xs leading-relaxed space-y-1"
-                    style={{
-                      backgroundColor: `${B}08`,
-                      border: `1px solid ${B}20`,
-                    }}
-                  >
-                    <p
-                      className="font-semibold"
-                      style={{ color: B }}
-                    >
-                      ⚠️ Important — include your country code
-                    </p>
-                    <p className="text-slate-600">
-                      Start with{" "}
-                      <span className="text-slate-900 font-medium">+</span>{" "}
-                      followed by your country code, then your number. No spaces
-                      or dashes.
-                    </p>
-                    <p className="text-slate-500">
-                      🇬🇧 UK: <span className="text-slate-800">+44</span>
-                      7700000000 &nbsp;·&nbsp; 🇦🇪 UAE:{" "}
-                      <span className="text-slate-800">+971</span>501234567
-                      &nbsp;·&nbsp; 🇪🇸 Spain:{" "}
-                      <span className="text-slate-800">+34</span>600000000
-                    </p>
-                    <p className="text-slate-500">
-                      We use this number to contact you via WhatsApp — a wrong
-                      number means we can&apos;t reach you.
-                    </p>
+                  <div className="relative phone-input-container">
+                    <PhoneInput
+                      international
+                      defaultCountry="GB"
+                      value={form.phone}
+                      onChange={(v) => upd({ phone: v || "" })}
+                      placeholder="+44 7700 000000"
+                      className="w-full"
+                    />
                   </div>
+                  <style jsx global>{`
+                    .phone-input-container .PhoneInput {
+                      display: flex;
+                      align-items: center;
+                      gap: 8px;
+                    }
+                    .phone-input-container .PhoneInputInput {
+                      width: 100%;
+                      padding: 10px 12px;
+                      border: 1px solid #e2e8f0;
+                      border-radius: 12px;
+                      font-size: 14px;
+                      background-color: #f8fafc;
+                      color: #0f172a;
+                      transition: all 0.2s;
+                      outline: none;
+                    }
+                    .phone-input-container .PhoneInputInput:focus {
+                      box-shadow: 0 0 0 2px ${B}55;
+                      border-color: ${B};
+                    }
+                    .phone-input-container .PhoneInputCountry {
+                      margin-right: 4px;
+                    }
+                  `}</style>
                   <FieldError message={errors.phone} />
                 </div>
 
