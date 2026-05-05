@@ -284,7 +284,7 @@ function TextInput({
         onBlur?.();
       }}
       style={{ colorScheme: "light" }}
-      className="w-full px-3 py-2.5 border border-slate-200 rounded-xl text-sm
+      className="w-full px-3 py-2.5 border border-[#FDB8D7] rounded-xl text-sm
         bg-slate-50 text-slate-900 placeholder:text-slate-400
         focus:outline-none disabled:opacity-50 transition-all"
       onFocus={onFocusBrand}
@@ -309,7 +309,7 @@ function TextareaInput({
       rows={rows}
       placeholder={placeholder}
       onChange={(e) => onChange(e.target.value)}
-      className="w-full px-3 py-2.5 border border-slate-200 rounded-xl text-sm
+      className="w-full px-3 py-2.5 border border-[#FDB8D7] rounded-xl text-sm
         bg-slate-50 text-slate-900 placeholder:text-slate-400
         focus:outline-none resize-none transition-all"
       onFocus={onFocusBrand}
@@ -335,7 +335,7 @@ function SelectInput({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         style={{ colorScheme: "light" }}
-        className="w-full appearance-none px-3 py-2.5 border border-slate-200 rounded-xl text-sm
+        className="w-full appearance-none px-3 py-2.5 border border-[#FDB8D7] rounded-xl text-sm
           bg-slate-50 text-slate-900 focus:outline-none transition-all"
         onFocus={onFocusBrand}
         onBlur={onBlurBrand}
@@ -475,7 +475,7 @@ function SuccessScreen() {
 
   return (
     <div className="min-h-screen bg-transparent flex items-center justify-center p-4">
-      <div className="bg-white border border-white/60 rounded-3xl shadow-2xl p-10 max-w-md w-full text-center">
+      <div className="bg-white border border-[#FDB8D7]/30 rounded-3xl shadow-2xl p-10 max-w-md w-full text-center">
         <div
           className="w-24 h-24 rounded-2xl overflow-hidden mx-auto mb-6 shadow-lg"
           style={{ boxShadow: `0 0 0 2px ${B}40` }}
@@ -653,12 +653,22 @@ export default function ApplyPage() {
     setSubmitting(true);
     setSubmitError("");
 
+    // ─── Optimization & Sanitization ──────────────────────────────────────────
+    const cleanPhone = form.phone.replace(/[\s\-\(\)]/g, "");
+    const cleanEmail = form.email.trim().toLowerCase();
+    const cleanFullName = form.fullName.trim();
+    const cleanInstagram = form.instagram.trim();
+    const cleanManualCity = form.manualCity.trim();
+    const cleanHomeCity = form.homeCity.trim();
+    const cleanShareCode = form.shareCode.trim().toUpperCase();
+    const cleanPrevCompany = form.prevCompany.trim();
+
     try {
-      // 1. Blacklist check
+      // 1. Blacklist check using sanitized data
       const { data: blacklistedCandidates, error: blacklistError } = await supabase
         .from("milli_candidates")
         .select("id")
-        .or(`email.eq.${form.email},phone.eq.${form.phone}`)
+        .or(`email.eq.${cleanEmail},phone.eq.${cleanPhone}`)
         .eq("blacklisted", true);
 
       if (blacklistError) {
@@ -675,18 +685,18 @@ export default function ApplyPage() {
 
       const payload = {
         personalInfo: {
-          fullName: form.fullName,
+          fullName: cleanFullName,
           dateOfBirth: form.dob,
-          email: form.email,
-          phone: form.phone,
-          instagram: form.instagram,
+          email: cleanEmail,
+          phone: cleanPhone,
+          instagram: cleanInstagram,
         },
         location: {
           primaryLocation: form.primaryCity,
           secondLocation: form.secondCity,
-          manualLocation: form.manualCity,
+          manualLocation: cleanManualCity,
           isStudent: form.isStudent,
-          homeCity: form.homeCity,
+          homeCity: cleanHomeCity,
           doesDrive: form.doesDrive,
         },
         photos: {
@@ -703,15 +713,15 @@ export default function ApplyPage() {
             }
             : null,
           hasNonUkPassport: form.nonUkPassport,
-          shareCode: form.shareCode,
+          shareCode: cleanShareCode,
         },
         experience: {
           hasPriorExperience: form.priorExp,
-          previousCompany: form.prevCompany,
+          previousCompany: cleanPrevCompany,
           yearsOfExperience: form.yearsExp,
-          understandRole: form.understandRole,
-          whyGoodFit: form.whyFit,
-          salesExperience: form.salesExp,
+          understandRole: form.understandRole.trim(),
+          whyGoodFit: form.whyFit.trim(),
+          salesExperience: form.salesExp.trim(),
           availableFrom: form.startDate,
         },
         declarations: {
@@ -808,7 +818,7 @@ export default function ApplyPage() {
                 }
                 className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300 ${s <= slide
                   ? ""
-                  : "bg-white/70 text-slate-400 border border-white/80"
+                  : "bg-slate-100 text-slate-400 border border-slate-200"
                   }`}
               >
                 {s < slide ? (
@@ -829,7 +839,7 @@ export default function ApplyPage() {
             </div>
           ))}
         </div>
-        <div className="h-1 bg-white/70 rounded-full overflow-hidden">
+        <div className="h-1 bg-slate-200/50 rounded-full overflow-hidden">
           <div
             style={{
               width: `${((slide - 1) / 4) * 100}%`,
@@ -844,7 +854,7 @@ export default function ApplyPage() {
       <div
         className={`max-w-xl mx-auto px-4 py-4 transition-all duration-200 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}
       >
-        <div className="bg-white rounded-3xl border border-white/70 overflow-hidden shadow-2xl">
+        <div className="bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-2xl">
           {/* Card Header */}
           <div
             className="px-6 py-5"
@@ -921,7 +931,7 @@ export default function ApplyPage() {
                     .phone-input-container .PhoneInputInput {
                       width: 100%;
                       padding: 10px 12px;
-                      border: 1px solid #e2e8f0;
+                      border: 1px solid ${B};
                       border-radius: 12px;
                       font-size: 14px;
                       background-color: #f8fafc;
@@ -1035,7 +1045,7 @@ export default function ApplyPage() {
                   </p>
                   <div
                     onClick={() => photosRef.current?.click()}
-                    className="border-2 border-dashed border-slate-200 rounded-2xl p-6 text-center bg-slate-50 cursor-pointer transition-all"
+                    className="border-2 border-dashed border-[#FDB8D7] rounded-2xl p-6 text-center bg-slate-50 cursor-pointer transition-all"
                     onMouseEnter={(e) => {
                       e.currentTarget.style.borderColor = B;
                     }}
@@ -1117,7 +1127,7 @@ export default function ApplyPage() {
                   {!form.passportId ? (
                     <div
                       onClick={() => idRef.current?.click()}
-                      className="border-2 border-dashed border-slate-200 rounded-2xl p-6 text-center bg-slate-50 cursor-pointer transition-all"
+                      className="border-2 border-dashed border-[#FDB8D7] rounded-2xl p-6 text-center bg-slate-50 cursor-pointer transition-all"
                       onMouseEnter={(e) => {
                         e.currentTarget.style.borderColor = B;
                       }}

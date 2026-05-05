@@ -85,7 +85,7 @@ function TextInput({
       onFocus={onFocusBrand}
       onBlur={onBlurBrand}
       style={{ colorScheme: "light" }}
-      className="w-full px-3 py-2.5 border border-slate-200 rounded-xl text-sm bg-slate-50 text-slate-900 placeholder:text-slate-400 focus:outline-none disabled:opacity-50 transition-all"
+      className="w-full px-3 py-2.5 border border-[#FDB8D7] rounded-xl text-sm bg-slate-50 text-slate-900 placeholder:text-slate-400 focus:outline-none disabled:opacity-50 transition-all"
     />
   );
 }
@@ -110,7 +110,7 @@ function TextareaInput({
       onChange={(e) => onChange(e.target.value)}
       onFocus={onFocusBrand}
       onBlur={onBlurBrand}
-      className="w-full px-3 py-2.5 border border-slate-200 rounded-xl text-sm bg-slate-50 text-slate-900 placeholder:text-slate-400 focus:outline-none resize-none transition-all"
+      className="w-full px-3 py-2.5 border border-[#FDB8D7] rounded-xl text-sm bg-slate-50 text-slate-900 placeholder:text-slate-400 focus:outline-none resize-none transition-all"
     />
   );
 }
@@ -135,7 +135,7 @@ function SelectInput({
         onFocus={onFocusBrand}
         onBlur={onBlurBrand}
         style={{ colorScheme: "light" }}
-        className="w-full appearance-none px-3 py-2.5 border border-slate-200 rounded-xl text-sm bg-slate-50 text-slate-900 focus:outline-none transition-all"
+        className="w-full appearance-none px-3 py-2.5 border border-[#FDB8D7] rounded-xl text-sm bg-slate-50 text-slate-900 focus:outline-none transition-all"
       >
         <option value="" className="text-slate-400">
           {placeholder}
@@ -167,7 +167,18 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const parsed = venueInquirySchema.safeParse(formData);
+
+    // ─── Optimization & Sanitization ──────────────────────────────────────────
+    const sanitizedData = {
+      ...formData,
+      name: formData.name.trim(),
+      email: formData.email.trim().toLowerCase(),
+      phone: formData.phone.replace(/[\s\-\(\)]/g, ""),
+      venueName: formData.venueName.trim(),
+      message: formData.message.trim(),
+    };
+
+    const parsed = venueInquirySchema.safeParse(sanitizedData);
 
     if (!parsed.success) {
       const nextErrors = Object.fromEntries(
@@ -283,7 +294,7 @@ export default function ContactPage() {
 
             {/* B2B Inquiry Form */}
             <div className="relative z-10 order-1 lg:order-2">
-              <div className="bg-white rounded-3xl border border-white/70 overflow-hidden shadow-2xl">
+              <div className="bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-2xl">
                 <div
                   className="px-6 py-5"
                   style={{ background: "linear-gradient(135deg, #ffffff, #fff1f7)" }}
