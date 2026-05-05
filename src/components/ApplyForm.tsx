@@ -12,6 +12,7 @@ import {
   AlertCircle,
   ChevronDown,
 } from "lucide-react";
+import { supabase } from "@/lib/supabase";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -728,6 +729,25 @@ export default function ApplyPage() {
     setSubmitError("");
 
     try {
+      // 1. Blacklist check
+      const { data: blacklistedCandidates, error: blacklistError } = await supabase
+        .from("milli_candidates")
+        .select("id")
+        .or(`email.eq.${form.email},phone.eq.${form.phone}`)
+        .eq("blacklisted", true);
+
+      if (blacklistError) {
+        console.error("[ApplyForm] Blacklist check failed:", blacklistError);
+      }
+
+      if (blacklistedCandidates && blacklistedCandidates.length > 0) {
+        setSubmitError(
+          "You are unable to apply at this time. Please contact us if you think this is a mistake.",
+        );
+        setSubmitting(false);
+        return;
+      }
+
       const payload = {
         personalInfo: {
           fullName: form.fullName,
