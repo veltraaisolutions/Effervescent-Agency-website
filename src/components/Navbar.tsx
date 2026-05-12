@@ -11,7 +11,7 @@ import AnnouncementBar from "./AnnouncementBar";
 const partnerCtas = [
   { label: "Become a Shot Seller", href: "/apply" },
   { label: "Discuss Your Venue", href: "/contact" },
-  { label: "Inquiries", href: "/referrals" },
+  { label: "Enquiries", href: "/referrals" },
 ];
 
 const Navbar = () => {
@@ -167,13 +167,16 @@ const Navbar = () => {
               <div className="relative">
                 <button
                   type="button"
-                  onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
-                  className="bg-primary text-white px-3 py-2 rounded-xl text-sm font-black shadow-md flex items-center justify-center gap-1 whitespace-nowrap overflow-hidden min-w-[112px] max-w-[128px]"
+                  onClick={() => {
+                    setMobileDropdownOpen(!mobileDropdownOpen);
+                    if (!mobileDropdownOpen) setMobileMenuOpen(false);
+                  }}
+                  className="bg-primary text-white px-4 py-2.5 rounded-xl text-base font-black shadow-md flex items-center justify-center gap-2 whitespace-nowrap overflow-hidden min-w-[140px] max-w-[160px]"
                 >
                   <span className="overflow-hidden">
                     Get in Touch
                   </span>
-                  <ChevronDown size={14} className={`transition-transform ${mobileDropdownOpen ? "rotate-180" : ""}`} />
+                  <ChevronDown size={16} className={`transition-transform ${mobileDropdownOpen ? "rotate-180" : ""}`} />
                 </button>
                 <AnimatePresence>
                   {mobileDropdownOpen && (
@@ -280,7 +283,10 @@ const Navbar = () => {
             {/* Mobile menu button */}
             <div className="xl:hidden flex items-center gap-2">
               <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                onClick={() => {
+                  setMobileMenuOpen(!mobileMenuOpen);
+                  if (!mobileMenuOpen) setMobileDropdownOpen(false);
+                }}
                 className="text-slate-900 p-2 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors"
               >
                 {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

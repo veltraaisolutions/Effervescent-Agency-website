@@ -45,7 +45,7 @@ export async function POST(request: Request) {
   }
 
   return NextResponse.json(
-    { error: "Failed to send inquiry" },
+    { error: "Failed to send enquiry" },
     { status: 502 },
   );
 }

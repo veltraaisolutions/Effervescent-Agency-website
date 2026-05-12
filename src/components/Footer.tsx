@@ -138,7 +138,7 @@ const Footer = () => {
                   <Link href="/contact" className="text-white/70 hover:text-white transition-all font-medium text-[15px]">Management</Link>
                 </li>
                 <li>
-                  <Link href="/referrals" className="text-white/70 hover:text-white transition-all font-medium text-[15px]">Inquiries</Link>
+                  <Link href="/referrals" className="text-white/70 hover:text-white transition-all font-medium text-[15px]">Enquiries</Link>
                 </li>
                 <li>
                   <Link href="/apply" className="text-white/70 hover:text-white transition-all font-medium text-[15px]">Apply Now</Link>

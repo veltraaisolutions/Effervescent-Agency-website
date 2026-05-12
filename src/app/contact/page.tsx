@@ -218,7 +218,7 @@ export default function ContactPage() {
           setFieldErrors(nextErrors);
         }
 
-        throw new Error(result?.error ?? "Failed to send inquiry");
+        throw new Error(result?.error ?? "Failed to send enquiry");
       }
 
       setSubmitted(true);
@@ -292,7 +292,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* B2B Inquiry Form */}
+            {/* B2B Enquiry Form */}
             <div className="relative z-10 order-1 lg:order-2">
               <div className="bg-white rounded-3xl border border-slate-100 overflow-hidden shadow-2xl">
                 <div
@@ -318,7 +318,7 @@ export default function ContactPage() {
                     <div className="w-20 h-20 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto shadow-inner">
                       <CheckCircle2 size={40} />
                     </div>
-                    <h4 className="text-2xl font-bold text-slate-900">Inquiry Sent!</h4>
+                    <h4 className="text-2xl font-bold text-slate-900">Enquiry Sent!</h4>
                     <p className="text-slate-500 font-light">Thank you for reaching out. Maddison will be in touch shortly to discuss your venue's growth.</p>
                     <button
                       onClick={() => setSubmitted(false)}
@@ -408,7 +408,7 @@ export default function ContactPage() {
                       {submitting ? (
                         <>Processing... <Loader2 className="animate-spin" size={16} /></>
                       ) : (
-                        <>Send Inquiry <ArrowRight size={16} /></>
+                        <>Send Enquiry <ArrowRight size={16} /></>
                       )}
                     </button>
                   </form>

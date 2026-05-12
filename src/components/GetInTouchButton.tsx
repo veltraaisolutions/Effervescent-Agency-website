@@ -8,7 +8,7 @@ import { ChevronDown } from "lucide-react";
 const partnerCtas = [
   { label: "Become a Shot Seller", href: "/apply" },
   { label: "Discuss Your Venue", href: "/contact" },
-  { label: "Inquiries", href: "/referrals" },
+  { label: "Enquiries", href: "/referrals" },
 ];
 
 interface GetInTouchButtonProps {
