@@ -184,14 +184,14 @@ const Navbar = () => {
                       initial={{ opacity: 0, y: 10, scale: 0.95 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                      className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white/25 backdrop-blur-2xl rounded-2xl shadow-[0_20px_50px_rgba(200,116,226,0.3),inset_0_0_20px_rgba(255,255,255,0.1)] border border-white/30 overflow-hidden flex flex-col"
+                      className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white rounded-2xl shadow-premium border border-slate-100 overflow-hidden flex flex-col"
                     >
                       {partnerCtas.map((cta, index) => (
                         <Link
                           key={`${cta.label}-${index}`}
                           href={cta.href}
                           onClick={() => setMobileDropdownOpen(false)}
-                          className="px-4 py-4 text-base font-black text-slate-900 text-center hover:bg-primary/30 transition-colors border-b border-white/10 last:border-b-0"
+                          className="px-4 py-4 text-base font-black text-slate-600 text-center bg-slate-50 hover:bg-slate-100 transition-colors border-b border-slate-100 last:border-b-0"
                         >
                           {cta.label}
                         </Link>
