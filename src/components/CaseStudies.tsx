@@ -58,11 +58,11 @@ const CaseStudies = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-32">
           {/* Card 1 */}
           <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} className="flex flex-col text-center">
-            <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-              <div className="bg-[#483c51] py-5">
+            <div className="rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(200,116,226,0.3),inset_0_0_20px_rgba(255,255,255,0.1)] border border-white/20 backdrop-blur-md bg-white/5">
+              <div className="bg-white/10 py-5 border-b border-white/10">
                 <span className="text-white font-serif text-2xl md:text-3xl font-medium tracking-wide">Venue No.1</span>
               </div>
-              <div className="bg-[#a97bf0] py-5">
+              <div className="bg-primary/20 py-5 transition-colors hover:bg-primary/30">
                 <span className="text-white font-serif text-4xl md:text-5xl italic tracking-tight">£166,905</span>
               </div>
             </div>
@@ -71,11 +71,11 @@ const CaseStudies = () => {
 
           {/* Card 2 */}
           <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="flex flex-col text-center">
-            <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-              <div className="bg-[#483c51] py-5">
+            <div className="rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(200,116,226,0.3),inset_0_0_20px_rgba(255,255,255,0.1)] border border-white/20 backdrop-blur-md bg-white/5">
+              <div className="bg-white/10 py-5 border-b border-white/10">
                 <span className="text-white font-serif text-2xl md:text-3xl font-medium tracking-wide">Venue No.2</span>
               </div>
-              <div className="bg-[#a97bf0] py-5">
+              <div className="bg-primary/20 py-5 transition-colors hover:bg-primary/30">
                 <span className="text-white font-serif text-4xl md:text-5xl italic tracking-tight">£98,462</span>
               </div>
             </div>
@@ -84,11 +84,11 @@ const CaseStudies = () => {
 
           {/* Card 3 */}
           <motion.div initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.4 }} className="flex flex-col text-center">
-            <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-              <div className="bg-[#483c51] py-5">
+            <div className="rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(200,116,226,0.3),inset_0_0_20px_rgba(255,255,255,0.1)] border border-white/20 backdrop-blur-md bg-white/5">
+              <div className="bg-white/10 py-5 border-b border-white/10">
                 <span className="text-white font-serif text-2xl md:text-3xl font-medium tracking-wide">Venue No.3</span>
               </div>
-              <div className="bg-[#a97bf0] py-5">
+              <div className="bg-primary/20 py-5 transition-colors hover:bg-primary/30">
                 <span className="text-white font-serif text-4xl md:text-5xl italic tracking-tight">£69,607</span>
               </div>
             </div>
