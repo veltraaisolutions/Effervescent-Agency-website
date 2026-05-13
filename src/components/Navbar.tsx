@@ -164,43 +164,19 @@ const Navbar = () => {
 
             {/* Mobile Rotating CTA (Centered) */}
             <div className="xl:hidden absolute left-1/2 -translate-x-1/2">
-              <div className="relative">
-                <button
-                  type="button"
-                  onClick={() => {
-                    setMobileDropdownOpen(!mobileDropdownOpen);
-                    if (!mobileDropdownOpen) setMobileMenuOpen(false);
-                  }}
-                  className="bg-primary text-white px-4 py-2.5 rounded-xl text-base font-black shadow-md flex items-center justify-center gap-2 whitespace-nowrap overflow-hidden min-w-[140px] max-w-[160px]"
-                >
-                  <span className="overflow-hidden">
-                    Get in Touch
-                  </span>
-                  <ChevronDown size={16} className={`transition-transform ${mobileDropdownOpen ? "rotate-180" : ""}`} />
-                </button>
-                <AnimatePresence>
-                  {mobileDropdownOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                      className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white rounded-2xl shadow-premium border border-slate-100 p-3 flex flex-col gap-2"
-                    >
-                      {partnerCtas.map((cta, index) => (
-                        <Link
-                          key={`${cta.label}-${index}`}
-                          href={cta.href}
-                          onClick={() => setMobileDropdownOpen(false)}
-                          className="block w-full text-center py-4 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all bg-slate-50 text-slate-600 border border-slate-100 hover:bg-slate-100"
-                        >
-                          {cta.label}
-                        </Link>
-                      ))}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+              <button
+                type="button"
+                onClick={() => {
+                  setMobileDropdownOpen(!mobileDropdownOpen);
+                  if (!mobileDropdownOpen) setMobileMenuOpen(false);
+                }}
+                className="bg-primary text-white px-10 py-2.5 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-md flex items-center justify-center gap-2 whitespace-nowrap overflow-hidden"
+              >
+                Get in Touch
+                <ChevronDown size={14} className={`transition-transform ${mobileDropdownOpen ? "rotate-180" : ""}`} />
+              </button>
             </div>
+
 
             {/* Center Navigation */}
             <div className="hidden xl:flex items-center gap-2">
@@ -248,7 +224,7 @@ const Navbar = () => {
                 <button
                   type="button"
                   onClick={() => setDesktopDropdownOpen(!desktopDropdownOpen)}
-                  className="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-3 rounded-full text-sm font-black shadow-lg transition-all hover:scale-105 active:scale-95 whitespace-nowrap overflow-hidden min-w-[252px]"
+                  className="inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-lg transition-all hover:scale-105 active:scale-95 whitespace-nowrap overflow-hidden"
                 >
                   Get in Touch
                   <ChevronDown
@@ -262,14 +238,14 @@ const Navbar = () => {
                       initial={{ opacity: 0, y: 10, scale: 0.95 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                      className="absolute right-0 top-full mt-3 w-64 bg-white rounded-2xl shadow-premium border border-slate-100 p-3 flex flex-col gap-2"
+                      className="absolute right-0 top-full mt-3 w-64 bg-white rounded-2xl shadow-premium border border-slate-100 p-4 flex flex-col gap-2"
                     >
                       {partnerCtas.map((cta, index) => (
                         <Link
                           key={`${cta.label}-${index}`}
                           href={cta.href}
                           onClick={() => setDesktopDropdownOpen(false)}
-                          className="block w-full text-center py-4 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all bg-slate-50 text-slate-600 border border-slate-100 hover:bg-slate-100"
+                          className="block w-full text-center py-4 rounded-xl text-sm font-black uppercase tracking-widest transition-all bg-slate-50 text-slate-600 border border-slate-100 hover:bg-primary hover:text-white hover:shadow-lg hover:border-primary"
                         >
                           {cta.label}
                         </Link>
@@ -294,6 +270,31 @@ const Navbar = () => {
             </div>
           </div>
         </div>
+
+        {/* Mobile Get in Touch Dropdown */}
+        <AnimatePresence>
+          {mobileDropdownOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="xl:hidden absolute inset-x-0 top-full bg-white border-t border-slate-100 shadow-premium z-50 overflow-hidden"
+            >
+              <div className="px-6 py-6 space-y-2">
+                {partnerCtas.map((cta, index) => (
+                  <Link
+                    key={`${cta.label}-${index}`}
+                    href={cta.href}
+                    onClick={() => setMobileDropdownOpen(false)}
+                    className="block w-full text-center py-4 rounded-xl text-sm font-black uppercase tracking-widest transition-all bg-slate-50 text-slate-600 border border-slate-100 hover:bg-primary hover:text-white hover:shadow-lg hover:border-primary"
+                  >
+                    {cta.label}
+                  </Link>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Mobile Navigation */}
         <div

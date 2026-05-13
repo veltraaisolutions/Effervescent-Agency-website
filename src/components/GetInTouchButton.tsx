@@ -39,7 +39,7 @@ export default function GetInTouchButton({
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className={`inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-3 rounded-full text-sm font-black shadow-lg transition-all hover:scale-105 active:scale-95 whitespace-nowrap ${buttonClassName}`}
+        className={`inline-flex items-center justify-center gap-2 bg-primary text-white px-8 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-lg transition-all hover:scale-105 active:scale-95 whitespace-nowrap ${buttonClassName}`}
       >
         Get in Touch
         <ChevronDown
@@ -54,14 +54,14 @@ export default function GetInTouchButton({
             initial={{ opacity: 0, y: 10, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
-            className="absolute left-0 lg:left-0 top-full mt-3 w-64 bg-white rounded-2xl shadow-premium border border-slate-100 p-3 flex flex-col gap-2 z-[500]"
+            className="absolute left-0 right-0 top-full mt-3 bg-white rounded-2xl shadow-premium border border-slate-100 p-6 flex flex-col gap-2 z-[500]"
           >
             {partnerCtas.map((cta, index) => (
               <Link
                 key={`${cta.label}-${index}`}
                 href={cta.href}
                 onClick={() => setIsOpen(false)}
-                className="block w-full text-center py-4 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all bg-slate-50 text-slate-600 border border-slate-100 hover:bg-slate-100"
+                className="block w-full text-center py-4 rounded-xl text-sm font-black uppercase tracking-widest transition-all bg-slate-50 text-slate-600 border border-slate-100 hover:bg-primary hover:text-white hover:shadow-lg hover:border-primary"
               >
                 {cta.label}
               </Link>
