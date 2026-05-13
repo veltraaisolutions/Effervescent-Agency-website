@@ -184,14 +184,14 @@ const Navbar = () => {
                       initial={{ opacity: 0, y: 10, scale: 0.95 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                      className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white/20 backdrop-blur-xl rounded-2xl shadow-[0_20px_50px_rgba(200,116,226,0.3),inset_0_0_20px_rgba(255,255,255,0.1)] border border-white/30 overflow-hidden flex flex-col"
+                      className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-64 bg-white/25 backdrop-blur-2xl rounded-2xl shadow-[0_20px_50px_rgba(200,116,226,0.3),inset_0_0_20px_rgba(255,255,255,0.1)] border border-white/30 overflow-hidden flex flex-col"
                     >
                       {partnerCtas.map((cta, index) => (
                         <Link
                           key={`${cta.label}-${index}`}
                           href={cta.href}
                           onClick={() => setMobileDropdownOpen(false)}
-                          className="px-4 py-4 text-sm font-black text-slate-900 text-center hover:bg-primary/30 transition-colors border-b border-white/10 last:border-b-0"
+                          className="px-4 py-4 text-base font-black text-slate-900 text-center hover:bg-primary/30 transition-colors border-b border-white/10 last:border-b-0"
                         >
                           {cta.label}
                         </Link>
@@ -262,14 +262,14 @@ const Navbar = () => {
                       initial={{ opacity: 0, y: 10, scale: 0.95 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                      className="absolute right-0 top-full mt-3 w-64 bg-white/20 backdrop-blur-xl rounded-2xl shadow-[0_20px_50px_rgba(200,116,226,0.3),inset_0_0_20px_rgba(255,255,255,0.1)] border border-white/30 overflow-hidden flex flex-col"
+                      className="absolute right-0 top-full mt-3 w-64 bg-white/25 backdrop-blur-2xl rounded-2xl shadow-[0_20px_50px_rgba(200,116,226,0.3),inset_0_0_20px_rgba(255,255,255,0.1)] border border-white/30 overflow-hidden flex flex-col"
                     >
                       {partnerCtas.map((cta, index) => (
                         <Link
                           key={`${cta.label}-${index}`}
                           href={cta.href}
                           onClick={() => setDesktopDropdownOpen(false)}
-                          className="px-4 py-4 text-sm font-black text-slate-900 text-center hover:bg-primary/30 transition-colors border-b border-white/10 last:border-b-0"
+                          className="px-4 py-4 text-base font-black text-slate-900 text-center hover:bg-primary/30 transition-colors border-b border-white/10 last:border-b-0"
                         >
                           {cta.label}
                         </Link>
@@ -297,7 +297,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         <div
-          className={`xl:hidden bg-white/20 backdrop-blur-2xl absolute inset-x-0 top-full border-t border-white/30 shadow-premium transition-all duration-500 ease-in-out z-50 overflow-hidden ${mobileMenuOpen ? "max-h-[800px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
+          className={`xl:hidden bg-white absolute inset-x-0 top-full border-t border-slate-100 shadow-premium transition-all duration-500 ease-in-out z-50 overflow-hidden ${mobileMenuOpen ? "max-h-[800px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
             }`}
         >
           <div className="px-6 py-6 space-y-2">
@@ -317,7 +317,7 @@ const Navbar = () => {
                   onClick={() => setMobileMenuOpen(false)}
                   className={`block w-full text-center py-4 rounded-xl text-sm font-black uppercase tracking-widest transition-all ${isActive
                     ? "bg-primary text-white shadow-lg"
-                    : "bg-white/20 backdrop-blur-xl text-slate-900 border border-white/30 shadow-soft"
+                    : "bg-slate-50 text-slate-600 border border-slate-100"
                     }`}
                 >
                   {link.name}
