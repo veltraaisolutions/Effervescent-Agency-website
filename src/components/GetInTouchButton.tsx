@@ -51,19 +51,20 @@ export default function GetInTouchButton({
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 10, scale: 0.95 }}
+            initial={{ opacity: 0, y: 15, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 10, scale: 0.95 }}
-            className="absolute left-0 right-0 top-full mt-3 bg-white rounded-2xl shadow-premium border border-slate-100 p-6 flex flex-col gap-2 z-[500]"
+            exit={{ opacity: 0, y: 15, scale: 0.95 }}
+            className="absolute left-1/2 -translate-x-1/2 top-full mt-4 w-80 bg-white/95 backdrop-blur-xl rounded-[2.5rem] shadow-premium border border-white/20 p-2 flex flex-col gap-2 z-[500]"
           >
             {partnerCtas.map((cta, index) => (
               <Link
                 key={`${cta.label}-${index}`}
                 href={cta.href}
                 onClick={() => setIsOpen(false)}
-                className="block w-full text-center py-4 rounded-xl text-sm font-black uppercase tracking-widest transition-all bg-slate-50 text-slate-600 border border-slate-100 hover:bg-primary hover:text-white hover:shadow-lg hover:border-primary"
+                className="group relative block w-full text-center py-5 rounded-[2rem] text-[10px] font-black uppercase tracking-[0.2em] transition-all overflow-hidden bg-slate-50 text-slate-600 hover:text-white"
               >
-                {cta.label}
+                <div className="absolute inset-0 bg-primary translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+                <span className="relative z-10">{cta.label}</span>
               </Link>
             ))}
           </motion.div>

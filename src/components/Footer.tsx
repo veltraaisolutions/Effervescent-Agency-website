@@ -77,7 +77,7 @@ const Footer = () => {
     ];
 
   return (
-    <footer className="relative pt-10 pb-8 overflow-hidden">
+    <footer className="relative pt-10 pb-8">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8 items-start">
           {/* Brand Column */}

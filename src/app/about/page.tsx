@@ -23,7 +23,7 @@ export default function AboutPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative min-h-[40vh] flex flex-col items-center justify-center overflow-hidden">
+      <section className="relative min-h-[40vh] flex flex-col items-center justify-center z-[80]">
         <div className="absolute top-0 right-0 w-[50%] h-full opacity-10" style={{ backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)', backgroundSize: '20px 20px' }} />
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full flex flex-col items-center text-center pt-40 md:pt-44">
           <motion.div
@@ -61,7 +61,7 @@ export default function AboutPage() {
       </section>
 
       {/* Track Record */}
-      <section className="relative py-8 md:py-12 overflow-hidden">
+      <section className="relative py-8 md:py-12 z-[70]">
         <div className="absolute top-0 left-0 w-[50%] h-full opacity-10" style={{ backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)', backgroundSize: '20px 20px' }} />
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -109,7 +109,7 @@ export default function AboutPage() {
       </section>
 
       {/* Final CTA Banner */}
-      <section className="relative py-12 md:py-16">
+      <section className="relative py-12 md:py-16 z-[60]">
         <div className="absolute inset-0 z-0 overflow-hidden">
           <div className="absolute -top-[30%] right-[-10%] w-[80%] h-[160%] bg-[#d690eb]/10 transform rotate-[35deg] border-l-2 border-white/20" />
         </div>
@@ -164,7 +164,7 @@ export default function AboutPage() {
       </section>
 
       {/* Final CTA Banner */}
-      <section className="relative py-12 md:py-16 overflow-hidden">
+      <section className="relative py-12 md:py-16 z-[50]">
         <div className="max-w-5xl mx-auto px-6 text-center relative z-10 space-y-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

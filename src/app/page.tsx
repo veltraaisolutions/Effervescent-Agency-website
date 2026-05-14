@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Modern SaaS-Style Hero Section */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden" style={{ background: 'radial-gradient(circle at 100% 0%, #C874E2 0%, transparent 50%)' }}>
+      <section className="relative min-h-screen flex flex-col items-center justify-center z-[80]" style={{ background: 'radial-gradient(circle at 100% 0%, #C874E2 0%, transparent 50%)' }}>
         <div className="absolute bottom-12 right-12 opacity-60">
           <div className="w-24 h-24 relative">
             <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
@@ -71,7 +71,7 @@ export default function Home() {
       </div>
 
       {/* Impact/Revenue Section */}
-      <section className="relative h-[70vh] md:h-[90vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[70vh] md:h-[90vh] flex items-center justify-center z-[70]">
         <div
           className="absolute inset-0 z-0"
           style={{
@@ -116,7 +116,7 @@ export default function Home() {
       </section>
 
       {/* Testimonial Section */}
-      <section className="relative py-32 md:py-48 overflow-hidden">
+      <section className="relative py-32 md:py-48 z-[60]">
         <div
           className="absolute inset-0 z-0 pointer-events-none"
           style={{
@@ -167,7 +167,7 @@ export default function Home() {
       </div>
 
       {/* Final CTA Banner */}
-      <section className="relative py-24 md:py-32">
+      <section className="relative py-24 md:py-32 z-[50]">
         <div
           className="absolute inset-0 z-0 pointer-events-none overflow-hidden"
           style={{

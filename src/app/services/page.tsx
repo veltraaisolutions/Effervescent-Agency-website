@@ -47,7 +47,7 @@ export default function ServicesPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative min-h-[40vh] flex flex-col items-center justify-center overflow-hidden">
+      <section className="relative min-h-[40vh] flex flex-col items-center justify-center">
         <div className="absolute top-0 right-0 w-[50%] h-full opacity-10 z-[1]" style={{ backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)', backgroundSize: '20px 20px' }} />
 
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full flex flex-col items-center text-center pt-40 md:pt-44">
@@ -98,6 +98,7 @@ export default function ServicesPage() {
         <section
           key={idx}
           className="relative py-8 md:py-12"
+          style={{ zIndex: 50 - idx }}
         >
           {/* Dotted Texture */}
           <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none z-[1] overflow-hidden" style={{ backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)', backgroundSize: '30px 30px' }} />
@@ -153,7 +154,7 @@ export default function ServicesPage() {
       ))}
 
       {/* Decorative Star Footer */}
-      <section className="relative py-8 md:py-12 overflow-hidden">
+      <section className="relative py-8 md:py-12">
         <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none z-[1]" style={{ backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)', backgroundSize: '30px 30px' }} />
 
         <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
