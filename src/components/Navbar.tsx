@@ -105,10 +105,10 @@ const Navbar = () => {
   );
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-[100]">
+    <div className="fixed top-0 left-0 right-0 z-[1000] flex flex-col">
       <AnnouncementBar />
       <nav
-        className={`transition-all duration-500 ${navIsSolid
+        className={`relative transition-all duration-500 ${navIsSolid
           ? "bg-white/95 backdrop-blur-xl py-2 shadow-soft border-b border-slate-100"
           : "bg-transparent py-4"
           }`}
