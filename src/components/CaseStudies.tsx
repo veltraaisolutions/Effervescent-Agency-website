@@ -125,11 +125,7 @@ const CaseStudies = () => {
       </div>
 
       {/* Decorative Star - Bottom Right */}
-      <div className="absolute bottom-12 right-12 opacity-90 scale-125 z-30">
-        <div className="w-20 h-20 relative">
-          <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
-        </div>
-      </div>
+
     </section>
   );
 };

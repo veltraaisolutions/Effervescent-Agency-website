@@ -35,7 +35,7 @@ export default function GetInTouchButton({
   }, []);
 
   return (
-    <div className={`relative ${className} ${isOpen ? "z-[600]" : "z-10"}`} ref={dropdownRef}>
+    <div className={`relative ${className} ${isOpen ? "z-[9999]" : "z-10"}`} ref={dropdownRef}>
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
@@ -51,10 +51,10 @@ export default function GetInTouchButton({
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 15, scale: 0.95 }}
+            initial={{ opacity: 0, y: -15, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 15, scale: 0.95 }}
-            className="absolute left-1/2 -translate-x-1/2 top-full mt-4 w-80 bg-white/95 backdrop-blur-xl rounded-[2.5rem] shadow-premium border border-white/20 p-2 flex flex-col gap-2 z-[500]"
+            exit={{ opacity: 0, y: -15, scale: 0.95 }}
+            className="absolute left-1/2 -translate-x-1/2 bottom-full mb-4 w-80 bg-white/95 backdrop-blur-xl rounded-[2.5rem] shadow-premium border border-white/20 p-2 flex flex-col gap-2 z-[9999]"
           >
             {partnerCtas.map((cta, index) => (
               <Link

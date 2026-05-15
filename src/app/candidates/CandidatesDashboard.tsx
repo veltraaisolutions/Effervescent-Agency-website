@@ -963,7 +963,7 @@ function CandidateModal({
           {/* Experience */}
           <Section title="Experience & Motivation">
             <InfoRow
-              label="Prior Shot-Seller Experience"
+              label="Prior Shot Seller Experience"
               value={candidate.has_prior_experience ? "Yes" : "No"}
             />
             <InfoRow

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function ShotSellersPage() {
 
@@ -17,7 +18,7 @@ export default function ShotSellersPage() {
             viewport={{ once: true }}
             className="text-5xl md:text-7xl font-serif text-white text-center mb-12 md:mb-16 tracking-tight"
           >
-            What is a Shot-Seller?
+            What is a Shot Seller?
           </motion.h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-24 mb-16 md:mb-20">
@@ -53,14 +54,29 @@ export default function ShotSellersPage() {
               className="space-y-4 md:space-y-6 text-white/90 text-base md:text-lg font-medium leading-relaxed max-w-lg"
             >
               <p>
-                Shot-sellers ARE a valuable addition to your venue, positively impacting customer experience and bringing revenue to new heights, at no additional cost to yourselves.
+                Shot Sellers ARE a valuable addition to your venue, positively impacting customer experience and bringing revenue to new heights, at no additional cost to yourselves.
               </p>
               <p>
-                Beyond that, Shot-Sellers excel at creating an engaging and enjoyable experience for customers, fostering a vibrant and social atmosphere.
+                Beyond that, Shot Sellers excel at creating an engaging and enjoyable experience for customers, fostering a vibrant and social atmosphere.
               </p>
               <p>
                 Customers also benefit from shorter wait times at the bar, streamlining your service, taking pressure off bar staff and improving customer satisfaction overall.
               </p>
+
+              <motion.div 
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6 }}
+                className="pt-6"
+              >
+                <Link 
+                  href="/apply"
+                  className="inline-flex items-center justify-center bg-white text-black px-10 py-4 rounded-xl text-xs font-black uppercase tracking-[0.2em] shadow-2xl transition-all hover:scale-105 active:scale-95 whitespace-nowrap"
+                >
+                  Apply Now
+                </Link>
+              </motion.div>
             </motion.div>
           </div>
         </div>

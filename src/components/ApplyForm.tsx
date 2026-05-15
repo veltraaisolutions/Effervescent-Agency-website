@@ -1257,7 +1257,7 @@ export default function ApplyPage() {
                 </div>
                 <div>
                   <FieldLabel required>
-                    What do you understand about being a shot-seller?
+                    What do you understand about being a shot seller?
                   </FieldLabel>
                   <TextareaInput
                     value={form.understandRole}

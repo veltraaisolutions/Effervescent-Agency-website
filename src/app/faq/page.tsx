@@ -10,7 +10,7 @@ const faqs = [
   {
     question: "How much does it cost?",
     answer:
-      "Our shot-sales service is offered on a commission-only basis, ensuring you can access our expertise without any upfront fees. Entertainment and other staffing service packages can be discussed on our introductory call.",
+      "Our shot sales service is offered on a commission-only basis, ensuring you can access our expertise without any upfront fees. Entertainment and other staffing service packages can be discussed on our introductory call.",
   },
   {
     question: "Is my business suitable?",
@@ -25,10 +25,10 @@ const faqs = [
   {
     question: "What services do Effervescent provide?",
     answer:
-      "We specialise in premium shot-sales teams, promotional staff, and through Effervescent Entertainment, a wide variety of experiential services including hostesses, performers, and bespoke entertainment packages.",
+      "We specialise in premium shot sales teams, promotional staff, and through Effervescent Entertainment, a wide variety of experiential services including hostesses, performers, and bespoke entertainment packages.",
   },
   {
-    question: "What benefits can a shot-sales team bring to my venue?",
+    question: "What benefits can a shot sales team bring to my venue?",
     answer:
       "Beyond the immediate revenue increase, our teams enhance the atmosphere, provide professional customer engagement, and operate with zero financial risk to your venue.",
   },
@@ -43,16 +43,12 @@ export default function FAQPage() {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   return (
-    <main className="flex flex-col min-h-screen">
+    <main className="flex flex-col min-h-screen overflow-x-hidden">
 
       {/* Hero Section — matches global background */}
       <section className="relative pt-24 pb-16 md:pt-36 md:pb-24 overflow-hidden">
         {/* Decorative star */}
-        <div className="absolute bottom-8 right-12 opacity-40 scale-100 z-30">
-          <div className="w-16 h-16 relative">
-            <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
-          </div>
-        </div>
+
 
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
           {/* Badge — 5 Star Rated */}
@@ -70,7 +66,7 @@ export default function FAQPage() {
               <div className="h-4 w-px bg-white/20 hidden md:block" />
             </div>
             <p className="text-[10px] font-black uppercase tracking-[0.15em] text-white text-center md:text-left leading-relaxed">
-              5/5 BY 400+ VENUES <span className="mx-1 md:mx-2 opacity-30">•</span> Shot-Sellers <span className="mx-1 md:mx-2 opacity-30">•</span> Hostesses <span className="mx-1 md:mx-2 opacity-30">•</span> Entertainment
+              5/5 BY 400+ VENUES <span className="mx-1 md:mx-2 opacity-30">•</span> Shot Sellers <span className="mx-1 md:mx-2 opacity-30">•</span> Hostesses <span className="mx-1 md:mx-2 opacity-30">•</span> Entertainment
             </p>
           </motion.div>
 
@@ -153,11 +149,7 @@ export default function FAQPage() {
       {/* CTA / Contact Section */}
       <section className="relative py-16 md:py-24 overflow-hidden">
         {/* Decorative star */}
-        <div className="absolute bottom-8 right-12 opacity-60 scale-100 z-30">
-          <div className="w-16 h-16 relative">
-            <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
-          </div>
-        </div>
+
 
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">

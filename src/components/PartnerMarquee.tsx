@@ -24,7 +24,7 @@ const PartnerMarquee = () => {
       <div className="max-w-7xl mx-auto px-6 relative z-10 mb-12">
         <div className="flex flex-col items-center text-center space-y-2">
           <div className="w-8 h-8 relative mb-2 opacity-80">
-            <Image src="/effervescent-sign1.png" alt="" fill className="object-contain brightness-0 invert" />
+            <Image src="/star.png" alt="" fill className="object-contain brightness-0 invert" />
           </div>
           <span className="text-white font-black uppercase tracking-[0.4em] text-[10px] md:text-xs">
             Trusted Industry Partners
@@ -33,7 +33,7 @@ const PartnerMarquee = () => {
         </div>
       </div>
       
-      <div className="flex whitespace-nowrap relative z-10 [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
+      <div className="flex whitespace-nowrap relative z-10 [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)] overflow-hidden">
         <motion.div
           animate={{
             x: ["0%", "-50%"],

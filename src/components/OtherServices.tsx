@@ -84,7 +84,7 @@ const OtherServices = () => {
             transition={{ delay: 0.3 }}
             className="hidden md:block absolute bottom-[20%] md:bottom-[15%] right-0 md:left-[30%] w-[65%] md:w-[45%] h-[220px] md:h-[300px] z-20 transform -rotate-[5deg] md:-rotate-[10deg] rounded-[2rem] md:rounded-[4rem] overflow-hidden shadow-3xl border-[6px] border-white/20 group"
           >
-            <Image src="/shot-seller-in-party.jpeg" alt="Hostess" fill className="object-cover transition-transform duration-1000 group-hover:scale-105" />
+            <Image src="/shot-seller-in-party.jpeg" alt="Shot Seller" fill className="object-cover transition-transform duration-1000 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
           </motion.div>
         </div>
@@ -92,11 +92,7 @@ const OtherServices = () => {
       </div>
 
       {/* Decorative Star - Bottom Right */}
-      <div className="absolute bottom-12 right-12 opacity-90 scale-125 z-40">
-        <div className="w-20 h-20 relative">
-          <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
-        </div>
-      </div>
+
     </section>
   );
 };

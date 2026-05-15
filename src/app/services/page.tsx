@@ -9,9 +9,9 @@ import GetInTouchButton from "@/components/GetInTouchButton";
 export default function ServicesPage() {
   const services = [
     {
-      title: "Shot-Sales People",
-      description: "Shot-sellers are a valuable addition to your venue, positively impacting customer experience and bringing revenue to new heights, at no additional cost to yourselves.",
-      extra: "Beyond that, shot-sellers excel at creating an engaging and enjoyable experience for customers, fostering a vibrant and social atmosphere. Customers also benefit from shorter wait times streamlining your service, taking pressure off bar staff and improving customer satisfaction overall.",
+      title: "Shot Sellers",
+      description: "Shot sellers are a valuable addition to your venue, positively impacting customer experience and bringing revenue to new heights, at no additional cost to yourselves.",
+      extra: "Beyond that, shot sellers excel at creating an engaging and enjoyable experience for customers, fostering a vibrant and social atmosphere. Customers also benefit from shorter wait times streamlining your service, taking pressure off bar staff and improving customer satisfaction overall.",
       image: "/tray-girl.jpeg",
       align: "left"
     },
@@ -20,26 +20,30 @@ export default function ServicesPage() {
       description: "Our dedicated bottle service teams are trained to deliver high-energy, premium presentations that drive sales and enhance the VIP experience.",
       extra: "From synchronized sparkler entries to expert table management, we ensure your high-spending guests receive the attention and spectacle they expect, maximizing your table revenue.",
       image: "/case-studies-bg.jpeg",
-      align: "right"
+      align: "right",
+      position: "object-top",
+      isLarge: true
     },
     {
       title: "Hostesses",
       description: "Effervescent provides professional hostesses and promo-staff to ensure a seamless guest journey from the moment they arrive.",
       extra: "Whether it's front-of-house greeting, guestlist management, or atmospheric promotion, our hostesses represent your brand with elegance and professional excellence.",
       image: "/HostessService.jpeg",
-      align: "left"
+      align: "left",
+      position: "object-center"
     },
     {
       title: "Dancers & Multi Skilled Performers",
       description: "Through our sister business, Effervescent Entertainment, we offer a variety of additional experiences to enrich your venue.",
       extra: "From fire performers to specialized dancers, we're committed to creating tailored performance packages that guarantee unique and unforgettable experiences for your guests.",
       image: "/fire-shot-worker.jpeg",
-      align: "right"
+      align: "right",
+      position: "object-center"
     }
   ];
 
   return (
-    <div className="flex flex-col min-h-screen relative">
+    <div className="flex flex-col min-h-screen relative overflow-x-hidden">
       {/* Subtle overlays for depth, allowing global background to shine through */}
       <div className="fixed inset-0 z-0 pointer-events-none opacity-20">
         <div className="absolute top-0 right-0 w-[80%] h-[60%] bg-[#C874E2] blur-[120px] rounded-full" />
@@ -47,7 +51,7 @@ export default function ServicesPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative min-h-[40vh] flex flex-col items-center justify-center">
+      <section className="relative min-h-[40vh] flex flex-col items-center justify-center overflow-hidden">
         <div className="absolute top-0 right-0 w-[50%] h-full opacity-10 z-[1]" style={{ backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)', backgroundSize: '20px 20px' }} />
 
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full flex flex-col items-center text-center pt-40 md:pt-44">
@@ -65,7 +69,7 @@ export default function ServicesPage() {
               <div className="h-4 w-px bg-white/20 hidden md:block" />
             </div>
             <p className="text-[10px] font-black uppercase tracking-[0.15em] text-white text-center md:text-left leading-relaxed">
-              5/5 BY 400+ VENUES <span className="mx-1 md:mx-2 opacity-30">•</span> Shot-Sellers <span className="mx-1 md:mx-2 opacity-30">•</span> Hostesses <span className="mx-1 md:mx-2 opacity-30">•</span> Entertainment
+              5/5 BY 400+ VENUES <span className="mx-1 md:mx-2 opacity-30">•</span> Shot Sellers <span className="mx-1 md:mx-2 opacity-30">•</span> Hostesses <span className="mx-1 md:mx-2 opacity-30">•</span> Entertainment
             </p>
           </motion.div>
 
@@ -86,11 +90,7 @@ export default function ServicesPage() {
           </motion.p>
         </div>
 
-        <div className="absolute bottom-8 right-8 opacity-40">
-          <div className="w-12 h-12 relative">
-            <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
-          </div>
-        </div>
+
       </section>
 
       {/* Services Grid */}
@@ -138,12 +138,12 @@ export default function ServicesPage() {
                 viewport={{ once: true }}
                 className={`relative group ${service.align === 'right' ? 'lg:order-1' : ''}`}
               >
-                <div className="relative h-[250px] md:h-[350px] w-full rounded-[2rem] overflow-hidden border-4 border-white/10 shadow-2xl transition-all duration-700">
+                <div className={`relative ${service.isLarge ? 'h-[350px] md:h-[550px]' : 'h-[300px] md:h-[450px]'} w-full rounded-[2rem] overflow-hidden border-4 border-white/10 shadow-2xl transition-all duration-700`}>
                   <Image
                     src={service.image}
                     alt={service.title}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    className={`${service.fit || 'object-cover'} ${service.position || 'object-center'} transition-transform duration-700 group-hover:scale-110`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent opacity-60"></div>
                 </div>
@@ -164,7 +164,7 @@ export default function ServicesPage() {
             viewport={{ once: true }}
           >
             <div className="w-12 h-12 relative mx-auto mb-4">
-              <Image src="/effervescent-sign1.png" alt="Star" fill className="object-contain" />
+              <Image src="/star.png" alt="Star" fill className="object-contain" />
             </div>
             <h3 className="text-2xl md:text-3xl font-serif italic text-white tracking-tight">
               Excellence in every detail.

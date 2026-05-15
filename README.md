@@ -4,7 +4,7 @@ Marketing and operations website for Effervescent Agency, built with Next.js, Re
 
 ## Overview
 
-The site presents Effervescent's venue services, shot-seller model, partner proof, FAQs, contact flows, candidate application flow, onboarding availability form, and a protected candidates dashboard.
+The site presents Effervescent's venue services, shot seller model, partner proof, FAQs, contact flows, candidate application flow, onboarding availability form, and a protected candidates dashboard.
 
 ## Tech Stack
 
@@ -95,11 +95,11 @@ Runs ESLint across the project.
 - `/` - Homepage with hero, services, case studies, partners, and testimonials.
 - `/about` - About Effervescent Agency.
 - `/services` - Service overview.
-- `/shot-sellers` - Shot-seller explanation and positioning.
+- `/shot-sellers` - Shot seller explanation and positioning.
 - `/venues` - Venue-focused landing page.
 - `/faq` - Frequently asked questions.
 - `/contact` - Contact and venue inquiry flow.
-- `/apply` - Shot-seller application form.
+- `/apply` - Shot seller application form.
 - `/onboarding` - Availability and onboarding form.
 - `/whitelist` - Whitelist flow.
 - `/candidates` - Protected candidates dashboard.

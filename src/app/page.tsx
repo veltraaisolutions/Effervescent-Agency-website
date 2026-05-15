@@ -10,12 +10,12 @@ import GetInTouchButton from "@/components/GetInTouchButton";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen overflow-x-hidden">
       {/* Modern SaaS-Style Hero Section */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center z-[80]" style={{ background: 'radial-gradient(circle at 100% 0%, #C874E2 0%, transparent 50%)' }}>
+      <section className="relative min-h-screen flex flex-col items-center justify-center z-[80] overflow-hidden" style={{ background: 'radial-gradient(circle at 100% 0%, #C874E2 0%, transparent 50%)' }}>
         <div className="absolute bottom-12 right-12 opacity-60">
           <div className="w-24 h-24 relative">
-            <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
+            <Image src="/star.png" alt="" fill className="object-contain" />
           </div>
         </div>
 
@@ -34,7 +34,7 @@ export default function Home() {
               <div className="h-4 w-px bg-white/20 hidden md:block" />
             </div>
             <p className="text-[10px] md:text-xs font-black uppercase tracking-[0.15em] text-white text-center md:text-left leading-relaxed">
-              5/5 BY 400+ VENUES <span className="mx-1 md:mx-2 opacity-30">•</span> Shot-Sellers <span className="mx-1 md:mx-2 opacity-30">•</span> Hostesses <span className="mx-1 md:mx-2 opacity-30">•</span> Entertainment
+              5/5 BY 400+ VENUES <span className="mx-1 md:mx-2 opacity-30">•</span> Shot Sellers <span className="mx-1 md:mx-2 opacity-30">•</span> Hostesses <span className="mx-1 md:mx-2 opacity-30">•</span> Entertainment
             </p>
           </motion.div>
 
@@ -48,7 +48,7 @@ export default function Home() {
                 src="/effervescent-logo.jpeg"
                 alt="Effervescent"
                 fill
-                className="object-contain scale-135 md:scale-175"
+                className="object-contain scale-110 md:scale-125"
                 priority
               />
             </div>
@@ -62,7 +62,6 @@ export default function Home() {
             Transforming Venues and Events Around the Globe
           </motion.p>
 
-
         </div>
       </section>
 
@@ -71,7 +70,7 @@ export default function Home() {
       </div>
 
       {/* Impact/Revenue Section */}
-      <section className="relative h-[70vh] md:h-[90vh] flex items-center justify-center z-[70]">
+      <section className="relative h-[70vh] md:h-[90vh] flex items-center justify-center z-[70] overflow-hidden">
         <div
           className="absolute inset-0 z-0"
           style={{
@@ -104,19 +103,15 @@ export default function Home() {
           >
             Over £2,000,000 generated <br />
             for hospitality businesses through <br />
-            our risk free, shot-sales service
+            our risk free, shot sales service
           </motion.h2>
         </div>
 
-        <div className="absolute bottom-12 right-12 opacity-90 scale-125">
-          <div className="w-20 h-20 relative">
-            <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
-          </div>
-        </div>
+
       </section>
 
       {/* Testimonial Section */}
-      <section className="relative py-32 md:py-48 z-[60]">
+      <section className="relative py-32 md:py-48 z-[60] overflow-hidden">
         <div
           className="absolute inset-0 z-0 pointer-events-none"
           style={{
@@ -144,7 +139,7 @@ export default function Home() {
               <h2 className="text-5xl md:text-6xl lg:text-[4.5rem] font-serif text-white italic tracking-wide leading-[1.15]">
                 It’s been great, <br className="hidden md:block" />
                 unreal difference <br className="hidden md:block" />
-                your Shot-Sellers have made <br className="hidden md:block" />
+                your Shot Sellers have made <br className="hidden md:block" />
                 versus other companies.”
               </h2>
               <div className="text-white font-serif text-xl md:text-2xl mt-2">
@@ -155,11 +150,7 @@ export default function Home() {
           </motion.div>
         </div>
 
-        <div className="absolute bottom-12 right-12 opacity-90 scale-125 z-30">
-          <div className="w-20 h-20 relative">
-            <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
-          </div>
-        </div>
+
       </section>
 
       <div className="relative">
@@ -167,7 +158,7 @@ export default function Home() {
       </div>
 
       {/* Final CTA Banner */}
-      <section className="relative py-24 md:py-32 z-[50]">
+      <section className="relative py-24 md:py-32 z-[50] overflow-hidden">
         <div
           className="absolute inset-0 z-0 pointer-events-none overflow-hidden"
           style={{
@@ -181,14 +172,14 @@ export default function Home() {
             <div className="space-y-10 text-center lg:text-left order-2 lg:order-1">
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 text-white text-sm font-bold tracking-[0.2em] uppercase mx-auto lg:mx-0">
                 <div className="w-6 h-4 relative">
-                  <Image src="/effervescent-sign1.png" alt="Icon" fill className="object-contain brightness-0 invert" />
+                  <Image src="/star.png" alt="Icon" fill className="object-contain brightness-0 invert" />
                 </div> Take the next step
               </div>
               <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif text-white leading-[1.1] text-balance">
                 Ready to <span className="italic underline decoration-white/50 underline-offset-8">transform</span> <br className="hidden md:block" /> your venue?
               </h2>
               <p className="text-xl md:text-2xl text-white/90 font-medium italic max-w-xl leading-relaxed mx-auto lg:mx-0">
-                Join the elite network of venues and shot-sellers redefining the global nightlife experience.
+                Join the elite network of venues and shot sellers redefining the global nightlife experience.
               </p>
               <div className="flex justify-center lg:justify-start pt-4">
                 <GetInTouchButton
@@ -211,11 +202,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-12 right-12 opacity-90 scale-125 z-30">
-          <div className="w-20 h-20 relative">
-            <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
-          </div>
-        </div>
+
       </section>
     </div>
   );

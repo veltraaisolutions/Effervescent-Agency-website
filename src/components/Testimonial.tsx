@@ -20,7 +20,7 @@ const Testimonial = () => {
             <h2 className="text-5xl md:text-7xl font-serif text-white italic leading-tight">
               &ldquo;It&rsquo;s been great, <br />
               unreal difference <br />
-              your Shot-Sellers have made <br />
+              your Shot Sellers have made <br />
               versus other companies.&rdquo;
             </h2>
 
@@ -34,7 +34,7 @@ const Testimonial = () => {
 
       {/* Signature Decorator */}
       <div className="absolute bottom-12 right-12 opacity-20 animate-pulse w-64 h-24">
-        <Image src="/effervescent-sign1.png" alt="Signature" fill className="object-contain brightness-0 invert" />
+        <Image src="/star.png" alt="Signature" fill className="object-contain brightness-0 invert" />
       </div>
 
       {/* Luminous Glow */}

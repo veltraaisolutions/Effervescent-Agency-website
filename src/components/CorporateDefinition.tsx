@@ -25,11 +25,11 @@ const CorporateDefinition = () => {
             viewport={{ once: true }}
             className="w-[280px] h-[280px] md:w-[calc(350px+15vw)] md:h-[340px] rounded-[2rem] md:rounded-l-[4rem] md:rounded-r-none overflow-hidden shadow-3xl absolute top-12 -right-8 md:-top-20 md:right-[-15vw] z-10 border-4 border-white/20 group"
           >
-            <Image 
-              src="/effervescent-definition1.jpeg" 
-              alt="Why Effervescent" 
-              fill 
-              className="object-cover object-center transition-transform duration-1000 group-hover:scale-105" 
+            <Image
+              src="/effervescent-definition1.jpeg"
+              alt="Why Effervescent"
+              fill
+              className="object-cover object-center transition-transform duration-1000 group-hover:scale-105"
             />
           </motion.div>
         </div>
@@ -88,13 +88,10 @@ const CorporateDefinition = () => {
       </div>
 
       {/* Decorative Star - Bottom Right */}
-      <div className="absolute bottom-12 right-12 opacity-90 scale-125 z-30">
-        <div className="w-20 h-20 relative">
-          <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
-        </div>
-      </div>
+
     </section>
   );
 };
 
 export default CorporateDefinition;
+

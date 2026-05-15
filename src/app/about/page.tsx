@@ -15,7 +15,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen relative">
+    <div className="flex flex-col min-h-screen relative overflow-x-hidden">
       {/* Subtle overlays for depth, allowing global background to shine through */}
       <div className="fixed inset-0 z-0 pointer-events-none opacity-20">
         <div className="absolute top-0 right-0 w-[80%] h-[60%] bg-[#C874E2] blur-[120px] rounded-full" />
@@ -23,7 +23,7 @@ export default function AboutPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative min-h-[40vh] flex flex-col items-center justify-center z-[80]">
+      <section className="relative min-h-[40vh] flex flex-col items-center justify-center z-[80] overflow-hidden">
         <div className="absolute top-0 right-0 w-[50%] h-full opacity-10" style={{ backgroundImage: 'radial-gradient(circle, white 2px, transparent 2px)', backgroundSize: '20px 20px' }} />
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 w-full flex flex-col items-center text-center pt-40 md:pt-44">
           <motion.div
@@ -32,7 +32,7 @@ export default function AboutPage() {
             className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-1.5 rounded-full border border-white/20 mb-6"
           >
             <div className="w-5 h-3 relative">
-              <Image src="/effervescent-sign1.png" alt="Icon" fill className="object-contain brightness-0 invert" />
+              <Image src="/star.png" alt="Icon" fill className="object-contain brightness-0 invert" />
             </div>
             <p className="text-[10px] md:text-xs font-black uppercase tracking-[0.15em] text-white">
               The Agency <span className="mx-2 opacity-30">•</span> Global Impact
@@ -53,11 +53,7 @@ export default function AboutPage() {
             Our extensive experience equips us with the insights needed to tailor shot girl services that deliver exceptional results.
           </motion.p>
         </div>
-        <div className="absolute bottom-8 right-8 opacity-40">
-          <div className="w-12 h-12 relative">
-            <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
-          </div>
-        </div>
+
       </section>
 
       {/* Track Record */}
@@ -145,7 +141,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-base md:text-lg text-white font-serif italic leading-relaxed opacity-90">
                 <p>We provide comprehensive sales training and our innovative commission-based pay structure is designed to drive results.</p>
-                <p>This means that our shot-sellers are not just servers, but motivated sales professionals incentivised to sell, ensuring they are as committed to your venue's success as you are.</p>
+                <p>This means that our shot sellers are not just servers, but motivated sales professionals incentivised to sell, ensuring they are as committed to your venue's success as you are.</p>
               </div>
               <div className="pt-2">
                 <div className="h-px w-12 bg-white/30 mb-4" />
@@ -156,15 +152,11 @@ export default function AboutPage() {
             </motion.div>
           </div>
         </div>
-        <div className="absolute bottom-8 right-8 opacity-60 scale-100 z-30">
-          <div className="w-12 h-12 relative">
-            <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
-          </div>
-        </div>
+
       </section>
 
       {/* Final CTA Banner */}
-      <section className="relative py-12 md:py-16 z-[50]">
+      <section className="relative py-12 md:py-16 z-[100]">
         <div className="max-w-5xl mx-auto px-6 text-center relative z-10 space-y-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -182,11 +174,7 @@ export default function AboutPage() {
             </div>
           </motion.div>
         </div>
-        <div className="absolute bottom-12 right-12 opacity-60 scale-100 z-30">
-          <div className="w-16 h-16 relative">
-            <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
-          </div>
-        </div>
+
       </section>
     </div>
   );

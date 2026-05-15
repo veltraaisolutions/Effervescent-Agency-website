@@ -238,7 +238,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen overflow-x-hidden">
       <section className="relative py-24 md:py-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center">
@@ -420,11 +420,7 @@ export default function ContactPage() {
         </div>
 
         {/* Decorative Star - Bottom Right */}
-        <div className="absolute bottom-12 right-12 opacity-90 scale-125 z-30">
-          <div className="w-20 h-20 relative">
-            <Image src="/effervescent-sign1.png" alt="" fill className="object-contain" />
-          </div>
-        </div>
+
       </section>
     </div>
   );
