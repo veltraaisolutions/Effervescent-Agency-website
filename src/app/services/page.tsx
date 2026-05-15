@@ -7,7 +7,18 @@ import Link from "next/link";
 import GetInTouchButton from "@/components/GetInTouchButton";
 
 export default function ServicesPage() {
-  const services = [
+  interface Service {
+    title: string;
+    description: string;
+    extra: string;
+    image: string;
+    align: "left" | "right";
+    position?: string;
+    isLarge?: boolean;
+    fit?: string;
+  }
+
+  const services: Service[] = [
     {
       title: "Shot Sellers",
       description: "Shot sellers are a valuable addition to your venue, positively impacting customer experience and bringing revenue to new heights, at no additional cost to yourselves.",

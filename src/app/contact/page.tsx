@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { AlertCircle, CheckCircle2, Loader2, ArrowRight, ChevronDown } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
 import {
   venueInquirySchema,
   venuePositionOptions,
@@ -419,7 +421,28 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* Decorative Star - Bottom Right */}
+        {/* Join the Team Section */}
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 mt-20 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-white/5 backdrop-blur-md border border-white/10 rounded-[2.5rem] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8"
+          >
+            <div className="space-y-4 text-center md:text-left">
+              <h3 className="text-3xl md:text-4xl font-serif text-white">Looking to join the team?</h3>
+              <p className="text-white/70 max-w-xl">
+                We&apos;re always looking for confident, energetic individuals to join our global network of shot sellers.
+              </p>
+            </div>
+            <Link 
+              href="/referrals"
+              className="inline-flex items-center justify-center bg-white text-black px-8 py-4 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] shadow-2xl transition-all hover:scale-105 active:scale-95 whitespace-nowrap"
+            >
+              Learn More <ArrowRight className="ml-2" size={14} />
+            </Link>
+          </motion.div>
+        </div>
 
       </section>
     </div>
